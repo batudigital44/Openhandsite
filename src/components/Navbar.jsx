@@ -1,20 +1,23 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, ChevronDown } from 'lucide-react'
 import Logo from '../assets/images/logo.png'
 
 const navLinks = [
   { name: 'Ana Sayfa', path: '/' },
   { name: 'Hakkımda', path: '/hakkimda' },
   { name: 'Portfolyo', path: '/portfolyo' },
+  { name: 'Eğitimler', path: '/egitimler' },
   { name: 'İletişim', path: '/iletisim' },
 ]
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isEducationOpen, setIsEducationOpen] = useState(false)
   const location = useLocation()
+  const educationRef = useRef(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,6 +30,17 @@ const Navbar = () => {
   useEffect(() => {
     setIsMobileMenuOpen(false)
   }, [location])
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (educationRef.current && !educationRef.current.contains(event.target)) {
+        setIsEducationOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
 
   return (
     <motion.nav

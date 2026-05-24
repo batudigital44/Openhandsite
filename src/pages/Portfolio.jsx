@@ -5,9 +5,10 @@ import portfolioBanner from '../assets/images/portfolio-banner.png'
 import portfolio1 from '../assets/images/portfolio-1.png'
 import portfolio3 from '../assets/images/portfolio-3.png'
 import portfolio4 from '../assets/images/portfolio-4.png'
-import hotelLobby from '../assets/images/hotel-lobby.png'
-import hotelPool from '../assets/images/hotel-pool.png'
-import hotelRoom from '../assets/images/hotel-room.png'
+import dubaiSkyline from '../assets/images/dubai-skyline.png'
+import hotelResort from '../assets/images/hotel-resort.png'
+import centralAsia from '../assets/images/central-asia.png'
+import logo from '../assets/images/logo.png'
 
 const Portfolio = () => {
   const ref = useRef(null)
@@ -22,27 +23,33 @@ const Portfolio = () => {
       tag: 'Eğitim & Üniversite'
     },
     {
-      image: portfolio3,
+      image: dubaiSkyline,
       title: 'Yüksek Dönüşümlü (High-Conversion) İçerik Stratejileri',
       description: 'Performans pazarlamasında sıradışı metinler ve satış stratejileriyle doğrudan satışa odaklanıyorum. Dubai gayrimenkul pazarı için tasarladığım tek bir içerik stratejisiyle sadece 14 günde 837.000$ değerinde satış konversiyonu sağlayarak içerik pazarlamasının gücünü kanıtladım.',
       metrics: ['14 günde 837.000$ satış', 'High-Conversion strateji', 'Gayrimenkul uzmanlığı'],
       tag: 'Gayrimenkul'
     },
     {
-      image: hotelRoom,
+      image: hotelResort,
       title: 'Veri Odaklı Dijital Pazarlama ile Pazar Liderliği',
       description: 'Orange County Otel Grubu\'nda kısıtlı kaynaklarla yürüttüğüm strateji sayesinde, Türkiye genelinde otel kategorisinde en güçlü sosyal medya hesaplarından birini inşa ettim (Instagram 3., Facebook 6. sıra). Web sitesi trafik analizleri ve SEO çalışmalarıyla son 5 yılın en yüksek ziyaretçi etkileşim oranlarını elde ettim.',
       metrics: ['Instagram 3. sıra', 'Facebook 6. sıra', 'SEO liderliği', '5 Yıl Rekoru'],
-      tag: 'Otel & Turizm',
-      gallery: [hotelLobby, hotelPool]
+      tag: 'Otel & Turizm'
     },
     {
-      image: portfolio4,
+      image: centralAsia,
       title: 'Uluslararası Medya Ekosistemi ve Diplomasi',
       description: 'Orta Asya ve Türkiye arasında köprü kuran, çok dilli ve çok uluslu bir gençlik medya ağı olan ASMAN Medya Grubu\'nu hayata geçirdim. 130 ülkede geçerli IFJ (Uluslararası Gazeteciler Federasyonu) basın akreditasyonuyla uluslararası düzeyde teknoloji ve diplomasi haberciliği yürütmekteyim.',
       metrics: ['130 ülke IFJ akreditasyonu', 'ASMAN Medya Grubu', 'Diplomasi haberciliği'],
       tag: 'Medya & Diplomasi'
     }
+  ]
+
+  const partners = [
+    { name: 'Antalya Belek Üniversitesi', logo: logo },
+    { name: 'ASMAN Medya Grubu', logo: logo },
+    { name: 'Orange County Otel', logo: logo },
+    { name: 'Teus Group', logo: logo }
   ]
 
   return (
@@ -151,6 +158,37 @@ const Portfolio = () => {
                     )}
                   </div>
                 </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Referanslar ve Ortaklar */}
+      <section className="section-padding bg-dark-800">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h3 className="text-3xl font-display font-bold mb-4">
+              Referanslar ve <span className="gradient-text">Ortaklar</span>
+            </h3>
+            <p className="text-gray-400">Birlikte çalıştığım kurumlar ve markalar</p>
+          </motion.div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {partners.map((partner, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="glass-card p-6 flex flex-col items-center justify-center hover:border-primary/30 transition-all"
+              >
+                <img src={partner.logo} alt={partner.name} className="h-12 w-auto mb-3 opacity-70 hover:opacity-100 transition-opacity" />
+                <span className="text-sm text-gray-400 text-center">{partner.name}</span>
               </motion.div>
             ))}
           </div>

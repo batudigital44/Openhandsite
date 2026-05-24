@@ -5,9 +5,9 @@ import portfolio1 from '../assets/images/portfolio-1.png'
 import portfolio2 from '../assets/images/portfolio-2.png'
 import portfolio3 from '../assets/images/portfolio-3.png'
 import portfolio4 from '../assets/images/portfolio-4.png'
-import hotelLobby from '../assets/images/hotel-lobby.png'
-import hotelPool from '../assets/images/hotel-pool.png'
-import hotelRoom from '../assets/images/hotel-room.png'
+import dubaiSkyline from '../assets/images/dubai-skyline.png'
+import hotelResort from '../assets/images/hotel-resort.png'
+import centralAsia from '../assets/images/central-asia.png'
 
 const PortfolioPreview = () => {
   const ref = useRef(null)
@@ -21,20 +21,20 @@ const PortfolioPreview = () => {
       tag: 'Eğitim & Üniversite'
     },
     {
-      image: portfolio3,
+      image: dubaiSkyline,
       title: 'Yüksek Dönüşümlü (High-Conversion) İçerik Stratejileri',
       description: 'Dubai gayrimenkul pazarı için tasarladığım tek bir içerik stratejisiyle sadece 14 günde 837.000$ değerinde satış konversiyonu sağladım',
       tag: 'Gayrimenkul'
     },
     {
-      image: hotelLobby,
+      image: hotelResort,
       title: 'Veri Odaklı Dijital Pazarlama ile Pazar Liderliği',
       description: 'Orange County Otel Grubu\'nda kısıtlı kaynaklarla yürüttüğüm strateji sayesinde, Türkiye genelinde otel kategorisinde en güçlü sosyal medya hesaplarından birini inşa ettim (Instagram 3., Facebook 6. sıra).',
       tag: 'Otel & Turizm',
       metrics: ['Instagram 3. Sıra', 'Facebook 6. Sıra', 'SEO Liderliği']
     },
     {
-      image: portfolio4,
+      image: centralAsia,
       title: 'Uluslararası Medya Ekosistemi ve Diplomasi',
       description: 'Orta Asya ve Türkiye arasında köprü kuran ASMAN Medya Grubu\'nu hayata geçirdim. 130 ülkede geçerli IFJ basın akreditasyonuyla çalışmaktayım',
       tag: 'Medya & Diplomasi'

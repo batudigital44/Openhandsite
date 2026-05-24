@@ -4,6 +4,7 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import About from './pages/About'
 import Portfolio from './pages/Portfolio'
+import Education from './pages/Education'
 import Contact from './pages/Contact'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/hakkimda" element={<About />} />
             <Route path="/portfolyo" element={<Portfolio />} />
+            <Route path="/egitimler" element={<Education />} />
             <Route path="/iletisim" element={<Contact />} />
           </Routes>
         </main>
