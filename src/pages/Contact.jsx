@@ -1,11 +1,11 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
-import { Mail, MapPin, Send, Zap, Smartphone, TrendingUp, Target, Shield } from 'lucide-react'
+import { Mail, MapPin, Send, Zap, Smartphone, TrendingUp, Target, Shield, Check } from 'lucide-react'
 
 const Contact = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const scrollRef = useRef(null)
+  const isInView = useInView(scrollRef, { once: true, margin: "-100px" })
+  const formRef = useRef(null)
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -15,19 +15,40 @@ const Contact = () => {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState('')
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
+    setError('')
+  }
+
+  const validateForm = () => {
+    if (!formData.name.trim()) return 'Lütfen adınızı girin'
+    if (!formData.phone.trim()) return 'Lütfen telefon numaranızı girin'
+    if (!formData.email.trim()) return 'Lütfen e-posta adresinizi girin'
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) return 'Geçerli bir e-posta adresi girin'
+    if (!formData.subject) return 'Lütfen bir konu seçin'
+    return null
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    
+    const validationError = validateForm()
+    if (validationError) {
+      setError(validationError)
+      return
+    }
+    
     setIsSubmitting(true)
-    // Simulate form submission
+    setError('')
+
+    // Simulate successful submission
     setTimeout(() => {
       setIsSubmitting(false)
       setSubmitted(true)
       setFormData({ name: '', phone: '', email: '', subject: '', message: '' })
+      setTimeout(() => setSubmitted(false), 5000)
     }, 1500)
   }
 
@@ -82,36 +103,41 @@ const Contact = () => {
                     className="text-center py-12"
                   >
                     <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Send className="w-8 h-8 text-green-400" />
+                      <Check className="w-8 h-8 text-green-400" />
                     </div>
-                    <h4 className="text-xl font-bold mb-2">Mesajınız Gönderildi!</h4>
-                    <p className="text-gray-400">En kısa sürede size dönüş yapacağım.</p>
+                    <h4 className="text-xl font-bold mb-2">Başvurunuz Alındı!</h4>
+                    <p className="text-gray-400">En kısa sürede {formData.email || 'e-posta adresinize'} dönüş yapacağım.</p>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    <div>
-                      <label className="block text-sm font-medium mb-2">İsim *</label>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-xl focus:border-primary focus:outline-none transition-colors"
-                        placeholder="Adınız Soyadınız"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium mb-2">Numaranız *</label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        required
-                        className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-xl focus:border-primary focus:outline-none transition-colors"
-                        placeholder="+90 5XX XXX XX XX"
-                      />
+                    {error && (
+                      <div className="p-4 bg-red-500/20 border border-red-500/30 rounded-xl text-red-400 text-sm">
+                        {error}
+                      </div>
+                    )}
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium mb-2">İsim *</label>
+                        <input
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-xl focus:border-primary focus:outline-none transition-colors"
+                          placeholder="Adınız Soyadınız"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium mb-2">Numaranız *</label>
+                        <input
+                          type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-xl focus:border-primary focus:outline-none transition-colors"
+                          placeholder="+90 5XX XXX XX XX"
+                        />
+                      </div>
                     </div>
                     <div>
                       <label className="block text-sm font-medium mb-2">Mail *</label>
@@ -120,7 +146,6 @@ const Contact = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        required
                         className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-xl focus:border-primary focus:outline-none transition-colors"
                         placeholder="ornek@mail.com"
                       />
@@ -131,7 +156,6 @@ const Contact = () => {
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
-                        required
                         className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-xl focus:border-primary focus:outline-none transition-colors"
                       >
                         <option value="">Seçiniz</option>
