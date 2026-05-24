@@ -29,7 +29,7 @@ const Education = () => {
     return null
   }
 
-  const handleSubmit = (e) => {
+const handleSubmit = (e) => {
     e.preventDefault()
     
     const validationError = validateForm()
@@ -38,9 +38,17 @@ const Education = () => {
       return
     }
     
-    setIsSubmitting(true)
-    setError('')
-
+    // Create mailto link with form data
+    const subject = encodeURIComponent('Eğitim Başvurusu')
+    const body = encodeURIComponent(
+      `İsim: ${formData.name}\n` +
+      `Telefon: ${formData.phone}\n` +
+      `E-posta: ${formData.email}\n\n` +
+      `Mesaj:\n${formData.message}`
+    )
+    
+    // Open email client with pre-filled data
+    window.location.href = `mailto:digital@batuhanates.com?subject=${subject}&body=${body}`
     // Simulate successful submission
     setTimeout(() => {
       setIsSubmitting(false)
@@ -142,8 +150,8 @@ const Education = () => {
               className="glass-card p-8"
             >
               <div className="text-center mb-6">
-                <span className="text-6xl font-bold gradient-text">1.429.716$</span>
-                <p className="text-gray-400 mt-2">Toplam Kazanç</p>
+                <span className="text-6xl font-bold gradient-text">837.000$</span>
+                <p className="text-gray-400 mt-2">1 Reklam Stratejisiyle Satış</p>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 {stats.map((stat, i) => (
@@ -447,7 +455,7 @@ const Education = () => {
                 <h4 className="font-semibold mb-4">Sosyal Medya</h4>
                 <div className="flex gap-4">
                   <a 
-                    href="https://www.instagram.com/batu.digital/" 
+                    href="https://www.instagram.com/ba2digital/" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-dark-700 rounded-xl flex items-center justify-center hover:bg-primary/20 transition-colors"
