@@ -15,28 +15,28 @@ const Portfolio = () => {
     {
       image: universityCampus,
       title: 'Sosyal Medyada Rekor Etkileşim ve Viral Başarılar',
-      description: 'Antalya Belek Üniversitesi\'nin dijital kimliğini modern bir vizyona taşıyarak üniversite tarihinin en yüksek etkileşim oranlarına ulaştım',
+      description: 'Antalya Belek Üniversitesi\'nin dijital kimliğini modern bir vizyona taşıyarak üniversite tarihinin en yüksek etkileşim oranlarına ulaştım. Kurumsal sosyal medya stratejileri ve viral içerik üretimi konusundaki uzmanlığımı kanıtlayan başarılı bir proje.',
       tag: 'Eğitim & Üniversite',
       metrics: ['Rekor etkileşim oranı', 'Viral içerik başarısı', 'Dijital dönüşüm']
     },
     {
       image: dubaiSkyline,
       title: 'Yüksek Dönüşümlü (High-Conversion) İçerik Stratejileri',
-      description: 'Dubai gayrimenkul pazarı için tasarladığım tek bir içerik stratejisiyle sadece 14 günde 837.000$ değerinde satış konversiyonu sağladım',
+      description: 'Performans pazarlamasında sıradışı metinler ve satış stratejileriyle doğrudan satışa odaklanıyorum. Dubai gayrimenkul pazarı için tasarladığım tek bir içerik stratejisiyle sadece 14 günde 837.000$ değerinde satış konversiyonu sağlayarak içerik pazarlamasının gücünü kanıtladım.',
       tag: 'Gayrimenkul',
       metrics: ['14 günde 837.000$ satış', 'High-Conversion strateji', 'Gayrimenkul uzmanlığı']
     },
     {
       image: hotelResort,
       title: 'Veri Odaklı Dijital Pazarlama ile Pazar Liderliği',
-      description: 'Orange County Otel Grubu\'nda kısıtlı kaynaklarla yürüttüğüm strateji sayesinde, Türkiye genelinde otel kategorisinde en güçlü sosyal medya hesaplarından birini inşa ettim (Instagram 3., Facebook 6. sıra).',
+      description: 'Orange County Otel Grubu\'nda kısıtlı kaynaklarla yürüttüğüm strateji sayesinde, Türkiye genelinde otel kategorisinde en güçlü sosyal medya hesaplarından birini inşa ettim (Instagram 3., Facebook 6. sıra). Web sitesi trafik analizleri ve SEO çalışmalarıyla son 5 yılın en yüksek ziyaretçi etkileşim oranlarını elde ettim.',
       tag: 'Otel & Turizm',
-      metrics: ['Instagram 3. Sıra', 'Facebook 6. Sıra', 'SEO Liderliği']
+      metrics: ['Instagram 3. sıra', 'Facebook 6. sıra', 'SEO liderliği', '5 Yıl Rekoru']
     },
     {
       image: diplomats,
       title: 'Uluslararası Medya Ekosistemi ve Diplomasi',
-      description: 'Orta Asya ve Türkiye arasında köprü kuran ASMAN Medya Grubu\'nu hayata geçirdim. 130 ülkede geçerli IFJ basın akreditasyonuyla çalışmaktayım',
+      description: 'Orta Asya ve Türkiye arasında köprü kuran, çok dilli ve çok uluslu bir gençlik medya ağı olan ASMAN Medya Grubu\'nu hayata geçirdim. 130 ülkede geçerli IFJ (Uluslararası Gazeteciler Federasyonu) basın akreditasyonuyla uluslararası düzeyde teknoloji ve diplomasi haberciliği yürütmekteyim.',
       tag: 'Medya & Diplomasi',
       metrics: ['130 ülke IFJ akreditasyonu', 'ASMAN Medya Grubu', 'Diplomasi haberciliği']
     }
