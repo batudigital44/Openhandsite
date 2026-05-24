@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Mail } from 'lucide-react'
+import { Mail, Target, Users, TrendingUp, Award } from 'lucide-react'
 import portfolioBanner from '../assets/images/portfolio-banner.png'
 import dubaiSkyline from '../assets/images/dubai-skyline.png'
 import hotelResort from '../assets/images/hotel-resort.png'
