@@ -81,7 +81,7 @@ const Contact = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="section-padding" ref={ref}>
+      <section className="section-padding" ref={scrollRef}>
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Form */}
