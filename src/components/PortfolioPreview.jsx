@@ -8,6 +8,8 @@ import portfolio4 from '../assets/images/portfolio-4.png'
 import dubaiSkyline from '../assets/images/dubai-skyline.png'
 import hotelResort from '../assets/images/hotel-resort.png'
 import centralAsia from '../assets/images/central-asia.png'
+import universityCampus from '../assets/images/university-campus.png'
+import diplomats from '../assets/images/diplomats.png'
 
 const PortfolioPreview = () => {
   const ref = useRef(null)
@@ -15,7 +17,7 @@ const PortfolioPreview = () => {
 
   const achievements = [
     {
-      image: portfolio1,
+      image: universityCampus,
       title: 'Sosyal Medyada Rekor Etkileşim ve Viral Başarılar',
       description: 'Antalya Belek Üniversitesi\'nin dijital kimliğini modern bir vizyona taşıyarak üniversite tarihinin en yüksek etkileşim oranlarına ulaştım',
       tag: 'Eğitim & Üniversite'
@@ -34,7 +36,7 @@ const PortfolioPreview = () => {
       metrics: ['Instagram 3. Sıra', 'Facebook 6. Sıra', 'SEO Liderliği']
     },
     {
-      image: centralAsia,
+      image: diplomats,
       title: 'Uluslararası Medya Ekosistemi ve Diplomasi',
       description: 'Orta Asya ve Türkiye arasında köprü kuran ASMAN Medya Grubu\'nu hayata geçirdim. 130 ülkede geçerli IFJ basın akreditasyonuyla çalışmaktayım',
       tag: 'Medya & Diplomasi'

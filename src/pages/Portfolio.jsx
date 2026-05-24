@@ -46,10 +46,30 @@ const Portfolio = () => {
   ]
 
   const partners = [
-    { name: 'Antalya Belek Üniversitesi', logo: logo },
-    { name: 'ASMAN Medya Grubu', logo: logo },
-    { name: 'Orange County Otel', logo: logo },
-    { name: 'Teus Group', logo: logo }
+    { 
+      name: 'Antalya Belek Üniversitesi', 
+      icon: '🏛️',
+      category: 'Eğitim & Dijital Dönüşüm',
+      link: 'https://beu.edu.tr'
+    },
+    { 
+      name: 'ASMAN Medya Grubu', 
+      icon: '🌏',
+      category: 'Uluslararası Medya & Diplomasi',
+      link: 'https://asmanmedia.com'
+    },
+    { 
+      name: 'Teus Group', 
+      icon: '🏢',
+      category: 'Gayrimenkul & Yatırım',
+      link: null
+    },
+    { 
+      name: 'Orange County Otel', 
+      icon: '🏨',
+      category: 'Otel & Turizm',
+      link: null
+    }
   ]
 
   return (
@@ -178,17 +198,25 @@ const Portfolio = () => {
             </h3>
             <p className="text-gray-400">Birlikte çalıştığım kurumlar ve markalar</p>
           </motion.div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {partners.map((partner, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="glass-card p-6 flex flex-col items-center justify-center hover:border-primary/30 transition-all"
+                className="glass-card p-6 hover:border-primary/30 transition-all"
               >
-                <img src={partner.logo} alt={partner.name} className="h-12 w-auto mb-3 opacity-70 hover:opacity-100 transition-opacity" />
-                <span className="text-sm text-gray-400 text-center">{partner.name}</span>
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4">
+                  <span className="text-2xl">{partner.icon}</span>
+                </div>
+                <h4 className="font-semibold mb-2">{partner.name}</h4>
+                <p className="text-gray-400 text-sm mb-3">{partner.category}</p>
+                {partner.link && (
+                  <a href={partner.link} target="_blank" rel="noopener" className="text-primary text-sm hover:underline">
+                    Website →
+                  </a>
+                )}
               </motion.div>
             ))}
           </div>
