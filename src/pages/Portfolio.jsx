@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Mail, Target, Users, TrendingUp, Award } from 'lucide-react'
+import { Mail, Target, Users, TrendingUp, Award, Award as Certificate } from 'lucide-react'
 import portfolioBanner from '../assets/images/portfolio-banner.png'
 import dubaiSkyline from '../assets/images/dubai-skyline.png'
 import hotelResort from '../assets/images/hotel-resort.png'
@@ -42,6 +42,24 @@ const Portfolio = () => {
     }
   ]
 
+  const certificates = [
+    { name: 'Dijital Pazarlama Temelleri', issuer: 'Google' },
+    { name: 'Marketing Expert (SEO, E-Ticaret, Sosyal Medya)', issuer: 'Google' },
+    { name: 'HTML & CSS', issuer: 'BTK Akademi' },
+    { name: 'Adobe After Effects Temel', issuer: 'Boğaziçi Enstitüsü' },
+    { name: 'Diplomasi Haberciliği', issuer: 'Türkiye Gazeteciler Cemiyeti' },
+    { name: 'Adobe Lightroom CC Temel', issuer: 'ODTÜ' },
+    { name: 'Dijital Gazetecilik', issuer: 'Reuters - Meta' },
+    { name: '360° Dijital Pazarlama, Adobe InDesign, SEO 2025, AI Prompt', issuer: 'Udemy' },
+    { name: 'Kurumsal Sosyal Medya Kullanımı', issuer: 'ODTÜ' },
+    { name: 'Sosyal Medya Pazarlama', issuer: 'LinkedIn' },
+    { name: 'Medya Okuryazarlığı', issuer: 'İngiltere Ankara Büyükelçiliği' },
+    { name: 'Genç Liderler Eğitimi', issuer: 'Rusya Ankara Büyükelçiliği' },
+    { name: 'Youthpass Sertifikası', issuer: 'ESC Avrupa Birliği' },
+    { name: 'Sosyal Medya Gazeteciliği', issuer: 'Al Jazeera' },
+    { name: 'International Press Card', issuer: 'IFJ - European Union' },
+  ]
+
   const partners = [
     { 
       name: 'Antalya Belek Üniversitesi', 
@@ -59,12 +77,36 @@ const Portfolio = () => {
       name: 'Teus Group', 
       icon: '🏢',
       category: 'Gayrimenkul & Yatırım',
-      link: null
+      link: 'https://teusgroup.com'
     },
     { 
       name: 'Orange County Otel', 
       icon: '🏨',
       category: 'Otel & Turizm',
+      link: 'https://orangecounty.com.tr'
+    },
+    { 
+      name: 'Reuters', 
+      icon: '📰',
+      category: 'Haber Ajansı & Medya',
+      link: 'https://reuters.com'
+    },
+    { 
+      name: 'Al Jazeera', 
+      icon: '🗺️',
+      category: 'Uluslararası Medya',
+      link: 'https://aljazeera.com'
+    },
+    { 
+      name: 'IFJ - Uluslararası Gazeteciler', 
+      icon: '🎖️',
+      category: 'Gazetecilik Federasyonu',
+      link: 'https://ifj.org'
+    },
+    { 
+      name: 'Manas Üniversitesi', 
+      icon: '🎓',
+      category: 'Eğitim & Akademi',
       link: null
     }
   ]
@@ -195,7 +237,7 @@ const Portfolio = () => {
             </h3>
             <p className="text-gray-400">Birlikte çalıştığım kurumlar ve markalar</p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {partners.map((partner, index) => (
               <motion.div
                 key={index}
@@ -214,6 +256,42 @@ const Portfolio = () => {
                     Website →
                   </a>
                 )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Sertifikalar */}
+      <section className="section-padding">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h3 className="text-3xl font-display font-bold mb-4">
+              Sertifikalar ve <span className="gradient-text">Başarılar</span>
+            </h3>
+            <p className="text-gray-400">Aldığım eğitimler ve sertifikalar</p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {certificates.map((cert, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                className="glass-card p-4 hover:border-primary/30 transition-all flex items-center gap-4"
+              >
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Certificate className="w-6 h-6 text-primary" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className="font-semibold text-sm mb-1 line-clamp-2">{cert.name}</h4>
+                  <p className="text-gray-400 text-xs">{cert.issuer}</p>
+                </div>
               </motion.div>
             ))}
           </div>
