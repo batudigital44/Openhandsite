@@ -1,25 +1,16 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
+import { useLanguage } from '../context/LanguageContext'
 import Logo from '../assets/images/logo.png'
 import LanguageSwitcher from './LanguageSwitcher'
-
-const navLinks = [
-  { name: 'Ana Sayfa', path: '/' },
-  { name: 'Hakkımda', path: '/hakkimda' },
-  { name: 'Portfolyo', path: '/portfolyo' },
-  { name: 'Eğitimler', path: '/egitimler' },
-  { name: 'Basın Köşesi', path: '/basin' },
-  { name: 'İletişim', path: '/iletisim' },
-]
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isEducationOpen, setIsEducationOpen] = useState(false)
   const location = useLocation()
-  const educationRef = useRef(null)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,16 +24,14 @@ const Navbar = () => {
     setIsMobileMenuOpen(false)
   }, [location])
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (educationRef.current && !educationRef.current.contains(event.target)) {
-        setIsEducationOpen(false)
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [])
+  const navLinks = [
+    { name: t('nav.home'), path: '/' },
+    { name: t('nav.about'), path: '/hakkimda' },
+    { name: t('nav.portfolio'), path: '/portfolyo' },
+    { name: t('nav.education'), path: '/egitimler' },
+    { name: t('nav.pressCorner'), path: '/basin' },
+    { name: t('nav.contact'), path: '/iletisim' },
+  ]
 
   return (
     <motion.nav
@@ -83,7 +72,7 @@ const Navbar = () => {
               href="mailto:digital@batuhanates.com"
               className="btn-primary text-sm"
             >
-              İletişime Geç
+              {t('nav.contactBtn')}
             </a>
           </div>
 
@@ -125,7 +114,7 @@ const Navbar = () => {
                 href="mailto:digital@batuhanates.com"
                 className="block btn-primary text-center mt-4"
               >
-                İletişime Geç
+                {t('nav.contactBtn')}
               </a>
             </div>
           </motion.div>

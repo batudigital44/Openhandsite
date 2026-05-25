@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion'
 import { ChevronDown, Instagram, Linkedin, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { useLanguage } from '../context/LanguageContext'
 import heroImage from '../assets/images/hero-bg.png'
 
 const Hero = () => {
+  const { t } = useLanguage()
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
@@ -32,7 +35,7 @@ const Hero = () => {
             className="inline-flex items-center gap-2 px-4 py-2 bg-dark-700/50 backdrop-blur-sm border border-dark-600 rounded-full mb-8"
           >
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            <span className="text-sm text-gray-300">Uluslararası Medya Uzmanı</span>
+            <span className="text-sm text-gray-300">{t('home.hero.subtitle')}</span>
           </motion.div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6">
@@ -47,7 +50,7 @@ const Hero = () => {
             transition={{ delay: 0.4, duration: 0.8 }}
             className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto"
           >
-            Uluslararası Medya ve Pazarlama Uzmanı ve Gazeteci
+            {t('home.hero.subtitle')}
           </motion.p>
 
           <motion.div
@@ -57,11 +60,11 @@ const Hero = () => {
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Link to="/portfolyo" className="btn-primary flex items-center gap-2">
-              Portfolyomu İncele
+              {t('home.hero.cta')}
               <ArrowRight size={18} />
             </Link>
             <Link to="/iletisim" className="btn-outline">
-              İletişime Geç
+              {t('home.hero.ctaSecondary')}
             </Link>
           </motion.div>
 
@@ -103,7 +106,7 @@ const Hero = () => {
             href="#about"
             className="flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-colors"
           >
-            <span className="text-sm">Aşağı kaydır</span>
+            <span className="text-sm">{t('common.scrollDown') || 'Aşağı kaydır'}</span>
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 1.5 }}

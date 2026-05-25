@@ -12,6 +12,14 @@ const translations = {
       contactBtn: 'İletişime Geç',
       pressCorner: 'Basın Köşesi'
     },
+    // Footer
+    footer: {
+      ctaTitle: 'Hadi Beraber Çalışalım',
+      ctaDesc: 'Dijitali öğrenmek, markanı konumlandırmak veya iş ortağı olmak için şimdi bana mail gönder görüşelim',
+      subtitle: 'Uluslararası Medya ve Pazarlama Uzmanı',
+      quickLinks: 'Hızlı Linkler',
+      contactTitle: 'İletişim'
+    },
     // Home
     home: {
       hero: {
@@ -52,7 +60,8 @@ const translations = {
     common: {
       loading: 'Yükleniyor...',
       error: 'Bir hata oluştu',
-      close: 'Kapat'
+      close: 'Kapat',
+      scrollDown: 'Aşağı kaydır'
     }
   },
   en: {
@@ -64,6 +73,13 @@ const translations = {
       contact: 'Contact',
       contactBtn: 'Contact',
       pressCorner: 'Press Corner'
+    },
+    footer: {
+      ctaTitle: "Let's Work Together",
+      ctaDesc: "Let's get in touch to learn digital, position your brand, or become a partner",
+      subtitle: 'International Media & Marketing Expert',
+      quickLinks: 'Quick Links',
+      contactTitle: 'Contact'
     },
     home: {
       hero: {
@@ -102,7 +118,8 @@ const translations = {
     common: {
       loading: 'Loading...',
       error: 'An error occurred',
-      close: 'Close'
+      close: 'Close',
+      scrollDown: 'Scroll Down'
     }
   },
   de: {
@@ -114,6 +131,13 @@ const translations = {
       contact: 'Kontakt',
       contactBtn: 'Kontakt',
       pressCorner: 'Pressewinkel'
+    },
+    footer: {
+      ctaTitle: 'Lassen Sie uns zusammenarbeiten',
+      ctaDesc: 'Kontaktieren Sie mich, um Digitales zu lernen, Ihre Marke zu positionieren oder Partner zu werden',
+      subtitle: 'Internationaler Medien- & Marketingexperte',
+      quickLinks: 'Schnelle Links',
+      contactTitle: 'Kontakt'
     },
     home: {
       hero: {
@@ -152,7 +176,8 @@ const translations = {
     common: {
       loading: 'Laden...',
       error: 'Ein Fehler ist aufgetreten',
-      close: 'Schließen'
+      close: 'Schließen',
+      scrollDown: 'Nach unten scrollen'
     }
   }
 }

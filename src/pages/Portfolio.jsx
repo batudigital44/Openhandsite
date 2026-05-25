@@ -244,18 +244,13 @@ const Portfolio = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="glass-card p-6 hover:border-primary/30 transition-all"
+                className="glass-card p-6 hover:border-primary/30 transition-all text-center"
               >
-                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4 mx-auto">
                   <span className="text-2xl">{partner.icon}</span>
                 </div>
                 <h4 className="font-semibold mb-2">{partner.name}</h4>
-                <p className="text-gray-400 text-sm mb-3">{partner.category}</p>
-                {partner.link && (
-                  <a href={partner.link} target="_blank" rel="noopener" className="text-primary text-sm hover:underline">
-                    Website →
-                  </a>
-                )}
+                <p className="text-gray-400 text-sm">{partner.category}</p>
               </motion.div>
             ))}
           </div>

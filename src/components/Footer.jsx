@@ -1,17 +1,20 @@
 import { Link } from 'react-router-dom'
 import { Instagram, Linkedin, Mail, MapPin } from 'lucide-react'
+import { useLanguage } from '../context/LanguageContext'
 import Logo from '../assets/images/logo.png'
 
 const Footer = () => {
+  const { t } = useLanguage()
+  
   return (
     <footer className="bg-dark-800 border-t border-dark-700">
       <div className="section-padding bg-gradient-to-r from-dark-800 via-dark-900 to-dark-800">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-            Hadi beraber çalışalım
+            {t('footer.ctaTitle')}
           </h2>
           <p className="text-gray-400 mb-8">
-            Dijitali öğrenmek, markanı konumlandırmak veya iş ortağı olmak için şimdi bana mail gönder görüşelim
+            {t('footer.ctaDesc')}
           </p>
           <a
             href="mailto:digital@batuhanates.com"
@@ -28,7 +31,7 @@ const Footer = () => {
           <div>
             <img src={Logo} alt="Batuhan Ateş" className="h-10 mb-4" />
             <p className="text-gray-400 text-sm">
-              Uluslararası Medya ve Pazarlama Uzmanı
+              {t('footer.subtitle')}
             </p>
             <div className="flex items-center gap-4 mt-4">
               <a
@@ -51,17 +54,17 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">Hızlı Linkler</h4>
+            <h4 className="font-semibold mb-4">{t('footer.quickLinks')}</h4>
             <ul className="space-y-2">
-              <li><Link to="/" className="text-gray-400 hover:text-white transition-colors">Ana Sayfa</Link></li>
-              <li><Link to="/hakkimda" className="text-gray-400 hover:text-white transition-colors">Hakkımda</Link></li>
-              <li><Link to="/portfolyo" className="text-gray-400 hover:text-white transition-colors">Portfolyo</Link></li>
-              <li><Link to="/iletisim" className="text-gray-400 hover:text-white transition-colors">İletişim</Link></li>
+              <li><Link to="/" className="text-gray-400 hover:text-white transition-colors">{t('nav.home')}</Link></li>
+              <li><Link to="/hakkimda" className="text-gray-400 hover:text-white transition-colors">{t('nav.about')}</Link></li>
+              <li><Link to="/portfolyo" className="text-gray-400 hover:text-white transition-colors">{t('nav.portfolio')}</Link></li>
+              <li><Link to="/iletisim" className="text-gray-400 hover:text-white transition-colors">{t('nav.contact')}</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4">İletişim</h4>
+            <h4 className="font-semibold mb-4">{t('footer.contactTitle')}</h4>
             <div className="space-y-3 text-gray-400">
               <div className="flex items-start gap-3">
                 <MapPin size={18} className="mt-1 text-primary" />
