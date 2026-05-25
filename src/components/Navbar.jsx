@@ -3,12 +3,14 @@ import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import Logo from '../assets/images/logo.png'
+import LanguageSwitcher from './LanguageSwitcher'
 
 const navLinks = [
   { name: 'Ana Sayfa', path: '/' },
   { name: 'Hakkımda', path: '/hakkimda' },
   { name: 'Portfolyo', path: '/portfolyo' },
   { name: 'Eğitimler', path: '/egitimler' },
+  { name: 'Basın Köşesi', path: '/basin' },
   { name: 'İletişim', path: '/iletisim' },
 ]
 
@@ -76,6 +78,7 @@ const Navbar = () => {
                 )}
               </Link>
             ))}
+            <LanguageSwitcher />
             <a
               href="mailto:digital@batuhanates.com"
               className="btn-primary text-sm"
@@ -115,6 +118,9 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
+              <div className="px-4 py-3">
+                <LanguageSwitcher />
+              </div>
               <a
                 href="mailto:digital@batuhanates.com"
                 className="block btn-primary text-center mt-4"
