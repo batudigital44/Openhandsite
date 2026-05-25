@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
@@ -10,7 +10,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const location = useLocation()
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,14 +24,15 @@ const Navbar = () => {
     setIsMobileMenuOpen(false)
   }, [location])
 
-  const navLinks = [
+  // Recalculate navLinks when language changes
+  const navLinks = useMemo(() => [
     { name: t('nav.home'), path: '/' },
     { name: t('nav.about'), path: '/hakkimda' },
     { name: t('nav.portfolio'), path: '/portfolyo' },
     { name: t('nav.education'), path: '/egitimler' },
     { name: t('nav.pressCorner'), path: '/basin' },
     { name: t('nav.contact'), path: '/iletisim' },
-  ]
+  ], [t, language])
 
   return (
     <motion.nav
