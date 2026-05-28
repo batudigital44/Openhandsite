@@ -5,8 +5,11 @@ import { Target, Users, TrendingUp, Award, Award as Certificate, ExternalLink } 
 import portfolioBanner from '../assets/images/portfolio-banner.png'
 import dubaiSkyline from '../assets/images/dubai-skyline.png'
 import hotelResort from '../assets/images/hotel-resort.png'
+import hotelPool from '../assets/images/hotel-pool.png'
 import universityCampus from '../assets/images/university-campus.png'
 import diplomats from '../assets/images/diplomats.png'
+import diplomacy from '../assets/images/diplomacy.png'
+import globalNetwork from '../assets/images/global-network.png'
 
 const Portfolio = () => {
   const { t } = useLanguage()
@@ -15,7 +18,7 @@ const Portfolio = () => {
 
   const achievements = [
     {
-      image: universityCampus,
+      image: diplomacy,
       title: 'Türkiye - Kırgızistan Diplomatik Dijital Dönüşüm',
       description: 'T.C. Bişkek Büyükelçiliği Eğitim Müşavirliği bünyesindeki TTEÖMER için ilk kurumsal dijital medya stratejisi tasarlandı. Multimedya ve prodüksiyon çalışmalarıyla kurumun marka değeri ve dijital görünürlüğü stabilize edildi.',
       tag: 'Diplomasi & Eğitim',
@@ -23,39 +26,32 @@ const Portfolio = () => {
       links: [{ name: 'Video', url: 'https://www.facebook.com/BiskekTTEOMER/videos/1323158961190017/' }]
     },
     {
-      image: diplomats,
+      image: hotelPool,
       title: 'Teus Group - Ulusal ve Uluslararası Medya Görünürlüğü',
-      description: 'Teus Group\'un Antalya, Bali ve Maldivler projeleri için ulusal ve uluslararası basında stratejik medya görünürlüğü sağlandı. Markanın "Avrupa\'nın En İyi Otel İnşaat ve Tasarım Ödülü" kazanma sürecindeki iletişim ve PR faaliyetleri koordine edildi.',
+      description: 'Teus Group\'un Antalya (Desire), Bali ve Maldivler projeleri için ulusal ve uluslararası basında stratejik medya görünürlüğü sağlandı. Markanın "Avrupa\'nın En İyi Otel İnşaat ve Tasarım Ödülü" kazanma sürecindeki iletişim ve PR faaliyetleri koordine edildi.',
       tag: 'Turizm & Gayrimenkul',
-      metrics: ['Avrupa Ödülü Koordinasyonu', 'Ulusal Basın PR', 'Turizm Today'],
+      metrics: ['Desire Antalya Projesi', 'Avrupa Ödülü', 'Ulusal Basın PR'],
       links: [
-        { name: 'Tourism Today', url: 'https://www.instagram.com/tourismtoday_official/p/DGz0SUbI7fv/' },
-        { name: 'Haberler', url: 'https://www.tourismtoday.net/kategoriler/genel-haberler/avrupa-odullu-teus-groupun-bali-adasindaki-yeni-projesi-amani-melasti/' }
+        { name: 'Desire Antalya', url: 'https://www.desire-antalya.com/tr/#gallery' },
+        { name: 'Tourism Today', url: 'https://www.instagram.com/tourismtoday_official/p/DGz0SUbI7fv/' }
       ]
-    },
-    {
-      image: hotelResort,
-      title: 'Dijital Eğitim ve Sektörel Seminerler',
-      description: 'Antalya\'da gayrimenkul profesyonellerine yönelik sektörel seminerler düzenlendi. Dünya Gazetesi ve GMDergi gibi önemli yayınlarda marka görünürlüğü sağlandı.',
-      tag: 'Eğitim & Medya',
-      metrics: ['Sektörel Seminer', 'Dünya Gazetesi', 'GMDergi']
     },
     {
       image: dubaiSkyline,
       title: 'Uluslararası Enerji Firması Dijital Dönüşümü',
-      description: 'Almanya merkezli enerji firmasının tüm dijital ekosistemi (Web, Sosyal Medya, B2B Lead) modern standartlara göre revize edildi. E-ticaret uyumlu sistemler ve içerik stratejileriyle marka etkileşimi maksimize edildi.',
+      description: 'Almanya merkezli enerji firması Mediawirt\'in tüm dijital ekosistemi (Web, Sosyal Medya, B2B Lead) modern standartlara göre revize edildi. E-ticaret uyumlu sistemler ve içerik stratejileriyle marka etkileşimi maksimize edildi.',
       tag: 'Enerji & B2B',
-      metrics: ['Dijital Dönüşüm', 'B2B Lead Generation', 'E-Ticaret']
+      metrics: ['Mediawirt (Almanya)', 'B2B Lead Generation', 'E-Ticaret']
     },
     {
-      image: universityCampus,
+      image: globalNetwork,
       title: 'Uluslararası Medya Danışmanlığı',
-      description: 'Melih Göğeban\'a (Donald Trump\'ın medya danışmanı) danışmanlık yapıldı. Beyaz Saray ve ulusal optik şirketi EMO Optik için iletişim stratejileri geliştirildi.',
+      description: 'Melih Göğeban\'a (Donald Trump\'ın medya danışmanı) danışmanlık yapıldı. Beyaz Saray iletişim stratejileri ve uluslararası medya koordinasyonu sağlandı.',
       tag: 'Uluslararası İletişim',
-      metrics: ['Trump Medya Danışmanlığı', 'Beyaz Saray İletişimi', 'EMO Optik']
+      metrics: ['Trump Medya Danışmanlığı', 'Beyaz Saray', 'Uluslararası Koordinasyon']
     },
     {
-      image: diplomats,
+      image: hotelResort,
       title: 'EMO Optik - Türkiye Pazarına Giriş Stratejisi',
       description: 'Uluslararası 7 büyük optik markasının (Trussardi, Ana Hickmann vb.) Türkiye dijital pazarına giriş ve konumlandırma süreçleri yönetildi. Meta Business Suite ve e-ticaret altyapı kurulumları ile kurumsal satış kanalları optimize edildi.',
       tag: 'E-Ticaret & Moda',
@@ -69,11 +65,12 @@ const Portfolio = () => {
       metrics: ['14 günde 837.000$ satış', 'High-Conversion strateji', 'Gayrimenkul uzmanlığı']
     },
     {
-      image: hotelResort,
+      image: hotelPool,
       title: 'Veri Odaklı Dijital Pazarlama ile Pazar Liderliği',
-      description: 'Orange County Otel Grubu\'nda kısıtlı kaynaklarla yürüttüğüm strateji sayesinde, Türkiye genelinde otel kategorisinde en güçlü sosyal medya hesaplarından birini inşa ettim (Instagram 3., Facebook 6. sıra).',
+      description: 'Orange County Otel Grubu\'nda kısıtlı kaynaklarla yürüttüğüm strateji sayesinde, Türkiye genelinde otel kategorisinde en güçlü sosyal medya hesaplarından birini inşa ettim. Foto galeri sayfası en çok ziyaret edilen sayfa yapısı oluşturuldu. Kemer otelimizde SEO ve içerik çalışmalarıyla Instagram 3., Facebook 6. sırada yer aldı.',
       tag: 'Otel & Turizm',
-      metrics: ['Instagram 3. sıra', 'Facebook 6. sıra', 'SEO liderliği', '5 Yıl Rekoru']
+      metrics: ['En Çok Ziyaret Edilen Sayfa', 'Instagram 3. sıra', 'Facebook 6. sıra'],
+      links: [{ name: 'Foto Galeri', url: 'https://www.orangecounty.com.tr/kemer/tr/foto-galeri' }]
     },
     {
       image: diplomats,

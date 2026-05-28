@@ -3,9 +3,10 @@ import { useRef } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import portfolioImage from '../assets/images/portfolio-banner.png'
 import dubaiSkyline from '../assets/images/dubai-skyline.png'
-import hotelResort from '../assets/images/hotel-resort.png'
-import universityCampus from '../assets/images/university-campus.png'
+import hotelPool from '../assets/images/hotel-pool.png'
 import diplomats from '../assets/images/diplomats.png'
+import diplomacy from '../assets/images/diplomacy.png'
+import globalNetwork from '../assets/images/global-network.png'
 
 const PortfolioPreview = () => {
   const ref = useRef(null)
@@ -14,32 +15,32 @@ const PortfolioPreview = () => {
 
   const achievements = [
     {
-      image: universityCampus,
+      image: diplomacy,
       title: 'Türkiye - Kırgızistan Diplomatik Dijital Dönüşüm',
-      description: 'T.C. Bişkek Büyükelçiliği Eğitim Müşavirliği bünyesindeki TTEÖMER için ilk kurumsal dijital medya stratejisi tasarlandı.',
+      description: 'T.C. Bişkek Büyükelçiliği bünyesindeki TTEÖMER için ilk kurumsal dijital medya stratejisi.',
       tag: 'Diplomasi & Eğitim',
       metrics: ['Kurumsal Dijital Strateji', 'Multimedya Prodüksiyon']
     },
     {
-      image: diplomats,
+      image: hotelPool,
       title: 'Teus Group - Ulusal ve Uluslararası Medya Görünürlüğü',
-      description: 'Teus Group projeleri için ulusal ve uluslararası basında stratejik medya görünürlüğü sağlandı.',
+      description: 'Teus Group projeleri için ulusal ve uluslararası basında stratejik medya görünürlüğü.',
       tag: 'Turizm & Gayrimenkul',
-      metrics: ['Avrupa Ödülü', 'Ulusal Basın PR']
+      metrics: ['Desire Antalya', 'Avrupa Ödülü']
     },
     {
       image: dubaiSkyline,
       title: 'Uluslararası Enerji Firması Dijital Dönüşümü',
-      description: 'Almanya merkezli enerji firmasının dijital ekosistemi modern standartlara göre revize edildi.',
+      description: 'Mediawirt (Almanya) için dijital ekosistemi modern standartlara göre revize edildi.',
       tag: 'Enerji & B2B',
       metrics: ['B2B Lead Generation', 'E-Ticaret']
     },
     {
-      image: hotelResort,
-      title: 'EMO Optik - Türkiye Pazarına Giriş',
-      description: '7 uluslararası optik markasının Türkiye dijital pazarına giriş ve konumlandırma süreçleri yönetildi.',
-      tag: 'E-Ticaret & Moda',
-      metrics: ['Meta Business Suite', 'E-Ticaret Altyapısı']
+      image: globalNetwork,
+      title: 'Uluslararası Medya Danışmanlığı',
+      description: 'Trump\'ın medya danışmanına danışmanlık ve Beyaz Saray iletişim koordinasyonu.',
+      tag: 'Uluslararası İletişim',
+      metrics: ['Trump Danışmanlığı', 'Beyaz Saray']
     }
   ]
 
