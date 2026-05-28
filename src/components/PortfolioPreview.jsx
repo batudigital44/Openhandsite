@@ -15,31 +15,31 @@ const PortfolioPreview = () => {
   const achievements = [
     {
       image: universityCampus,
-      title: 'Sosyal Medyada Rekor Etkileşim ve Viral Başarılar',
-      description: 'Antalya Belek Üniversitesi\'nin dijital kimliğini modern bir vizyona taşıyarak üniversite tarihinin en yüksek etkileşim oranlarına ulaştım. Kurumsal sosyal medya stratejileri ve viral içerik üretimi konusundaki uzmanlığımı kanıtlayan başarılı bir proje.',
-      tag: 'Eğitim & Üniversite',
-      metrics: ['Rekor etkileşim oranı', 'Viral içerik başarısı', 'Dijital dönüşüm']
-    },
-    {
-      image: dubaiSkyline,
-      title: 'Yüksek Dönüşümlü (High-Conversion) İçerik Stratejileri',
-      description: 'Performans pazarlamasında sıradışı metinler ve satış stratejileriyle doğrudan satışa odaklanıyorum. Dubai gayrimenkul pazarı için tasarladığım tek bir içerik stratejisiyle sadece 14 günde 837.000$ değerinde satış konversiyonu sağlayarak içerik pazarlamasının gücünü kanıtladım.',
-      tag: 'Gayrimenkul',
-      metrics: ['14 günde 837.000$ satış', 'High-Conversion strateji', 'Gayrimenkul uzmanlığı']
-    },
-    {
-      image: hotelResort,
-      title: 'Veri Odaklı Dijital Pazarlama ile Pazar Liderliği',
-      description: 'Orange County Otel Grubu\'nda kısıtlı kaynaklarla yürüttüğüm strateji sayesinde, Türkiye genelinde otel kategorisinde en güçlü sosyal medya hesaplarından birini inşa ettim (Instagram 3., Facebook 6. sıra). Web sitesi trafik analizleri ve SEO çalışmalarıyla son 5 yılın en yüksek ziyaretçi etkileşim oranlarını elde ettim.',
-      tag: 'Otel & Turizm',
-      metrics: ['Instagram 3. sıra', 'Facebook 6. sıra', 'SEO liderliği', '5 Yıl Rekoru']
+      title: 'Türkiye - Kırgızistan Diplomatik Dijital Dönüşüm',
+      description: 'T.C. Bişkek Büyükelçiliği Eğitim Müşavirliği bünyesindeki TTEÖMER için ilk kurumsal dijital medya stratejisi tasarlandı.',
+      tag: 'Diplomasi & Eğitim',
+      metrics: ['Kurumsal Dijital Strateji', 'Multimedya Prodüksiyon']
     },
     {
       image: diplomats,
-      title: 'Uluslararası Medya Ekosistemi ve Diplomasi',
-      description: 'Orta Asya ve Türkiye arasında köprü kuran, çok dilli ve çok uluslu bir gençlik medya ağı olan ASMAN Medya Grubu\'nu hayata geçirdim. 130 ülkede geçerli IFJ (Uluslararası Gazeteciler Federasyonu) basın akreditasyonuyla uluslararası düzeyde teknoloji ve diplomasi haberciliği yürütmekteyim.',
-      tag: 'Medya & Diplomasi',
-      metrics: ['130 ülke IFJ akreditasyonu', 'ASMAN Medya Grubu', 'Diplomasi haberciliği']
+      title: 'Teus Group - Ulusal ve Uluslararası Medya Görünürlüğü',
+      description: 'Teus Group projeleri için ulusal ve uluslararası basında stratejik medya görünürlüğü sağlandı.',
+      tag: 'Turizm & Gayrimenkul',
+      metrics: ['Avrupa Ödülü', 'Ulusal Basın PR']
+    },
+    {
+      image: dubaiSkyline,
+      title: 'Uluslararası Enerji Firması Dijital Dönüşümü',
+      description: 'Almanya merkezli enerji firmasının dijital ekosistemi modern standartlara göre revize edildi.',
+      tag: 'Enerji & B2B',
+      metrics: ['B2B Lead Generation', 'E-Ticaret']
+    },
+    {
+      image: hotelResort,
+      title: 'EMO Optik - Türkiye Pazarına Giriş',
+      description: '7 uluslararası optik markasının Türkiye dijital pazarına giriş ve konumlandırma süreçleri yönetildi.',
+      tag: 'E-Ticaret & Moda',
+      metrics: ['Meta Business Suite', 'E-Ticaret Altyapısı']
     }
   ]
 

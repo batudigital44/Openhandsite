@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useLanguage } from '../context/LanguageContext'
 import { useRef } from 'react'
-import { Target, Users, TrendingUp, Award, Award as Certificate } from 'lucide-react'
+import { Target, Users, TrendingUp, Award, Award as Certificate, ExternalLink } from 'lucide-react'
 import portfolioBanner from '../assets/images/portfolio-banner.png'
 import dubaiSkyline from '../assets/images/dubai-skyline.png'
 import hotelResort from '../assets/images/hotel-resort.png'
@@ -16,22 +16,62 @@ const Portfolio = () => {
   const achievements = [
     {
       image: universityCampus,
-      title: 'Sosyal Medyada Rekor Etkileşim ve Viral Başarılar',
-      description: 'Antalya Belek Üniversitesi\'nin dijital kimliğini modern bir vizyona taşıyarak üniversite tarihinin en yüksek etkileşim oranlarına ulaştım. Kurumsal sosyal medya stratejileri ve viral içerik üretimi konusundaki uzmanlığımı kanıtlayan başarılı bir proje.',
-      tag: 'Eğitim & Üniversite',
-      metrics: ['Rekor etkileşim oranı', 'Viral içerik başarısı', 'Dijital dönüşüm']
+      title: 'Türkiye - Kırgızistan Diplomatik Dijital Dönüşüm',
+      description: 'T.C. Bişkek Büyükelçiliği Eğitim Müşavirliği bünyesindeki TTEÖMER için ilk kurumsal dijital medya stratejisi tasarlandı. Multimedya ve prodüksiyon çalışmalarıyla kurumun marka değeri ve dijital görünürlüğü stabilize edildi.',
+      tag: 'Diplomasi & Eğitim',
+      metrics: ['Kurumsal Dijital Strateji', 'Multimedya Prodüksiyon', 'Uluslararası Kurum'],
+      links: [{ name: 'Video', url: 'https://www.facebook.com/BiskekTTEOMER/videos/1323158961190017/' }]
+    },
+    {
+      image: diplomats,
+      title: 'Teus Group - Ulusal ve Uluslararası Medya Görünürlüğü',
+      description: 'Teus Group\'un Antalya, Bali ve Maldivler projeleri için ulusal ve uluslararası basında stratejik medya görünürlüğü sağlandı. Markanın "Avrupa\'nın En İyi Otel İnşaat ve Tasarım Ödülü" kazanma sürecindeki iletişim ve PR faaliyetleri koordine edildi.',
+      tag: 'Turizm & Gayrimenkul',
+      metrics: ['Avrupa Ödülü Koordinasyonu', 'Ulusal Basın PR', 'Turizm Today'],
+      links: [
+        { name: 'Tourism Today', url: 'https://www.instagram.com/tourismtoday_official/p/DGz0SUbI7fv/' },
+        { name: 'Haberler', url: 'https://www.tourismtoday.net/kategoriler/genel-haberler/avrupa-odullu-teus-groupun-bali-adasindaki-yeni-projesi-amani-melasti/' }
+      ]
+    },
+    {
+      image: hotelResort,
+      title: 'Dijital Eğitim ve Sektörel Seminerler',
+      description: 'Antalya\'da gayrimenkul profesyonellerine yönelik sektörel seminerler düzenlendi. Dünya Gazetesi ve GMDergi gibi önemli yayınlarda marka görünürlüğü sağlandı.',
+      tag: 'Eğitim & Medya',
+      metrics: ['Sektörel Seminer', 'Dünya Gazetesi', 'GMDergi']
+    },
+    {
+      image: dubaiSkyline,
+      title: 'Uluslararası Enerji Firması Dijital Dönüşümü',
+      description: 'Almanya merkezli enerji firmasının tüm dijital ekosistemi (Web, Sosyal Medya, B2B Lead) modern standartlara göre revize edildi. E-ticaret uyumlu sistemler ve içerik stratejileriyle marka etkileşimi maksimize edildi.',
+      tag: 'Enerji & B2B',
+      metrics: ['Dijital Dönüşüm', 'B2B Lead Generation', 'E-Ticaret']
+    },
+    {
+      image: universityCampus,
+      title: 'Uluslararası Medya Danışmanlığı',
+      description: 'Melih Göğeban\'a (Donald Trump\'ın medya danışmanı) danışmanlık yapıldı. Beyaz Saray ve ulusal optik şirketi EMO Optik için iletişim stratejileri geliştirildi.',
+      tag: 'Uluslararası İletişim',
+      metrics: ['Trump Medya Danışmanlığı', 'Beyaz Saray İletişimi', 'EMO Optik']
+    },
+    {
+      image: diplomats,
+      title: 'EMO Optik - Türkiye Pazarına Giriş Stratejisi',
+      description: 'Uluslararası 7 büyük optik markasının (Trussardi, Ana Hickmann vb.) Türkiye dijital pazarına giriş ve konumlandırma süreçleri yönetildi. Meta Business Suite ve e-ticaret altyapı kurulumları ile kurumsal satış kanalları optimize edildi.',
+      tag: 'E-Ticaret & Moda',
+      metrics: ['7 Uluslararası Marka', 'Meta Business Suite', 'E-Ticaret Altyapısı']
     },
     {
       image: dubaiSkyline,
       title: 'Yüksek Dönüşümlü (High-Conversion) İçerik Stratejileri',
-      description: 'Performans pazarlamasında sıradışı metinler ve satış stratejileriyle doğrudan satışa odaklanıyorum. Dubai gayrimenkul pazarı için tasarladığım tek bir içerik stratejisiyle sadece 14 günde 837.000$ değerinde satış konversiyonu sağlayarak içerik pazarlamasının gücünü kanıtladım.',
+      description: 'Performans pazarlamasında sıradışı metinler ve satış stratejileriyle doğrudan satışa odaklanıyorum. Dubai gayrimenkul pazarı için tasarladığım tek bir içerik stratejisiyle sadece 14 günde 837.000$ değerinde satış konversiyonu sağladım.',
       tag: 'Gayrimenkul',
       metrics: ['14 günde 837.000$ satış', 'High-Conversion strateji', 'Gayrimenkul uzmanlığı']
     },
     {
       image: hotelResort,
       title: 'Veri Odaklı Dijital Pazarlama ile Pazar Liderliği',
-      description: 'Orange County Otel Grubu\'nda kısıtlı kaynaklarla yürüttüğüm strateji sayesinde, Türkiye genelinde otel kategorisinde en güçlü sosyal medya hesaplarından birini inşa ettim (Instagram 3., Facebook 6. sıra). Web sitesi trafik analizleri ve SEO çalışmalarıyla son 5 yılın en yüksek ziyaretçi etkileşim oranlarını elde ettim.',
+      description: 'Orange County Otel Grubu\'nda kısıtlı kaynaklarla yürüttüğüm strateji sayesinde, Türkiye genelinde otel kategorisinde en güçlü sosyal medya hesaplarından birini inşa ettim (Instagram 3., Facebook 6. sıra).',
       tag: 'Otel & Turizm',
       metrics: ['Instagram 3. sıra', 'Facebook 6. sıra', 'SEO liderliği', '5 Yıl Rekoru']
     },
@@ -66,50 +106,57 @@ const Portfolio = () => {
     { 
       name: 'Antalya Belek Üniversitesi', 
       icon: '🏛️',
-      category: 'Eğitim & Dijital Dönüşüm',
-      link: 'https://beu.edu.tr'
+      category: 'Eğitim & Dijital Dönüşüm'
     },
     { 
       name: 'ASMAN Medya Grubu', 
       icon: '🌏',
-      category: 'Uluslararası Medya & Diplomasi',
-      link: 'https://asmanmedia.com'
+      category: 'Uluslararası Medya & Diplomasi'
     },
     { 
       name: 'Teus Group', 
       icon: '🏢',
-      category: 'Gayrimenkul & Yatırım',
-      link: 'https://teusgroup.com'
+      category: 'Gayrimenkul & Turizm'
     },
     { 
       name: 'Orange County Otel', 
       icon: '🏨',
-      category: 'Otel & Turizm',
-      link: 'https://orangecounty.com.tr'
+      category: 'Otel & Turizm'
+    },
+    { 
+      name: 'TTEÖMER - Bişkek', 
+      icon: '🎓',
+      category: 'Diplomasi & Eğitim'
+    },
+    { 
+      name: 'Mediawirt (Almanya)', 
+      icon: '⚡',
+      category: 'Enerji & B2B'
+    },
+    { 
+      name: 'EMO Optik', 
+      icon: '👓',
+      category: 'Optik & E-Ticaret'
     },
     { 
       name: 'Reuters', 
       icon: '📰',
-      category: 'Haber Ajansı & Medya',
-      link: 'https://reuters.com'
+      category: 'Haber Ajansı & Medya'
     },
     { 
       name: 'Al Jazeera', 
       icon: '🗺️',
-      category: 'Uluslararası Medya',
-      link: 'https://aljazeera.com'
+      category: 'Uluslararası Medya'
     },
     { 
       name: 'IFJ - Uluslararası Gazeteciler', 
       icon: '🎖️',
-      category: 'Gazetecilik Federasyonu',
-      link: 'https://ifj.org'
+      category: 'Gazetecilik Federasyonu'
     },
     { 
       name: 'Manas Üniversitesi', 
       icon: '🎓',
-      category: 'Eğitim & Akademi',
-      link: null
+      category: 'Eğitim & Akademi'
     }
   ]
 
@@ -214,6 +261,23 @@ const Portfolio = () => {
                       <div className="flex gap-3 mt-4">
                         {item.gallery.map((img, i) => (
                           <img key={i} src={img} alt="" className="w-24 h-16 object-cover rounded-lg" />
+                        ))}
+                      </div>
+                    )}
+                    {/* Project links */}
+                    {item.links && item.links.length > 0 && (
+                      <div className="flex flex-wrap gap-3 mt-4">
+                        {item.links.map((link, i) => (
+                          <a
+                            key={i}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-4 py-2 bg-primary/20 hover:bg-primary/30 text-primary text-sm rounded-full transition-colors"
+                          >
+                            <ExternalLink size={14} />
+                            {link.name}
+                          </a>
                         ))}
                       </div>
                     )}
