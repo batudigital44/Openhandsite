@@ -49,13 +49,6 @@ const translations = {
         }
       }
     },
-    // Press Corner
-    press: {
-      title: 'Basın Köşesi',
-      subtitle: 'Medyada yer alan çalışmalarım ve haberler',
-      readMore: 'Devamını Oku',
-      externalLink: 'Dış Bağlantı'
-    },
     // Common
     common: {
       loading: 'Yükleniyor...',
@@ -107,6 +100,34 @@ const translations = {
     portfolio: {
       certificates: 'Sertifikalar ve Başarılar',
       certificatesDesc: 'Aldığım eğitimler ve sertifikalar'
+    },
+    portfolioPreview: {
+      subtitle: 'Başarılar ve Ödüller',
+      title: 'Tüm Çalışmalarım'
+    },
+    about: {
+      heroTitle: 'Dijital Dünyayı Keşfet',
+      heroSubtitle: 'Benimle',
+      aboutMe: 'Batuhan Ateş Kimdir?',
+      jobRefs: 'İş Referanslarım',
+      successMetrics: 'Başarı Ölçütlerim',
+      skills: 'Yeteneklerim',
+      tools: 'Kullandığım Araçlar',
+      languages: 'Diller',
+      gallery: 'Galeri',
+      photos: 'Fotoğraflarım'
+    },
+    press: {
+      title: 'Basın Köşesi',
+      subtitle: 'Medyada Yer Alan Çalışmalarım ve Yazılarım',
+      mediaContent: 'Medya İçeriklerim',
+      mediaPlatforms: 'Basında ve Dijital Platformlarda',
+      publications: 'Yayınlarım ve Makalelerim',
+      publicationsDesc: 'Dijital pazarlama, medya ve uluslararası ilişkiler üzerine yazılar',
+      newsArticles: 'Haber & Makale',
+      platforms: 'Farklı Platform',
+      reach: 'Erişim',
+      open: 'Aç'
     }
   },
   en: {
@@ -153,12 +174,6 @@ const translations = {
           desc: 'Professional video and photo content'
         }
       }
-    },
-    press: {
-      title: 'Press Corner',
-      subtitle: 'My work in the media and news',
-      readMore: 'Read More',
-      externalLink: 'External Link'
     },
     common: {
       loading: 'Loading...',
@@ -208,6 +223,34 @@ const translations = {
     portfolio: {
       certificates: 'Certificates and Achievements',
       certificatesDesc: 'Trainings and certificates I have obtained'
+    },
+    portfolioPreview: {
+      subtitle: 'Success Stories',
+      title: 'All My Work'
+    },
+    about: {
+      heroTitle: 'Explore the Digital World',
+      heroSubtitle: 'With Me',
+      aboutMe: 'Who is Batuhan Ateş?',
+      jobRefs: 'Job References',
+      successMetrics: 'Success Metrics',
+      skills: 'My Skills',
+      tools: 'Tools I Use',
+      languages: 'Languages',
+      gallery: 'Gallery',
+      photos: 'My Photos'
+    },
+    press: {
+      title: 'Press Corner',
+      subtitle: 'My Media Appearances and Writings',
+      mediaContent: 'My Media Content',
+      mediaPlatforms: 'In Media and Digital Platforms',
+      publications: 'My Publications',
+      publicationsDesc: 'Articles on digital marketing, media and international relations',
+      newsArticles: 'News & Articles',
+      platforms: 'Different Platforms',
+      reach: 'Reach',
+      open: 'Open'
     }
   },
   de: {
@@ -254,12 +297,6 @@ const translations = {
           desc: 'Professionelle Video- und Fotoinhalte'
         }
       }
-    },
-    press: {
-      title: 'Pressewinkel',
-      subtitle: 'Meine Arbeit in den Medien und Nachrichten',
-      readMore: 'Weiterlesen',
-      externalLink: 'Externer Link'
     },
     common: {
       loading: 'Laden...',
@@ -309,6 +346,34 @@ const translations = {
     portfolio: {
       certificates: 'Zertifikate und Erfolge',
       certificatesDesc: 'Schulungen und Zertifikate, die ich erworben habe'
+    },
+    portfolioPreview: {
+      subtitle: 'Erfolgsgeschichten',
+      title: 'Alle meine Arbeiten'
+    },
+    about: {
+      heroTitle: 'Entdecken Sie die digitale Welt',
+      heroSubtitle: 'Mit mir',
+      aboutMe: 'Wer ist Batuhan Ateş?',
+      jobRefs: 'Arbeitsreferenzen',
+      successMetrics: 'Erfolgsmetriken',
+      skills: 'Meine Fähigkeiten',
+      tools: 'Werkzeuge, die ich verwende',
+      languages: 'Sprachen',
+      gallery: 'Galerie',
+      photos: 'Meine Fotos'
+    },
+    press: {
+      title: 'Pressewinkel',
+      subtitle: 'Meine Medienauftritte und Schriften',
+      mediaContent: 'Meine Medieninhalte',
+      mediaPlatforms: 'In Medien und digitalen Plattformen',
+      publications: 'Meine Veröffentlichungen',
+      publicationsDesc: 'Artikel über digitales Marketing, Medien und internationale Beziehungen',
+      newsArticles: 'Nachrichten & Artikel',
+      platforms: 'Verschiedene Plattformen',
+      reach: 'Reichweite',
+      open: 'Öffnen'
     }
   }
 }

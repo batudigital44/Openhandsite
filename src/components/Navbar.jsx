@@ -22,6 +22,7 @@ const Navbar = () => {
 
   useEffect(() => {
     setIsMobileMenuOpen(false)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [location])
 
   // Recalculate navLinks when language changes

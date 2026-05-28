@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { useLanguage } from '../context/LanguageContext'
 import portfolioImage from '../assets/images/portfolio-banner.png'
 import dubaiSkyline from '../assets/images/dubai-skyline.png'
 import hotelResort from '../assets/images/hotel-resort.png'
@@ -9,6 +10,7 @@ import diplomats from '../assets/images/diplomats.png'
 const PortfolioPreview = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const { t } = useLanguage()
 
   const achievements = [
     {
@@ -53,9 +55,9 @@ const PortfolioPreview = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-sm font-semibold text-primary mb-2">Başarılar ve Ödüller</h2>
+          <h2 className="text-sm font-semibold text-primary mb-2">{t('portfolioPreview.subtitle')}</h2>
           <h3 className="text-3xl md:text-4xl font-display font-bold mb-4">
-            Tüm <span className="gradient-text">Çalışmalarım</span>
+            {t('portfolioPreview.title')}
           </h3>
           <img src={portfolioImage} alt="" className="mx-auto mt-8 max-w-md" />
         </motion.div>

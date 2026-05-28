@@ -228,30 +228,7 @@ const Press = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-dark-800 via-dark-900 to-dark-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-              Basın ve Medya İşbirliği
-            </h2>
-            <p className="text-gray-400 mb-8">
-              Röportaj, işbirliği veya medya içerikleri için iletişime geçebilirsiniz
-            </p>
-            <a
-              href="mailto:press@batuhanates.com"
-              className="inline-flex items-center gap-2 text-xl font-bold gradient-text hover:scale-105 transition-transform"
-            >
-              <ExternalLink size={24} />
-              press@batuhanates.com
-            </a>
-          </motion.div>
-        </div>
-      </section>
+      {/* CTA removed - using Footer CTA */}
     </div>
   )
 }

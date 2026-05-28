@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { Mail, ArrowRight, CheckCircle, Award, Users, Target, TrendingUp } from 'lucide-react'
+import { ArrowRight, CheckCircle, Award, Users, Target, TrendingUp } from 'lucide-react'
 import aboutImage from '../assets/images/about-hero.png'
 import figmaImg from '../assets/images/figma.png'
 import photoshopImg from '../assets/images/photoshop.png'
@@ -193,30 +193,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-dark-800 via-dark-900 to-dark-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-              Hadi Beraber Çalışalım
-            </h2>
-            <p className="text-gray-400 mb-8">
-              Dijitali öğrenmek, markanı konumlandırmak veya iş ortağı olmak için şimdi bana mail gönder görüşelim
-            </p>
-            <a
-              href="mailto:digital@batuhanates.com"
-              className="inline-flex items-center gap-2 text-2xl font-bold gradient-text hover:scale-105 transition-transform"
-            >
-              <Mail size={28} />
-              digital@batuhanates.com
-            </a>
-          </motion.div>
-        </div>
-      </section>
+      {/* CTA removed - using Footer CTA */}
     </div>
   )
 }
