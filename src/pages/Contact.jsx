@@ -1,12 +1,36 @@
 import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Mail, MapPin, Send, Zap, Smartphone, TrendingUp, Target, Shield, Check } from 'lucide-react'
+import { useLanguage } from '../context/LanguageContext'
 
+const subjectOptions = {
+  tr: [
+    { value: '', label: 'Seçiniz' },
+    { value: 'egitim', label: 'Eğitim' },
+    { value: 'danismanlik', label: 'Danışmanlık' },
+    { value: 'proje', label: 'Proje İşbirliği' },
+    { value: 'diger', label: 'Diğer' },
+  ],
+  en: [
+    { value: '', label: 'Select' },
+    { value: 'egitim', label: 'Education' },
+    { value: 'danismanlik', label: 'Consulting' },
+    { value: 'proje', label: 'Project Collaboration' },
+    { value: 'diger', label: 'Other' },
+  ],
+  de: [
+    { value: '', label: 'Auswählen' },
+    { value: 'egitim', label: 'Bildung' },
+    { value: 'danismanlik', label: 'Beratung' },
+    { value: 'proje', label: 'Projektzusammenarbeit' },
+    { value: 'diger', label: 'Andere' },
+  ]
+}
 
 const Contact = () => {
   const scrollRef = useRef(null)
   const isInView = useInView(scrollRef, { once: true, margin: "-100px" })
-  const formRef = useRef(null)
+  const { t, language } = useLanguage()
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -24,14 +48,15 @@ const Contact = () => {
   }
 
   const validateForm = () => {
-    if (!formData.name.trim()) return 'Lütfen adınızı girin'
-    if (!formData.phone.trim()) return 'Lütfen telefon numaranızı girin'
-    if (!formData.email.trim()) return 'Lütfen e-posta adresinizi girin'
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) return 'Geçerli bir e-posta adresi girin'
-    if (!formData.subject) return 'Lütfen bir konu seçin'
+    if (!formData.name.trim()) return t('contact.errors.name')
+    if (!formData.phone.trim()) return t('contact.errors.phone')
+    if (!formData.email.trim()) return t('contact.errors.email')
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) return t('contact.errors.emailInvalid')
+    if (!formData.subject) return t('contact.errors.subject')
     return null
   }
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
     
     const validationError = validateForm()
@@ -40,30 +65,56 @@ const Contact = () => {
       return
     }
     
-    // Create mailto link with form data
-    const subject = encodeURIComponent(formData.subject || 'Yeni Mesaj')
-    const body = encodeURIComponent(
-      `İsim: ${formData.name}\n` +
-      `Telefon: ${formData.phone}\n` +
-      `E-posta: ${formData.email}\n` +
-      `Konu: ${formData.subject}\n\n` +
-      `Mesaj:\n${formData.message}`
-    )
+    setIsSubmitting(true)
     
-    // Open email client with pre-filled data
-    window.location.href = `mailto:digital@batuhanates.com?subject=${subject}&body=${body}`
+    try {
+      // Using Formspree
+      const response = await fetch('https://formspree.io/f/xpwzgzkl', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      })
+      
+      if (response.ok) {
+        setSubmitted(true)
+        setFormData({ name: '', phone: '', email: '', subject: '', message: '' })
+        setTimeout(() => setSubmitted(false), 5000)
+      } else {
+        throw new Error('Formspree failed')
+      }
+    } catch (err) {
+      // Fallback: mailto
+      const subject = encodeURIComponent(t('contact.emailSubject'))
+      const body = encodeURIComponent(
+        `${t('contact.form.name')}: ${formData.name}\n` +
+        `${t('contact.form.phone')}: ${formData.phone}\n` +
+        `${t('contact.form.email')}: ${formData.email}\n` +
+        `${t('contact.form.subject')}: ${formData.subject}\n\n` +
+        `${t('contact.form.message')}:\n${formData.message}`
+      )
+      window.location.href = `mailto:digital@batuhanates.com?subject=${subject}&body=${body}`
+      setSubmitted(true)
+      setFormData({ name: '', phone: '', email: '', subject: '', message: '' })
+      setTimeout(() => setSubmitted(false), 5000)
+    }
     
-    setSubmitted(true)
-    setFormData({ name: '', phone: '', email: '', subject: '', message: '' })
-    setTimeout(() => setSubmitted(false), 5000)
+    setIsSubmitting(false)
   }
 
   const trainingFeatures = [
-    { icon: Zap, text: 'Yapay zeka ile profesyonel içerik üretimi' },
-    { icon: Smartphone, text: 'Mobil içerik üretimi' },
-    { icon: Target, text: 'Nokta atışı Meta reklam stratejileri' },
-    { icon: TrendingUp, text: 'CRM ve otomatik müşteri yönetimi' },
+    { icon: Zap, text: t('contact.feature1') },
+    { icon: Smartphone, text: t('contact.feature2') },
+    { icon: Target, text: t('contact.feature3') },
+    { icon: TrendingUp, text: t('contact.feature4') },
   ]
+
+  const subjects = subjectOptions[language] || subjectOptions.tr
 
   return (
     <div className="pt-20">
@@ -79,9 +130,9 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
-              Hadi <span className="gradient-text">Formu Doldur</span>
+              {t('contact.heroTitle')}
             </h1>
-            <p className="text-xl text-gray-300">Eğitimlere Başlayalım</p>
+            <p className="text-xl text-gray-300">{t('contact.heroSubtitle')}</p>
           </motion.div>
         </div>
       </section>
@@ -97,9 +148,8 @@ const Contact = () => {
               transition={{ duration: 0.8 }}
             >
               <div className="glass-card p-8">
-                <h3 className="text-2xl font-bold mb-6">Hadi Beraber Çalışalım</h3>
                 <p className="text-gray-400 mb-8">
-                  Aklınızda bir proje mi var? Fikirlerinizi dinlemek ve birlikte anlamlı bir şey yaratmak isterim. Hayalinizdeki projeyi hayata geçirelim.
+                  {t('contact.formDescription')}
                 </p>
 
                 {submitted ? (
@@ -111,8 +161,8 @@ const Contact = () => {
                     <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Check className="w-8 h-8 text-green-400" />
                     </div>
-                    <h4 className="text-xl font-bold mb-2">Başvurunuz Alındı!</h4>
-                    <p className="text-gray-400">En kısa sürede {formData.email || 'e-posta adresinize'} dönüş yapacağım.</p>
+                    <h4 className="text-xl font-bold mb-2">{t('contact.formSubmitted')}</h4>
+                    <p className="text-gray-400">{t('contact.formSubmittedDesc')}</p>
                   </motion.div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
@@ -123,18 +173,18 @@ const Contact = () => {
                     )}
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium mb-2">İsim *</label>
+                        <label className="block text-sm font-medium mb-2">{t('contact.form.name')} *</label>
                         <input
                           type="text"
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
                           className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-xl focus:border-primary focus:outline-none transition-colors"
-                          placeholder="Adınız Soyadınız"
+                          placeholder={t('contact.form.namePlaceholder')}
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium mb-2">Numaranız *</label>
+                        <label className="block text-sm font-medium mb-2">{t('contact.form.phone')} *</label>
                         <input
                           type="tel"
                           name="phone"
@@ -146,40 +196,38 @@ const Contact = () => {
                       </div>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium mb-2">Mail *</label>
+                      <label className="block text-sm font-medium mb-2">{t('contact.form.email')} *</label>
                       <input
                         type="email"
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-xl focus:border-primary focus:outline-none transition-colors"
-                        placeholder="ornek@mail.com"
+                        placeholder={t('contact.form.emailPlaceholder')}
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium mb-2">Hangi konuda formu doldurmaktasınız? *</label>
+                      <label className="block text-sm font-medium mb-2">{t('contact.form.subjectLabel')} *</label>
                       <select
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-xl focus:border-primary focus:outline-none transition-colors"
                       >
-                        <option value="">Seçiniz</option>
-                        <option value="egitim">Eğitim</option>
-                        <option value="danismanlik">Danışmanlık</option>
-                        <option value="proje">Proje İşbirliği</option>
-                        <option value="diger">Diğer</option>
+                        {subjects.map((opt) => (
+                          <option key={opt.value} value={opt.value}>{opt.label}</option>
+                        ))}
                       </select>
                     </div>
                     <div>
-                      <label className="block text-sm font-medium mb-2">Mesajınız</label>
+                      <label className="block text-sm font-medium mb-2">{t('contact.form.message')}</label>
                       <textarea
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
-                        rows={4}
+                        rows="4"
                         className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-xl focus:border-primary focus:outline-none transition-colors resize-none"
-                        placeholder="Mesajınızı buraya yazabilirsiniz..."
+                        placeholder={t('contact.form.messagePlaceholder')}
                       />
                     </div>
                     <button
@@ -190,12 +238,12 @@ const Contact = () => {
                       {isSubmitting ? (
                         <>
                           <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                          Gönderiliyor...
+                          {t('contact.sending')}
                         </>
                       ) : (
                         <>
                           <Send size={18} />
-                          Gönder
+                          {t('contact.submit')}
                         </>
                       )}
                     </button>
@@ -204,12 +252,9 @@ const Contact = () => {
 
                 <div className="mt-8 pt-8 border-t border-dark-600">
                   <p className="text-sm text-gray-400 mb-4">
-                    Eğitimlerim ve danışmanlıklarım için lütfen ön başvuru formunu doldurunuz.
+                    {t('contact.formNote')}
                   </p>
-                  <a
-                    href="mailto:digital@batuhanates.com"
-                    className="flex items-center gap-2 text-primary hover:underline"
-                  >
+                  <a href="mailto:digital@batuhanates.com" className="flex items-center gap-2 text-primary hover:underline">
                     <Mail size={18} />
                     digital@batuhanates.com
                   </a>
@@ -226,12 +271,10 @@ const Contact = () => {
             >
               {/* Upcoming Training */}
               <div className="glass-card p-8">
-                <h3 className="text-xl font-bold mb-6">Gelecek Eğitimler</h3>
+                <h3 className="text-xl font-bold mb-6">{t('contact.upcomingTraining')}</h3>
                 <div className="bg-gradient-to-r from-primary/20 to-secondary/20 rounded-xl p-6 mb-6">
-                  <h4 className="text-lg font-semibold mb-2">
-                    Emlak Danışmanları için Yüz Yüze Dijital Dönüşüm Atölyesi Başlıyor!
-                  </h4>
-                  <p className="text-sm text-gray-400 mb-4">Neler Kazanacaksınız?</p>
+                  <h4 className="text-lg font-semibold mb-2">{t('contact.trainingTitle')}</h4>
+                  <p className="text-sm text-gray-400 mb-4">{t('contact.trainingDesc')}</p>
                   <ul className="space-y-3">
                     {trainingFeatures.map((feature, index) => (
                       <li key={index} className="flex items-center gap-3 text-sm">
@@ -243,36 +286,31 @@ const Contact = () => {
                 </div>
                 <div className="flex items-center gap-2 text-sm text-yellow-400 mb-4">
                   <Shield className="w-4 h-4" />
-                  <span>Kontenjan Kısıtlı: Verimlilik adına sadece 10 kişi kabul edilecektir.</span>
+                  <span>{t('contact.limitedSlots')}</span>
                 </div>
-                <p className="text-sm text-gray-400 mb-4">
-                  Formu doldur ya da hemen bana DM'den mesaj gönder
-                </p>
+                <p className="text-sm text-gray-400 mb-4">{t('contact.contactNote')}</p>
                 <div className="flex items-center gap-2 text-gray-400">
                   <MapPin className="w-4 h-4 text-primary" />
-                  <span>Teus Group Ofisi, Muratpaşa/Antalya</span>
+                  <span>{t('contact.location')}</span>
                 </div>
               </div>
 
               {/* Contact Info */}
               <div className="glass-card p-8">
-                <h3 className="text-xl font-bold mb-6">İletişim Bilgileri</h3>
+                <h3 className="text-xl font-bold mb-6">{t('contact.contactInfo')}</h3>
                 <div className="space-y-4">
-                  <a
-                    href="mailto:digital@batuhanates.com"
-                    className="flex items-center gap-4 p-4 bg-dark-700 rounded-xl hover:bg-primary/10 transition-colors group"
-                  >
+                  <a href="mailto:digital@batuhanates.com" className="flex items-center gap-4 p-4 bg-dark-700 rounded-xl hover:bg-primary/10 transition-colors group">
                     <Mail className="w-6 h-6 text-primary" />
                     <div>
-                      <div className="text-sm text-gray-400">E-posta</div>
+                      <div className="text-sm text-gray-400">{t('contact.emailLabel')}</div>
                       <div className="font-medium group-hover:text-primary transition-colors">digital@batuhanates.com</div>
                     </div>
                   </a>
                   <div className="flex items-center gap-4 p-4 bg-dark-700 rounded-xl">
                     <MapPin className="w-6 h-6 text-primary" />
                     <div>
-                      <div className="text-sm text-gray-400">Konum</div>
-                      <div className="font-medium">Antalya, Türkiye</div>
+                      <div className="text-sm text-gray-400">{t('contact.locationLabel')}</div>
+                      <div className="font-medium">{t('contact.locationValue')}</div>
                     </div>
                   </div>
                 </div>
@@ -280,32 +318,18 @@ const Contact = () => {
 
               {/* Social Links */}
               <div className="glass-card p-8">
-                <h3 className="text-xl font-bold mb-6">Sosyal Medya</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  <a
-                    href="https://www.instagram.com/ba2digital/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-4 bg-dark-700 rounded-xl hover:bg-primary/10 transition-colors"
-                  >
-                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-                      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                      </svg>
-                    </div>
+                <h3 className="text-xl font-bold mb-6">{t('contact.socialMedia')}</h3>
+                <div className="flex gap-4">
+                  <a href="https://www.instagram.com/ba2digital/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 bg-dark-700 rounded-xl hover:bg-primary/10 transition-colors">
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
                     <span>@ba2digital</span>
                   </a>
-                  <a
-                    href="https://www.linkedin.com/in/batuhan-ate%C5%9F/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-4 bg-dark-700 rounded-xl hover:bg-primary/10 transition-colors"
-                  >
-                    <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                      </svg>
-                    </div>
+                  <a href="https://www.linkedin.com/in/batuhan-ate%C5%9F/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-4 bg-dark-700 rounded-xl hover:bg-primary/10 transition-colors">
+                    <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
                     <span>Batuhan Ateş</span>
                   </a>
                 </div>

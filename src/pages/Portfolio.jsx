@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion'
+import { useLanguage } from '../context/LanguageContext'
 import { useRef } from 'react'
-import { Mail, Target, Users, TrendingUp, Award, Award as Certificate } from 'lucide-react'
+import { Target, Users, TrendingUp, Award, Award as Certificate } from 'lucide-react'
 import portfolioBanner from '../assets/images/portfolio-banner.png'
 import dubaiSkyline from '../assets/images/dubai-skyline.png'
 import hotelResort from '../assets/images/hotel-resort.png'
@@ -8,6 +9,7 @@ import universityCampus from '../assets/images/university-campus.png'
 import diplomats from '../assets/images/diplomats.png'
 
 const Portfolio = () => {
+  const { t } = useLanguage()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
@@ -267,9 +269,9 @@ const Portfolio = () => {
             className="text-center mb-12"
           >
             <h3 className="text-3xl font-display font-bold mb-4">
-              Sertifikalar ve <span className="gradient-text">Başarılar</span>
+              {t('portfolio.certificates')}
             </h3>
-            <p className="text-gray-400">Aldığım eğitimler ve sertifikalar</p>
+            <p className="text-gray-400">{t('portfolio.certificatesDesc')}</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {certificates.map((cert, index) => (
@@ -293,30 +295,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-dark-800 via-dark-900 to-dark-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-              Hadi Beraber Çalışalım
-            </h2>
-            <p className="text-gray-400 mb-8">
-              Dijitali öğrenmek, markanı konumlandırmak veya iş ortağı olmak için şimdi bana mail gönder görüşelim
-            </p>
-            <a
-              href="mailto:digital@batuhanates.com"
-              className="inline-flex items-center gap-2 text-2xl font-bold gradient-text hover:scale-105 transition-transform"
-            >
-              <Mail size={28} />
-              digital@batuhanates.com
-            </a>
-          </motion.div>
-        </div>
-      </section>
+      {/* CTA removed - using Footer CTA instead */}
     </div>
   )
 }
