@@ -236,7 +236,7 @@ const Press = () => {
             <p className="text-gray-400">Dijital pazarlama, medya ve uluslararası ilişkiler üzerine yazılar</p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <motion.a
               href="https://batuhanates.substack.com/"
               target="_blank"
@@ -259,8 +259,8 @@ const Press = () => {
               href="https://medium.com/@hanates4444"
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, x: 30 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5 }}
               className="glass-card p-6 hover:border-primary/50 transition-all flex items-center gap-4"
             >
@@ -270,6 +270,24 @@ const Press = () => {
               <div>
                 <h4 className="font-bold mb-1">Medium</h4>
                 <p className="text-gray-400 text-sm">Teknik makaleler ve düşünceler</p>
+              </div>
+            </motion.a>
+
+            <motion.a
+              href="https://www.basinantalya.com/batuhan-ates"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, x: 30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.5 }}
+              className="glass-card p-6 hover:border-primary/50 transition-all flex items-center gap-4"
+            >
+              <div className="w-16 h-16 bg-accent/20 rounded-xl flex items-center justify-center">
+                <span className="text-3xl">📰</span>
+              </div>
+              <div>
+                <h4 className="font-bold mb-1">Basın Antalya</h4>
+                <p className="text-gray-400 text-sm">Yerel medya ve haberler</p>
               </div>
             </motion.a>
           </div>
