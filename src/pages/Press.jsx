@@ -9,6 +9,54 @@ const Press = () => {
 
   const pressArticles = [
     {
+      title: 'Schengen\'de Türkiye\'ye Özel Kapı Diplomasisi',
+      source: 'Turizm Aktüel',
+      date: '2025',
+      excerpt: 'Avrupa havalimanlarında Türk yolcular için ayrı bir şerit önerisi ve diplomasi trafiği.',
+      url: 'https://www.turizmaktuel.com/haber/schengen-de-turkiye-ye-ozel-kapi-diplomasisi',
+      category: 'Uluslararası & Diplomasi'
+    },
+    {
+      title: 'Avrupa Havalimanlarında Türk Yolcular İçin Ayrı Şerit Önerisi',
+      source: 'Turizm Günlüğü',
+      date: '2026',
+      excerpt: 'Türk yolcuların Avrupa\'da karşılaştığı güçlükler ve yeni diplomatik öneriler hakkında.',
+      url: 'https://www.turizmgunlugu.com/2026/05/31/avrupa-havalimanlarinda-turk-yolcular-icin-ayri-serit-onerisi/',
+      category: 'Uluslararası & Diplomasi'
+    },
+    {
+      title: 'Türk Yolcular Neden "Other" Kuyruğunda? Avrupa\'ya Yeni Çağrı',
+      source: 'Antalya Hurriyet',
+      date: '2025',
+      excerpt: 'Avrupa havalimanlarındaki ayrımcı uygulamalar ve Türk vatandaşları için yeni diplomatik girişimler.',
+      url: 'https://www.antalyahurses.com/turk-yolcular-neden-other-kuyrugunda-avrupaya-yeni-cagri/553574',
+      category: 'Uluslararası & Diplomasi'
+    },
+    {
+      title: 'Schengen Değilse Türkiye\'ye Özel Kapı Diplomasisi',
+      source: 'Basın Antalya',
+      date: '2025',
+      excerpt: 'Türkiye\'nin AB ile ilişkilerinde yeni bir diplomasi stratejisi önerisi.',
+      url: 'https://www.basinantalya.com/schengen-degilse-turkiyeye-ozel-kapi-diplomasisi',
+      category: 'Uluslararası & Diplomasi'
+    },
+    {
+      title: 'Schengen Değil, En Olası Çözüm: Türk Yolcular İçin Ayrı Şerit',
+      source: 'Antalya Haber 7',
+      date: '2025',
+      excerpt: 'Türk vatandaşları için Avrupa\'da özel muamele ve kapı diplomasisi önerileri.',
+      url: 'https://antalyahaber7.com/haber/schengen-degil-en-olasi-cozum-onerisiturk-yolcular-icin-ayri-serit-onerisi-21808',
+      category: 'Uluslararası & Diplomasi'
+    },
+    {
+      title: 'Schengen Değilse Türkiye\'ye Özel Kapı Diplomasisi',
+      source: 'Turizm İnsesi',
+      date: '2025',
+      excerpt: 'Türkiye-AB ilişkilerinde yeni dönem ve diplomatik çözüm önerileri.',
+      url: 'https://www.turizminsesi.com/haber/schengen-degilse-turkiyeye-ozel-kapi-diplomasisi-32966.htm',
+      category: 'Uluslararası & Diplomasi'
+    },
+    {
       title: 'Ekstra İş Yapıyorum Diyenler Dikkat!',
       source: 'Ajans Bir',
       date: '2025',
@@ -105,12 +153,12 @@ const Press = () => {
             <div className="flex justify-center gap-4 mt-8">
               <div className="glass-card px-6 py-4">
                 <Newspaper className="w-8 h-8 text-primary mx-auto mb-2" />
-                <div className="text-2xl font-bold gradient-text">9+</div>
+                <div className="text-2xl font-bold gradient-text">15+</div>
                 <div className="text-sm text-gray-400">Haber & Makale</div>
               </div>
               <div className="glass-card px-6 py-4">
                 <Globe className="w-8 h-8 text-secondary mx-auto mb-2" />
-                <div className="text-2xl font-bold gradient-text">5+</div>
+                <div className="text-2xl font-bold gradient-text">10+</div>
                 <div className="text-sm text-gray-400">Farklı Platform</div>
               </div>
               <div className="glass-card px-6 py-4">
