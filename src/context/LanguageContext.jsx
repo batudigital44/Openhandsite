@@ -25,6 +25,7 @@ const translations = {
       title: 'Beni Tanıyın',
       subtitle: 'Dijitalin sınırları',
       subtitleHighlight: 'olmadığını',
+      subtitleSuffix: 'söyleyerek',
       description1: 'Hem profesyonel hem de akademik olarak yeni medya alanında çalışmalarıma devam ediyorum.',
       description2: 'Batuhan Ateş, 1996 yılında Ankara\'da doğdu. Malatya doğumlu olan Ateş, ilkokul, ortaokul ve lise eğitimini Antalya\'nın Manavgat ilçesinde tamamladı. 2020 yılında Kırgızistan\'daki Manas Üniversitesi İletişim Fakültesi Gazetecilik bölümünden mezun oldu.',
       stats: {
@@ -198,8 +199,9 @@ const translations = {
     // AboutPreview Component
     aboutPreview: {
       title: 'Get to Know Me',
-      subtitle: 'Saying that the limits of',
+      subtitle: 'By saying that the limits of',
       subtitleHighlight: 'digital have no bounds',
+      subtitleSuffix: '',
       description1: 'I continue my work in the new media field both professionally and academically.',
       description2: 'Batuhan Ateş was born in 1996 in Ankara. Born in Malatya, Ateş completed primary, secondary and high school education in the Manavgat district of Antalya. In 2020, he graduated from the Journalism department of the Faculty of Communication at Manas University in Kyrgyzstan.',
       stats: {
@@ -371,6 +373,7 @@ const translations = {
       title: 'Lernen Sie mich kennen',
       subtitle: 'Indem ich sage, dass die Grenzen des',
       subtitleHighlight: 'Digitalen keine Grenzen haben',
+      subtitleSuffix: '',
       description1: 'Ich setze meine Arbeit im Bereich der neuen Medien sowohl professionell als auch akademisch fort.',
       description2: 'Batuhan Ateş wurde 1996 in Ankara geboren. Der in Malatya geborene Ateş absolvierte seine Grund-, Mittel- und Oberschulbildung im Bezirk Manavgat in Antalya. Im Jahr 2020 schloss er das Journalismus-Studium an der Fakultät für Kommunikation der Manas Universität in Kirgisistan ab.',
       stats: {

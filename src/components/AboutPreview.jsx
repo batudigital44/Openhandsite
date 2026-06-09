@@ -53,7 +53,7 @@ const AboutPreview = () => {
           >
             <h2 className="text-sm font-semibold text-primary mb-2">{t('aboutPreview.title')}</h2>
             <h3 className="text-3xl md:text-4xl font-display font-bold mb-6">
-              {t('aboutPreview.subtitle')} <span className="gradient-text">{t('aboutPreview.subtitleHighlight')}</span> söyleyerek
+              {t('aboutPreview.subtitle')} <span className="gradient-text">{t('aboutPreview.subtitleHighlight')}</span>{t('aboutPreview.subtitleSuffix') && ' ' + t('aboutPreview.subtitleSuffix')}
             </h3>
             <p className="text-gray-400 mb-6 leading-relaxed">
               {t('aboutPreview.description1')}
