@@ -2,6 +2,12 @@ import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Mail, MapPin, Send, Zap, Smartphone, TrendingUp, Target, Shield, Check } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
+import emailjs from '@emailjs/browser'
+
+// EmailJS Configuration - Bu değerleri EmailJS hesabınızdan alın
+const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'
+const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'
+const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'
 
 const subjectOptions = {
   tr: [
@@ -27,7 +33,14 @@ const subjectOptions = {
   ]
 }
 
+const subjectLabels = {
+  tr: { egitim: 'Eğitim', danismanlik: 'Danışmanlık', proje: 'Proje İşbirliği', diger: 'Diğer' },
+  en: { egitim: 'Education', danismanlik: 'Consulting', proje: 'Project Collaboration', diger: 'Other' },
+  de: { egitim: 'Bildung', danismanlik: 'Beratung', proje: 'Projektzusammenarbeit', diger: 'Andere' }
+}
+
 const Contact = () => {
+  const formRef = useRef(null)
   const scrollRef = useRef(null)
   const isInView = useInView(scrollRef, { once: true, margin: "-100px" })
   const { t, language } = useLanguage()
@@ -68,34 +81,35 @@ const Contact = () => {
     setIsSubmitting(true)
     
     try {
-      // Using Formspree
-      const response = await fetch('https://formspree.io/f/xpwzgzkl', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-        }),
-      })
-      
-      if (response.ok) {
-        setSubmitted(true)
-        setFormData({ name: '', phone: '', email: '', subject: '', message: '' })
-        setTimeout(() => setSubmitted(false), 5000)
-      } else {
-        throw new Error('Formspree failed')
+      // EmailJS ile email gönder
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        subject: subjectLabels[language]?.[formData.subject] || formData.subject,
+        message: formData.message || 'Mesaj yok',
+        to_email: 'digital@batuhanates.com',
       }
+
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      )
+      
+      setSubmitted(true)
+      setFormData({ name: '', phone: '', email: '', subject: '', message: '' })
+      setTimeout(() => setSubmitted(false), 5000)
     } catch (err) {
+      console.error('EmailJS Error:', err)
       // Fallback: mailto
       const subject = encodeURIComponent(t('contact.emailSubject'))
       const body = encodeURIComponent(
         `${t('contact.form.name')}: ${formData.name}\n` +
         `${t('contact.form.phone')}: ${formData.phone}\n` +
         `${t('contact.form.email')}: ${formData.email}\n` +
-        `${t('contact.form.subject')}: ${formData.subject}\n\n` +
+        `${t('contact.form.subject')}: ${subjectLabels[language]?.[formData.subject] || formData.subject}\n\n` +
         `${t('contact.form.message')}:\n${formData.message}`
       )
       window.location.href = `mailto:digital@batuhanates.com?subject=${subject}&body=${body}`
