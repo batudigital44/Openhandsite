@@ -10,7 +10,7 @@ import germanyBerlin from '../assets/images/germany-berlin.jpg'
 import whiteHouse from '../assets/images/white-house.jpg'
 import opticStore from '../assets/images/optic-store.jpg'
 import centralAsia from '../assets/images/central-asia.png'
-import kyrgyzstanDiplomacy from '../assets/images/kyrgyzstan-diplomacy.jpg'
+import diplomaticMeeting from '../assets/images/diplomatic-meeting.jpg'
 
 const Portfolio = () => {
   const { t } = useLanguage()
@@ -19,7 +19,7 @@ const Portfolio = () => {
 
   const achievements = [
     {
-      image: kyrgyzstanDiplomacy,
+      image: diplomaticMeeting,
       title: 'Türkiye - Kırgızistan Diplomatik Dijital Dönüşüm',
       description: 'T.C. Bişkek Büyükelçiliği Eğitim Müşavirliği bünyesindeki TTEÖMER için ilk kurumsal dijital medya stratejisi tasarlandı. Multimedya ve prodüksiyon çalışmalarıyla kurumun marka değeri ve dijital görünürlüğü stabilize edildi.',
       tag: 'Diplomasi & Eğitim',

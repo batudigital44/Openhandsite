@@ -7,7 +7,7 @@ import hotelPool from '../assets/images/hotel-pool.png'
 import hotelResort from '../assets/images/hotel-resort.png'
 import germanyBerlin from '../assets/images/germany-berlin.jpg'
 import whiteHouse from '../assets/images/white-house.jpg'
-import kyrgyzstanDiplomacy from '../assets/images/kyrgyzstan-diplomacy.jpg'
+import diplomaticMeeting from '../assets/images/diplomatic-meeting.jpg'
 
 const PortfolioPreview = () => {
   const ref = useRef(null)
@@ -16,7 +16,7 @@ const PortfolioPreview = () => {
 
   const achievements = [
     {
-      image: kyrgyzstanDiplomacy,
+      image: diplomaticMeeting,
       title: 'Türkiye - Kırgızistan Diplomatik Dijital Dönüşüm',
       description: 'T.C. Bişkek Büyükelçiliği bünyesindeki TTEÖMER için ilk kurumsal dijital medya stratejisi.',
       tag: 'Diplomasi & Eğitim',
