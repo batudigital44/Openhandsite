@@ -4,9 +4,10 @@ import { useLanguage } from '../context/LanguageContext'
 import portfolioImage from '../assets/images/portfolio-banner.png'
 import dubaiSkyline from '../assets/images/dubai-skyline.png'
 import hotelPool from '../assets/images/hotel-pool.png'
-import diplomats from '../assets/images/diplomats.png'
-import diplomacy from '../assets/images/diplomacy.png'
-import globalNetwork from '../assets/images/global-network.png'
+import hotelResort from '../assets/images/hotel-resort.png'
+import germanyBerlin from '../assets/images/germany-berlin.jpg'
+import whiteHouse from '../assets/images/white-house.jpg'
+import kyrgyzstanDiplomacy from '../assets/images/kyrgyzstan-diplomacy.jpg'
 
 const PortfolioPreview = () => {
   const ref = useRef(null)
@@ -15,28 +16,28 @@ const PortfolioPreview = () => {
 
   const achievements = [
     {
-      image: diplomacy,
+      image: kyrgyzstanDiplomacy,
       title: 'Türkiye - Kırgızistan Diplomatik Dijital Dönüşüm',
       description: 'T.C. Bişkek Büyükelçiliği bünyesindeki TTEÖMER için ilk kurumsal dijital medya stratejisi.',
       tag: 'Diplomasi & Eğitim',
       metrics: ['Kurumsal Dijital Strateji', 'Multimedya Prodüksiyon']
     },
     {
-      image: hotelPool,
+      image: hotelResort,
       title: 'Teus Group - Ulusal ve Uluslararası Medya Görünürlüğü',
       description: 'Teus Group projeleri için ulusal ve uluslararası basında stratejik medya görünürlüğü.',
       tag: 'Turizm & Gayrimenkul',
       metrics: ['Desire Antalya', 'Avrupa Ödülü']
     },
     {
-      image: dubaiSkyline,
+      image: germanyBerlin,
       title: 'Uluslararası Enerji Firması Dijital Dönüşümü',
       description: 'Mediawirt (Almanya) için dijital ekosistemi modern standartlara göre revize edildi.',
       tag: 'Enerji & B2B',
       metrics: ['B2B Lead Generation', 'E-Ticaret']
     },
     {
-      image: globalNetwork,
+      image: whiteHouse,
       title: 'Uluslararası Medya Danışmanlığı',
       description: 'Trump\'ın medya danışmanına danışmanlık ve Beyaz Saray iletişim koordinasyonu.',
       tag: 'Uluslararası İletişim',
