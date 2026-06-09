@@ -20,6 +20,54 @@ const translations = {
       quickLinks: 'Hızlı Linkler',
       contactTitle: 'İletişim'
     },
+    // AboutPreview Component
+    aboutPreview: {
+      title: 'Beni Tanıyın',
+      subtitle: 'Dijitalin sınırları',
+      subtitleHighlight: 'olmadığını',
+      description1: 'Hem profesyonel hem de akademik olarak yeni medya alanında çalışmalarıma devam ediyorum.',
+      description2: 'Batuhan Ateş, 1996 yılında Ankara\'da doğdu. Malatya doğumlu olan Ateş, ilkokul, ortaokul ve lise eğitimini Antalya\'nın Manavgat ilçesinde tamamladı. 2020 yılında Kırgızistan\'daki Manas Üniversitesi İletişim Fakültesi Gazetecilik bölümünden mezun oldu.',
+      stats: {
+        brands: 'Marka ve kurum yönetimi',
+        international: 'Uluslararası işbirliği',
+        success: 'Başarı ve satış oranı',
+        engagement: 'İçerik etkileşimi'
+      },
+      cta: 'Hakkımda Sayfası'
+    },
+    // Services Component
+    services: {
+      title: 'Hizmetlerim',
+      subtitle: 'Kreatif ve',
+      subtitleHighlight: 'Performans',
+      description: 'Güçlü mesleki alanlarım',
+      items: {
+        martech: {
+          title: 'Pazarlama Teknolojileri (MarTech) & Otomasyon',
+          desc: 'HubSpot ve Mautic ile omnichannel otomasyon kurulumları, Zapier ile sistem entegrasyonları ve CRM tabanlı satış hunisi (Sales Funnel) optimizasyonu.'
+        },
+        webdev: {
+          title: 'Web Geliştirme & Teknik SEO',
+          desc: 'HTML/CSS tabanlı web geliştirme, WordPress yönetimi ve arama motoru görünürlüğünü artıran teknik/içerik odaklı SEO stratejileri.'
+        },
+        ai: {
+          title: 'Üretken Yapay Zeka (Generative AI)',
+          desc: 'İleri düzey Prompt Mühendisliği, yapay zeka destekli içerik/tasarım iş akışları ve AI otomasyonları ile operasyonel verimlilik artışı.'
+        },
+        performance: {
+          title: 'Performans Pazarlaması',
+          desc: 'Meta, Google ve Yandex Ads platformlarında veri odaklı reklam yönetimi, A/B testleri ve yüksek dönüşümlü (High-Conversion) kampanya stratejileri.'
+        },
+        pr: {
+          title: 'Dijital Görünürlük & PR',
+          desc: 'Marka konumlandırma, kriz iletişimi yönetimi ve uluslararası medya akreditasyonu (IFJ) ile stratejik basın ilişkileri yönetimi.'
+        },
+        training: {
+          title: 'Eğitim & Danışmanlık',
+          desc: 'Profesyonel ve kurumsal dijital pazarlama eğitimleri, stratejik danışmanlık ve mentörlük programları.'
+        }
+      }
+    },
     // Home
     home: {
       hero: {
@@ -147,6 +195,54 @@ const translations = {
       quickLinks: 'Quick Links',
       contactTitle: 'Contact'
     },
+    // AboutPreview Component
+    aboutPreview: {
+      title: 'Get to Know Me',
+      subtitle: 'Saying that the limits of',
+      subtitleHighlight: 'digital have no bounds',
+      description1: 'I continue my work in the new media field both professionally and academically.',
+      description2: 'Batuhan Ateş was born in 1996 in Ankara. Born in Malatya, Ateş completed primary, secondary and high school education in the Manavgat district of Antalya. In 2020, he graduated from the Journalism department of the Faculty of Communication at Manas University in Kyrgyzstan.',
+      stats: {
+        brands: 'Brand and institution management',
+        international: 'International collaboration',
+        success: 'Success and sales rate',
+        engagement: 'Content engagement'
+      },
+      cta: 'About Page'
+    },
+    // Services Component
+    services: {
+      title: 'My Services',
+      subtitle: 'Creative and',
+      subtitleHighlight: 'Performance',
+      description: 'My strong professional areas',
+      items: {
+        martech: {
+          title: 'Marketing Technology (MarTech) & Automation',
+          desc: 'Omnichannel automation setups with HubSpot and Mautic, system integrations with Zapier, and CRM-based sales funnel optimization.'
+        },
+        webdev: {
+          title: 'Web Development & Technical SEO',
+          desc: 'HTML/CSS-based web development, WordPress management, and technical/content-focused SEO strategies that increase search engine visibility.'
+        },
+        ai: {
+          title: 'Generative AI',
+          desc: 'Advanced Prompt Engineering, AI-powered content/design workflows, and AI automation for operational efficiency improvements.'
+        },
+        performance: {
+          title: 'Performance Marketing',
+          desc: 'Data-driven ad management on Meta, Google, and Yandex Ads platforms, A/B testing, and high-conversion campaign strategies.'
+        },
+        pr: {
+          title: 'Digital Visibility & PR',
+          desc: 'Brand positioning, crisis communication management, and strategic press relations with international media accreditation (IFJ).'
+        },
+        training: {
+          title: 'Training & Consulting',
+          desc: 'Professional and corporate digital marketing training, strategic consulting, and mentorship programs.'
+        }
+      }
+    },
     home: {
       hero: {
         title: 'Transforming the Digital World',
@@ -269,6 +365,54 @@ const translations = {
       subtitle: 'Internationaler Medien- & Marketingexperte',
       quickLinks: 'Schnelle Links',
       contactTitle: 'Kontakt'
+    },
+    // AboutPreview Component
+    aboutPreview: {
+      title: 'Lernen Sie mich kennen',
+      subtitle: 'Indem ich sage, dass die Grenzen des',
+      subtitleHighlight: 'Digitalen keine Grenzen haben',
+      description1: 'Ich setze meine Arbeit im Bereich der neuen Medien sowohl professionell als auch akademisch fort.',
+      description2: 'Batuhan Ateş wurde 1996 in Ankara geboren. Der in Malatya geborene Ateş absolvierte seine Grund-, Mittel- und Oberschulbildung im Bezirk Manavgat in Antalya. Im Jahr 2020 schloss er das Journalismus-Studium an der Fakultät für Kommunikation der Manas Universität in Kirgisistan ab.',
+      stats: {
+        brands: 'Marken- und Institutionsmanagement',
+        international: 'Internationale Zusammenarbeit',
+        success: 'Erfolgs- und Verkaufsquote',
+        engagement: 'Inhaltsinteraktion'
+      },
+      cta: 'Über-mich-Seite'
+    },
+    // Services Component
+    services: {
+      title: 'Meine Dienste',
+      subtitle: 'Kreativ und',
+      subtitleHighlight: 'Performance',
+      description: 'Meine starken beruflichen Bereiche',
+      items: {
+        martech: {
+          title: 'Marketing-Technologie (MarTech) & Automation',
+          desc: 'Omnichannel-Automatisierung mit HubSpot und Mautic, Systemintegrationen mit Zapier und CRM-basierte Sales-Funnel-Optimierung.'
+        },
+        webdev: {
+          title: 'Webentwicklung & Technisches SEO',
+          desc: 'HTML/CSS-basierte Webentwicklung, WordPress-Management und technische/inhaltsbasierte SEO-Strategien zur Erhöhung der Suchmaschinensichtbarkeit.'
+        },
+        ai: {
+          title: 'Generative KI',
+          desc: 'Fortgeschrittenes Prompt Engineering, KI-gestützte Inhalts-/Design-Workflows und KI-Automatisierung zur operativen Effizienzsteigerung.'
+        },
+        performance: {
+          title: 'Performance-Marketing',
+          desc: 'Datengesteuertes Anzeigenmanagement auf Meta, Google und Yandex Ads Plattformen, A/B-Tests und High-Conversion-Kampagnenstrategien.'
+        },
+        pr: {
+          title: 'Digitale Sichtbarkeit & PR',
+          desc: 'Markenpositionierung, Krisenkommunikationsmanagement und strategische Pressebeziehungen mit internationaler Medienakkreditierung (IFJ).'
+        },
+        training: {
+          title: 'Schulung & Beratung',
+          desc: 'Professionelle und unternehmensbezogene Digitalmarketing-Schulungen, strategische Beratung und Mentoring-Programme.'
+        }
+      }
     },
     home: {
       hero: {

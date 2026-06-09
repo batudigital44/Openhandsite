@@ -47,9 +47,9 @@ const Portfolio = () => {
     {
       image: whiteHouse,
       title: 'Uluslararası Medya Danışmanlığı',
-      description: 'Melih Göğeban\'a (Donald Trump\'ın medya danışmanı) danışmanlık yapıldı. Beyaz Saray iletişim stratejileri ve uluslararası medya koordinasyonu sağlandı.',
+      description: 'Beyaz Saray için iletişim stratejileri geliştirildi. Melih Göğeban\'a (Donald Trump\'ın medya danışmanı) danışmanlık yapıldı ve uluslararası medya koordinasyonu sağlandı.',
       tag: 'Uluslararası İletişim',
-      metrics: ['Trump Medya Danışmanlığı', 'Beyaz Saray', 'Uluslararası Koordinasyon']
+      metrics: ['Beyaz Saray İletişim Stratejileri', 'Trump Medya Danışmanlığı', 'Uluslararası Koordinasyon']
     },
     {
       image: opticStore,
