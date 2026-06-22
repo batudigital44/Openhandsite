@@ -1,46 +1,42 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Zap, Code, Brain, TrendingUp, Globe, BookOpen } from 'lucide-react'
+import { useLanguage } from '../context/LanguageContext'
 
 const Services = () => {
+  const { t } = useLanguage()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   const services = [
     {
       icon: Zap,
-      title: 'Pazarlama Teknolojileri (MarTech) & Otomasyon',
-      description: 'HubSpot ve Mautic ile omnichannel otomasyon kurulumları, Zapier ile sistem entegrasyonları ve CRM tabanlı satış hunisi (Sales Funnel) optimizasyonu.',
+      key: 'martech',
       color: 'from-yellow-500 to-orange-500'
     },
     {
       icon: Code,
-      title: 'Web Geliştirme & Teknik SEO',
-      description: 'HTML/CSS tabanlı web geliştirme, WordPress yönetimi ve arama motoru görünürlüğünü artıran teknik/içerik odaklı SEO stratejileri.',
+      key: 'webdev',
       color: 'from-blue-500 to-cyan-500'
     },
     {
       icon: Brain,
-      title: 'Üretken Yapay Zeka (Generative AI)',
-      description: 'İleri düzey Prompt Mühendisliği, yapay zeka destekli içerik/tasarım iş akışları ve AI otomasyonları ile operasyonel verimlilik artışı.',
+      key: 'ai',
       color: 'from-purple-500 to-pink-500'
     },
     {
       icon: TrendingUp,
-      title: 'Performans Pazarlaması',
-      description: 'Meta, Google ve Yandex Ads platformlarında veri odaklı reklam yönetimi, A/B testleri ve yüksek dönüşümlü (High-Conversion) kampanya stratejileri.',
+      key: 'performance',
       color: 'from-green-500 to-emerald-500'
     },
     {
       icon: Globe,
-      title: 'Dijital Görünürlük & PR',
-      description: 'Marka konumlandırma, kriz iletişimi yönetimi ve uluslararası medya akreditasyonu (IFJ) ile stratejik basın ilişkileri yönetimi.',
+      key: 'pr',
       color: 'from-red-500 to-rose-500'
     },
     {
       icon: BookOpen,
-      title: 'Eğitim & Danışmanlık',
-      description: 'Profesyonel ve kurumsal dijital pazarlama eğitimleri, stratejik danışmanlık ve mentörlük programları.',
+      key: 'training',
       color: 'from-indigo-500 to-blue-500'
     }
   ]
@@ -57,12 +53,12 @@ const Services = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-sm font-semibold text-primary mb-2">Hizmetlerim</h2>
+          <h2 className="text-sm font-semibold text-primary mb-2">{t('services.title')}</h2>
           <h3 className="text-3xl md:text-4xl font-display font-bold mb-4">
-            Kreatif ve <span className="gradient-text">Performans</span>
+            {t('services.subtitle')} <span className="gradient-text">{t('services.subtitleHighlight')}</span>
           </h3>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Güçlü mesleki alanlarım
+            {t('services.description')}
           </p>
         </motion.div>
 
@@ -80,10 +76,10 @@ const Services = () => {
                 <service.icon className="w-full h-full text-white" />
               </div>
               <h4 className="text-lg font-bold mb-3 group-hover:text-primary transition-colors">
-                {service.title}
+                {t(`services.items.${service.key}.title`)}
               </h4>
               <p className="text-gray-400 text-sm leading-relaxed">
-                {service.description}
+                {t(`services.items.${service.key}.desc`)}
               </p>
             </motion.div>
           ))}

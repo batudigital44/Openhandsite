@@ -1,9 +1,11 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { ExternalLink, Newspaper, TrendingUp, Globe } from 'lucide-react'
+import { useLanguage } from '../context/LanguageContext'
 import pressBanner from '../assets/images/portfolio-banner.png'
 
 const Press = () => {
+  const { t } = useLanguage()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
@@ -147,24 +149,24 @@ const Press = () => {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
-              Basın <span className="gradient-text">Köşesi</span>
+              {t('press.title').split(' ')[0]} <span className="gradient-text">{t('press.title').split(' ')[1]}</span>
             </h1>
-            <p className="text-xl text-gray-300 mb-8">Medyada Yer Alan Çalışmalarım ve Yazılarım</p>
+            <p className="text-xl text-gray-300 mb-8">{t('press.subtitle')}</p>
             <div className="flex justify-center gap-4 mt-8">
               <div className="glass-card px-6 py-4">
                 <Newspaper className="w-8 h-8 text-primary mx-auto mb-2" />
                 <div className="text-2xl font-bold gradient-text">15+</div>
-                <div className="text-sm text-gray-400">Haber & Makale</div>
+                <div className="text-sm text-gray-400">{t('press.newsArticles')}</div>
               </div>
               <div className="glass-card px-6 py-4">
                 <Globe className="w-8 h-8 text-secondary mx-auto mb-2" />
                 <div className="text-2xl font-bold gradient-text">10+</div>
-                <div className="text-sm text-gray-400">Farklı Platform</div>
+                <div className="text-sm text-gray-400">{t('press.platforms')}</div>
               </div>
               <div className="glass-card px-6 py-4">
                 <TrendingUp className="w-8 h-8 text-primary mx-auto mb-2" />
                 <div className="text-2xl font-bold gradient-text">1M+</div>
-                <div className="text-sm text-gray-400">Erişim</div>
+                <div className="text-sm text-gray-400">{t('press.reach')}</div>
               </div>
             </div>
           </motion.div>
@@ -180,8 +182,8 @@ const Press = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-sm font-semibold text-primary mb-2">Medya İçeriklerim</h2>
-            <h3 className="text-3xl font-display font-bold">Basında ve Dijital Platformlarda</h3>
+            <h2 className="text-sm font-semibold text-primary mb-2">{t('press.mediaContent')}</h2>
+            <h3 className="text-3xl font-display font-bold">{t('press.mediaPlatforms')}</h3>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -212,7 +214,7 @@ const Press = () => {
                   <span className="text-gray-500 text-xs">{article.date}</span>
                   <span className="flex items-center gap-1 text-primary text-sm group-hover:underline">
                     <ExternalLink size={14} />
-                    Aç
+                    {t('press.open')}
                   </span>
                 </div>
               </motion.a>
@@ -231,9 +233,9 @@ const Press = () => {
             className="text-center mb-12"
           >
             <h3 className="text-3xl font-display font-bold mb-4">
-              Yayınlarım ve <span className="gradient-text">Makalelerim</span>
+              {t('press.publications').split(' ')[0]} ve <span className="gradient-text">{t('press.publications').split(' ').slice(1).join(' ')}</span>
             </h3>
-            <p className="text-gray-400">Dijital pazarlama, medya ve uluslararası ilişkiler üzerine yazılar</p>
+            <p className="text-gray-400">{t('press.publicationsDesc')}</p>
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

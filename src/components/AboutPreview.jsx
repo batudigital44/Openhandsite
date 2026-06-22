@@ -3,17 +3,19 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, Target, TrendingUp, Users, Award } from 'lucide-react'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
+import { useLanguage } from '../context/LanguageContext'
 import aboutImage from '../assets/images/about-hero.png'
 
 const AboutPreview = () => {
+  const { t } = useLanguage()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   const stats = [
-    { number: '25+', label: 'Marka ve kurum yönetimi', icon: Target },
-    { number: '10+', label: 'Uluslararası işbirliği', icon: Users },
-    { number: '95%', label: 'Başarı ve satış oranı', icon: TrendingUp },
-    { number: '1M+', label: 'İçerik etkileşimi', icon: Award },
+    { number: '25+', label: t('aboutPreview.stats.brands'), icon: Target },
+    { number: '10+', label: t('aboutPreview.stats.international'), icon: Users },
+    { number: '95%', label: t('aboutPreview.stats.success'), icon: TrendingUp },
+    { number: '1M+', label: t('aboutPreview.stats.engagement'), icon: Award },
   ]
 
   return (
@@ -49,15 +51,15 @@ const AboutPreview = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h2 className="text-sm font-semibold text-primary mb-2">Beni Tanıyın</h2>
+            <h2 className="text-sm font-semibold text-primary mb-2">{t('aboutPreview.title')}</h2>
             <h3 className="text-3xl md:text-4xl font-display font-bold mb-6">
-              Dijitalin sınırları <span className="gradient-text">olmadığını</span> söyleyerek
+              {t('aboutPreview.subtitle')} <span className="gradient-text">{t('aboutPreview.subtitleHighlight')}</span>{t('aboutPreview.subtitleSuffix') && ' ' + t('aboutPreview.subtitleSuffix')}
             </h3>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Hem profesyonel hem de akademik olarak yeni medya alanında çalışmalarıma devam ediyorum.
+              {t('aboutPreview.description1')}
             </p>
             <p className="text-gray-400 mb-8 leading-relaxed">
-              Batuhan Ateş, 1996 yılında Ankara'da doğdu. Malatya doğumlu olan Ateş, ilkokul, ortaokul ve lise eğitimini Antalya'nın Manavgat ilçesinde tamamladı. 2020 yılında Kırgızistan'daki Manas Üniversitesi İletişim Fakültesi Gazetecilik bölümünden mezun oldu.
+              {t('aboutPreview.description2')}
             </p>
 
             {/* Stats */}
@@ -78,7 +80,7 @@ const AboutPreview = () => {
             </div>
 
             <Link to="/hakkimda" className="btn-primary inline-flex items-center gap-2">
-              Hakkımda Sayfası
+              {t('aboutPreview.cta')}
               <ArrowRight size={18} />
             </Link>
           </motion.div>

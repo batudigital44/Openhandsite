@@ -2,6 +2,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle, Award, Users, Target, TrendingUp } from 'lucide-react'
+import { useLanguage } from '../context/LanguageContext'
 import aboutImage from '../assets/images/about-hero.png'
 import figmaImg from '../assets/images/figma.png'
 import photoshopImg from '../assets/images/photoshop.png'
@@ -11,14 +12,15 @@ import gallery1 from '../assets/images/gallery-1.jpg'
 import gallery2 from '../assets/images/gallery-2.jpg'
 
 const About = () => {
+  const { t } = useLanguage()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   const stats = [
-    { number: '25+', label: 'Marka ve kurum yönetimi', icon: Target },
-    { number: '10+', label: 'Uluslararası işbirliği', icon: Users },
-    { number: '95%', label: 'Başarı ve satış oranı', icon: TrendingUp },
-    { number: '1M+', label: 'İçerik etkileşimi', icon: Award },
+    { number: '25+', label: t('aboutPreview.stats.brands'), icon: Target },
+    { number: '10+', label: t('aboutPreview.stats.international'), icon: Users },
+    { number: '95%', label: t('aboutPreview.stats.success'), icon: TrendingUp },
+    { number: '1M+', label: t('aboutPreview.stats.engagement'), icon: Award },
   ]
 
   const tools = [
@@ -34,7 +36,14 @@ const About = () => {
     { name: 'Midjourney', image: midjourneyImg },
   ]
 
-  const languages = ['Türkçe', 'İngilizce', 'Almanca', 'Rusça', 'Kırgızca', 'Kazakça']
+  const languages = [
+    { code: 'tr', name: 'Türkçe' },
+    { code: 'en', name: 'English' },
+    { code: 'de', name: 'Deutsch' },
+    { code: 'ru', name: 'Русский' },
+    { code: 'kg', name: 'Кыргызча' },
+    { code: 'kk', name: 'Қазақша' },
+  ]
 
   return (
     <div className="pt-20">
@@ -52,8 +61,8 @@ const About = () => {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-4xl md:text-6xl font-display font-bold mb-6">
-                Dijital Dünyayı<br />
-                <span className="gradient-text">Benimle Keşfet</span>
+                {t('about.heroTitle')}<br />
+                <span className="gradient-text">{t('about.heroSubtitle')}</span>
               </h1>
               <img src={aboutImage} alt="Batuhan Ateş" className="max-w-md rounded-2xl shadow-2xl" />
             </motion.div>
@@ -63,17 +72,55 @@ const About = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h3 className="text-2xl font-bold mb-4">Batuhan Ateş Kimdir?</h3>
+              <h3 className="text-2xl font-bold mb-4">{t('about.aboutMe')}</h3>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Batuhan Ateş, uluslararası saha deneyimine sahip, seçkin bir stratejik iletişim profesyonelidir. Dijital medya ekosistemini sınır ötesi etki oluşturmanın güçlü bir aracı olarak konumlandıran Ateş, veri odaklı dijital pazarlama teknolojilerini gelişmiş bir küresel temsil kabiliyetiyle birleştirerek kariyerini yüksek profilli markaların ve büyük ölçekli projelerin uluslararası itibarını inşa etmeye ve sürdürülebilir kılmaya adamıştır.
+                {t('about.bio1')}
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Küresel operasyonel ağı; Portekiz, Hollanda, Belçika, Katar ve Birleşik Arap Emirlikleri gibi stratejik öneme sahip pazarlarda aktif saha deneyimine dayanmaktadır. Bu bölgelerde yerel pazar dinamiklerini ve karmaşık iletişim protokollerini doğrudan deneyimleyerek uzmanlaşmıştır.
+                {t('about.bio2')}
+              </p>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                {t('about.bio3')}
               </p>
               <p className="text-gray-300 leading-relaxed">
-                Türkçe, İngilizce, Almanca, Rusça, Kırgızca ve Kazakça dillerine hâkim olan Batuhan Ateş, Avrupa ile Avrasya coğrafyaları arasında güçlü bir çok dilli köprü görevi görmekte; dijital pazarlama ve medyayı modern çağın en etkili stratejik araçları olarak yeniden tanımlamaya devam etmektedir.
+                {t('about.bio4')}
               </p>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Expertise Section */}
+      <section className="section-padding bg-dark-800/50">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-sm font-semibold text-primary mb-2">{t('about.expertiseTitle')}</h2>
+            <h3 className="text-3xl font-display font-bold">{t('about.expertiseSubtitle')}</h3>
+          </motion.div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: '🎯', title: t('about.expertise1Title'), desc: t('about.expertise1Desc') },
+              { icon: '📊', title: t('about.expertise2Title'), desc: t('about.expertise2Desc') },
+              { icon: '🌍', title: t('about.expertise3Title'), desc: t('about.expertise3Desc') },
+              { icon: '📱', title: t('about.expertise4Title'), desc: t('about.expertise4Desc') },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="glass-card p-6 text-center"
+              >
+                <span className="text-4xl mb-4 block">{item.icon}</span>
+                <h4 className="font-bold mb-2">{item.title}</h4>
+                <p className="text-gray-400 text-sm">{item.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -87,8 +134,8 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-sm font-semibold text-primary mb-2">İş Referanslarım</h2>
-            <h3 className="text-3xl font-display font-bold">Başarı Ölçütlerim</h3>
+            <h2 className="text-sm font-semibold text-primary mb-2">{t('about.jobRefs')}</h2>
+            <h3 className="text-3xl font-display font-bold">{t('about.successMetrics')}</h3>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -118,8 +165,8 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-sm font-semibold text-primary mb-2">Yeteneklerim</h2>
-            <h3 className="text-3xl font-display font-bold">Kullandığım Araçlar</h3>
+            <h2 className="text-sm font-semibold text-primary mb-2">{t('about.skills')}</h2>
+            <h3 className="text-3xl font-display font-bold">{t('about.tools')}</h3>
           </motion.div>
 
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12">
@@ -147,11 +194,11 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="text-center"
           >
-            <h4 className="text-xl font-semibold mb-4">Diller</h4>
+            <h4 className="text-xl font-semibold mb-4">{t('about.languages')}</h4>
             <div className="flex flex-wrap justify-center gap-3">
               {languages.map((lang, index) => (
                 <span key={index} className="px-4 py-2 bg-dark-700 rounded-full text-sm">
-                  {lang}
+                  {lang.name}
                 </span>
               ))}
             </div>
@@ -168,8 +215,8 @@ const About = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-sm font-semibold text-primary mb-2">Galeri</h2>
-            <h3 className="text-3xl font-display font-bold">Fotoğraflarım</h3>
+            <h2 className="text-sm font-semibold text-primary mb-2">{t('about.gallery')}</h2>
+            <h3 className="text-3xl font-display font-bold">{t('about.photos')}</h3>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
