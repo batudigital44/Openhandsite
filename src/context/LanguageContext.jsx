@@ -167,6 +167,24 @@ const translations = {
         metric2: 'Yüksek ROAS / ROI',
         metric3: 'Performans Pazarlaması'
       },
+      // Yunexia SaaS - Muhasebe Yazılımı
+      yunexia: {
+        title: 'Yunexia Muhasebe SaaS - Yazılım Projesi',
+        description: 'Yunexia tarafından geliştirilen bulut tabanlı muhasebe yazılımının pazarlaması ve AI otomasyonları kurulumu. SAAS ürün lansmanı için dijital pazarlama stratejileri, lead generation kampanyaları ve müşteri edinme süreçleri yönetildi. Yapay zeka destekli otomasyonlar ile satış ve pazarlama süreçleri optimize edildi.',
+        tag: 'Yazılım & SAAS',
+        metric1: 'SAAS Pazarlama Stratejisi',
+        metric2: 'AI Otomasyonları',
+        metric3: 'Lead Generation'
+      },
+      // PPG Tourism Panel - Turizm Yazılımı
+      ppg: {
+        title: 'PPG All In One Turizm Panel - Yazılım Projesi',
+        description: 'PMA Partner tarafından geliştirilen PPG All In One turizm panel sisteminin pazarlama süreçlerinde yer aldım. Yazılım test kontrolü, IT bağlantıları, kullanıcı deneyimi optimizasyonu ve pazarlama otomasyonları kurulumları gerçekleştirdim. Turizm sektörüne özel çözümlerin tanıtımı ve satış stratejileri geliştirildi.',
+        tag: 'Turizm & Yazılım',
+        metric1: 'Turizm Panel Sistemi',
+        metric2: 'Test & Kontrol',
+        metric3: 'Pazarlama Otomasyonu'
+      },
       // Kyrgyzstan
       kyrgyz: {
         title: 'Türkiye - Kırgızistan Diplomatik Dijital Dönüşüm',
@@ -426,6 +444,24 @@ const translations = {
         metric2: 'High ROAS / ROI',
         metric3: 'Performance Marketing'
       },
+      // Yunexia SaaS - Accounting Software
+      yunexia: {
+        title: 'Yunexia Accounting SaaS - Software Project',
+        description: 'Marketing and AI automation setup for cloud-based accounting software developed by Yunexia. Digital marketing strategies, lead generation campaigns, and customer acquisition processes were managed for SAAS product launch. Sales and marketing processes were optimized with AI-powered automations.',
+        tag: 'Software & SAAS',
+        metric1: 'SAAS Marketing Strategy',
+        metric2: 'AI Automations',
+        metric3: 'Lead Generation'
+      },
+      // PPG Tourism Panel - Tourism Software
+      ppg: {
+        title: 'PPG All In One Tourism Panel - Software Project',
+        description: 'Participated in marketing processes for PPG All In One tourism panel system developed by PMA Partner. Performed software testing, IT integrations, UX optimization, and marketing automation setup. Developed promotional strategies and sales strategies for tourism-specific solutions.',
+        tag: 'Tourism & Software',
+        metric1: 'Tourism Panel System',
+        metric2: 'Testing & Control',
+        metric3: 'Marketing Automation'
+      },
       // Kyrgyzstan
       kyrgyz: {
         title: 'Turkey - Kyrgyzstan Diplomatic Digital Transformation',
@@ -684,6 +720,24 @@ const translations = {
         metric1: '800.000$+ Verkauf in 14 Tagen',
         metric2: 'Hohe ROAS / ROI',
         metric3: 'Performance-Marketing'
+      },
+      // Yunexia SaaS - Buchhaltungssoftware
+      yunexia: {
+        title: 'Yunexia Buchhaltungs-SaaS - Softwareprojekt',
+        description: 'Marketing und KI-Automatisierung für Cloud-basierte Buchhaltungssoftware von Yunexia entwickelt. Digitale Marketingstrategien, Lead-Generierungskampagnen und Kundenakquisitionsprozesse für SaaS-Produkteinführung verwaltet. Vertriebs- und Marketingprozesse mit KI-gestützter Automatisierung optimiert.',
+        tag: 'Software & SaaS',
+        metric1: 'SaaS-Marketing-Strategie',
+        metric2: 'KI-Automatisierung',
+        metric3: 'Lead-Generierung'
+      },
+      // PPG Tourismus-Panel - Tourismus-Software
+      ppg: {
+        title: 'PPG All In One Tourismus-Panel - Softwareprojekt',
+        description: 'Mitwirkung bei Marketingprozessen für das von PMA Partner entwickelte PPG All In One Tourismus-Panel-System. Softwaretests, IT-Integrationen, UX-Optimierung und Marketing-Automatisierung durchgeführt. Werbestrategien und Vertriebsstrategien für tourismusspezifische Lösungen entwickelt.',
+        tag: 'Tourismus & Software',
+        metric1: 'Tourismus-Panel-System',
+        metric2: 'Tests & Kontrolle',
+        metric3: 'Marketing-Automatisierung'
       },
       // Kyrgyzstan
       kyrgyz: {

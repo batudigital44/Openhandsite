@@ -32,6 +32,22 @@ const Portfolio = () => {
       tag: t('portfolio.dubai.tag'),
       metrics: [t('portfolio.dubai.metric1'), t('portfolio.dubai.metric2'), t('portfolio.dubai.metric3')]
     },
+    // Software Project 1: Yunexia SaaS
+    {
+      image: centralAsia,
+      title: t('portfolio.yunexia.title'),
+      description: t('portfolio.yunexia.description'),
+      tag: t('portfolio.yunexia.tag'),
+      metrics: [t('portfolio.yunexia.metric1'), t('portfolio.yunexia.metric2'), t('portfolio.yunexia.metric3')]
+    },
+    // Software Project 2: PPG Tourism Panel
+    {
+      image: hotelPool,
+      title: t('portfolio.ppg.title'),
+      description: t('portfolio.ppg.description'),
+      tag: t('portfolio.ppg.tag'),
+      metrics: [t('portfolio.ppg.metric1'), t('portfolio.ppg.metric2'), t('portfolio.ppg.metric3')]
+    },
     {
       image: diplomaticMeeting,
       title: t('portfolio.kyrgyz.title'),
