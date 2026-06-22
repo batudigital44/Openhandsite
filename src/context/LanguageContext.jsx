@@ -26,8 +26,8 @@ const translations = {
       subtitle: 'Dijitalin sınırları',
       subtitleHighlight: 'olmadığını',
       subtitleSuffix: 'söyleyerek',
-      description1: 'Hem profesyonel hem de akademik olarak yeni medya alanında çalışmalarıma devam ediyorum.',
-      description2: 'Batuhan Ateş, 1996 yılında Ankara\'da doğdu. Malatya doğumlu olan Ateş, ilkokul, ortaokul ve lise eğitimini Antalya\'nın Manavgat ilçesinde tamamladı. 2020 yılında Kırgızistan\'daki Manas Üniversitesi İletişim Fakültesi Gazetecilik bölümünden mezun oldu.',
+      description1: 'Uluslararası Medya ve Pazarlama Uzmanıyım. Beyaz Saray iletişim stratejileri danışmanlığı, 800.000$+ Dubai emlak satış dönüşümü ve IFJ akreditasyonlu diplomasi haberciliği deneyimine sahibim.',
+      description2: 'PMA Partner bünyesinde turizm teknolojileri ve otomasyon alanında stratejik dijital dönüşüm süreçlerini yönetiyorum. Münih merkezli TravelTech şirketinin İstanbul ve Stockholm ofisleriyle koordineli çalışarak uluslararası projelerde görev alıyorum.',
       stats: {
         brands: 'Marka ve kurum yönetimi',
         international: 'Uluslararası işbirliği',
@@ -321,8 +321,8 @@ const translations = {
       subtitle: 'By saying that the limits of',
       subtitleHighlight: 'digital have no bounds',
       subtitleSuffix: '',
-      description1: 'I continue my work in the new media field both professionally and academically.',
-      description2: 'Batuhan Ateş was born in 1996 in Ankara. Born in Malatya, Ateş completed primary, secondary and high school education in the Manavgat district of Antalya. In 2020, he graduated from the Journalism department of the Faculty of Communication at Manas University in Kyrgyzstan.',
+      description1: 'I am an International Media and Marketing Expert. I have experience in White House communication strategy consulting, $800,000+ Dubai real estate sales conversion, and IFJ-accredited diplomacy journalism.',
+      description2: 'I manage strategic digital transformation processes at PMA Partner in tourism technology and automation. I work in coordination with the Munich-based TravelTech company\'s Istanbul and Stockholm offices on international projects.',
       stats: {
         brands: 'Brand and institution management',
         international: 'International collaboration',
@@ -612,8 +612,8 @@ const translations = {
       subtitle: 'Indem ich sage, dass die Grenzen des',
       subtitleHighlight: 'Digitalen keine Grenzen haben',
       subtitleSuffix: '',
-      description1: 'Ich setze meine Arbeit im Bereich der neuen Medien sowohl professionell als auch akademisch fort.',
-      description2: 'Batuhan Ateş wurde 1996 in Ankara geboren. Der in Malatya geborene Ateş absolvierte seine Grund-, Mittel- und Oberschulbildung im Bezirk Manavgat in Antalya. Im Jahr 2020 schloss er das Journalismus-Studium an der Fakultät für Kommunikation der Manas Universität in Kirgisistan ab.',
+      description1: 'Ich bin ein Internationaler Medien- und Marketingexperte. Ich verfüge über Erfahrung in Weißen-Haus-Kommunikationsstrategieberatung, 800.000$+ Dubai-Immobilienverkaufskonversion und IFJ-akkreditiertem Diplomatie-Journalismus.',
+      description2: 'Ich leite strategische digitale Transformationsprozesse bei PMA Partner in Tourismustechnologie und -automatisierung. Ich arbeite in Koordination mit den Istanbul- und Stockholm-Büros des München basierten TravelTech-Unternehmens an internationalen Projekten.',
       stats: {
         brands: 'Marken- und Institutionsmanagement',
         international: 'Internationale Zusammenarbeit',
