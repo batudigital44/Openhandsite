@@ -274,7 +274,16 @@ const translations = {
       brandsSubtitle: 'Girişimlerim ve Projelerim',
       brandAsmanDesc: 'Orta Asya ve Türkiye arasında köprü kuran çok dilli medya ağı. IFJ akreditasyonu ile diplomasi haberciliği.',
       brandItronyDesc: 'Antalya merkezli dijital pazarlama ve sosyal medya ajansı.',
-      brandYarinigezDesc: 'Antalya\'da kurulan seyahat acentası ve gezi platformu.'
+      brandYarinigezDesc: 'Antalya\'da kurulan seyahat acentası ve gezi platformu.',
+      partnersTitle: 'Referanslar ve Ortaklar',
+      partnersSubtitle: 'Çalıştığım Firmalar ve İş Ortaklarım',
+      partnersDesc: 'Uluslararası turizm teknolojileri, otomasyon ve dijital dönüşüm alanlarında küresel çapta faaliyet gösteren firmalarla işbirliği içindeyim.',
+      partnersNote: 'Tüm referanslar ve ortaklarım ile gizlilik sözleşmesi kapsamında çalışmaktayım.',
+      partnerPmaDesc: 'Münih merkezli TravelTech şirketi. Yapay zeka tabanlı turizm çözümleri, yazılımlar ve dijital stratejiler.',
+      partnerDnaDesc: 'Avrupa\'da faaliyet gösteren premium otel zinciri. Turizm sektöründe lider konumda.',
+      partnerContiDesc: 'Avrupa genelinde butik otel ve rezidans işletmeleri. Konukseverlik sektöründe yenilikçi yaklaşımlar.',
+      partnerTypeTech: 'TravelTech',
+      partnerTypeHotel: 'Otel Grubu'
     },
     press: {
       title: 'Basın Köşesi',
@@ -556,7 +565,16 @@ const translations = {
       brandsSubtitle: 'My Ventures and Projects',
       brandAsmanDesc: 'Multilingual media network bridging Central Asia and Turkey. Diplomacy journalism with IFJ accreditation.',
       brandItronyDesc: 'Antalya-based digital marketing and social media agency.',
-      brandYarinigezDesc: 'Travel agency and travel platform established in Antalya.'
+      brandYarinigezDesc: 'Travel agency and travel platform established in Antalya.',
+      partnersTitle: 'References & Partners',
+      partnersSubtitle: 'Companies I Work With & Business Partners',
+      partnersDesc: 'I collaborate with global firms in international tourism technology, automation and digital transformation.',
+      partnersNote: 'All references and partners are covered under confidentiality agreements.',
+      partnerPmaDesc: 'Munich-based TravelTech company. AI-powered tourism solutions, software and digital strategies.',
+      partnerDnaDesc: 'Premium hotel chain operating in Europe. Leader in the tourism sector.',
+      partnerContiDesc: 'Boutique hotels and residences across Europe. Innovative approaches in hospitality industry.',
+      partnerTypeTech: 'TravelTech',
+      partnerTypeHotel: 'Hotel Group'
     },
     press: {
       title: 'Press Corner',
@@ -838,7 +856,16 @@ const translations = {
       brandsSubtitle: 'Meine Unternehmungen und Projekte',
       brandAsmanDesc: 'Mehrsprachiges Mediennetzwerk, das Zentralasien und die Türkei verbindet. Diplomatie-Journalismus mit IFJ-Akkreditierung.',
       brandItronyDesc: 'Antalya-basierte Digitalmarketing- und Social-Media-Agentur.',
-      brandYarinigezDesc: 'Reisebüro und Reiseplattform in Antalya gegründet.'
+      brandYarinigezDesc: 'Reisebüro und Reiseplattform in Antalya gegründet.',
+      partnersTitle: 'Referenzen & Partner',
+      partnersSubtitle: 'Firmen und Geschäftspartner',
+      partnersDesc: 'Ich arbeite mit globalen Unternehmen in internationaler Tourismustechnologie, Automatisierung und digitaler Transformation zusammen.',
+      partnersNote: 'Alle Referenzen und Partner unterliegen Vertraulichkeitsvereinbarungen.',
+      partnerPmaDesc: 'München-basierte TravelTech-Unternehmen. KI-gestützte Tourismuslösungen, Software und digitale Strategien.',
+      partnerDnaDesc: 'Premium-Hotelkette in Europa. Führend im Tourismussektor.',
+      partnerContiDesc: 'Boutique-Hotels und Residenzen in ganz Europa. Innovative Ansätze in der Gastfreundschaft.',
+      partnerTypeTech: 'TravelTech',
+      partnerTypeHotel: 'Hotelgruppe'
     },
     press: {
       title: 'Pressewinkel',

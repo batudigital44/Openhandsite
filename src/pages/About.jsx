@@ -13,6 +13,7 @@ import gallery2 from '../assets/images/gallery-2.jpg'
 import asmanMedia from '../assets/images/central-asia.png'
 import itrony from '../assets/images/hotel-pool.png'
 import yarinigez from '../assets/images/bishkek-city.jpg'
+import hotelResort from '../assets/images/hotel-resort.png'
 
 const About = () => {
   const { t } = useLanguage()
@@ -72,6 +73,33 @@ const About = () => {
       year: '2021',
       location: 'Antalya, Türkiye',
       link: 'https://yarinigez.com'
+    }
+  ]
+
+  const partners = [
+    {
+      name: 'PMA Partner',
+      logo: itrony,
+      description: t('about.partnerPmaDesc'),
+      type: t('about.partnerTypeTech'),
+      location: 'Münih, Almanya',
+      link: 'https://www.pma-partner.com'
+    },
+    {
+      name: 'Dna Hotels',
+      logo: hotelResort,
+      description: t('about.partnerDnaDesc'),
+      type: t('about.partnerTypeHotel'),
+      location: 'Avrupa',
+      link: 'https://www.dnahotels.com'
+    },
+    {
+      name: 'Conti Hotels',
+      logo: hotelPool,
+      description: t('about.partnerContiDesc'),
+      type: t('about.partnerTypeHotel'),
+      location: 'Avrupa',
+      link: 'https://www.contihotels.com'
     }
   ]
 
@@ -278,6 +306,60 @@ const About = () => {
               </motion.a>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Partners & References Section */}
+      <section className="section-padding">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-sm font-semibold text-primary mb-2">{t('about.partnersTitle')}</h2>
+            <h3 className="text-3xl font-display font-bold">{t('about.partnersSubtitle')}</h3>
+            <p className="text-gray-400 mt-4 max-w-2xl mx-auto">{t('about.partnersDesc')}</p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {partners.map((partner, index) => (
+              <motion.a
+                key={index}
+                href={partner.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="glass-card p-6 hover:border-secondary/50 transition-all group"
+              >
+                <div className="h-32 bg-dark-700 rounded-xl mb-4 overflow-hidden">
+                  <img 
+                    src={partner.logo} 
+                    alt={partner.name} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform" 
+                  />
+                </div>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="px-2 py-1 text-xs bg-secondary/20 text-secondary rounded">{partner.type}</span>
+                  <span className="text-xs text-gray-400">{partner.location}</span>
+                </div>
+                <h4 className="font-bold text-lg mb-2 group-hover:text-secondary transition-colors">{partner.name}</h4>
+                <p className="text-gray-400 text-sm">{partner.description}</p>
+              </motion.a>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="mt-12 text-center"
+          >
+            <p className="text-sm text-gray-500">{t('about.partnersNote')}</p>
+          </motion.div>
         </div>
       </section>
 
