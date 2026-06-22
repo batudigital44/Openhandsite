@@ -10,6 +10,9 @@ import illustratorImg from '../assets/images/illustrator.png'
 import midjourneyImg from '../assets/images/midjourney.png'
 import gallery1 from '../assets/images/gallery-1.jpg'
 import gallery2 from '../assets/images/gallery-2.jpg'
+import asmanMedia from '../assets/images/central-asia.png'
+import itrony from '../assets/images/hotel-pool.png'
+import yarinigez from '../assets/images/bishkek-city.jpg'
 
 const About = () => {
   const { t } = useLanguage()
@@ -43,6 +46,33 @@ const About = () => {
     { code: 'ru', name: 'Русский' },
     { code: 'kg', name: 'Кыргызча' },
     { code: 'kk', name: 'Қазақша' },
+  ]
+
+  const brands = [
+    {
+      name: 'ASMAN Medya Grubu',
+      logo: asmanMedia,
+      description: t('about.brandAsmanDesc'),
+      year: '2018-2020',
+      location: 'Kırgızistan / Türkiye',
+      link: 'https://asmangroup.com'
+    },
+    {
+      name: 'İtrony',
+      logo: itrony,
+      description: t('about.brandItronyDesc'),
+      year: '2020',
+      location: 'Antalya, Türkiye',
+      link: 'https://itrony.com'
+    },
+    {
+      name: 'Yarını Gez',
+      logo: yarinigez,
+      description: t('about.brandYarinigezDesc'),
+      year: '2021',
+      location: 'Antalya, Türkiye',
+      link: 'https://yarinigez.com'
+    }
   ]
 
   return (
@@ -203,6 +233,51 @@ const About = () => {
               ))}
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Brands I Founded Section */}
+      <section className="section-padding bg-dark-800/50">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-sm font-semibold text-primary mb-2">{t('about.brandsTitle')}</h2>
+            <h3 className="text-3xl font-display font-bold">{t('about.brandsSubtitle')}</h3>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {brands.map((brand, index) => (
+              <motion.a
+                key={index}
+                href={brand.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="glass-card p-6 hover:border-primary/50 transition-all group"
+              >
+                <div className="h-32 bg-dark-700 rounded-xl mb-4 overflow-hidden">
+                  <img 
+                    src={brand.logo} 
+                    alt={brand.name} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform" 
+                  />
+                </div>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-xs text-primary">{brand.year}</span>
+                  <span className="text-xs text-gray-500">•</span>
+                  <span className="text-xs text-gray-400">{brand.location}</span>
+                </div>
+                <h4 className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">{brand.name}</h4>
+                <p className="text-gray-400 text-sm">{brand.description}</p>
+              </motion.a>
+            ))}
+          </div>
         </div>
       </section>
 

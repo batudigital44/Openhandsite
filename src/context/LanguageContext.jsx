@@ -269,7 +269,12 @@ const translations = {
       tools: 'Kullandığım Araçlar',
       languages: 'Diller',
       gallery: 'Galeri',
-      photos: 'Fotoğraflarım'
+      photos: 'Fotoğraflarım',
+      brandsTitle: 'Kurucu Olduğum Markalar',
+      brandsSubtitle: 'Girişimlerim ve Projelerim',
+      brandAsmanDesc: 'Orta Asya ve Türkiye arasında köprü kuran çok dilli medya ağı. IFJ akreditasyonu ile diplomasi haberciliği.',
+      brandItronyDesc: 'Antalya merkezli dijital pazarlama ve sosyal medya ajansı.',
+      brandYarinigezDesc: 'Antalya\'da kurulan seyahat acentası ve gezi platformu.'
     },
     press: {
       title: 'Basın Köşesi',
@@ -546,7 +551,12 @@ const translations = {
       tools: 'Tools I Use',
       languages: 'Languages',
       gallery: 'Gallery',
-      photos: 'My Photos'
+      photos: 'My Photos',
+      brandsTitle: 'Brands I Founded',
+      brandsSubtitle: 'My Ventures and Projects',
+      brandAsmanDesc: 'Multilingual media network bridging Central Asia and Turkey. Diplomacy journalism with IFJ accreditation.',
+      brandItronyDesc: 'Antalya-based digital marketing and social media agency.',
+      brandYarinigezDesc: 'Travel agency and travel platform established in Antalya.'
     },
     press: {
       title: 'Press Corner',
@@ -823,7 +833,12 @@ const translations = {
       tools: 'Werkzeuge, die ich verwende',
       languages: 'Sprachen',
       gallery: 'Galerie',
-      photos: 'Meine Fotos'
+      photos: 'Meine Fotos',
+      brandsTitle: 'Von mir gegründete Marken',
+      brandsSubtitle: 'Meine Unternehmungen und Projekte',
+      brandAsmanDesc: 'Mehrsprachiges Mediennetzwerk, das Zentralasien und die Türkei verbindet. Diplomatie-Journalismus mit IFJ-Akkreditierung.',
+      brandItronyDesc: 'Antalya-basierte Digitalmarketing- und Social-Media-Agentur.',
+      brandYarinigezDesc: 'Reisebüro und Reiseplattform in Antalya gegründet.'
     },
     press: {
       title: 'Pressewinkel',
