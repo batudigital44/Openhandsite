@@ -19,19 +19,33 @@ const Portfolio = () => {
 
   const achievements = [
     {
+      image: whiteHouse,
+      title: t('portfolio.whitehouse.title'),
+      description: t('portfolio.whitehouse.description'),
+      tag: t('portfolio.whitehouse.tag'),
+      metrics: [t('portfolio.whitehouse.metric1'), t('portfolio.whitehouse.metric2'), t('portfolio.whitehouse.metric3')]
+    },
+    {
+      image: dubaiSkyline,
+      title: t('portfolio.dubai.title'),
+      description: t('portfolio.dubai.description'),
+      tag: t('portfolio.dubai.tag'),
+      metrics: [t('portfolio.dubai.metric1'), t('portfolio.dubai.metric2'), t('portfolio.dubai.metric3')]
+    },
+    {
       image: diplomaticMeeting,
-      title: 'Türkiye - Kırgızistan Diplomatik Dijital Dönüşüm',
-      description: 'T.C. Bişkek Büyükelçiliği Eğitim Müşavirliği bünyesindeki TTEÖMER için ilk kurumsal dijital medya stratejisi tasarlandı. Multimedya ve prodüksiyon çalışmalarıyla kurumun marka değeri ve dijital görünürlüğü stabilize edildi.',
-      tag: 'Diplomasi & Eğitim',
-      metrics: ['Kurumsal Dijital Strateji', 'Multimedya Prodüksiyon', 'Uluslararası Kurum'],
+      title: t('portfolio.kyrgyz.title'),
+      description: t('portfolio.kyrgyz.description'),
+      tag: t('portfolio.kyrgyz.tag'),
+      metrics: [t('portfolio.kyrgyz.metric1'), t('portfolio.kyrgyz.metric2'), t('portfolio.kyrgyz.metric3')],
       links: [{ name: 'Video', url: 'https://www.facebook.com/BiskekTTEOMER/videos/1323158961190017/' }]
     },
     {
       image: hotelResort,
-      title: 'Teus Group - Ulusal ve Uluslararası Medya Görünürlüğü',
-      description: 'Teus Group\'un Antalya (Desire), Bali ve Maldivler projeleri için ulusal ve uluslararası basında stratejik medya görünürlüğü sağlandı. Markanın "Avrupa\'nın En İyi Otel İnşaat ve Tasarım Ödülü" kazanma sürecindeki iletişim ve PR faaliyetleri koordine edildi.',
-      tag: 'Turizm & Gayrimenkul',
-      metrics: ['Desire Antalya Projesi', 'Avrupa Ödülü', 'Ulusal Basın PR'],
+      title: t('portfolio.teus.title'),
+      description: t('portfolio.teus.description'),
+      tag: t('portfolio.teus.tag'),
+      metrics: [t('portfolio.teus.metric1'), t('portfolio.teus.metric2'), t('portfolio.teus.metric3')],
       links: [
         { name: 'Desire Antalya', url: 'https://www.desire-antalya.com/tr/#gallery' },
         { name: 'Tourism Today', url: 'https://www.instagram.com/tourismtoday_official/p/DGz0SUbI7fv/' }
@@ -39,46 +53,32 @@ const Portfolio = () => {
     },
     {
       image: germanyBerlin,
-      title: 'Uluslararası Enerji Firması Dijital Dönüşümü',
-      description: 'Almanya merkezli enerji firması Mediawirt\'in tüm dijital ekosistemi (Web, Sosyal Medya, B2B Lead) modern standartlara göre revize edildi. E-ticaret uyumlu sistemler ve içerik stratejileriyle marka etkileşimi maksimize edildi.',
-      tag: 'Enerji & B2B',
-      metrics: ['Mediawirt (Almanya)', 'B2B Lead Generation', 'E-Ticaret']
-    },
-    {
-      image: whiteHouse,
-      title: 'Uluslararası Medya Danışmanlığı',
-      description: 'Beyaz Saray için iletişim stratejileri geliştirildi. Melih Göğeban\'a (Donald Trump\'ın medya danışmanı) danışmanlık yapıldı ve uluslararası medya koordinasyonu sağlandı.',
-      tag: 'Uluslararası İletişim',
-      metrics: ['Beyaz Saray İletişim Stratejileri', 'Trump Medya Danışmanlığı', 'Uluslararası Koordinasyon']
+      title: t('portfolio.energy.title'),
+      description: t('portfolio.energy.description'),
+      tag: t('portfolio.energy.tag'),
+      metrics: [t('portfolio.energy.metric1'), t('portfolio.energy.metric2'), t('portfolio.energy.metric3')]
     },
     {
       image: opticStore,
-      title: 'EMO Optik - Türkiye Pazarına Giriş Stratejisi',
-      description: 'Uluslararası 7 büyük optik markasının (Trussardi, Ana Hickmann vb.) Türkiye dijital pazarına giriş ve konumlandırma süreçleri yönetildi. Meta Business Suite ve e-ticaret altyapı kurulumları ile kurumsal satış kanalları optimize edildi.',
-      tag: 'E-Ticaret & Moda',
-      metrics: ['7 Uluslararası Marka', 'Meta Business Suite', 'E-Ticaret Altyapısı']
-    },
-    {
-      image: dubaiSkyline,
-      title: 'Yüksek Dönüşümlü (High-Conversion) İçerik Stratejileri',
-      description: 'Performans pazarlamasında sıradışı metinler ve satış stratejileriyle doğrudan satışa odaklanıyorum. Dubai gayrimenkul pazarı için tasarladığım tek bir içerik stratejisiyle sadece 14 günde 837.000$ değerinde satış konversiyonu sağladım.',
-      tag: 'Gayrimenkul',
-      metrics: ['14 günde 837.000$ satış', 'High-Conversion strateji', 'Gayrimenkul uzmanlığı']
+      title: t('portfolio.emo.title'),
+      description: t('portfolio.emo.description'),
+      tag: t('portfolio.emo.tag'),
+      metrics: [t('portfolio.emo.metric1'), t('portfolio.emo.metric2'), t('portfolio.emo.metric3')]
     },
     {
       image: hotelPool,
-      title: 'Veri Odaklı Dijital Pazarlama ile Pazar Liderliği',
-      description: 'Orange County Otel Grubu\'nda kısıtlı kaynaklarla yürüttüğüm strateji sayesinde, Türkiye genelinde otel kategorisinde en güçlü sosyal medya hesaplarından birini inşa ettim. Foto galeri sayfası en çok ziyaret edilen sayfa yapısı oluşturuldu. Kemer otelimizde SEO ve içerik çalışmalarıyla Instagram 3., Facebook 6. sırada yer aldı.',
-      tag: 'Otel & Turizm',
-      metrics: ['En Çok Ziyaret Edilen Sayfa', 'Instagram 3. sıra', 'Facebook 6. sıra'],
-      links: [{ name: 'Foto Galeri', url: 'https://www.orangecounty.com.tr/kemer/tr/foto-galeri' }]
+      title: t('portfolio.hotel.title'),
+      description: t('portfolio.hotel.description'),
+      tag: t('portfolio.hotel.tag'),
+      metrics: [t('portfolio.hotel.metric1'), t('portfolio.hotel.metric2'), t('portfolio.hotel.metric3')],
+      links: [{ name: t('portfolio.hotel.photoLink'), url: 'https://www.orangecounty.com.tr/kemer/tr/foto-galeri' }]
     },
     {
       image: centralAsia,
-      title: 'Uluslararası Medya Ekosistemi ve Diplomasi',
-      description: 'Orta Asya ve Türkiye arasında köprü kuran, çok dilli ve çok uluslu bir gençlik medya ağı olan ASMAN Medya Grubu\'nu hayata geçirdim. 130 ülkede geçerli IFJ (Uluslararası Gazeteciler Federasyonu) basın akreditasyonuyla uluslararası düzeyde teknoloji ve diplomasi haberciliği yürütmekteyim.',
-      tag: 'Medya & Diplomasi',
-      metrics: ['130 ülke IFJ akreditasyonu', 'ASMAN Medya Grubu', 'Diplomasi haberciliği']
+      title: t('portfolio.asman.title'),
+      description: t('portfolio.asman.description'),
+      tag: t('portfolio.asman.tag'),
+      metrics: [t('portfolio.asman.metric1'), t('portfolio.asman.metric2'), t('portfolio.asman.metric3')]
     }
   ]
 

@@ -74,15 +74,53 @@ const About = () => {
             >
               <h3 className="text-2xl font-bold mb-4">{t('about.aboutMe')}</h3>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Batuhan Ateş, uluslararası saha deneyimine sahip, seçkin bir stratejik iletişim profesyonelidir. Dijital medya ekosistemini sınır ötesi etki oluşturmanın güçlü bir aracı olarak konumlandıran Ateş, veri odaklı dijital pazarlama teknolojilerini gelişmiş bir küresel temsil kabiliyetiyle birleştirerek kariyerini yüksek profilli markaların ve büyük ölçekli projelerin uluslararası itibarını inşa etmeye ve sürdürülebilir kılmaya adamıştır.
+                {t('about.bio1')}
               </p>
               <p className="text-gray-300 leading-relaxed mb-4">
-                Küresel operasyonel ağı; Portekiz, Hollanda, Belçika, Katar ve Birleşik Arap Emirlikleri gibi stratejik öneme sahip pazarlarda aktif saha deneyimine dayanmaktadır. Bu bölgelerde yerel pazar dinamiklerini ve karmaşık iletişim protokollerini doğrudan deneyimleyerek uzmanlaşmıştır.
+                {t('about.bio2')}
+              </p>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                {t('about.bio3')}
               </p>
               <p className="text-gray-300 leading-relaxed">
-                Türkçe, İngilizce, Almanca, Rusça, Kırgızca ve Kazakça dillerine hâkim olan Batuhan Ateş, Avrupa ile Avrasya coğrafyaları arasında güçlü bir çok dilli köprü görevi görmekte; dijital pazarlama ve medyayı modern çağın en etkili stratejik araçları olarak yeniden tanımlamaya devam etmektedir.
+                {t('about.bio4')}
               </p>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Expertise Section */}
+      <section className="section-padding bg-dark-800/50">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-sm font-semibold text-primary mb-2">{t('about.expertiseTitle')}</h2>
+            <h3 className="text-3xl font-display font-bold">{t('about.expertiseSubtitle')}</h3>
+          </motion.div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: '🎯', title: t('about.expertise1Title'), desc: t('about.expertise1Desc') },
+              { icon: '📊', title: t('about.expertise2Title'), desc: t('about.expertise2Desc') },
+              { icon: '🌍', title: t('about.expertise3Title'), desc: t('about.expertise3Desc') },
+              { icon: '📱', title: t('about.expertise4Title'), desc: t('about.expertise4Desc') },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="glass-card p-6 text-center"
+              >
+                <span className="text-4xl mb-4 block">{item.icon}</span>
+                <h4 className="font-bold mb-2">{item.title}</h4>
+                <p className="text-gray-400 text-sm">{item.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
