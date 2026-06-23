@@ -16,7 +16,7 @@ const translations = {
     footer: {
       ctaTitle: 'Hadi Beraber Çalışalım',
       ctaDesc: 'Dijitali öğrenmek, markanı konumlandırmak veya iş ortağı olmak için şimdi bana mail gönder görüşelim',
-      subtitle: 'Uluslararası Medya ve Pazarlama Uzmanı',
+      subtitle: 'Uluslararası Medya Danışmanı | Dijital Pazarlama Uzmanı | Diplomasi Teknoloji Gazetecisi',
       quickLinks: 'Hızlı Linkler',
       contactTitle: 'İletişim'
     },
@@ -26,7 +26,7 @@ const translations = {
       subtitle: 'Dijitalin sınırları',
       subtitleHighlight: 'olmadığını',
       subtitleSuffix: 'söyleyerek',
-      description1: 'Uluslararası Medya ve Pazarlama Uzmanıyım. Beyaz Saray iletişim stratejileri danışmanlığı, 800.000$+ Dubai emlak satış dönüşümü ve IFJ akreditasyonlu diplomasi haberciliği deneyimine sahibim.',
+      description1: 'Uluslararası Medya Danışmanı, Dijital Pazarlama Uzmanı ve Diplomasi Teknoloji Gazetecisiyim. Donald Trump\'ın medya danışmanı Melih Göğeban ile çalışmış, 800.000$+ Dubai emlak satış dönüşümü ve IFJ akreditasyonlu diplomasi haberciliği deneyimine sahibim.',
       description2: 'PMA Partner bünyesinde turizm teknolojileri ve otomasyon alanında stratejik dijital dönüşüm süreçlerini yönetiyorum. Münih merkezli TravelTech şirketinin İstanbul ve Stockholm ofisleriyle koordineli çalışarak uluslararası projelerde görev alıyorum.',
       stats: {
         brands: 'Marka ve kurum yönetimi',
@@ -73,7 +73,7 @@ const translations = {
     home: {
       hero: {
         title: 'Dijital Dünyayı Dönüştürüyorum',
-        subtitle: 'Uluslararası Medya ve Pazarlama Uzmanı',
+        subtitle: 'Uluslararası Medya Danışmanı | Dijital Pazarlama | Diplomasi Teknoloji Gazetecisi',
         cta: 'Projelerimi İncele',
         ctaSecondary: 'İletişime Geç'
       },
@@ -311,7 +311,7 @@ const translations = {
     footer: {
       ctaTitle: "Let's Work Together",
       ctaDesc: "Let's get in touch to learn digital, position your brand, or become a partner",
-      subtitle: 'International Media & Marketing Expert',
+      subtitle: 'International Media Consultant | Digital Marketing Expert | Diplomacy Technology Journalist',
       quickLinks: 'Quick Links',
       contactTitle: 'Contact'
     },
@@ -321,7 +321,7 @@ const translations = {
       subtitle: 'By saying that the limits of',
       subtitleHighlight: 'digital have no bounds',
       subtitleSuffix: '',
-      description1: 'I am an International Media and Marketing Expert. I have experience in White House communication strategy consulting, $800,000+ Dubai real estate sales conversion, and IFJ-accredited diplomacy journalism.',
+      description1: 'I am an International Media Consultant, Digital Marketing Expert, and Diplomacy Technology Journalist. I have worked with Donald Trump\'s media advisor Melih Göğeban, $800,000+ Dubai real estate sales conversion, and IFJ-accredited diplomacy journalism.',
       description2: 'I manage strategic digital transformation processes at PMA Partner in tourism technology and automation. I work in coordination with the Munich-based TravelTech company\'s Istanbul and Stockholm offices on international projects.',
       stats: {
         brands: 'Brand and institution management',
@@ -367,7 +367,7 @@ const translations = {
     home: {
       hero: {
         title: 'Transforming the Digital World',
-        subtitle: 'International Media & Marketing Expert',
+        subtitle: 'International Media Consultant | Digital Marketing | Diplomacy Technology Journalist',
         cta: 'View Projects',
         ctaSecondary: 'Contact'
       },
@@ -602,7 +602,7 @@ const translations = {
     footer: {
       ctaTitle: 'Lassen Sie uns zusammenarbeiten',
       ctaDesc: 'Kontaktieren Sie mich, um Digitales zu lernen, Ihre Marke zu positionieren oder Partner zu werden',
-      subtitle: 'Internationaler Medien- & Marketingexperte',
+      subtitle: 'Internationaler Medienberater | Digitalmarketing-Experte | Diplomatie-Technologie-Journalist',
       quickLinks: 'Schnelle Links',
       contactTitle: 'Kontakt'
     },
@@ -612,7 +612,7 @@ const translations = {
       subtitle: 'Indem ich sage, dass die Grenzen des',
       subtitleHighlight: 'Digitalen keine Grenzen haben',
       subtitleSuffix: '',
-      description1: 'Ich bin ein Internationaler Medien- und Marketingexperte. Ich verfüge über Erfahrung in Weißen-Haus-Kommunikationsstrategieberatung, 800.000$+ Dubai-Immobilienverkaufskonversion und IFJ-akkreditiertem Diplomatie-Journalismus.',
+      description1: 'Ich bin Internationaler Medienberater, Digitalmarketing-Experte und Diplomatie-Technologie-Journalist. Ich habe mit Trumps Medienberater Melih Göğeban zusammengearbeitet, 800.000$+ Dubai-Immobilienverkaufskonversion und IFJ-akkreditiertem Diplomatie-Journalismus.',
       description2: 'Ich leite strategische digitale Transformationsprozesse bei PMA Partner in Tourismustechnologie und -automatisierung. Ich arbeite in Koordination mit den Istanbul- und Stockholm-Büros des München basierten TravelTech-Unternehmens an internationalen Projekten.',
       stats: {
         brands: 'Marken- und Institutionsmanagement',
@@ -658,7 +658,7 @@ const translations = {
     home: {
       hero: {
         title: 'Die digitale Welt transformieren',
-        subtitle: 'Internationaler Medien- & Marketingexperte',
+        subtitle: 'Internationaler Medienberater | Digitalmarketing | Diplomatie-Technologie-Journalist',
         cta: 'Projekte ansehen',
         ctaSecondary: 'Kontakt'
       },
