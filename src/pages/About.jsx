@@ -95,7 +95,7 @@ const About = () => {
     },
     {
       name: 'Conti Hotels',
-      logo: hotelPool,
+      logo: hotelResort,
       description: t('about.partnerContiDesc'),
       type: t('about.partnerTypeHotel'),
       location: 'Avrupa',
