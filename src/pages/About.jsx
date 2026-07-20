@@ -125,37 +125,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="section-padding bg-dark-800" ref={ref}>
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-sm font-semibold text-primary mb-2">{t('about.jobRefs')}</h2>
-            <h3 className="text-3xl font-display font-bold">{t('about.successMetrics')}</h3>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-card p-6 text-center"
-              >
-                <stat.icon className="w-8 h-8 text-primary mx-auto mb-4" />
-                <div className="text-4xl font-bold gradient-text mb-2">{stat.number}</div>
-                <div className="text-sm text-gray-400">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Skills Section */}
       <section className="section-padding">
         <div className="max-w-7xl mx-auto">
