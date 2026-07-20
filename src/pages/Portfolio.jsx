@@ -295,59 +295,88 @@ const Portfolio = () => {
 
   const partners = [
     { 
-      name: 'Antalya Belek Üniversitesi', 
-      icon: '🏛️',
-      category: 'Eğitim & Dijital Dönüşüm'
-    },
-    { 
-      name: 'ASMAN Medya Grubu', 
-      icon: '🌏',
-      category: 'Uluslararası Medya & Diplomasi'
-    },
-    { 
       name: 'Teus Group', 
       icon: '🏢',
-      category: 'Gayrimenkul & Turizm'
+      category: 'Uluslararası İnşaat & Gayrimenkul',
+      link: 'https://www.instagram.com/desire_antalya/'
     },
     { 
-      name: 'Orange County Otel', 
+      name: 'Orange County Otelleri', 
       icon: '🏨',
-      category: 'Otel & Turizm'
+      category: 'Otel & Turizm',
+      link: 'https://www.instagram.com/orangecountyhotels/'
     },
     { 
-      name: 'TTEÖMER - Bişkek', 
+      name: 'Sueno Otelleri', 
+      icon: '🏖️',
+      category: 'Otel & Turizm',
+      link: 'https://www.instagram.com/sueno_hotels/'
+    },
+    { 
+      name: 'Prana Doğan Hotel', 
+      icon: '🏝️',
+      category: 'Otel & Turizm',
+      link: 'https://www.instagram.com/pranaresortdogan/'
+    },
+    { 
+      name: 'Antalya Belek Üniversitesi', 
       icon: '🎓',
-      category: 'Diplomasi & Eğitim'
+      category: 'Eğitim & Akademi',
+      link: 'https://www.instagram.com/belekuni/'
     },
     { 
-      name: 'Mediawirt (Almanya)', 
+      name: 'İtrony Dijital Medya Akademisi', 
+      icon: '💻',
+      category: 'Dijital Medya & Eğitim',
+      link: 'https://www.instagram.com/itronyacademy/'
+    },
+    { 
+      name: 'Yarınıgez Seyahat Platformu', 
+      icon: '✈️',
+      category: 'Seyahat & Turizm',
+      link: 'https://www.instagram.com/yarinigez/'
+    },
+    { 
+      name: 'Çıra Tur Acente', 
+      icon: '🧳',
+      category: 'Turizm & Seyahat',
+      link: 'https://www.instagram.com/ciratur/'
+    },
+    { 
+      name: 'Mediawirt Enerji Danışmanlık', 
       icon: '⚡',
-      category: 'Enerji & B2B'
+      category: 'Enerji & B2B (Almanya)',
+      link: 'https://www.instagram.com/mediawirt/'
     },
     { 
-      name: 'EMO Optik', 
-      icon: '👓',
-      category: 'Optik & E-Ticaret'
+      name: 'Tente Üretim Fabrikası', 
+      icon: '🏭',
+      category: 'Üretim (Almanya)',
+      link: 'https://www.instagram.com/tente24.de/'
     },
     { 
-      name: 'Reuters', 
-      icon: '📰',
-      category: 'Haber Ajansı & Medya'
+      name: 'TTEÖMER Kırgızistan', 
+      icon: '🌏',
+      category: 'Eğitim & Diplomasi',
+      link: 'https://www.facebook.com/BiskekTTEOMER/videos/1323158961190017/'
     },
     { 
-      name: 'Al Jazeera', 
-      icon: '🗺️',
-      category: 'Uluslararası Medya'
+      name: 'VSM Sport', 
+      icon: '🏃',
+      category: 'Spor & Ekipman',
+      link: 'https://www.instagram.com/vsm_yapi/'
     },
     { 
-      name: 'IFJ - Uluslararası Gazeteciler', 
-      icon: '🎖️',
-      category: 'Gazetecilik Federasyonu'
+      name: 'Pink Aksesuar', 
+      icon: '💍',
+      category: 'Aksesuar & Moda',
+      link: 'https://www.instagram.com/pinkbujiteri07/'
     },
     { 
-      name: 'Manas Üniversitesi', 
-      icon: '🎓',
-      category: 'Eğitim & Akademi'
+      name: 'Keyf Hamam Spa & Wellness', 
+      icon: '🧖',
+      category: 'Wellness & Spa',
+      link: 'https://www.instagram.com/keyfwellnessclub/'
     }
   ]
 
@@ -499,21 +528,30 @@ const Portfolio = () => {
             </h3>
             <p className="text-gray-400">Kurucu veya yönetici olarak bulunduğum firmalar ve markalar</p>
           </motion.div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {partners.map((partner, index) => (
-              <motion.div
+              <motion.a
                 key={index}
+                href={partner.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="glass-card p-6 hover:border-primary/30 transition-all text-center"
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                className="glass-card p-5 hover:border-primary/30 transition-all text-center group"
               >
-                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4 mx-auto">
+                <div className="w-14 h-14 bg-primary/20 rounded-xl flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/30 transition-colors">
                   <span className="text-2xl">{partner.icon}</span>
                 </div>
-                <h4 className="font-semibold mb-2">{partner.name}</h4>
-                <p className="text-gray-400 text-sm">{partner.category}</p>
-              </motion.div>
+                <h4 className="font-semibold mb-2 text-sm">{partner.name}</h4>
+                <p className="text-gray-400 text-xs mb-3">{partner.category}</p>
+                <span className="inline-flex items-center gap-1 text-primary text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                  Instagram
+                </span>
+              </motion.a>
             ))}
           </div>
         </div>
