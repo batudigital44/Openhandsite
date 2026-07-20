@@ -263,7 +263,7 @@ const About = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="section-padding bg-dark-800">
+      <section className="py-20 px-4 md:px-8 lg:px-16 bg-dark-800">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -276,22 +276,30 @@ const About = () => {
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <motion.img
-              src={gallery1}
-              alt="Galeri 1"
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6 }}
-              className="rounded-2xl w-full"
-            />
-            <motion.img
-              src={gallery2}
-              alt="Galeri 2"
+              className="overflow-hidden rounded-2xl"
+            >
+              <img
+                src={gallery1}
+                alt="Batuhan Ateş Galeri 1"
+                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </motion.div>
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="rounded-2xl w-full"
-            />
+              className="overflow-hidden rounded-2xl"
+            >
+              <img
+                src={gallery2}
+                alt="Batuhan Ateş Galeri 2"
+                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </motion.div>
           </div>
         </div>
       </section>
