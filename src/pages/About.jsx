@@ -98,11 +98,78 @@ const About = () => {
                 transition={{ duration: 0.3 }}
                 className="overflow-hidden"
               >
-                <div className="mt-6 p-6 glass-card rounded-xl">
-                  <p className="text-gray-300 leading-relaxed">
-                    {/* İÇERİK BURAYA GELECEK - Google Docs'tan alınacak */}
-                    İçerik yakında eklenecek...
-                  </p>
+                <div className="mt-6 space-y-6">
+                  
+                  {/* 1 */}
+                  <div className="p-6 glass-card rounded-xl">
+                    <h4 className="text-xl font-bold mb-3 flex items-center gap-2">
+                      <span className="text-primary">01</span>
+                      "Gazeteci Refleksini" Pazarlamaya Entegre Etmesi
+                    </h4>
+                    <p className="text-gray-300 leading-relaxed mb-3">
+                      Birçok dijital pazarlamacı sadece metriklere ve bütçelere odaklanırken, onun en büyük gücü ajans haberciliği ve foto-muhabirliği (IFJ Akreditasyonlu) geçmişidir.
+                    </p>
+                    <p className="text-sm text-secondary italic">
+                      <strong>Perde Arkası:</strong> Geçmiş kariyerinde uluslararası protokoller, mitingler ve doğal afet alanları gibi yüksek stresli sahalarda canlı yayın ve drone operasyonları yönetmiştir. Bu durum ona, CONTI veya DNA Hotels gibi dev yapılarda aniden gelişebilecek küresel PR krizlerinde, paniklemeden ve saniyeler içinde "kriz manevrası" yapabilme yeteneği kazandırmıştır.
+                    </p>
+                  </div>
+
+                  {/* 2 */}
+                  <div className="p-6 glass-card rounded-xl">
+                    <h4 className="text-xl font-bold mb-3 flex items-center gap-2">
+                      <span className="text-primary">02</span>
+                      Yapay Zekayı "Araç" Değil "Ekip Arkadaşı" Olarak Görmesi
+                    </h4>
+                    <p className="text-gray-300 leading-relaxed mb-3">
+                      Generative AI (Üretken Yapay Zeka) dünyasında herkes hazır şablonlar veya basit komutlar kullanırken, onun farkı yapay zekayı bir insan gibi eğitebilmesidir.
+                    </p>
+                    <p className="text-sm text-secondary italic">
+                      <strong>Perde Arkası:</strong> PMA Partner bünyesindeki Gravity projesinde ve diğer AI-native SaaS platformlarında, yapay zekanın "kültürel nüansları ve lüks segment dilini" anlayabilmesi için çok katmanlı, özel Prompt Mimarileri kurgulamıştır. Yapay zekaya sadece metin yazdırmaz; onun hedef kitle analitiği yapmasını ve tüketici davranışlarını modellemesini sağlayan arka plan algoritmalarını kodlar. Teknolojideki lakabı bu yüzden bir nevi "AI fısıldayıcısı"dır.
+                    </p>
+                  </div>
+
+                  {/* 3 */}
+                  <div className="p-6 glass-card rounded-xl">
+                    <h4 className="text-xl font-bold mb-3 flex items-center gap-2">
+                      <span className="text-primary">03</span>
+                      Sahne Arkasında Kalma Tercihi
+                    </h4>
+                    <p className="text-gray-300 leading-relaxed mb-3">
+                      Münih, Dubai, Stockholm ve Lizbon hattında, milyon dolarlık küresel turizm ve teknoloji projelerinin dijital komuta merkezini yönetmesine rağmen, kendi kişisel markasını son derece minimalist tutar.
+                    </p>
+                    <p className="text-sm text-secondary italic">
+                      <strong>Perde Arkası:</strong> Portfolyosunda 25'ten fazla büyük ölçekli küresel marka yönetimi ve milyonlarca reklam etkileşimi bulunmasına rağmen, sahnede kendi adının bağırmasını istemez. O, yönettiği markaların büyüme grafiklerinin (ROI) konuşmasını tercih eden, uluslararası iş dünyasının tam güvenini kazanmış tipik bir "gölge stratejist" profilidir.
+                    </p>
+                  </div>
+
+                  {/* 4 */}
+                  <div className="p-6 glass-card rounded-xl">
+                    <h4 className="text-xl font-bold mb-3 flex items-center gap-2">
+                      <span className="text-primary">04</span>
+                      Multidisipliner "Köprü" Olma Yeteneği
+                    </h4>
+                    <p className="text-gray-300 leading-relaxed mb-3">
+                      Şirketlerin en büyük problemi, farklı departmanların (yazılımcılar, kreatifler ve CEO'lar) birbirini anlamamasıdır. Batuhan'ın iş ortamlarında fark yaratan yönü, bu üç dünyanın da dilini çok iyi konuşmasıdır.
+                    </p>
+                    <p className="text-sm text-secondary italic">
+                      <strong>Perde Arkası:</strong> Geçmişte Almanya merkezli Mediawirt gibi şirketlerin B2B e-ticaret dönüşümlerini yönetirken; sistemleri birbirine bağlayan teknik entegrasyonları (HubSpot, Mautic, Zapier) bizzat kurgulamıştır. Teknik SEO mimarisini bir yazılımcı gibi tartışabilir, görsel estetiği bir sanat yönetmeni gibi eleştirebilir ve günün sonunda işin finansal getirisini bir CEO gibi raporlayabilir.
+                    </p>
+                  </div>
+
+                  {/* 5 */}
+                  <div className="p-6 glass-card rounded-xl">
+                    <h4 className="text-xl font-bold mb-3 flex items-center gap-2">
+                      <span className="text-primary">05</span>
+                      Coğrafi ve Kültürel Adaptasyon Hızı
+                    </h4>
+                    <p className="text-gray-300 leading-relaxed mb-3">
+                      Kırgızistan Manas Üniversitesi'nde aldığı gazetecilik eğitimi, ona sadece bir diploma değil, Avrasya ve Rus dilli pazarların sosyolojik kodlarını kazandırdı.
+                    </p>
+                    <p className="text-sm text-secondary italic">
+                      <strong>Perde Arkası:</strong> Eğitim yıllarında T.C. Bişkek Büyükelçiliği TTEÖMER bünyesinde ilk kurumsal dijital medya stratejisini ve multimedya prodüksiyonlarını hayata geçirerek genç yaşta diplomatik iletişim kaslarını geliştirmiştir. Bu çok kültürlü geçmiş (Orta Asya, Avrupa, Orta Doğu), bugün farklı ülkelerdeki yerel turist profillerini ve iş yapış şekillerini anında çözmesini sağlamaktadır.
+                    </p>
+                  </div>
+
                 </div>
               </motion.div>
             </motion.div>
