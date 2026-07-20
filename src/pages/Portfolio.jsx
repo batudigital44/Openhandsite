@@ -277,19 +277,19 @@ const Portfolio = () => {
   const referenceLetters = [
     {
       name: 'Dç. Dr. Erdoğan Akman',
-      title: 'Akademisyen & Danışman @ Bişkek Manas Üniversitesi'
+      title: 'Manas Üniversitesi Doçent Doktoru'
     },
     {
       name: 'Melih Göğeban',
-      title: 'Trump Medya Danışmanı'
+      title: 'Donald Trump Medya Danışmanı'
     },
     {
       name: 'Pelin Aktaş',
-      title: 'Medya Profesyoneli'
+      title: 'Antalya Belek Üniversitesi Asistan Profesör'
     },
     {
       name: 'Rasim Gündüz',
-      title: 'Kurumsal Yönetici @ Turizm Sektörü'
+      title: 'Antalya Körfez Gazetesi Genel Yayın Yönetmeni & Kurucu'
     }
   ]
 
