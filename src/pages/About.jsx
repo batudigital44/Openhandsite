@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, CheckCircle, Award, Users, Target, TrendingUp, ChevronDown } from 'lucide-react'
+import { ArrowRight, ChevronDown } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
 import aboutImage from '../assets/images/about-hero.png'
 import figmaImg from '../assets/images/figma.png'
@@ -16,13 +16,6 @@ const About = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [showWhyBatuhan, setShowWhyBatuhan] = useState(false)
-
-  const stats = [
-    { number: '25+', label: t('aboutPreview.stats.brands'), icon: Target },
-    { number: '10+', label: t('aboutPreview.stats.international'), icon: Users },
-    { number: '95%', label: t('aboutPreview.stats.success'), icon: TrendingUp },
-    { number: '1M+', label: t('aboutPreview.stats.engagement'), icon: Award },
-  ]
 
   const tools = [
     { name: 'Google & Meta Ads', image: null },
