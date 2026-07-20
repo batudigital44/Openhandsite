@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, CheckCircle, Award, Users, Target, TrendingUp } from 'lucide-react'
+import { ArrowRight, CheckCircle, Award, Users, Target, TrendingUp, ChevronDown } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
 import aboutImage from '../assets/images/about-hero.png'
 import figmaImg from '../assets/images/figma.png'
@@ -15,6 +15,7 @@ const About = () => {
   const { t } = useLanguage()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const [showWhyBatuhan, setShowWhyBatuhan] = useState(false)
 
   const stats = [
     { number: '25+', label: t('aboutPreview.stats.brands'), icon: Target },
@@ -85,6 +86,32 @@ const About = () => {
               <p className="text-gray-300 leading-relaxed">
                 {t('about.bio4')}
               </p>
+              
+              {/* Neden Batuhan Ateş Button */}
+              <button
+                onClick={() => setShowWhyBatuhan(!showWhyBatuhan)}
+                className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/80 text-white rounded-full transition-all duration-300 font-semibold group"
+              >
+                <span>Neden Batuhan Ateş?</span>
+                <ChevronDown 
+                  className={`w-5 h-5 transition-transform duration-300 ${showWhyBatuhan ? 'rotate-180' : ''}`} 
+                />
+              </button>
+
+              {/* Hidden Content */}
+              <motion.div
+                initial={false}
+                animate={{ height: showWhyBatuhan ? 'auto' : 0, opacity: showWhyBatuhan ? 1 : 0 }}
+                transition={{ duration: 0.3 }}
+                className="overflow-hidden"
+              >
+                <div className="mt-6 p-6 glass-card rounded-xl">
+                  <p className="text-gray-300 leading-relaxed">
+                    {/* İÇERİK BURAYA GELECEK - Google Docs'tan alınacak */}
+                    İçerik yakında eklenecek...
+                  </p>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
