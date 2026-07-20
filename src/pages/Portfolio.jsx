@@ -144,7 +144,6 @@ const Portfolio = () => {
     { name: 'Genç Liderler Eğitimi', issuer: 'Rusya Ankara Büyükelçiliği', year: '2021' },
     { name: 'B1 Seviye İngilizce Sertifikası', issuer: 'Dil Eğitimi', year: '2025' },
     { name: 'SEO Eğitimi 2025', issuer: 'Udemy', year: '2025' },
-    { name: 'Ambassador Program Sertifikası 2026', issuer: 'Özel Program', year: '2026' },
     { name: 'AI Engineering Certificate', issuer: 'Özel Eğitim', year: '2026' },
   ]
 
@@ -199,6 +198,18 @@ const Portfolio = () => {
       role: 'Sertifikalı Gazeteci',
       country: 'Küresel',
       description: 'Dijital gazetecilik ve içerik üretimi sertifikası'
+    },
+    {
+      name: 'IEP - International Ambassador Program',
+      role: 'Büyükelçi (Ambassador)',
+      country: 'Uluslararası',
+      description: 'Uluslararası Ekonomi ve Diplomasi alanında Büyükelçi Programı başarıyla tamamlandı'
+    },
+    {
+      name: 'Camerapixo Press',
+      role: 'Diplomasi Basın Kartlı Gazeteci',
+      country: 'Avrupa Merkezli - Türkiye Üyesi',
+      description: 'Avrupa merkezli diplomasi haberciliği yapan uluslararası basın ajansı üyesi'
     }
   ]
 
