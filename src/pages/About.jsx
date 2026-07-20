@@ -10,6 +10,14 @@ import illustratorImg from '../assets/images/illustrator.png'
 import midjourneyImg from '../assets/images/midjourney.png'
 import gallery1 from '../assets/images/gallery-1.jpg'
 import gallery2 from '../assets/images/gallery-2.jpg'
+import portfolio1 from '../assets/images/portfolio-1.png'
+import portfolio2 from '../assets/images/portfolio-2.png'
+import portfolio3 from '../assets/images/portfolio-3.png'
+import portfolio4 from '../assets/images/portfolio-4.png'
+import diplomaticMeeting from '../assets/images/diplomatic-meeting.jpg'
+import whiteHouse from '../assets/images/white-house.jpg'
+import hotelResort from '../assets/images/hotel-resort.png'
+import dubaiSkyline from '../assets/images/dubai-skyline.png'
 
 const About = () => {
   const { t } = useLanguage()
@@ -275,29 +283,125 @@ const About = () => {
             <h3 className="text-3xl font-display font-bold">{t('about.photos')}</h3>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.6 }}
-              className="overflow-hidden rounded-2xl"
+              transition={{ duration: 0.5 }}
+              className="col-span-2 row-span-2 overflow-hidden rounded-2xl"
             >
               <img
                 src={gallery1}
-                alt="Batuhan Ateş Galeri 1"
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                alt="Galeri 1"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
               className="overflow-hidden rounded-2xl"
             >
               <img
                 src={gallery2}
-                alt="Batuhan Ateş Galeri 2"
-                className="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+                alt="Galeri 2"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="overflow-hidden rounded-2xl"
+            >
+              <img
+                src={whiteHouse}
+                alt="Beyaz Saray"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="overflow-hidden rounded-2xl"
+            >
+              <img
+                src={diplomaticMeeting}
+                alt="Diplomatik Görüşme"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              className="overflow-hidden rounded-2xl"
+            >
+              <img
+                src={dubaiSkyline}
+                alt="Dubai"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="col-span-2 overflow-hidden rounded-2xl"
+            >
+              <img
+                src={portfolio1}
+                alt="Portfolyo 1"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.5, delay: 0.35 }}
+              className="overflow-hidden rounded-2xl"
+            >
+              <img
+                src={portfolio2}
+                alt="Portfolyo 2"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="overflow-hidden rounded-2xl"
+            >
+              <img
+                src={portfolio3}
+                alt="Portfolyo 3"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.5, delay: 0.45 }}
+              className="overflow-hidden rounded-2xl"
+            >
+              <img
+                src={hotelResort}
+                alt="Hotel Resort"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="overflow-hidden rounded-2xl"
+            >
+              <img
+                src={portfolio4}
+                alt="Portfolyo 4"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
             </motion.div>
           </div>
