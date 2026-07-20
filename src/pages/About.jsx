@@ -271,7 +271,7 @@ const About = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-20 px-4 md:px-8 lg:px-16 bg-dark-800">
+      <section className="section-padding bg-gradient-to-r from-dark-800 via-dark-900 to-dark-800">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -407,8 +407,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
-      {/* CTA removed - using Footer CTA */}
     </div>
   )
 }
