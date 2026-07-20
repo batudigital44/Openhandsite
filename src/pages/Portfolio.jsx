@@ -246,38 +246,50 @@ const Portfolio = () => {
     }
   ]
 
-  const references = [
+  const linkedinRecommendations = [
+    {
+      name: 'Vladyslav Kramarenko',
+      title: 'Platform & Automation Engineer @ Teus Group',
+      recommendation: 'Batuhan, proaktif ve güvenilirliğiyle öne çıkan bir profesyonel. Her zaman görevini yerine getireceğinden emin olabileceğiniz biri. Güçlü bir gelişim zihniyetine sahip ve teknik sistemlerle pazarlama çalışmalarını uyumlu hale getirmek için aktif olarak işbirliği yaptı. İşine sahip çıkan, özverili bir profesyonel.'
+    },
+    {
+      name: 'Mehmet Kutlay',
+      title: 'Director of Sales & Marketing @ Queen\'s Park Göynük & Le jardin Resort',
+      recommendation: 'İşine hakim, severek çalışan, profesyonelce düşünebilen, ekip çalışmalarına yatkın ve çok düzgün bir profesyonel.'
+    },
+    {
+      name: 'Ayşe Pektaş',
+      title: 'Human Resources Manager',
+      recommendation: 'Dijital Pazarlama, Sosyal Medya Yönetimi ve Kurumsal İletişim çalışmalarının tüm süreçlerinde görev aldı. Yenilikleri takip eden, proaktif ve iletişimi güçlü. Her takıma katma değer sağlayacak biridir.'
+    },
+    {
+      name: 'Nilüfer Akduman',
+      title: 'Satış ve Pazarlama Müdürü',
+      recommendation: 'Güvenilir, çalışkan, yenilikçi, girişken, güncel teknolojiyi takip edip kendini geliştiren, saygılı, takım çalışmasına yatkın, çok yönlü, işine ve sözüne sadık, işini en iyi şekilde yapmayı hedefleyen, tavsiye edebileceğim nadir insanlardan biri.'
+    },
+    {
+      name: 'Selin Uzuner Güneş',
+      title: 'TechTransfer | IPR | Project Management',
+      recommendation: 'Üniversite yıllarından günümüze dijital ortamda içerik üretmeye devam etmektedir. Öğrenme isteği ve artan tecrübesiyle, sektöründe fark yaratacağına inanıyorum.'
+    }
+  ]
+
+  const referenceLetters = [
     {
       name: 'Dç. Dr. Erdoğan Akman',
-      title: 'Akademisyen & Danışman',
-      company: 'Bişkek Manas Üniversitesi',
-      type: 'Akademik Referans',
-      linkedin: 'https://www.linkedin.com/in/erdoganakman',
-      recommendation: 'Batuhan Ateş ile çalışmak son derece verimli bir deneyimdi. Uluslararası diplomasi ve medya alanındaki uzmanlığı, projelerimizin başarısına doğrudan katkı sağladı.'
+      title: 'Akademisyen & Danışman @ Bişkek Manas Üniversitesi'
     },
     {
       name: 'Melih Göğeban',
-      title: 'Trump Medya Danışmanı',
-      company: 'Donald Trump Medya Ekibi',
-      type: 'Uluslararası Referans',
-      linkedin: 'https://www.linkedin.com/in/melihgogeeban',
-      recommendation: 'Batuhan, uluslararası medya koordinasyonunda gösterdiği profesyonellik ve stratejik düşünce yapısıyla takdire şayan bir performans sergiledi.'
+      title: 'Trump Medya Danışmanı'
     },
     {
       name: 'Pelin Aktaş',
-      title: 'Medya Profesyoneli',
-      company: 'Uluslararası Medya',
-      type: 'Profesyonel Referans',
-      linkedin: 'https://www.linkedin.com/in/pelinaktas',
-      recommendation: 'Dijital pazarlama ve içerik stratejileri konusundaki yetkinliği, işimize gerçek değer kattı. Profesyonel ve güvenilir bir iş ortağı.'
+      title: 'Medya Profesyoneli'
     },
     {
       name: 'Rasim Gündüz',
-      title: 'Kurumsal Yönetici',
-      company: 'Turizm Sektörü',
-      type: 'Sektörel Referans',
-      linkedin: 'https://www.linkedin.com/in/rasimgunduz',
-      recommendation: 'Turizm sektöründeki dijital dönüşüm projelerimizde Batuhan\'ın vizyoner yaklaşımı ve uygulama becerileri bizi ziyaretçi hedeflerimizde %40 büyütmeye taşıdı.'
+      title: 'Kurumsal Yönetici @ Turizm Sektörü'
     }
   ]
 
@@ -473,7 +485,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Referanslar ve Ortaklar */}
+      {/* Yönettiğim Firmalar */}
       <section className="section-padding bg-dark-800">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -483,9 +495,9 @@ const Portfolio = () => {
             className="text-center mb-12"
           >
             <h3 className="text-3xl font-display font-bold mb-4">
-              Referanslar ve <span className="gradient-text">Ortaklar</span>
+              🏢 Yönettiğim <span className="gradient-text">Firmalar</span>
             </h3>
-            <p className="text-gray-400">Birlikte çalıştığım kurumlar ve markalar</p>
+            <p className="text-gray-400">Kurucu veya yönetici olarak bulunduğum firmalar ve markalar</p>
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {partners.map((partner, index) => (
@@ -669,6 +681,8 @@ const Portfolio = () => {
       {/* Referanslar ve Tavsiyeler */}
       <section className="section-padding bg-dark-800">
         <div className="max-w-7xl mx-auto">
+          
+          {/* LinkedIn Tavsiyeleri */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -676,12 +690,12 @@ const Portfolio = () => {
             className="text-center mb-12"
           >
             <h3 className="text-3xl font-display font-bold mb-4">
-              💬 Referanslar ve <span className="gradient-text">Tavsiyeler</span>
+              💬 LinkedIn <span className="gradient-text">Tavsiyeleri</span>
             </h3>
             <p className="text-gray-400">İş dünyasından ve akademik çevrelerden aldığım LinkedIn tavsiyeleri</p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {references.map((ref, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+            {linkedinRecommendations.map((rec, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
@@ -691,41 +705,49 @@ const Portfolio = () => {
               >
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-14 h-14 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
-                    {ref.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                    {rec.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
                   </div>
                   <div className="flex-1">
-                    <span className="px-2 py-1 bg-secondary/20 text-secondary text-xs font-semibold rounded-full">
-                      {ref.type}
-                    </span>
-                    <h4 className="font-bold mt-2 mb-1">{ref.name}</h4>
-                    <p className="text-gray-400 text-sm mb-1">{ref.title}</p>
-                    <div className="flex items-center gap-2 text-gray-500 text-xs">
-                      <Building size={12} />
-                      <span>{ref.company}</span>
-                    </div>
+                    <h4 className="font-bold mb-1">{rec.name}</h4>
+                    <p className="text-secondary text-sm">{rec.title}</p>
                   </div>
                 </div>
-                {/* Tavsiye Metni */}
                 <div className="relative pl-4 border-l-2 border-primary/30">
                   <svg className="absolute -left-2 -top-2 w-4 h-4 text-primary/40" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
                   </svg>
-                  <p className="text-gray-300 text-sm italic leading-relaxed">
-                    "{ref.recommendation}"
-                  </p>
+                  <p className="text-gray-300 text-sm italic leading-relaxed">"{rec.recommendation}"</p>
                 </div>
-                {/* LinkedIn Link */}
-                <a 
-                  href={ref.linkedin} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-4 text-primary hover:text-primary/80 text-sm transition-colors"
-                >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                  LinkedIn'de Görüntüle
-                </a>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Referans Mektupları */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h3 className="text-3xl font-display font-bold mb-4">
+              📄 Referans <span className="gradient-text">Mektupları</span>
+            </h3>
+            <p className="text-gray-400">Aldığım referans mektupları</p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {referenceLetters.map((ref, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="glass-card p-5 hover:border-primary/30 transition-all text-center"
+              >
+                <div className="w-14 h-14 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4">
+                  {ref.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                </div>
+                <h4 className="font-bold mb-2">{ref.name}</h4>
+                <p className="text-secondary text-sm">{ref.title}</p>
               </motion.div>
             ))}
           </div>
