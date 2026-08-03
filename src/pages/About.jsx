@@ -8,16 +8,14 @@ import figmaImg from '../assets/images/figma.png'
 import photoshopImg from '../assets/images/photoshop.png'
 import illustratorImg from '../assets/images/illustrator.png'
 import midjourneyImg from '../assets/images/midjourney.png'
-import gallery1 from '../assets/images/gallery-1.jpg'
-import gallery2 from '../assets/images/gallery-2.jpg'
-import gallery3 from '../assets/images/photo_2025-09-15_21-23-37.jpg'
-import gallery4 from '../assets/images/photo_2025-09-16_21-58-29.jpg'
-import gallery5 from '../assets/images/photo_2026-06-25_00-42-11.jpg'
-import gallery6 from '../assets/images/photo_2026-06-25_00-42-15.jpg'
-import gallery7 from '../assets/images/photo_2026-06-25_00-42-18.jpg'
-import gallery8 from '../assets/images/photo_2026-06-25_00-42-26.jpg'
-import gallery9 from '../assets/images/photo_2026-07-21_00-25-23.jpg'
-import gallery10 from '../assets/images/photo_2026-07-21_00-27-31.jpg'
+import gallery1 from '../assets/images/photo_2025-09-15_21-23-37.jpg'
+import gallery2 from '../assets/images/photo_2025-09-16_21-58-29.jpg'
+import gallery3 from '../assets/images/photo_2026-06-25_00-42-11.jpg'
+import gallery4 from '../assets/images/photo_2026-06-25_00-42-15.jpg'
+import gallery5 from '../assets/images/photo_2026-06-25_00-42-18.jpg'
+import gallery6 from '../assets/images/photo_2026-06-25_00-42-26.jpg'
+import gallery7 from '../assets/images/photo_2026-07-21_00-25-23.jpg'
+import gallery8 from '../assets/images/photo_2026-07-21_00-27-31.jpg'
 import portfolio1 from '../assets/images/portfolio-1.png'
 import portfolio2 from '../assets/images/portfolio-2.png'
 import portfolio3 from '../assets/images/portfolio-3.png'
@@ -347,22 +345,6 @@ const About = () => {
               <img
                 src={gallery8}
                 alt="Galeri 8"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 min-h-[145px]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-            <div className="relative group cursor-pointer overflow-hidden rounded-xl">
-              <img
-                src={gallery9}
-                alt="Galeri 9"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 min-h-[145px]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-            <div className="relative group cursor-pointer overflow-hidden rounded-xl">
-              <img
-                src={gallery10}
-                alt="Galeri 10"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 min-h-[145px]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
