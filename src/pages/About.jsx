@@ -10,6 +10,14 @@ import illustratorImg from '../assets/images/illustrator.png'
 import midjourneyImg from '../assets/images/midjourney.png'
 import gallery1 from '../assets/images/gallery-1.jpg'
 import gallery2 from '../assets/images/gallery-2.jpg'
+import gallery3 from '../assets/images/photo_2025-09-15_21-23-37.jpg'
+import gallery4 from '../assets/images/photo_2025-09-16_21-58-29.jpg'
+import gallery5 from '../assets/images/photo_2026-06-25_00-42-11.jpg'
+import gallery6 from '../assets/images/photo_2026-06-25_00-42-15.jpg'
+import gallery7 from '../assets/images/photo_2026-06-25_00-42-18.jpg'
+import gallery8 from '../assets/images/photo_2026-06-25_00-42-26.jpg'
+import gallery9 from '../assets/images/photo_2026-07-21_00-25-23.jpg'
+import gallery10 from '../assets/images/photo_2026-07-21_00-27-31.jpg'
 import portfolio1 from '../assets/images/portfolio-1.png'
 import portfolio2 from '../assets/images/portfolio-2.png'
 import portfolio3 from '../assets/images/portfolio-3.png'
@@ -222,7 +230,7 @@ const About = () => {
 
       {/* Skills Section */}
       <section className="section-padding bg-dark-900">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto" ref={ref}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -271,139 +279,94 @@ const About = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="section-padding bg-gradient-to-r from-dark-800 via-dark-900 to-dark-800">
+      <section className="py-20 px-4 bg-dark-900">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-sm font-semibold text-primary mb-2">{t('about.gallery')}</h2>
-            <h3 className="text-3xl font-display font-bold">{t('about.photos')}</h3>
-          </motion.div>
+          <div className="text-center mb-12">
+            <h2 className="text-sm font-semibold text-primary mb-2 uppercase tracking-wider">{t('about.gallery')}</h2>
+            <h3 className="text-4xl md:text-5xl font-display font-bold text-white">{t('about.photos')}</h3>
+          </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5 }}
-              className="col-span-2 row-span-2 overflow-hidden rounded-2xl"
-            >
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-fr">
+            <div className="col-span-2 row-span-2 relative group cursor-pointer overflow-hidden rounded-xl">
               <img
                 src={gallery1}
                 alt="Galeri 1"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 min-h-[300px]"
               />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="overflow-hidden rounded-2xl"
-            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+            <div className="relative group cursor-pointer overflow-hidden rounded-xl">
               <img
                 src={gallery2}
                 alt="Galeri 2"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 min-h-[145px]"
               />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.15 }}
-              className="overflow-hidden rounded-2xl"
-            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+            <div className="relative group cursor-pointer overflow-hidden rounded-xl">
               <img
-                src={whiteHouse}
-                alt="Beyaz Saray"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                src={gallery3}
+                alt="Galeri 3"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 min-h-[145px]"
               />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="overflow-hidden rounded-2xl"
-            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+            <div className="relative group cursor-pointer overflow-hidden rounded-xl">
               <img
-                src={diplomaticMeeting}
-                alt="Diplomatik Görüşme"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                src={gallery4}
+                alt="Galeri 4"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 min-h-[145px]"
               />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.25 }}
-              className="overflow-hidden rounded-2xl"
-            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+            <div className="relative group cursor-pointer overflow-hidden rounded-xl">
               <img
-                src={dubaiSkyline}
-                alt="Dubai"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                src={gallery5}
+                alt="Galeri 5"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 min-h-[145px]"
               />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="col-span-2 overflow-hidden rounded-2xl"
-            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+            <div className="relative group cursor-pointer overflow-hidden rounded-xl">
               <img
-                src={portfolio1}
-                alt="Portfolyo 1"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                src={gallery6}
+                alt="Galeri 6"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 min-h-[145px]"
               />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.35 }}
-              className="overflow-hidden rounded-2xl"
-            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+            <div className="relative group cursor-pointer overflow-hidden rounded-xl">
               <img
-                src={portfolio2}
-                alt="Portfolyo 2"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                src={gallery7}
+                alt="Galeri 7"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 min-h-[145px]"
               />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="overflow-hidden rounded-2xl"
-            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+            <div className="relative group cursor-pointer overflow-hidden rounded-xl">
               <img
-                src={portfolio3}
-                alt="Portfolyo 3"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                src={gallery8}
+                alt="Galeri 8"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 min-h-[145px]"
               />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.45 }}
-              className="overflow-hidden rounded-2xl"
-            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+            <div className="relative group cursor-pointer overflow-hidden rounded-xl">
               <img
-                src={hotelResort}
-                alt="Hotel Resort"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                src={gallery9}
+                alt="Galeri 9"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 min-h-[145px]"
               />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="overflow-hidden rounded-2xl"
-            >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
+            <div className="relative group cursor-pointer overflow-hidden rounded-xl">
               <img
-                src={portfolio4}
-                alt="Portfolyo 4"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                src={gallery10}
+                alt="Galeri 10"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 min-h-[145px]"
               />
-            </motion.div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
           </div>
         </div>
       </section>
