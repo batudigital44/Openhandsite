@@ -155,12 +155,6 @@ const Portfolio = () => {
       description: 'Ulusal ve uluslararası basın PR çalışmalarıyla desteklenen iletişim stratejisi'
     },
     {
-      name: 'Beyaz Saray İletişim Stratejileri Danışmanlığı',
-      project: 'Trump Medya Danışmanı Melih Göğeban',
-      year: '2024',
-      description: 'Uluslararası medya koordinasyonu ve stratejik iletişim danışmanlığı'
-    },
-    {
       name: '800.000$+ Dubai Gayrimenkul Satış Dönüşümü',
       project: 'Dubai Emlak Firması',
       year: '2024',
@@ -278,10 +272,6 @@ const Portfolio = () => {
     {
       name: 'Dç. Dr. Erdoğan Akman',
       title: 'Manas Üniversitesi Doçent Doktoru'
-    },
-    {
-      name: 'Melih Göğeban',
-      title: 'Donald Trump Medya Danışmanı'
     },
     {
       name: 'Pelin Aktaş',

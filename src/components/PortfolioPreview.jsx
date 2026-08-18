@@ -6,7 +6,6 @@ import dubaiSkyline from '../assets/images/dubai-skyline.png'
 import hotelPool from '../assets/images/hotel-pool.png'
 import hotelResort from '../assets/images/hotel-resort.png'
 import germanyBerlin from '../assets/images/germany-berlin.jpg'
-import whiteHouse from '../assets/images/white-house.jpg'
 import diplomaticMeeting from '../assets/images/diplomatic-meeting.jpg'
 
 const PortfolioPreview = () => {
@@ -35,13 +34,6 @@ const PortfolioPreview = () => {
       description: 'Mediawirt (Almanya) için dijital ekosistemi modern standartlara göre revize edildi.',
       tag: 'Enerji & B2B',
       metrics: ['B2B Lead Generation', 'E-Ticaret']
-    },
-    {
-      image: whiteHouse,
-      title: 'Uluslararası Medya Danışmanlığı',
-      description: 'Trump\'ın medya danışmanına danışmanlık ve Beyaz Saray iletişim koordinasyonu.',
-      tag: 'Uluslararası İletişim',
-      metrics: ['Trump Danışmanlığı', 'Beyaz Saray']
     }
   ]
 

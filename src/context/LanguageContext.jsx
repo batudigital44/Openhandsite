@@ -26,7 +26,7 @@ const translations = {
       subtitle: 'Dijitalin sınırları',
       subtitleHighlight: 'olmadığını',
       subtitleSuffix: 'söyleyerek',
-      description1: 'Uluslararası Medya Danışmanı, Dijital Pazarlama Uzmanı ve Diplomasi Teknoloji Gazetecisiyim. Donald Trump\'ın medya danışmanı Melih Göğeban ile çalışmış, 800.000$+ Dubai emlak satış dönüşümü ve IFJ akreditasyonlu diplomasi haberciliği deneyimine sahibim.',
+      description1: 'Uluslararası Medya Danışmanı, Dijital Pazarlama Uzmanı ve Diplomasi Teknoloji Gazetecisiyim. 800.000$+ Dubai emlak satış dönüşümü ve IFJ akreditasyonlu diplomasi haberciliği deneyimine sahibim.',
       description2: 'PMA Partner bünyesinde turizm teknolojileri ve otomasyon alanında stratejik dijital dönüşüm süreçlerini yönetiyorum. Münih merkezli TravelTech şirketinin İstanbul ve Stockholm ofisleriyle koordineli çalışarak uluslararası projelerde görev alıyorum.',
       stats: {
         brands: 'Marka ve kurum yönetimi',
@@ -149,15 +149,6 @@ const translations = {
     portfolio: {
       certificates: 'Sertifikalar ve Başarılar',
       certificatesDesc: 'Aldığım eğitimler ve sertifikalar',
-      // White House
-      whitehouse: {
-        title: 'Uluslararası Medya Danışmanlığı',
-        description: 'Beyaz Saray için iletişim stratejileri geliştirildi. Melih Göğeban\'a (Donald Trump\'ın medya danışmanı) danışmanlık yapıldı ve uluslararası medya koordinasyonu sağlandı.',
-        tag: 'Uluslararası İletişim',
-        metric1: 'Beyaz Saray İletişim Stratejileri',
-        metric2: 'Trump Medya Danışmanlığı',
-        metric3: 'Uluslararası Koordinasyon'
-      },
       // Dubai Real Estate
       dubai: {
         title: 'Dubai Emlak Firması - 800.000$+ Satış Dönüşümü',
@@ -252,7 +243,7 @@ const translations = {
       bio1: 'Batuhan Ateş, uluslararası saha deneyimine sahip, seçkin bir stratejik iletişim profesyonelidir. Dijital medya ekosistemini sınır ötesi etki oluşturmanın güçlü bir aracı olarak konumlandıran Ateş, veri odaklı dijital pazarlama teknolojilerini gelişmiş bir küresel temsil kabiliyetiyle birleştirerek kariyerini yüksek profilli markaların ve büyük ölçekli projelerin uluslararası itibarını inşa etmeye ve sürdürülebilir kılmaya adamıştır.',
       bio2: 'Küresel operasyonel ağı; Portekiz, Hollanda, Belçika, Katar ve Birleşik Arap Emirlikleri gibi stratejik öneme sahip pazarlarda aktif saha deneyimine dayanmaktadır. Bu bölgelerde yerel pazar dinamiklerini ve karmaşık iletişim protokollerini doğrudan deneyimleyerek uzmanlaşmıştır.',
       bio3: 'Türkçe, İngilizce, Almanca, Rusça, Kırgızca ve Kazakça dillerine hâkim olan Batuhan Ateş, Avrupa ile Avrasya coğrafyaları arasında güçlü bir çok dilli köprü görevi görmekte; dijital pazarlama ve medyayı modern çağın en etkili stratejik araçları olarak yeniden tanımlamaya devam etmektedir.',
-      bio4: 'Beyaz Saray iletişim stratejileri, Dubai gayrimenkul pazarlaması, uluslararası diplomasi haberciliği ve çok dilli medya koordinasyonu alanlarındaki uzmanlığıyla, markaların ve kurumların küresel görünürlüklerini artırmalarına yardımcı olmaktadır.',
+      bio4: 'Dubai gayrimenkul pazarlaması, uluslararası diplomasi haberciliği ve çok dilli medya koordinasyonu alanlarındaki uzmanlığıyla, markaların ve kurumların küresel görünürlüklerini artırmalarına yardımcı olmaktadır.',
       expertiseTitle: 'Uzmanlık Alanlarım',
       expertiseSubtitle: 'Neler Yapıyorum?',
       expertise1Title: 'Dijital Strateji',
@@ -321,7 +312,7 @@ const translations = {
       subtitle: 'By saying that the limits of',
       subtitleHighlight: 'digital have no bounds',
       subtitleSuffix: '',
-      description1: 'I am an International Media Consultant, Digital Marketing Expert, and Diplomacy Technology Journalist. I have worked with Donald Trump\'s media advisor Melih Göğeban, $800,000+ Dubai real estate sales conversion, and IFJ-accredited diplomacy journalism.',
+      description1: 'I am an International Media Consultant, Digital Marketing Expert, and Diplomacy Technology Journalist. I have $800,000+ Dubai real estate sales conversion and IFJ-accredited diplomacy journalism experience.',
       description2: 'I manage strategic digital transformation processes at PMA Partner in tourism technology and automation. I work in coordination with the Munich-based TravelTech company\'s Istanbul and Stockholm offices on international projects.',
       stats: {
         brands: 'Brand and institution management',
@@ -440,15 +431,6 @@ const translations = {
     portfolio: {
       certificates: 'Certificates and Achievements',
       certificatesDesc: 'Trainings and certificates I have obtained',
-      // White House
-      whitehouse: {
-        title: 'International Media Consulting',
-        description: 'Communication strategies were developed for the White House. Consulting was provided to Melih Göğeban (Donald Trump\'s media advisor) and international media coordination was ensured.',
-        tag: 'International Communication',
-        metric1: 'White House Communication Strategies',
-        metric2: 'Trump Media Consulting',
-        metric3: 'International Coordination'
-      },
       // Dubai Real Estate
       dubai: {
         title: 'Dubai Real Estate Company - 800.000$+ Sales Conversion',
@@ -543,7 +525,7 @@ const translations = {
       bio1: 'Batuhan Ateş is an elite strategic communications professional with international field experience. Positioning the digital media ecosystem as a powerful tool for cross-border impact, Ateş combines data-driven digital marketing technologies with advanced global representation capabilities, dedicating his career to building and sustaining the international reputation of high-profile brands and large-scale projects.',
       bio2: 'His global operational network is based on active field experience in strategically important markets such as Portugal, Netherlands, Belgium, Qatar, and the United Arab Emirates. In these regions, he has developed expertise by directly experiencing local market dynamics and complex communication protocols.',
       bio3: 'Proficient in Turkish, English, German, Russian, Kyrgyz, and Kazakh, Batuhan Ateş serves as a powerful multilingual bridge between Europe and Eurasia geographies; continuing to redefine digital marketing and media as the most effective strategic tools of the modern era.',
-      bio4: 'With expertise in White House communication strategies, Dubai real estate marketing, international diplomacy journalism, and multilingual media coordination, he helps brands and institutions increase their global visibility.',
+      bio4: 'With expertise in Dubai real estate marketing, international diplomacy journalism, and multilingual media coordination, he helps brands and institutions increase their global visibility.',
       expertiseTitle: 'My Expertise',
       expertiseSubtitle: 'What Do I Do?',
       expertise1Title: 'Digital Strategy',
@@ -612,7 +594,7 @@ const translations = {
       subtitle: 'Indem ich sage, dass die Grenzen des',
       subtitleHighlight: 'Digitalen keine Grenzen haben',
       subtitleSuffix: '',
-      description1: 'Ich bin Internationaler Medienberater, Digitalmarketing-Experte und Diplomatie-Technologie-Journalist. Ich habe mit Trumps Medienberater Melih Göğeban zusammengearbeitet, 800.000$+ Dubai-Immobilienverkaufskonversion und IFJ-akkreditiertem Diplomatie-Journalismus.',
+      description1: 'Ich bin Internationaler Medienberater, Digitalmarketing-Experte und Diplomatie-Technologie-Journalist. Ich habe 800.000$+ Dubai-Immobilienverkaufskonversion und IFJ-akkreditiertem Diplomatie-Journalismus Erfahrung.',
       description2: 'Ich leite strategische digitale Transformationsprozesse bei PMA Partner in Tourismustechnologie und -automatisierung. Ich arbeite in Koordination mit den Istanbul- und Stockholm-Büros des München basierten TravelTech-Unternehmens an internationalen Projekten.',
       stats: {
         brands: 'Marken- und Institutionsmanagement',
@@ -731,15 +713,6 @@ const translations = {
     portfolio: {
       certificates: 'Zertifikate und Erfolge',
       certificatesDesc: 'Schulungen und Zertifikate, die ich erworben habe',
-      // White House
-      whitehouse: {
-        title: 'Internationale Medienberatung',
-        description: 'Kommunikationsstrategien wurden für das Weiße Haus entwickelt. Beratung wurde für Melih Göğeban (Donald Trumps Medienberater) durchgeführt und internationale Medienkoordination sichergestellt.',
-        tag: 'Internationale Kommunikation',
-        metric1: 'Weißes-Haus Kommunikationsstrategien',
-        metric2: 'Trump Medienberatung',
-        metric3: 'Internationale Koordination'
-      },
       // Dubai Real Estate
       dubai: {
         title: 'Dubai Immobilienfirma - 800.000$+ Verkaufsumwandlung',
