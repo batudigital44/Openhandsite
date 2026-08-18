@@ -1,12 +1,11 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { useLanguage } from '../context/LanguageContext'
+import { Link } from 'react-router-dom'
 import portfolioImage from '../assets/images/portfolio-banner.png'
-import dubaiSkyline from '../assets/images/dubai-skyline.png'
-import hotelPool from '../assets/images/hotel-pool.png'
+import globalNetwork from '../assets/images/global-network.png'
 import hotelResort from '../assets/images/hotel-resort.png'
-import germanyBerlin from '../assets/images/germany-berlin.jpg'
-import diplomaticMeeting from '../assets/images/diplomatic-meeting.jpg'
+import dubaiSkyline from '../assets/images/dubai-skyline.png'
 
 const PortfolioPreview = () => {
   const ref = useRef(null)
@@ -15,25 +14,25 @@ const PortfolioPreview = () => {
 
   const achievements = [
     {
-      image: diplomaticMeeting,
-      title: 'Türkiye - Kırgızistan Diplomatik Dijital Dönüşüm',
-      description: 'T.C. Bişkek Büyükelçiliği bünyesindeki TTEÖMER için ilk kurumsal dijital medya stratejisi.',
-      tag: 'Diplomasi & Eğitim',
-      metrics: ['Kurumsal Dijital Strateji', 'Multimedya Prodüksiyon']
+      image: globalNetwork,
+      title: t('portfolio.pma.title'),
+      description: t('portfolio.pma.description'),
+      tag: t('portfolio.pma.tag'),
+      metrics: [t('portfolio.pma.metric1'), t('portfolio.pma.metric2'), t('portfolio.pma.metric3')]
     },
     {
       image: hotelResort,
-      title: 'Teus Group - Ulusal ve Uluslararası Medya Görünürlüğü',
-      description: 'Teus Group projeleri için ulusal ve uluslararası basında stratejik medya görünürlüğü.',
-      tag: 'Turizm & Gayrimenkul',
-      metrics: ['Desire Antalya', 'Avrupa Ödülü']
+      title: t('portfolio.conti.title'),
+      description: t('portfolio.conti.description'),
+      tag: t('portfolio.conti.tag'),
+      metrics: [t('portfolio.conti.metric1'), t('portfolio.conti.metric2'), t('portfolio.conti.metric3')]
     },
     {
-      image: germanyBerlin,
-      title: 'Uluslararası Enerji Firması Dijital Dönüşümü',
-      description: 'Mediawirt (Almanya) için dijital ekosistemi modern standartlara göre revize edildi.',
-      tag: 'Enerji & B2B',
-      metrics: ['B2B Lead Generation', 'E-Ticaret']
+      image: dubaiSkyline,
+      title: t('portfolio.dubai.title'),
+      description: t('portfolio.dubai.description'),
+      tag: t('portfolio.dubai.tag'),
+      metrics: [t('portfolio.dubai.metric1'), t('portfolio.dubai.metric2'), t('portfolio.dubai.metric3')]
     }
   ]
 
@@ -101,6 +100,24 @@ const PortfolioPreview = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* View All Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-center mt-12"
+        >
+          <Link
+            to="/portfolyo"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-xl hover:opacity-90 transition-opacity"
+          >
+            {t('portfolioPreview.viewAll')}
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </Link>
+        </motion.div>
       </div>
     </section>
   )

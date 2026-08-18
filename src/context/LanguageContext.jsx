@@ -149,92 +149,129 @@ const translations = {
     portfolio: {
       certificates: 'Sertifikalar ve Başarılar',
       certificatesDesc: 'Aldığım eğitimler ve sertifikalar',
-      // Dubai Real Estate
+      // 1. PMA Partner
+      pma: {
+        title: 'PMA Partner — Uluslararası Pazarlama, Medya & Teknoloji',
+        description: 'PMA Partner bünyesinde dört farklı ülkede turizm ve teknoloji markalarının dijital büyüme, pazarlama ve medya süreçlerinde aktif rol alıyorum. Dijital pazarlama stratejileri, SEO, Meta reklamları, içerik yönetimi, performans takibi, turizm teknolojileri, uluslararası ekiplerle koordinasyon ve yazılım/dijital ürün pazarlaması alanlarında çalışıyorum.',
+        tag: 'Turizm & Teknoloji',
+        metric1: '4 Farklı Ülke',
+        metric2: 'Uluslararası Koordinasyon',
+        metric3: 'Dijital Büyüme'
+      },
+      // 2. Conti Group
+      conti: {
+        title: 'Conti Group — Satış, SEO & Performans Pazarlaması',
+        description: 'Conti Group\'ta yürüttüğüm kampanyalarda en yüksek satış hacmi ve içerik izlenmesi elde edildi. SEO\'da ulaşılan en yüksek hacim, Meta reklam performansı ve organik görünlük artışıyla ölçülebilir sonuçlar sağladım.',
+        tag: 'Satış & SEO',
+        metric1: 'En Yüksek Satış Hacmi',
+        metric2: 'SEO Hacmi Artışı',
+        metric3: 'Meta Reklam Performansı'
+      },
+      // 3. Istanbul Airlines
+      istanbulAirlines: {
+        title: 'Istanbul Airlines — Pazarlama & Dijital Büyüme',
+        description: 'Istanbul Airlines\'ta pazarlama operasyonları, dijital medya, kampanya yönetimi, içerik stratejisi, marka görünürlüğü, SEO ve performans pazarlaması alanlarında aktif rol aldım. Satış, rezervasyon, lead, web trafiği, sosyal medya erişimi ve kampanya dönüşümü KPI\'larını takip ettim.',
+        tag: 'Havacılık & Pazarlama',
+        metric1: 'Dijital Medya',
+        metric2: 'Kampanya Yönetimi',
+        metric3: 'Marka Görünürlüğü'
+      },
+      // 4. DNA Hotels Egypt
+      dna: {
+        title: 'DNA Hotels — Mısır (Teknoloji × Pazarlama × Medya)',
+        description: 'DNA Hotels Mısır\'da Technology × Marketing × Media üçlüsüyle çalıştım. Yazılım süreçleri, dijital sistemler, dijital pazarlama, SEO, performans, içerik stratejisi, medya stratejisi ve dijital görünürlük alanlarında kapsamlı hizmet verdim.',
+        tag: 'Teknoloji × Pazarlama × Medya',
+        metric1: 'Yazılım Süreçleri',
+        metric2: 'Dijital Pazarlama',
+        metric3: 'Medya Stratejisi'
+      },
+      // 5. Dubai Real Estate
       dubai: {
-        title: 'Dubai Emlak Firması - 800.000$+ Satış Dönüşümü',
-        description: 'Performans pazarlamasında sıradışı metinler ve satış stratejileriyle doğrudan satışa odaklanıyorum. Dubai gayrimenkul pazarı için tasarladığım tek bir içerik stratejisiyle sadece 14 günde 800.000$+ değerinde satış konversiyonu sağladım. 5.000 TL reklam harcamasiyla yüksek ROAS elde edildi.',
+        title: 'Dubai Emlak — $800K+ Dönüşüm',
+        description: 'Performans pazarlamasında sıradışı metinler ve satış stratejileriyle doğrudan satışa odaklandım. Dubai gayrimenkul pazarı için tasarladığım tek bir içerik stratejisiyle 14 günde 800.000$+ atfedilen satış dönüşümü sağladım. 5.000 TL reklam harcamasıyla yüksek ROAS elde edildi.',
         tag: 'Gayrimenkul & ROI',
-        metric1: '14 günde 800.000$+ satış',
-        metric2: 'Yüksek ROAS / ROI',
-        metric3: 'Performans Pazarlaması'
+        metric1: '$800K+ Atfedilen Satış',
+        metric2: '5.000 TL Reklam Harcaması',
+        metric3: 'Yüksek ROAS'
       },
-      // Yunexia SaaS - Muhasebe Yazılımı
+      // 6. Yunexia SaaS
       yunexia: {
-        title: 'Yunexia Muhasebe SaaS - Yazılım Projesi',
-        description: 'Yunexia tarafından geliştirilen bulut tabanlı muhasebe yazılımının pazarlaması ve AI otomasyonları kurulumu. SAAS ürün lansmanı için dijital pazarlama stratejileri, lead generation kampanyaları ve müşteri edinme süreçleri yönetildi. Yapay zeka destekli otomasyonlar ile satış ve pazarlama süreçleri optimize edildi.',
-        tag: 'Yazılım & SAAS',
-        metric1: 'SAAS Pazarlama Stratejisi',
-        metric2: 'AI Otomasyonları',
-        metric3: 'Lead Generation'
+        title: 'Yunexia — SaaS & AI Otomasyonu',
+        description: 'Yunexia\'nın bulut tabanlı muhasebe SaaS ürününün pazarlaması, AI otomasyonları, lead generation ve müşteri edinme süreçlerinde rol aldım. SaaS go-to-market, dijital pazarlama, AI otomasyonu, sales funnel ve customer acquisition alanlarında çalıştım.',
+        tag: 'SaaS & AI',
+        metric1: 'SaaS Pazarlama Stratejisi',
+        metric2: 'AI Otomasyonu',
+        metric3: 'Lead & Conversion'
       },
-      // PPG Tourism Panel - Turizm Yazılımı
+      // 7. PPG All in One
       ppg: {
-        title: 'PPG All In One Turizm Panel - Yazılım Projesi',
-        description: 'PMA Partner tarafından geliştirilen PPG All In One turizm panel sisteminin pazarlama süreçlerinde yer aldım. Yazılım test kontrolü, IT bağlantıları, kullanıcı deneyimi optimizasyonu ve pazarlama otomasyonları kurulumları gerçekleştirdim. Turizm sektörüne özel çözümlerin tanıtımı ve satış stratejileri geliştirildi.',
+        title: 'PPG All in One — Turizm Teknolojisi',
+        description: 'PMA Partner tarafından geliştirilen turizm panelinde yazılım testleri, IT bağlantıları, kullanıcı deneyimi, pazarlama otomasyonları ve satış stratejilerinde rol aldım. Yazılım test kontrolü, kullanıcı deneyimi optimizasyonu ve turizm sektörüne özel çözümlerin tanıtımı alanlarında çalıştım.',
         tag: 'Turizm & Yazılım',
-        metric1: 'Turizm Panel Sistemi',
-        metric2: 'Test & Kontrol',
-        metric3: 'Pazarlama Otomasyonu'
+        metric1: 'Yazılım Testleri',
+        metric2: 'Pazarlama Otomasyonu',
+        metric3: 'Satış Stratejisi'
       },
-      // Kyrgyzstan
+      // 8. Orange County Hotels
+      orangeCounty: {
+        title: 'Orange County Hotels — Veri Odaklı Pazarlama',
+        description: 'Orange County Hotels\'ta foto galeri sayfasını en çok ziyaret edilen sayfa haline getirdim. Instagram\'da Türkiye otel kategorisinde 3., Facebook\'ta 6. sıraya ulaştım. SEO, içerik stratejisi ve data-driven pazarlama ile ölçülebilir sonuçlar elde ettim.',
+        tag: 'Otel & Turizm',
+        metric1: 'Instagram 3. Sıra',
+        metric2: 'Facebook 6. Sıra',
+        metric3: 'En Çok Ziyaret Edilen Sayfa',
+        photoLink: 'Foto Galeri'
+      },
+      // 9. Teus Group
+      teus: {
+        title: 'Teus Group — Uluslararası PR & Medya',
+        description: 'Teus Group\'un Antalya (Desire), Bali ve Maldivler projeleri için ulusal ve uluslararası basında stratejik medya görünürlüğü sağladım. PR stratejisi, medya ilişkileri, uluslararası medya, içerik ve marka görünürlüğü alanlarında çalıştım. Desire Antalya\'nın "Avrupa\'nın En İyi Otel İnşaat ve Tasarım Ödülü" kazanma sürecinde iletişim koordinasyonu yürüttüm.',
+        tag: 'PR & Medya',
+        metric1: 'Ulusal Basın PR',
+        metric2: 'Uluslararası Medya',
+        metric3: 'Avrupa Ödülü'
+      },
+      // 10. Mediawirt Germany
+      mediawirt: {
+        title: 'Mediawirt — Almanya / Dijital Dönüşüm',
+        description: 'Almanya merkezli enerji şirketinin web, sosyal medya, B2B lead generation ve e-ticaret uyumlu dijital ekosisteminin yeniden yapılandırılmasında rol aldım. Dijital ekosistem, website, sosyal medya, B2B lead generation, içerik stratejisi ve dijital konumlandırma alanlarında çalıştım.',
+        tag: 'Dijital Dönüşüm',
+        metric1: 'Dijital Ekosistem',
+        metric2: 'B2B Lead Generation',
+        metric3: 'E-Ticaret'
+      },
+      // 11. EMO Optik
+      emo: {
+        title: 'EMO Optik — Türkiye Pazar Girişi',
+        description: '7 uluslararası optik markasının (Trussardi, Ana Hickmann vb.) Türkiye dijital pazarına giriş ve konumlandırma süreçlerini yönettim. Pazar girişi, dijital konumlandırma, Meta ekosistem, e-ticaret, marka yerelleştirme alanlarında çalıştım.',
+        tag: 'E-Ticaret & Moda',
+        metric1: '7 Uluslararası Marka',
+        metric2: 'Pazar Girişi',
+        metric3: 'E-Ticaret Altyapısı'
+      },
+      // 12. Kyrgyzstan
       kyrgyz: {
-        title: 'Türkiye - Kırgızistan Diplomatik Dijital Dönüşüm',
-        description: 'T.C. Bişkek Büyükelçiliği Eğitim Müşavirliği bünyesindeki TTEÖMER için ilk kurumsal dijital medya stratejisi tasarlandı. Multimedya ve prodüksiyon çalışmalarıyla kurumun marka değeri ve dijital görünürlüğü stabilize edildi.',
+        title: 'Türkiye – Kırgızistan — Diplomatik Dijital Dönüşüm',
+        description: 'T.C. Bişkek Büyükelçiliği bünyesindeki TTEÖMER için ilk kurumsal dijital medya stratejisini tasarladım. Dijital strateji, kurumsal iletişim, medya stratejisi, multimedya ve prodüksiyon alanlarında çalıştım. Dijital görünürlük, içerik erişimi ve kurumsal iletişim çıktıları elde ettim.',
         tag: 'Diplomasi & Eğitim',
         metric1: 'Kurumsal Dijital Strateji',
         metric2: 'Multimedya Prodüksiyon',
         metric3: 'Uluslararası Kurum'
       },
-      // Teus Group
-      teus: {
-        title: 'Teus Group - Ulusal ve Uluslararası Medya Görünürlüğü',
-        description: 'Teus Group\'un Antalya (Desire), Bali ve Maldivler projeleri için ulusal ve uluslararası basında stratejik medya görünürlüğü sağlandı. Markanın "Avrupa\'nın En İyi Otel İnşaat ve Tasarım Ödülü" kazanma sürecindeki iletişim ve PR faaliyetleri koordine edildi.',
-        tag: 'Turizm & Gayrimenkul',
-        metric1: 'Desire Antalya Projesi',
-        metric2: 'Avrupa Ödülü',
-        metric3: 'Ulusal Basın PR'
-      },
-      // Energy
-      energy: {
-        title: 'Uluslararası Enerji Firması Dijital Dönüşümü',
-        description: 'Almanya merkezli enerji firması Mediawirt\'in tüm dijital ekosistemi (Web, Sosyal Medya, B2B Lead) modern standartlara göre revize edildi. E-ticaret uyumlu sistemler ve içerik stratejileriyle marka etkileşimi maksimize edildi.',
-        tag: 'Enerji & B2B',
-        metric1: 'Mediawirt (Almanya)',
-        metric2: 'B2B Lead Generation',
-        metric3: 'E-Ticaret'
-      },
-      // EMO Optic
-      emo: {
-        title: 'EMO Optik - Türkiye Pazarına Giriş Stratejisi',
-        description: 'Uluslararası 7 büyük optik markasının (Trussardi, Ana Hickmann vb.) Türkiye dijital pazarına giriş ve konumlandırma süreçleri yönetildi. Meta Business Suite ve e-ticaret altyapı kurulumları ile kurumsal satış kanalları optimize edildi.',
-        tag: 'E-Ticaret & Moda',
-        metric1: '7 Uluslararası Marka',
-        metric2: 'Meta Business Suite',
-        metric3: 'E-Ticaret Altyapısı'
-      },
-      // Hotel
-      hotel: {
-        title: 'Veri Odaklı Dijital Pazarlama ile Pazar Liderliği',
-        description: 'Orange County Otel Grubu\'nda kısıtlı kaynaklarla yürüttüğüm strateji sayesinde, Türkiye genelinde otel kategorisinde en güçlü sosyal medya hesaplarından birini inşa ettim. Foto galeri sayfası en çok ziyaret edilen sayfa yapısı oluşturuldu. Kemer otelimizde SEO ve içerik çalışmalarıyla Instagram 3., Facebook 6. sırada yer aldı.',
-        tag: 'Otel & Turizm',
-        metric1: 'En Çok Ziyaret Edilen Sayfa',
-        metric2: 'Instagram 3. sıra',
-        metric3: 'Facebook 6. sıra',
-        photoLink: 'Foto Galeri'
-      },
-      // ASMAN
+      // 13. ASMAN Media Group
       asman: {
-        title: 'Uluslararası Medya Ekosistemi ve Diplomasi',
-        description: 'Orta Asya ve Türkiye arasında köprü kuran, çok dilli ve çok uluslu bir gençlik medya ağı olan ASMAN Medya Grubu\'nu hayata geçirdim. 130 ülkede geçerli IFJ (Uluslararası Gazeteciler Federasyonu) basın akreditasyonuyla uluslararası düzeyde teknoloji ve diplomasi haberciliği yürütmekteyim.',
-        tag: 'Medya & Diplomasi',
-        metric1: '130 ülke IFJ akreditasyonu',
+        title: 'ASMAN Media Group — Kurucu / Uluslararası Medya',
+        description: 'Kurucu olarak ASMAN Medya Grubu\'nu hayata geçirdim. Orta Asya ve Türkiye arasında köprü kuran çok dilli ve çok uluslu bir medya platformu geliştirdim. 130 ülkede geçerli IFJ basın akreditasyonuyla uluslararası düzeyde teknoloji ve diplomasi haberciliği yürütmekteyim.',
+        tag: 'Kurucu & Medya',
+        metric1: '130 Ülke IFJ Akreditasyonu',
         metric2: 'ASMAN Medya Grubu',
-        metric3: 'Diplomasi haberciliği'
+        metric3: 'Diplomasi Haberciliği'
       }
     },
     portfolioPreview: {
       subtitle: 'Başarılar ve Ödüller',
-      title: 'Tüm Çalışmalarım'
+      title: 'Tüm Çalışmalarım',
+      viewAll: 'Tümünü Gör'
     },
     about: {
       heroTitle: 'Dijital Dünyayı Keşfet',
@@ -431,84 +468,120 @@ const translations = {
     portfolio: {
       certificates: 'Certificates and Achievements',
       certificatesDesc: 'Trainings and certificates I have obtained',
-      // Dubai Real Estate
+      // 1. PMA Partner
+      pma: {
+        title: 'PMA Partner — International Marketing, Media & Technology',
+        description: 'At PMA Partner, I actively take part in digital growth, marketing, and media processes of tourism and technology brands in four different countries. I work in areas such as digital marketing strategies, SEO, Meta ads, content management, performance tracking, tourism technologies, international team coordination, and software/digital product marketing.',
+        tag: 'Tourism & Technology',
+        metric1: '4 Different Countries',
+        metric2: 'International Coordination',
+        metric3: 'Digital Growth'
+      },
+      // 2. Conti Group
+      conti: {
+        title: 'Conti Group — Sales, SEO & Performance Marketing',
+        description: 'In campaigns I managed at Conti Group, I achieved the highest sales volume and content views. I delivered measurable results with the highest SEO volume reached, Meta ad performance, and organic visibility increase.',
+        tag: 'Sales & SEO',
+        metric1: 'Highest Sales Volume',
+        metric2: 'SEO Volume Increase',
+        metric3: 'Meta Ad Performance'
+      },
+      // 3. Istanbul Airlines
+      istanbulAirlines: {
+        title: 'Istanbul Airlines — Marketing & Digital Growth',
+        description: 'At Istanbul Airlines, I took an active role in marketing operations, digital media, campaign management, content strategy, brand visibility, SEO, and performance marketing. I tracked KPIs such as sales, reservations, leads, web traffic, social media reach, and campaign conversions.',
+        tag: 'Aviation & Marketing',
+        metric1: 'Digital Media',
+        metric2: 'Campaign Management',
+        metric3: 'Brand Visibility'
+      },
+      // 4. DNA Hotels Egypt
+      dna: {
+        title: 'DNA Hotels — Egypt (Technology × Marketing × Media)',
+        description: 'At DNA Hotels Egypt, I worked with the Technology × Marketing × Media trio. I provided comprehensive services in software processes, digital systems, digital marketing, SEO, performance, content strategy, media strategy, and digital visibility.',
+        tag: 'Technology × Marketing × Media',
+        metric1: 'Software Processes',
+        metric2: 'Digital Marketing',
+        metric3: 'Media Strategy'
+      },
+      // 5. Dubai Real Estate
       dubai: {
-        title: 'Dubai Real Estate Company - 800.000$+ Sales Conversion',
-        description: 'I focus on direct sales with extraordinary texts and sales strategies in performance marketing. With a single content strategy designed for the Dubai real estate market, I achieved $800,000+ in sales conversion in just 14 days. High ROAS was achieved with 5,000 TL in ad spend.',
+        title: 'Dubai Real Estate — $800K+ Conversion',
+        description: 'I focused on direct sales with extraordinary texts and sales strategies in performance marketing. With a single content strategy designed for the Dubai real estate market, I achieved $800,000+ in attributed sales conversion in just 14 days. High ROAS was achieved with 5,000 TL in ad spend.',
         tag: 'Real Estate & ROI',
-        metric1: '$800,000+ sales in 14 days',
-        metric2: 'High ROAS / ROI',
-        metric3: 'Performance Marketing'
+        metric1: '$800K+ Attributed Sales',
+        metric2: '5,000 TL Ad Spend',
+        metric3: 'High ROAS'
       },
-      // Yunexia SaaS - Accounting Software
+      // 6. Yunexia SaaS
       yunexia: {
-        title: 'Yunexia Accounting SaaS - Software Project',
-        description: 'Marketing and AI automation setup for cloud-based accounting software developed by Yunexia. Digital marketing strategies, lead generation campaigns, and customer acquisition processes were managed for SAAS product launch. Sales and marketing processes were optimized with AI-powered automations.',
-        tag: 'Software & SAAS',
-        metric1: 'SAAS Marketing Strategy',
-        metric2: 'AI Automations',
-        metric3: 'Lead Generation'
+        title: 'Yunexia — SaaS & AI Automation',
+        description: 'I took a role in marketing Yunexia\'s cloud-based accounting SaaS product, AI automations, lead generation, and customer acquisition processes. I worked in areas such as SaaS go-to-market, digital marketing, AI automation, sales funnel, and customer acquisition.',
+        tag: 'SaaS & AI',
+        metric1: 'SaaS Marketing Strategy',
+        metric2: 'AI Automation',
+        metric3: 'Lead & Conversion'
       },
-      // PPG Tourism Panel - Tourism Software
+      // 7. PPG All in One
       ppg: {
-        title: 'PPG All In One Tourism Panel - Software Project',
-        description: 'Participated in marketing processes for PPG All In One tourism panel system developed by PMA Partner. Performed software testing, IT integrations, UX optimization, and marketing automation setup. Developed promotional strategies and sales strategies for tourism-specific solutions.',
+        title: 'PPG All in One — Tourism Technology',
+        description: 'At the tourism panel developed by PMA Partner, I played a role in software testing, IT connections, user experience, marketing automations, and sales strategies. I worked in software testing control, user experience optimization, and promotion of tourism-specific solutions.',
         tag: 'Tourism & Software',
-        metric1: 'Tourism Panel System',
-        metric2: 'Testing & Control',
-        metric3: 'Marketing Automation'
+        metric1: 'Software Testing',
+        metric2: 'Marketing Automation',
+        metric3: 'Sales Strategy'
       },
-      // Kyrgyzstan
+      // 8. Orange County Hotels
+      orangeCounty: {
+        title: 'Orange County Hotels — Data-Driven Marketing',
+        description: 'At Orange County Hotels, I turned the photo gallery page into the most visited page. I reached 3rd place on Instagram and 6th place on Facebook in Turkey\'s hotel category. I achieved measurable results with SEO, content strategy, and data-driven marketing.',
+        tag: 'Hotel & Tourism',
+        metric1: 'Instagram 3rd Place',
+        metric2: 'Facebook 6th Place',
+        metric3: 'Most Visited Page',
+        photoLink: 'Photo Gallery'
+      },
+      // 9. Teus Group
+      teus: {
+        title: 'Teus Group — International PR & Media',
+        description: 'I provided strategic media visibility in national and international press for Teus Group\'s Antalya (Desire), Bali, and Maldives projects. I worked in PR strategy, media relations, international media, content, and brand visibility. I coordinated communication during Desire Antalya\'s process of winning the "Europe\'s Best Hotel Construction and Design Award".',
+        tag: 'PR & Media',
+        metric1: 'National Press PR',
+        metric2: 'International Media',
+        metric3: 'Europe Award'
+      },
+      // 10. Mediawirt Germany
+      mediawirt: {
+        title: 'Mediawirt — Germany / Digital Transformation',
+        description: 'I played a role in restructuring the web, social media, B2B lead generation, and e-commerce-compatible digital ecosystem of a Germany-based energy company. I worked in digital ecosystem, website, social media, B2B lead generation, content strategy, and digital positioning.',
+        tag: 'Digital Transformation',
+        metric1: 'Digital Ecosystem',
+        metric2: 'B2B Lead Generation',
+        metric3: 'E-Commerce'
+      },
+      // 11. EMO Optik
+      emo: {
+        title: 'EMO Optic — Turkey Market Entry',
+        description: 'I managed international market entry and positioning processes for 7 international optical brands (Trussardi, Ana Hickmann, etc.). I worked in market entry, digital positioning, Meta ecosystem, e-commerce, and brand localization.',
+        tag: 'E-Commerce & Fashion',
+        metric1: '7 International Brands',
+        metric2: 'Market Entry',
+        metric3: 'E-Commerce Infrastructure'
+      },
+      // 12. Kyrgyzstan
       kyrgyz: {
-        title: 'Turkey - Kyrgyzstan Diplomatic Digital Transformation',
-        description: 'The first institutional digital media strategy was designed for TTEÖMER under the Training Consultancy of the T.C. Embassy in Bishkek. With multimedia and production work, the institution\'s brand value and digital visibility were stabilized.',
+        title: 'Turkey – Kyrgyzstan — Diplomatic Digital Transformation',
+        description: 'I designed the first institutional digital media strategy for TTEÖMER under the T.C. Embassy in Bishkek. I worked in digital strategy, institutional communication, media strategy, multimedia, and production. I achieved digital visibility, content reach, and institutional communication outputs.',
         tag: 'Diplomacy & Education',
         metric1: 'Institutional Digital Strategy',
         metric2: 'Multimedia Production',
         metric3: 'International Institution'
       },
-      // Teus Group
-      teus: {
-        title: 'Teus Group - National and International Media Visibility',
-        description: 'Strategic media visibility was provided in national and international press for Teus Group\'s Antalya (Desire), Bali and Maldives projects. Communication and PR activities during the brand\'s process of winning the "Europe\'s Best Hotel Construction and Design Award" were coordinated.',
-        tag: 'Tourism & Real Estate',
-        metric1: 'Desire Antalya Project',
-        metric2: 'Europe Award',
-        metric3: 'National Press PR'
-      },
-      // Energy
-      energy: {
-        title: 'International Energy Company Digital Transformation',
-        description: 'The entire digital ecosystem (Web, Social Media, B2B Lead) of Germany-based energy company Mediawirt was revised according to modern standards. Brand engagement was maximized with e-commerce compatible systems and content strategies.',
-        tag: 'Energy & B2B',
-        metric1: 'Mediawirt (Germany)',
-        metric2: 'B2B Lead Generation',
-        metric3: 'E-Commerce'
-      },
-      // EMO Optic
-      emo: {
-        title: 'EMO Optic - Turkey Market Entry Strategy',
-        description: 'International market entry and positioning processes were managed for 7 major international optical brands (Trussardi, Ana Hickmann, etc.). Corporate sales channels were optimized with Meta Business Suite and e-commerce infrastructure installations.',
-        tag: 'E-Commerce & Fashion',
-        metric1: '7 International Brands',
-        metric2: 'Meta Business Suite',
-        metric3: 'E-Commerce Infrastructure'
-      },
-      // Hotel
-      hotel: {
-        title: 'Market Leadership with Data-Driven Digital Marketing',
-        description: 'Thanks to the strategy I implemented at Orange County Hotel Group with limited resources, I built one of the strongest social media accounts in the hotel category across Turkey. A photo gallery page was created as the most visited page structure. At our Kemer hotel, we achieved 3rd place on Instagram and 6th place on Facebook through SEO and content work.',
-        tag: 'Hotel & Tourism',
-        metric1: 'Most Visited Page',
-        metric2: 'Instagram 3rd Place',
-        metric3: 'Facebook 6th Place',
-        photoLink: 'Photo Gallery'
-      },
-      // ASMAN
+      // 13. ASMAN Media Group
       asman: {
-        title: 'International Media Ecosystem and Diplomacy',
-        description: 'I launched ASMAN Media Group, a multilingual and multinational youth media network that bridges Central Asia and Turkey. With IFJ (International Federation of Journalists) press accreditation valid in 130 countries, I conduct international technology and diplomacy journalism.',
-        tag: 'Media & Diplomacy',
+        title: 'ASMAN Media Group — Founder / International Media',
+        description: 'As founder, I launched ASMAN Media Group. I developed a multilingual and multinational media platform bridging Central Asia and Turkey. With IFJ press accreditation valid in 130 countries, I conduct international technology and diplomacy journalism.',
+        tag: 'Founder & Media',
         metric1: '130 Countries IFJ Accreditation',
         metric2: 'ASMAN Media Group',
         metric3: 'Diplomacy Journalism'
@@ -516,7 +589,8 @@ const translations = {
     },
     portfolioPreview: {
       subtitle: 'Success Stories',
-      title: 'All My Work'
+      title: 'All My Work',
+      viewAll: 'View All'
     },
     about: {
       heroTitle: 'Explore the Digital World',
@@ -713,84 +787,120 @@ const translations = {
     portfolio: {
       certificates: 'Zertifikate und Erfolge',
       certificatesDesc: 'Schulungen und Zertifikate, die ich erworben habe',
-      // Dubai Real Estate
-      dubai: {
-        title: 'Dubai Immobilienfirma - 800.000$+ Verkaufsumwandlung',
-        description: 'Ich konzentriere mich auf Direktvertrieb mit außergewöhnlichen Texten und Verkaufsstrategien im Performance-Marketing. Mit einer einzelnen Content-Strategie für den Dubai-Immobilienmarkt erzielte ich in nur 14 Tagen über 800.000$ an Verkaufskonversion. Hohe ROAS wurde mit 5.000 TL Werbeausgaben erzielt.',
-        tag: 'Immobilien & ROI',
-        metric1: '800.000$+ Verkauf in 14 Tagen',
-        metric2: 'Hohe ROAS / ROI',
-        metric3: 'Performance-Marketing'
+      // 1. PMA Partner
+      pma: {
+        title: 'PMA Partner — Internationales Marketing, Medien & Technologie',
+        description: 'Bei PMA Partner bin ich aktiv an digitalem Wachstum, Marketing und Medienprozessen von Tourismus- und Technologiemarken in vier verschiedenen Ländern beteiligt. Ich arbeite in Bereichen wie digitale Marketingstrategien, SEO, Meta-Anzeigen, Content-Management, Performance-Tracking, Tourismustechnologien, internationaler Teamkoordination und Software-/Digitalproduktmarketing.',
+        tag: 'Tourismus & Technologie',
+        metric1: '4 Verschiedene Länder',
+        metric2: 'Internationale Koordination',
+        metric3: 'Digitales Wachstum'
       },
-      // Yunexia SaaS - Buchhaltungssoftware
+      // 2. Conti Group
+      conti: {
+        title: 'Conti Group — Vertrieb, SEO & Performance-Marketing',
+        description: 'In Kampagnen, die ich bei Conti Group leitete, erzielte ich das höchste Verkaufsvolumen und die höchsten Content-Aufrufe. Ich lieferte messbare Ergebnisse mit dem höchsten erreichten SEO-Volumen, Meta-Anzeigenleistung und organischer Sichtbarkeitssteigerung.',
+        tag: 'Vertrieb & SEO',
+        metric1: 'Höchstes Verkaufsvolumen',
+        metric2: 'SEO-Volumensteigerung',
+        metric3: 'Meta-Anzeigenleistung'
+      },
+      // 3. Istanbul Airlines
+      istanbulAirlines: {
+        title: 'Istanbul Airlines — Marketing & Digitales Wachstum',
+        description: 'Bei Istanbul Airlines war ich aktiv an Marketing-Operationen, digitalen Medien, Kampagnenmanagement, Content-Strategie, Markensichtbarkeit, SEO und Performance-Marketing beteiligt. Ich verfolgte KPIs wie Verkäufe, Reservierungen, Leads, Web-Traffic, Social-Media-Reichweite und Kampagnenkonversionen.',
+        tag: 'Luftfahrt & Marketing',
+        metric1: 'Digitale Medien',
+        metric2: 'Kampagnenmanagement',
+        metric3: 'Markensichtbarkeit'
+      },
+      // 4. DNA Hotels Egypt
+      dna: {
+        title: 'DNA Hotels — Ägypten (Technologie × Marketing × Medien)',
+        description: 'Bei DNA Hotels Ägypten arbeitete ich mit dem Technologie × Marketing × Medien-Trio. Ich bot umfassende Dienstleistungen in Softwareprozessen, digitalen Systemen, digitalem Marketing, SEO, Performance, Content-Strategie, Medienstrategie und digitaler Sichtbarkeit an.',
+        tag: 'Technologie × Marketing × Medien',
+        metric1: 'Softwareprozesse',
+        metric2: 'Digitales Marketing',
+        metric3: 'Medienstrategie'
+      },
+      // 5. Dubai Real Estate
+      dubai: {
+        title: 'Dubai Immobilien — $800K+ Konversion',
+        description: 'Ich konzentrierte mich auf Direktverkauf mit außergewöhnlichen Texten und Verkaufsstrategien im Performance-Marketing. Mit einer einzelnen Content-Strategie für den Dubai-Immobilienmarkt erzielte ich in nur 14 Tagen über 800.000$ an zugeschriebenem Verkaufsumsatz. Hohe ROAS wurde mit 5.000 TL Werbeausgaben erzielt.',
+        tag: 'Immobilien & ROI',
+        metric1: '$800K+ Zugeschriebener Umsatz',
+        metric2: '5.000 TL Werbeausgaben',
+        metric3: 'Hohe ROAS'
+      },
+      // 6. Yunexia SaaS
       yunexia: {
-        title: 'Yunexia Buchhaltungs-SaaS - Softwareprojekt',
-        description: 'Marketing und KI-Automatisierung für Cloud-basierte Buchhaltungssoftware von Yunexia entwickelt. Digitale Marketingstrategien, Lead-Generierungskampagnen und Kundenakquisitionsprozesse für SaaS-Produkteinführung verwaltet. Vertriebs- und Marketingprozesse mit KI-gestützter Automatisierung optimiert.',
-        tag: 'Software & SaaS',
+        title: 'Yunexia — SaaS & KI-Automatisierung',
+        description: 'Ich war am Marketing von Yunexias Cloud-basiertem Buchhaltungs-SaaS-Produkt, KI-Automatisierungen, Lead-Generierung und Kundenakquisitionsprozessen beteiligt. Ich arbeitete in Bereichen wie SaaS Go-to-Market, digitalem Marketing, KI-Automatisierung, Sales-Funnel und Kundenakquisition.',
+        tag: 'SaaS & KI',
         metric1: 'SaaS-Marketing-Strategie',
         metric2: 'KI-Automatisierung',
-        metric3: 'Lead-Generierung'
+        metric3: 'Lead & Konversion'
       },
-      // PPG Tourismus-Panel - Tourismus-Software
+      // 7. PPG All in One
       ppg: {
-        title: 'PPG All In One Tourismus-Panel - Softwareprojekt',
-        description: 'Mitwirkung bei Marketingprozessen für das von PMA Partner entwickelte PPG All In One Tourismus-Panel-System. Softwaretests, IT-Integrationen, UX-Optimierung und Marketing-Automatisierung durchgeführt. Werbestrategien und Vertriebsstrategien für tourismusspezifische Lösungen entwickelt.',
+        title: 'PPG All in One — Tourismustechnologie',
+        description: 'Im von PMA Partner entwickelten Tourismus-Panel war ich an Softwaretests, IT-Verbindungen, Benutzererfahrung, Marketing-Automatisierungen und Vertriebsstrategien beteiligt. Ich arbeitete in Softwaretest-Kontrolle, Benutzererfahrungs-Optimierung und Promotion von tourismusspezifischen Lösungen.',
         tag: 'Tourismus & Software',
-        metric1: 'Tourismus-Panel-System',
-        metric2: 'Tests & Kontrolle',
-        metric3: 'Marketing-Automatisierung'
+        metric1: 'Softwaretests',
+        metric2: 'Marketing-Automatisierung',
+        metric3: 'Vertriebsstrategie'
       },
-      // Kyrgyzstan
+      // 8. Orange County Hotels
+      orangeCounty: {
+        title: 'Orange County Hotels — Datengesteuertes Marketing',
+        description: 'Bei Orange County Hotels habe ich die Fotogalerie-Seite zur meistbesuchten Seite gemacht. Ich erreichte den 3. Platz auf Instagram und den 6. Platz auf Facebook in der türkischen Hotelkategorie. Ich erzielte messbare Ergebnisse mit SEO, Content-Strategie und datengesteuertem Marketing.',
+        tag: 'Hotel & Tourismus',
+        metric1: 'Instagram 3. Platz',
+        metric2: 'Facebook 6. Platz',
+        metric3: 'Meistbesuchte Seite',
+        photoLink: 'Fotogalerie'
+      },
+      // 9. Teus Group
+      teus: {
+        title: 'Teus Group — Internationales PR & Medien',
+        description: 'Ich bot strategische Medienpräsenz in nationaler und internationaler Presse für Teus Groups Projekte in Antalya (Desire), Bali und Malediven. Ich arbeitete in PR-Strategie, Medienbeziehungen, internationalen Medien, Content und Markensichtbarkeit. Ich koordinierte die Kommunikation während Desire Antalyas Prozess zur Erlangung des "Europas besten Hotelbau- und Designpreises".',
+        tag: 'PR & Medien',
+        metric1: 'Nationale Pressearbeit',
+        metric2: 'Internationale Medien',
+        metric3: 'Europa Preis'
+      },
+      // 10. Mediawirt Germany
+      mediawirt: {
+        title: 'Mediawirt — Deutschland / Digitale Transformation',
+        description: 'Ich war an der Neustrukturierung des Web-, Social-Media-, B2B-Lead-Generierungs- und E-Commerce-kompatiblen digitalen Ökosystems eines deutschen Energieunternehmens beteiligt. Ich arbeitete in digitalem Ökosystem, Website, Social Media, B2B-Lead-Generierung, Content-Strategie und digitaler Positionierung.',
+        tag: 'Digitale Transformation',
+        metric1: 'Digitales Ökosystem',
+        metric2: 'B2B Lead Generation',
+        metric3: 'E-Commerce'
+      },
+      // 11. EMO Optik
+      emo: {
+        title: 'EMO Optik — Türkei Markteintritt',
+        description: 'Ich leitete internationale Markteintritts- und Positionierungsprozesse für 7 internationale Optikmarken (Trussardi, Ana Hickmann usw.). Ich arbeitete in Markteintritt, digitaler Positionierung, Meta-Ökosystem, E-Commerce und Markenlokalisierung.',
+        tag: 'E-Commerce & Mode',
+        metric1: '7 Internationale Marken',
+        metric2: 'Markteintritt',
+        metric3: 'E-Commerce Infrastruktur'
+      },
+      // 12. Kyrgyzstan
       kyrgyz: {
-        title: 'Türkei - Kirgisistan Diplomatische Digitale Transformation',
-        description: 'Die erste institutionelle digitale Medienstrategie wurde für TTEÖMER unter der Ausbildungsberatung der Botschaft der Republik Türkei in Bischkek entwickelt. Mit Multimedia- und Produktionsarbeit wurden der Markenwert und die digitale Sichtbarkeit der Institution stabilisiert.',
+        title: 'Türkei – Kirgisistan — Diplomatische Digitale Transformation',
+        description: 'Ich entwickelte die erste institutionelle digitale Medienstrategie für TTEÖMER unter der Botschaft der Republik Türkei in Bischkek. Ich arbeitete in digitaler Strategie, institutioneller Kommunikation, Medienstrategie, Multimedia und Produktion. Ich erzielte digitale Sichtbarkeit, Content-Reichweite und institutionelle Kommunikationsergebnisse.',
         tag: 'Diplomatie & Bildung',
         metric1: 'Institutionelle Digitale Strategie',
         metric2: 'Multimedia-Produktion',
         metric3: 'Internationale Institution'
       },
-      // Teus Group
-      teus: {
-        title: 'Teus Group - National und International Medienpräsenz',
-        description: 'Strategische Medienpräsenz wurde für Teus Groups Projekte in Antalya (Desire), Bali und Malediven in der nationalen und internationalen Presse bereitgestellt. Kommunikations- und PR-Aktivitäten während des Prozesses der Marke zur Erlangung des "Europas besten Hotelbau- und Designpreises" wurden koordiniert.',
-        tag: 'Tourismus & Immobilien',
-        metric1: 'Desire Antalya Projekt',
-        metric2: 'Europa Preis',
-        metric3: 'Nationale Pressearbeit'
-      },
-      // Energy
-      energy: {
-        title: 'Internationale Energieunternehmen Digitale Transformation',
-        description: 'Das gesamte digitale Ökosystem (Web, Social Media, B2B Lead) des deutschen Energieunternehmens Mediawirt wurde nach modernen Standards überarbeitet. Markenbindung wurde mit e-commerce-kompatiblen Systemen und Content-Strategien maximiert.',
-        tag: 'Energie & B2B',
-        metric1: 'Mediawirt (Deutschland)',
-        metric2: 'B2B Lead Generation',
-        metric3: 'E-Commerce'
-      },
-      // EMO Optic
-      emo: {
-        title: 'EMO Optik - Türkei Markteintritt Strategie',
-        description: 'Internationale Markteintritts- und Positionierungsprozesse wurden für 7 große internationale Optikmarken (Trussardi, Ana Hickmann usw.) gemanagt. Unternehmensvertriebskanäle wurden mit Meta Business Suite und E-Commerce-Infrastrukturinstallationen optimiert.',
-        tag: 'E-Commerce & Mode',
-        metric1: '7 Internationale Marken',
-        metric2: 'Meta Business Suite',
-        metric3: 'E-Commerce Infrastruktur'
-      },
-      // Hotel
-      hotel: {
-        title: 'Marktführerschaft mit datengesteuertem digitalen Marketing',
-        description: 'Dank der Strategie, die ich bei Orange County Hotel Group mit begrenzten Ressourcen umgesetzt habe, habe ich eines der stärksten Social-Media-Konten in der Hotelkategorie in ganz Türkei aufgebaut. Eine Fotogalerie-Seite wurde als meistbesuchte Seitenstruktur erstellt. In unserem Kemer-Hotel erreichten wir durch SEO- und Content-Arbeit den 3. Platz auf Instagram und den 6. Platz auf Facebook.',
-        tag: 'Hotel & Tourismus',
-        metric1: 'Meistbesuchte Seite',
-        metric2: 'Instagram 3. Platz',
-        metric3: 'Facebook 6. Platz',
-        photoLink: 'Fotogalerie'
-      },
-      // ASMAN
+      // 13. ASMAN Media Group
       asman: {
-        title: 'Internationales Medienökosystem und Diplomatie',
-        description: 'Ich habe die ASMAN Mediengruppe gegründet, ein mehrsprachiges und multinationales Jugendmediennetzwerk, das Zentralasien und Türkei verbindet. Mit IFJ (Internationale Journalistenföderation) Pressakkreditierung, die in 130 Ländern gültig ist, betreibe ich internationale Technologie- und Diplomatie-Journalismus.',
-        tag: 'Medien & Diplomatie',
+        title: 'ASMAN Mediengruppe — Gründer / Internationale Medien',
+        description: 'Als Gründer habe ich die ASMAN Mediengruppe gegründet. Ich entwickelte eine mehrsprachige und multinationale Medienplattform, die Zentralasien und Türkei verbindet. Mit IFJ-Pressakkreditierung, die in 130 Ländern gültig ist, betreibe ich internationalen Technologie- und Diplomatie-Journalismus.',
+        tag: 'Gründer & Medien',
         metric1: '130 Länder IFJ Akkreditierung',
         metric2: 'ASMAN Mediengruppe',
         metric3: 'Diplomatie-Journalismus'
@@ -798,7 +908,8 @@ const translations = {
     },
     portfolioPreview: {
       subtitle: 'Erfolgsgeschichten',
-      title: 'Alle meine Arbeiten'
+      title: 'Alle meine Arbeiten',
+      viewAll: 'Alle ansehen'
     },
     about: {
       heroTitle: 'Entdecken Sie die digitale Welt',

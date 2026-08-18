@@ -7,10 +7,10 @@ import dubaiSkyline from '../assets/images/dubai-skyline.png'
 import hotelPool from '../assets/images/hotel-pool.png'
 import hotelResort from '../assets/images/hotel-resort.png'
 import germanyBerlin from '../assets/images/germany-berlin.jpg'
-import whiteHouse from '../assets/images/white-house.jpg'
 import opticStore from '../assets/images/optic-store.jpg'
 import centralAsia from '../assets/images/central-asia.png'
 import diplomaticMeeting from '../assets/images/diplomatic-meeting.jpg'
+import globalNetwork from '../assets/images/global-network.png'
 
 const Portfolio = () => {
   const { t } = useLanguage()
@@ -18,13 +18,64 @@ const Portfolio = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   const achievements = [
+    // 1. PMA Partner — International Marketing, Media & Technology
     {
-      image: whiteHouse,
-      title: t('portfolio.whitehouse.title'),
-      description: t('portfolio.whitehouse.description'),
-      tag: t('portfolio.whitehouse.tag'),
-      metrics: [t('portfolio.whitehouse.metric1'), t('portfolio.whitehouse.metric2'), t('portfolio.whitehouse.metric3')]
+      image: globalNetwork,
+      title: t('portfolio.pma.title'),
+      description: t('portfolio.pma.description'),
+      tag: t('portfolio.pma.tag'),
+      metrics: [t('portfolio.pma.metric1'), t('portfolio.pma.metric2'), t('portfolio.pma.metric3')]
     },
+    // 2. Conti Group — Sales, SEO & Performance Marketing
+    {
+      image: hotelResort,
+      title: t('portfolio.conti.title'),
+      description: t('portfolio.conti.description'),
+      tag: t('portfolio.conti.tag'),
+      metrics: [t('portfolio.conti.metric1'), t('portfolio.conti.metric2'), t('portfolio.conti.metric3')]
+    },
+    // 3. Istanbul Airlines — Marketing & Digital Growth
+    {
+      image: dubaiSkyline,
+      title: t('portfolio.istanbulAirlines.title'),
+      description: t('portfolio.istanbulAirlines.description'),
+      tag: t('portfolio.istanbulAirlines.tag'),
+      metrics: [t('portfolio.istanbulAirlines.metric1'), t('portfolio.istanbulAirlines.metric2'), t('portfolio.istanbulAirlines.metric3')]
+    },
+    // 4. DNA Hotels — Egypt (Technology × Marketing × Media)
+    {
+      image: hotelPool,
+      title: t('portfolio.dna.title'),
+      description: t('portfolio.dna.description'),
+      tag: t('portfolio.dna.tag'),
+      metrics: [t('portfolio.dna.metric1'), t('portfolio.dna.metric2'), t('portfolio.dna.metric3')]
+    },
+    // 5. PPG All in One — Tourism Technology
+    {
+      image: centralAsia,
+      title: t('portfolio.ppg.title'),
+      description: t('portfolio.ppg.description'),
+      tag: t('portfolio.ppg.tag'),
+      metrics: [t('portfolio.ppg.metric1'), t('portfolio.ppg.metric2'), t('portfolio.ppg.metric3')]
+    },
+    // 6. Yunexia — SaaS & AI Automation
+    {
+      image: diplomaticMeeting,
+      title: t('portfolio.yunexia.title'),
+      description: t('portfolio.yunexia.description'),
+      tag: t('portfolio.yunexia.tag'),
+      metrics: [t('portfolio.yunexia.metric1'), t('portfolio.yunexia.metric2'), t('portfolio.yunexia.metric3')]
+    },
+    // 7. Orange County Hotels — Data-Driven Marketing
+    {
+      image: hotelPool,
+      title: t('portfolio.orangeCounty.title'),
+      description: t('portfolio.orangeCounty.description'),
+      tag: t('portfolio.orangeCounty.tag'),
+      metrics: [t('portfolio.orangeCounty.metric1'), t('portfolio.orangeCounty.metric2'), t('portfolio.orangeCounty.metric3')],
+      links: [{ name: t('portfolio.orangeCounty.photoLink'), url: 'https://www.orangecounty.com.tr/kemer/tr/foto-galeri' }]
+    },
+    // 8. Dubai Real Estate — $800K+ Conversion
     {
       image: dubaiSkyline,
       title: t('portfolio.dubai.title'),
@@ -32,30 +83,7 @@ const Portfolio = () => {
       tag: t('portfolio.dubai.tag'),
       metrics: [t('portfolio.dubai.metric1'), t('portfolio.dubai.metric2'), t('portfolio.dubai.metric3')]
     },
-    // Software Project 1: Yunexia SaaS
-    {
-      image: centralAsia,
-      title: t('portfolio.yunexia.title'),
-      description: t('portfolio.yunexia.description'),
-      tag: t('portfolio.yunexia.tag'),
-      metrics: [t('portfolio.yunexia.metric1'), t('portfolio.yunexia.metric2'), t('portfolio.yunexia.metric3')]
-    },
-    // Software Project 2: PPG Tourism Panel
-    {
-      image: hotelPool,
-      title: t('portfolio.ppg.title'),
-      description: t('portfolio.ppg.description'),
-      tag: t('portfolio.ppg.tag'),
-      metrics: [t('portfolio.ppg.metric1'), t('portfolio.ppg.metric2'), t('portfolio.ppg.metric3')]
-    },
-    {
-      image: diplomaticMeeting,
-      title: t('portfolio.kyrgyz.title'),
-      description: t('portfolio.kyrgyz.description'),
-      tag: t('portfolio.kyrgyz.tag'),
-      metrics: [t('portfolio.kyrgyz.metric1'), t('portfolio.kyrgyz.metric2'), t('portfolio.kyrgyz.metric3')],
-      links: [{ name: 'Video', url: 'https://www.facebook.com/BiskekTTEOMER/videos/1323158961190017/' }]
-    },
+    // 9. Teus Group — International PR & Media
     {
       image: hotelResort,
       title: t('portfolio.teus.title'),
@@ -67,13 +95,15 @@ const Portfolio = () => {
         { name: 'Tourism Today', url: 'https://www.instagram.com/tourismtoday_official/p/DGz0SUbI7fv/' }
       ]
     },
+    // 10. Mediawirt — Germany / Digital Transformation
     {
       image: germanyBerlin,
-      title: t('portfolio.energy.title'),
-      description: t('portfolio.energy.description'),
-      tag: t('portfolio.energy.tag'),
-      metrics: [t('portfolio.energy.metric1'), t('portfolio.energy.metric2'), t('portfolio.energy.metric3')]
+      title: t('portfolio.mediawirt.title'),
+      description: t('portfolio.mediawirt.description'),
+      tag: t('portfolio.mediawirt.tag'),
+      metrics: [t('portfolio.mediawirt.metric1'), t('portfolio.mediawirt.metric2'), t('portfolio.mediawirt.metric3')]
     },
+    // 11. EMO Optik — Turkey Market Entry
     {
       image: opticStore,
       title: t('portfolio.emo.title'),
@@ -81,14 +111,16 @@ const Portfolio = () => {
       tag: t('portfolio.emo.tag'),
       metrics: [t('portfolio.emo.metric1'), t('portfolio.emo.metric2'), t('portfolio.emo.metric3')]
     },
+    // 12. Türkiye–Kırgızistan — Diplomatic Digital Transformation
     {
-      image: hotelPool,
-      title: t('portfolio.hotel.title'),
-      description: t('portfolio.hotel.description'),
-      tag: t('portfolio.hotel.tag'),
-      metrics: [t('portfolio.hotel.metric1'), t('portfolio.hotel.metric2'), t('portfolio.hotel.metric3')],
-      links: [{ name: t('portfolio.hotel.photoLink'), url: 'https://www.orangecounty.com.tr/kemer/tr/foto-galeri' }]
+      image: diplomaticMeeting,
+      title: t('portfolio.kyrgyz.title'),
+      description: t('portfolio.kyrgyz.description'),
+      tag: t('portfolio.kyrgyz.tag'),
+      metrics: [t('portfolio.kyrgyz.metric1'), t('portfolio.kyrgyz.metric2'), t('portfolio.kyrgyz.metric3')],
+      links: [{ name: 'Video', url: 'https://www.facebook.com/BiskekTTEOMER/videos/1323158961190017/' }]
     },
+    // 13. ASMAN Media Group — Founder / International Media
     {
       image: centralAsia,
       title: t('portfolio.asman.title'),
