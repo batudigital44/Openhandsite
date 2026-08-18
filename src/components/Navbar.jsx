@@ -31,7 +31,7 @@ const Navbar = () => {
     { name: t('nav.about'), path: '/hakkimda' },
     { name: t('nav.portfolio'), path: '/portfolyo' },
     { name: t('nav.education'), path: '/egitimler' },
-    { name: t('nav.pressCorner'), path: '/basin' },
+    { name: t('nav.mediaPress'), path: '/medya-basin' },
     { name: t('nav.contact'), path: '/iletisim' },
   ], [t, language])
 

@@ -7,10 +7,10 @@ const translations = {
       home: 'Ana Sayfa',
       about: 'Hakkımda',
       portfolio: 'Portfolyo',
-      education: 'Eğitimler',
+      education: 'Eğitim',
+      mediaPress: 'Medya & Basın',
       contact: 'İletişim',
-      contactBtn: 'İletişime Geç',
-      pressCorner: 'Basın Köşesi'
+      contactBtn: 'İletişime Geç'
     },
     // Footer
     footer: {
@@ -277,7 +277,7 @@ const translations = {
       partnerTypeHotel: 'Otel Grubu'
     },
     press: {
-      title: 'Basın Köşesi',
+      title: 'Medya & Basın',
       subtitle: 'Medyada Yer Alan Çalışmalarım ve Yazılarım',
       mediaContent: 'Medya İçeriklerim',
       mediaPlatforms: 'Basında ve Dijital Platformlarda',
@@ -295,9 +295,9 @@ const translations = {
       about: 'About',
       portfolio: 'Portfolio',
       education: 'Education',
+      mediaPress: 'Media & Press',
       contact: 'Contact',
-      contactBtn: 'Contact',
-      pressCorner: 'Press Corner'
+      contactBtn: 'Contact'
     },
     footer: {
       ctaTitle: "Let's Work Together",
@@ -559,7 +559,7 @@ const translations = {
       partnerTypeHotel: 'Hotel Group'
     },
     press: {
-      title: 'Press Corner',
+      title: 'Media & Press',
       subtitle: 'My Media Appearances and Writings',
       mediaContent: 'My Media Content',
       mediaPlatforms: 'In Media and Digital Platforms',
@@ -577,9 +577,9 @@ const translations = {
       about: 'Über mich',
       portfolio: 'Portfolio',
       education: 'Bildung',
+      mediaPress: 'Medien & Presse',
       contact: 'Kontakt',
-      contactBtn: 'Kontakt',
-      pressCorner: 'Pressewinkel'
+      contactBtn: 'Kontakt'
     },
     footer: {
       ctaTitle: 'Lassen Sie uns zusammenarbeiten',
@@ -841,7 +841,7 @@ const translations = {
       partnerTypeHotel: 'Hotelgruppe'
     },
     press: {
-      title: 'Pressewinkel',
+      title: 'Medien & Presse',
       subtitle: 'Meine Medienauftritte und Schriften',
       mediaContent: 'Meine Medieninhalte',
       mediaPlatforms: 'In Medien und digitalen Plattformen',

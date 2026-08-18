@@ -22,7 +22,7 @@ function App() {
               <Route path="/portfolyo" element={<Portfolio />} />
               <Route path="/egitimler" element={<Education />} />
               <Route path="/iletisim" element={<Contact />} />
-              <Route path="/basin" element={<Press />} />
+              <Route path="/medya-basin" element={<Press />} />
             </Routes>
           </main>
           <Footer />
