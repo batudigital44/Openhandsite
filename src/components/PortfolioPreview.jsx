@@ -14,25 +14,25 @@ const PortfolioPreview = () => {
 
   const achievements = [
     {
-      image: globalNetwork,
-      title: t('portfolio.pma.title'),
-      description: t('portfolio.pma.description'),
-      tag: t('portfolio.pma.tag'),
-      metrics: [t('portfolio.pma.metric1'), t('portfolio.pma.metric2'), t('portfolio.pma.metric3')]
-    },
-    {
-      image: hotelResort,
-      title: t('portfolio.conti.title'),
-      description: t('portfolio.conti.description'),
-      tag: t('portfolio.conti.tag'),
-      metrics: [t('portfolio.conti.metric1'), t('portfolio.conti.metric2'), t('portfolio.conti.metric3')]
-    },
-    {
       image: dubaiSkyline,
       title: t('portfolio.dubai.title'),
       description: t('portfolio.dubai.description'),
       tag: t('portfolio.dubai.tag'),
-      metrics: [t('portfolio.dubai.metric1'), t('portfolio.dubai.metric2'), t('portfolio.dubai.metric3')]
+      metrics: [t('portfolio.dubai.metric1'), t('portfolio.dubai.metric2')]
+    },
+    {
+      image: globalNetwork,
+      title: t('portfolio.yunexia.title'),
+      description: t('portfolio.yunexia.description'),
+      tag: t('portfolio.yunexia.tag'),
+      metrics: [t('portfolio.yunexia.metric1'), t('portfolio.yunexia.metric2')]
+    },
+    {
+      image: hotelResort,
+      title: t('portfolio.orangeCounty.title'),
+      description: t('portfolio.orangeCounty.description'),
+      tag: t('portfolio.orangeCounty.tag'),
+      metrics: [t('portfolio.orangeCounty.metric1'), t('portfolio.orangeCounty.metric2')]
     }
   ]
 

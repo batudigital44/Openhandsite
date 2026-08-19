@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import { useLanguage } from '../context/LanguageContext'
 import { useRef } from 'react'
-import { Target, Users, TrendingUp, Award, Award as Certificate, ExternalLink, Globe, MapPin, Building, MessageSquare } from 'lucide-react'
+import { Users, TrendingUp, Award as Certificate, ExternalLink, Globe, MapPin, MessageSquare, Clock, Zap, Cpu, Rocket, Code } from 'lucide-react'
 import portfolioBanner from '../assets/images/portfolio-banner.png'
 import dubaiSkyline from '../assets/images/dubai-skyline.png'
 import hotelPool from '../assets/images/hotel-pool.png'
@@ -17,77 +17,63 @@ const Portfolio = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
+  const kpiStats = [
+    { icon: Users, number: t('portfolio.kpi.stat1Number'), label: t('portfolio.kpi.stat1Label') },
+    { icon: Globe, number: t('portfolio.kpi.stat2Number'), label: t('portfolio.kpi.stat2Label') },
+    { icon: TrendingUp, number: t('portfolio.kpi.stat3Number'), label: t('portfolio.kpi.stat3Label') },
+    { icon: MessageSquare, number: t('portfolio.kpi.stat4Number'), label: t('portfolio.kpi.stat4Label') },
+    { icon: Clock, number: t('portfolio.kpi.stat5Number'), label: t('portfolio.kpi.stat5Label') },
+  ]
+
   const achievements = [
-    // 1. PMA Partner — International Marketing, Media & Technology
-    {
-      image: globalNetwork,
-      title: t('portfolio.pma.title'),
-      description: t('portfolio.pma.description'),
-      tag: t('portfolio.pma.tag'),
-      metrics: [t('portfolio.pma.metric1'), t('portfolio.pma.metric2'), t('portfolio.pma.metric3')]
-    },
-    // 2. Conti Group — Sales, SEO & Performance Marketing
-    {
-      image: hotelResort,
-      title: t('portfolio.conti.title'),
-      description: t('portfolio.conti.description'),
-      tag: t('portfolio.conti.tag'),
-      metrics: [t('portfolio.conti.metric1'), t('portfolio.conti.metric2'), t('portfolio.conti.metric3')]
-    },
-    // 3. Istanbul Airlines — Marketing & Digital Growth
-    {
-      image: dubaiSkyline,
-      title: t('portfolio.istanbulAirlines.title'),
-      description: t('portfolio.istanbulAirlines.description'),
-      tag: t('portfolio.istanbulAirlines.tag'),
-      metrics: [t('portfolio.istanbulAirlines.metric1'), t('portfolio.istanbulAirlines.metric2'), t('portfolio.istanbulAirlines.metric3')]
-    },
-    // 4. DNA Hotels — Egypt (Technology × Marketing × Media)
-    {
-      image: hotelPool,
-      title: t('portfolio.dna.title'),
-      description: t('portfolio.dna.description'),
-      tag: t('portfolio.dna.tag'),
-      metrics: [t('portfolio.dna.metric1'), t('portfolio.dna.metric2'), t('portfolio.dna.metric3')]
-    },
-    // 5. PPG All in One — Tourism Technology
-    {
-      image: centralAsia,
-      title: t('portfolio.ppg.title'),
-      description: t('portfolio.ppg.description'),
-      tag: t('portfolio.ppg.tag'),
-      metrics: [t('portfolio.ppg.metric1'), t('portfolio.ppg.metric2'), t('portfolio.ppg.metric3')]
-    },
-    // 6. Yunexia — SaaS & AI Automation
-    {
-      image: diplomaticMeeting,
-      title: t('portfolio.yunexia.title'),
-      description: t('portfolio.yunexia.description'),
-      tag: t('portfolio.yunexia.tag'),
-      metrics: [t('portfolio.yunexia.metric1'), t('portfolio.yunexia.metric2'), t('portfolio.yunexia.metric3')]
-    },
-    // 7. Orange County Hotels — Data-Driven Marketing
-    {
-      image: hotelPool,
-      title: t('portfolio.orangeCounty.title'),
-      description: t('portfolio.orangeCounty.description'),
-      tag: t('portfolio.orangeCounty.tag'),
-      metrics: [t('portfolio.orangeCounty.metric1'), t('portfolio.orangeCounty.metric2'), t('portfolio.orangeCounty.metric3')],
-      links: [{ name: t('portfolio.orangeCounty.photoLink'), url: 'https://www.orangecounty.com.tr/kemer/tr/foto-galeri' }]
-    },
-    // 8. Dubai Real Estate — $800K+ Conversion
+    // 1. Dubai Gayrimenkul — Performans Pazarlaması ve $800K+ Satış Dönüşümü
     {
       image: dubaiSkyline,
       title: t('portfolio.dubai.title'),
       description: t('portfolio.dubai.description'),
+      description2: t('portfolio.dubai.description2'),
       tag: t('portfolio.dubai.tag'),
-      metrics: [t('portfolio.dubai.metric1'), t('portfolio.dubai.metric2'), t('portfolio.dubai.metric3')]
+      resultsLabel: t('portfolio.resultsLabel'),
+      metrics: [t('portfolio.dubai.metric1'), t('portfolio.dubai.metric2'), t('portfolio.dubai.metric3'), t('portfolio.dubai.metric4')],
+      expertise: t('portfolio.dubai.expertise')
     },
-    // 9. Teus Group — International PR & Media
+    // 2. Yunexia — SaaS Ürün Pazarlaması ve AI Otomasyonları
+    {
+      image: globalNetwork,
+      title: t('portfolio.yunexia.title'),
+      description: t('portfolio.yunexia.description'),
+      description2: t('portfolio.yunexia.description2'),
+      description3: t('portfolio.yunexia.description3'),
+      tag: t('portfolio.yunexia.tag'),
+      metrics: [t('portfolio.yunexia.metric1'), t('portfolio.yunexia.metric2'), t('portfolio.yunexia.metric3'), t('portfolio.yunexia.metric4')]
+    },
+    // 3. PPG All In One — TravelTech ve Dijital Ürün
     {
       image: hotelResort,
+      title: t('portfolio.ppg.title'),
+      description: t('portfolio.ppg.description'),
+      description2: t('portfolio.ppg.description2'),
+      tag: t('portfolio.ppg.tag'),
+      metrics: [t('portfolio.ppg.metric1'), t('portfolio.ppg.metric2'), t('portfolio.ppg.metric3')]
+    },
+    // 4. Türkiye–Kırgızistan — Kurumsal Dijital Dönüşüm
+    {
+      image: diplomaticMeeting,
+      title: t('portfolio.kyrgyz.title'),
+      description: t('portfolio.kyrgyz.description'),
+      description2: t('portfolio.kyrgyz.description2'),
+      description3: t('portfolio.kyrgyz.description3'),
+      tag: t('portfolio.kyrgyz.tag'),
+      metrics: [t('portfolio.kyrgyz.metric1'), t('portfolio.kyrgyz.metric2'), t('portfolio.kyrgyz.metric3')],
+      links: [{ name: 'Video', url: 'https://www.facebook.com/BiskekTTEOMER/videos/1323158961190017/' }]
+    },
+    // 5. Teus Group — Uluslararası PR ve Marka İletişimi
+    {
+      image: hotelPool,
       title: t('portfolio.teus.title'),
       description: t('portfolio.teus.description'),
+      description2: t('portfolio.teus.description2'),
+      description3: t('portfolio.teus.description3'),
       tag: t('portfolio.teus.tag'),
       metrics: [t('portfolio.teus.metric1'), t('portfolio.teus.metric2'), t('portfolio.teus.metric3')],
       links: [
@@ -95,39 +81,57 @@ const Portfolio = () => {
         { name: 'Tourism Today', url: 'https://www.instagram.com/tourismtoday_official/p/DGz0SUbI7fv/' }
       ]
     },
-    // 10. Mediawirt — Germany / Digital Transformation
+    // 6. Mediawirt — Almanya | B2B Dijital Dönüşüm
     {
       image: germanyBerlin,
       title: t('portfolio.mediawirt.title'),
       description: t('portfolio.mediawirt.description'),
+      description2: t('portfolio.mediawirt.description2'),
+      description3: t('portfolio.mediawirt.description3'),
       tag: t('portfolio.mediawirt.tag'),
       metrics: [t('portfolio.mediawirt.metric1'), t('portfolio.mediawirt.metric2'), t('portfolio.mediawirt.metric3')]
     },
-    // 11. EMO Optik — Turkey Market Entry
+    // 7. EMO Optik — 7 Uluslararası Markanın Türkiye Dijital Pazarı
     {
       image: opticStore,
       title: t('portfolio.emo.title'),
       description: t('portfolio.emo.description'),
+      description2: t('portfolio.emo.description2'),
+      description3: t('portfolio.emo.description3'),
       tag: t('portfolio.emo.tag'),
       metrics: [t('portfolio.emo.metric1'), t('portfolio.emo.metric2'), t('portfolio.emo.metric3')]
     },
-    // 12. Türkiye–Kırgızistan — Diplomatic Digital Transformation
+    // 8. Orange County Hotels — Veri Odaklı Dijital Pazarlama
     {
-      image: diplomaticMeeting,
-      title: t('portfolio.kyrgyz.title'),
-      description: t('portfolio.kyrgyz.description'),
-      tag: t('portfolio.kyrgyz.tag'),
-      metrics: [t('portfolio.kyrgyz.metric1'), t('portfolio.kyrgyz.metric2'), t('portfolio.kyrgyz.metric3')],
-      links: [{ name: 'Video', url: 'https://www.facebook.com/BiskekTTEOMER/videos/1323158961190017/' }]
+      image: hotelResort,
+      title: t('portfolio.orangeCounty.title'),
+      description: t('portfolio.orangeCounty.description'),
+      description2: t('portfolio.orangeCounty.description2'),
+      description3: t('portfolio.orangeCounty.description3'),
+      tag: t('portfolio.orangeCounty.tag'),
+      resultsLabel: t('portfolio.orangeCounty.resultsLabel'),
+      metrics: [t('portfolio.orangeCounty.metric1'), t('portfolio.orangeCounty.metric2'), t('portfolio.orangeCounty.metric3')],
+      links: [{ name: t('portfolio.orangeCounty.photoLink'), url: 'https://www.orangecounty.com.tr/kemer/tr/foto-galeri' }]
     },
-    // 13. ASMAN Media Group — Founder / International Media
+    // 9. ASMAN Medya — Uluslararası Medya ve Diplomasi
     {
       image: centralAsia,
       title: t('portfolio.asman.title'),
       description: t('portfolio.asman.description'),
+      description2: t('portfolio.asman.description2'),
+      description3: t('portfolio.asman.description3'),
       tag: t('portfolio.asman.tag'),
       metrics: [t('portfolio.asman.metric1'), t('portfolio.asman.metric2'), t('portfolio.asman.metric3')]
     }
+  ]
+
+  const techAreas = [
+    { icon: TrendingUp, title: t('portfolio.tech.item1Title'), desc: t('portfolio.tech.item1Desc') },
+    { icon: Zap, title: t('portfolio.tech.item2Title'), desc: t('portfolio.tech.item2Desc') },
+    { icon: Cpu, title: t('portfolio.tech.item3Title'), desc: t('portfolio.tech.item3Desc') },
+    { icon: Rocket, title: t('portfolio.tech.item4Title'), desc: t('portfolio.tech.item4Desc') },
+    { icon: Code, title: t('portfolio.tech.item5Title'), desc: t('portfolio.tech.item5Desc') },
+    { icon: Globe, title: t('portfolio.tech.item6Title'), desc: t('portfolio.tech.item6Desc') },
   ]
 
   const certificates = [
@@ -177,21 +181,6 @@ const Portfolio = () => {
     { name: 'B1 Seviye İngilizce Sertifikası', issuer: 'Dil Eğitimi', year: '2025' },
     { name: 'SEO Eğitimi 2025', issuer: 'Udemy', year: '2025' },
     { name: 'AI Engineering Certificate', issuer: 'Özel Eğitim', year: '2026' },
-  ]
-
-  const awards = [
-    {
-      name: 'Avrupa\'nın En İyi Otel İnşaat ve Tasarım Ödülü',
-      project: 'Teus Group - Desire Antalya',
-      year: '2024',
-      description: 'Ulusal ve uluslararası basın PR çalışmalarıyla desteklenen iletişim stratejisi'
-    },
-    {
-      name: '800.000$+ Dubai Gayrimenkul Satış Dönüşümü',
-      project: 'Dubai Emlak Firması',
-      year: '2024',
-      description: '14 günde, 5.000 TL reklam harcamasıyla 800.000$+ satış konversiyonu'
-    }
   ]
 
   const associations = [
@@ -428,17 +417,8 @@ const Portfolio = () => {
       {/* KPI Stats Section */}
       <section className="py-12 bg-dark-800">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[
-              { icon: Target, number: '800K$+', label: 'Satış Dönüşümü', sublabel: 'Dubai Gayrimenkul' },
-              { icon: TrendingUp, number: '160x', label: 'ROAS Ortalaması', sublabel: 'Performans Kampanyaları' },
-              { icon: Users, number: '25+', label: 'Marka & Kurum', sublabel: 'Uluslararası Projeler' },
-              { icon: Award, number: '1M+', label: 'İçerik Etkileşimi', sublabel: 'Organik Erişim' },
-              { icon: Award, number: '130+', label: 'Ülke Ağı', sublabel: 'IFJ Akreditasyonu' },
-              { icon: Target, number: '95%', label: 'Başarı Oranı', sublabel: 'Tamamlanan Projeler' },
-              { icon: TrendingUp, number: '14 gün', label: 'Hızlı Sonuç', sublabel: 'En Hızlı Dönüşüm' },
-              { icon: Award, number: '40+', label: 'Sertifika', sublabel: 'Profesyonel Eğitim' },
-            ].map((stat, index) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {kpiStats.map((stat, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -449,7 +429,6 @@ const Portfolio = () => {
                 <stat.icon className="w-6 h-6 text-primary mx-auto mb-2" />
                 <div className="text-2xl md:text-3xl font-bold gradient-text">{stat.number}</div>
                 <div className="text-sm font-medium text-white mt-1">{stat.label}</div>
-                <div className="text-xs text-gray-400 mt-1">{stat.sublabel}</div>
               </motion.div>
             ))}
           </div>
@@ -465,8 +444,8 @@ const Portfolio = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-sm font-semibold text-primary mb-2">Başarılar ve Ödüller</h2>
-            <h3 className="text-3xl font-display font-bold">Tüm Çalışmalarım</h3>
+            <h2 className="text-sm font-semibold text-primary mb-2">{t('portfolio.projectsEyebrow')}</h2>
+            <h3 className="text-3xl font-display font-bold">{t('portfolio.projectsTitle')}</h3>
           </motion.div>
 
           <div className="space-y-16">
@@ -495,14 +474,28 @@ const Portfolio = () => {
                   </div>
                   <div className="p-8 lg:p-12 flex flex-col justify-center">
                     <h4 className="text-2xl font-bold mb-4">{item.title}</h4>
-                    <p className="text-gray-300 leading-relaxed mb-6">{item.description}</p>
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <p className="text-gray-300 leading-relaxed mb-4">{item.description}</p>
+                    {item.description2 && (
+                      <p className="text-gray-300 leading-relaxed mb-4">{item.description2}</p>
+                    )}
+                    {item.description3 && (
+                      <p className="text-gray-300 leading-relaxed mb-4">{item.description3}</p>
+                    )}
+                    {item.resultsLabel && (
+                      <p className="text-sm font-semibold text-white mt-2 mb-2">{item.resultsLabel}</p>
+                    )}
+                    <div className="flex flex-wrap gap-2 mb-4 mt-2">
                       {item.metrics.map((metric, i) => (
                         <span key={i} className="px-3 py-1 bg-gradient-to-r from-primary/20 to-secondary/20 text-primary text-sm rounded-full">
                           {metric}
                         </span>
                       ))}
                     </div>
+                    {item.expertise && (
+                      <p className="text-xs text-gray-400 mb-4">
+                        <span className="font-semibold text-secondary">{t('portfolio.expertiseLabel')}:</span> {item.expertise}
+                      </p>
+                    )}
                     {/* Additional gallery images for hotel section */}
                     {item.gallery && (
                       <div className="flex gap-3 mt-4">
@@ -579,7 +572,7 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Ödüller ve Başarılar */}
+      {/* KPI Başarıları */}
       <section className="section-padding bg-dark-800">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -589,30 +582,22 @@ const Portfolio = () => {
             className="text-center mb-12"
           >
             <h3 className="text-3xl font-display font-bold mb-4">
-              🏆 Ödüller ve <span className="gradient-text">KPI Başarıları</span>
+              🏆 <span className="gradient-text">{t('portfolio.kpiAchievementsTitle')}</span>
             </h3>
-            <p className="text-gray-400">Ölçülebilir sonuçlar ve uluslararası başarılar</p>
+            <p className="text-gray-400">{t('portfolio.kpiAchievementsDesc')}</p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {awards.map((award, index) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {kpiStats.map((stat, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="glass-card p-6 hover:border-primary/30 transition-all relative overflow-hidden"
+                className="text-center p-4 glass-card hover:border-primary/30 transition-all"
               >
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-bl-full" />
-                <div className="relative">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full">
-                      {award.year}
-                    </span>
-                  </div>
-                  <h4 className="font-bold text-lg mb-2">{award.name}</h4>
-                  <p className="text-secondary text-sm mb-2">{award.project}</p>
-                  <p className="text-gray-400 text-sm">{award.description}</p>
-                </div>
+                <stat.icon className="w-6 h-6 text-primary mx-auto mb-2" />
+                <div className="text-2xl md:text-3xl font-bold gradient-text">{stat.number}</div>
+                <div className="text-sm font-medium text-white mt-1">{stat.label}</div>
               </motion.div>
             ))}
           </div>
@@ -808,6 +793,39 @@ const Portfolio = () => {
                 </div>
                 <h4 className="font-bold mb-2">{ref.name}</h4>
                 <p className="text-secondary text-sm">{ref.title}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Teknoloji ve Uzmanlık Alanları */}
+      <section className="section-padding">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h3 className="text-3xl font-display font-bold mb-4">
+              💡 <span className="gradient-text">{t('portfolio.tech.title')}</span>
+            </h3>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {techAreas.map((area, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="glass-card p-6 hover:border-primary/30 transition-all"
+              >
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4">
+                  <area.icon className="w-6 h-6 text-primary" />
+                </div>
+                <h4 className="font-bold mb-2">{area.title}</h4>
+                <p className="text-gray-400 text-sm">{area.desc}</p>
               </motion.div>
             ))}
           </div>
