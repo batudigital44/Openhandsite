@@ -12,7 +12,11 @@ import centralAsia from '../assets/images/central-asia.png'
 import diplomaticMeeting from '../assets/images/diplomatic-meeting.jpg'
 import globalNetwork from '../assets/images/global-network.png'
 import belcontiResort from '../assets/images/belconti-resort.jpg'
-import thyBelekUniversity from '../assets/images/thy-belek-university.jpg'
+import belcontiPoolAerial from '../assets/images/belconti-pool-aerial.jpg'
+import thyAirplane from '../assets/images/thy-airplane.jpg'
+import istanbulAirlinesJet from '../assets/images/istanbul-airlines-jet.jpg'
+import orangeCountyKemer from '../assets/images/orange-county-kemer.jpg'
+import universityCampus from '../assets/images/university-campus.png'
 
 const Portfolio = () => {
   const { t } = useLanguage()
@@ -38,7 +42,7 @@ const Portfolio = () => {
     },
     // 3. Istanbul Airlines — Marketing & Digital Growth
     {
-      image: dubaiSkyline,
+      image: istanbulAirlinesJet,
       title: t('portfolio.istanbulAirlines.title'),
       description: t('portfolio.istanbulAirlines.description'),
       tag: t('portfolio.istanbulAirlines.tag'),
@@ -70,7 +74,7 @@ const Portfolio = () => {
     },
     // 7. Orange County Hotels — Data-Driven Marketing
     {
-      image: hotelPool,
+      image: orangeCountyKemer,
       title: t('portfolio.orangeCounty.title'),
       description: t('portfolio.orangeCounty.description'),
       tag: t('portfolio.orangeCounty.tag'),
@@ -137,6 +141,7 @@ const Portfolio = () => {
       description: t('portfolio.belconti.description'),
       tag: t('portfolio.belconti.tag'),
       metrics: [t('portfolio.belconti.metric1'), t('portfolio.belconti.metric2'), t('portfolio.belconti.metric3')],
+      gallery: [belcontiPoolAerial],
       links: [
         { name: t('portfolio.belconti.articleLink'), url: 'https://www.linkedin.com/pulse/mobil-i%C3%A7erikle-90-bin-izlenme-batuhan-ate%C5%9F-vyc6f/' },
         { name: t('portfolio.belconti.videoLink'), url: 'https://www.instagram.com/p/DcJDPBrIOCK/' }
@@ -144,11 +149,12 @@ const Portfolio = () => {
     },
     // 15. Belek Üniversitesi × Türk Hava Yolları — Record Brand Collaboration
     {
-      image: thyBelekUniversity,
+      image: thyAirplane,
       title: t('portfolio.belekUni.title'),
       description: t('portfolio.belekUni.description'),
       tag: t('portfolio.belekUni.tag'),
       metrics: [t('portfolio.belekUni.metric1'), t('portfolio.belekUni.metric2'), t('portfolio.belekUni.metric3')],
+      gallery: [universityCampus],
       links: [
         { name: t('portfolio.belekUni.videoLink'), url: 'https://www.instagram.com/p/C13erk5oGBJ/' }
       ]
