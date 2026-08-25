@@ -11,6 +11,8 @@ import opticStore from '../assets/images/optic-store.jpg'
 import centralAsia from '../assets/images/central-asia.png'
 import diplomaticMeeting from '../assets/images/diplomatic-meeting.jpg'
 import globalNetwork from '../assets/images/global-network.png'
+import belcontiResort from '../assets/images/belconti-resort.jpg'
+import thyBelekUniversity from '../assets/images/thy-belek-university.jpg'
 
 const Portfolio = () => {
   const { t } = useLanguage()
@@ -127,6 +129,29 @@ const Portfolio = () => {
       description: t('portfolio.asman.description'),
       tag: t('portfolio.asman.tag'),
       metrics: [t('portfolio.asman.metric1'), t('portfolio.asman.metric2'), t('portfolio.asman.metric3')]
+    },
+    // 14. Belconti Resort Hotel — 90K Views Viral Content
+    {
+      image: belcontiResort,
+      title: t('portfolio.belconti.title'),
+      description: t('portfolio.belconti.description'),
+      tag: t('portfolio.belconti.tag'),
+      metrics: [t('portfolio.belconti.metric1'), t('portfolio.belconti.metric2'), t('portfolio.belconti.metric3')],
+      links: [
+        { name: t('portfolio.belconti.articleLink'), url: 'https://www.linkedin.com/pulse/mobil-i%C3%A7erikle-90-bin-izlenme-batuhan-ate%C5%9F-vyc6f/' },
+        { name: t('portfolio.belconti.videoLink'), url: 'https://www.instagram.com/p/DcJDPBrIOCK/' }
+      ]
+    },
+    // 15. Belek Üniversitesi × Türk Hava Yolları — Record Brand Collaboration
+    {
+      image: thyBelekUniversity,
+      title: t('portfolio.belekUni.title'),
+      description: t('portfolio.belekUni.description'),
+      tag: t('portfolio.belekUni.tag'),
+      metrics: [t('portfolio.belekUni.metric1'), t('portfolio.belekUni.metric2'), t('portfolio.belekUni.metric3')],
+      links: [
+        { name: t('portfolio.belekUni.videoLink'), url: 'https://www.instagram.com/p/C13erk5oGBJ/' }
+      ]
     }
   ]
 

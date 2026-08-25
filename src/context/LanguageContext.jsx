@@ -266,6 +266,27 @@ const translations = {
         metric1: '130 Ülke IFJ Akreditasyonu',
         metric2: 'ASMAN Medya Grubu',
         metric3: 'Diplomasi Haberciliği'
+      },
+      // 14. Belconti Resort Hotel
+      belconti: {
+        title: 'Belconti Resort Hotel — 90 Bin İzlenme Rekoru',
+        description: 'Belconti Resort Hotel için ürettiğim mobil içerik 90.000 izlenmeye ulaşarak son 2 yılın en çok izlenen içeriği oldu. İçerik, otelin en yüksek takipçi kazanımını sağladı ve dijital görünürlüğünü zirveye taşıdı.',
+        tag: 'Otel & Viral İçerik',
+        metric1: '90.000+ İzlenme',
+        metric2: 'Son 2 Yılın Rekoru',
+        metric3: 'En Yüksek Takipçi Kazanımı',
+        articleLink: 'LinkedIn Makalesi',
+        videoLink: 'Instagram Videosu'
+      },
+      // 15. Belek Üniversitesi × Türk Hava Yolları
+      belekUni: {
+        title: 'Belek Üniversitesi × Türk Hava Yolları — Rekor Marka İşbirliği',
+        description: 'Belek Üniversitesi için hazırladığım Türk Hava Yolları temalı içerik, üniversitenin açılışından bu yana en çok izlenen video oldu ve ilk büyük marka işbirliğini temsil etti. Başarı, Antalya Vali Yardımcısı tarafından bizzat tebrik ve teşekkürle taçlandırıldı.',
+        tag: 'Üniversite & Havacılık',
+        metric1: 'Tüm Zamanların Rekoru',
+        metric2: 'THY Marka İşbirliği',
+        metric3: 'Vali Yardımcısı Teşekkürü',
+        videoLink: 'Instagram Videosu'
       }
     },
     portfolioPreview: {
@@ -585,6 +606,27 @@ const translations = {
         metric1: '130 Countries IFJ Accreditation',
         metric2: 'ASMAN Media Group',
         metric3: 'Diplomacy Journalism'
+      },
+      // 14. Belconti Resort Hotel
+      belconti: {
+        title: 'Belconti Resort Hotel — 90K Views Record',
+        description: 'The mobile content I produced for Belconti Resort Hotel reached 90,000 views, becoming the most-viewed content of the last 2 years. It delivered the hotel\'s highest follower gain and took its digital visibility to the top.',
+        tag: 'Hotel & Viral Content',
+        metric1: '90,000+ Views',
+        metric2: 'Last 2 Years Record',
+        metric3: 'Highest Follower Gain',
+        articleLink: 'LinkedIn Article',
+        videoLink: 'Instagram Video'
+      },
+      // 15. Belek University × Turkish Airlines
+      belekUni: {
+        title: 'Belek University × Turkish Airlines — Record Brand Collaboration',
+        description: 'The Turkish Airlines-themed content I created for Belek University became the most-viewed video since the university\'s opening and represented its first major brand collaboration. The achievement was crowned with personal congratulations and thanks from the Antalya Deputy Governor.',
+        tag: 'University & Aviation',
+        metric1: 'All-Time Record',
+        metric2: 'Turkish Airlines Collaboration',
+        metric3: 'Deputy Governor\'s Thanks',
+        videoLink: 'Instagram Video'
       }
     },
     portfolioPreview: {
@@ -904,6 +946,27 @@ const translations = {
         metric1: '130 Länder IFJ Akkreditierung',
         metric2: 'ASMAN Mediengruppe',
         metric3: 'Diplomatie-Journalismus'
+      },
+      // 14. Belconti Resort Hotel
+      belconti: {
+        title: 'Belconti Resort Hotel — Rekord mit 90.000 Aufrufen',
+        description: 'Der mobile Content, den ich für das Belconti Resort Hotel produzierte, erreichte 90.000 Aufrufe und wurde damit zum meistgesehenen Inhalt der letzten 2 Jahre. Er sorgte für das höchste Follower-Wachstum des Hotels und brachte dessen digitale Sichtbarkeit auf ein neues Niveau.',
+        tag: 'Hotel & Viraler Content',
+        metric1: '90.000+ Aufrufe',
+        metric2: 'Rekord der letzten 2 Jahre',
+        metric3: 'Höchstes Follower-Wachstum',
+        articleLink: 'LinkedIn-Artikel',
+        videoLink: 'Instagram-Video'
+      },
+      // 15. Belek Universität × Turkish Airlines
+      belekUni: {
+        title: 'Belek Universität × Turkish Airlines — Rekord-Markenkooperation',
+        description: 'Der Turkish-Airlines-Content, den ich für die Belek Universität erstellte, wurde zum meistgesehenen Video seit der Eröffnung der Universität und stellte ihre erste große Markenkooperation dar. Der Erfolg wurde mit persönlichen Glückwünschen und Dank des Vize-Gouverneurs von Antalya gekrönt.',
+        tag: 'Universität & Luftfahrt',
+        metric1: 'Allzeitrekord',
+        metric2: 'Turkish Airlines Kooperation',
+        metric3: 'Dank des Vize-Gouverneurs',
+        videoLink: 'Instagram-Video'
       }
     },
     portfolioPreview: {
