@@ -61,4 +61,10 @@
     <xhtml:link rel="alternate" hreflang="tr" href="https://www.batuhanates.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.batuhanates.com/en/"/>
   </url>
+  <url>
+    <loc>https://www.batuhanates.com/blogs</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
