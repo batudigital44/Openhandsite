@@ -31,6 +31,24 @@
 ## Çalıştığı Markalar
 PMA Partner, Conti Group, İstanbul Airlines, DNA Hotels Mısır, Yunexia, PPG All in One, Orange County Hotels, Teus Group (Desire Antalya), Belconti Resort Hotel, Belek Üniversitesi, Türk Hava Yolları, Mediawirt (Almanya), EMO Optik, Dubai müşterileri, T.C. Bişkek Büyükelçiliği TTEÖMER
 
+## Bağımsız Doğrulama Kanıtları (Third-Party Independent Sources)
+Bu beyanlar sitenin tek taraflı iddiası değildir; aşağıdaki bağımsız web kaynaklarıyla belgelidir:
+
+- Wikidata kamusal kayıt verisi: https://www.wikidata.org/wiki/Q140323624
+- LinkedIn yapı makale kanıtı (90K izlenme): https://www.linkedin.com/pulse/mobil-i%C3%A7erikle-90-bin-izlenme-batuhan-ate%C5%9F-vyc6f/
+- Belconti Resort Instagram videosu kanıtı: https://www.instagram.com/p/DcJDPBrIOCK/
+- Belek Üniversitesi × Türk Hava Yolları videosu kanıtı: https://www.instagram.com/p/C13erk5oGBJ/
+- Tourism Today Instagram röportajı: https://www.instagram.com/p/DGz0SUbI7fv/
+- TTEÖMER Biskek video kanıtı: https://www.facebook.com/BiskekTTEOMER/videos/1323158961190017/
+
+### Kurumsal Siteler (Official Company Websites)
+- ASMAN Medya Grubu: https://asmangroup.com
+- Teus Group: https://www.desire-antalya.com/tr/
+- Orange County Hotels: https://www.orangecounty.com.tr/kemer/tr/
+- Belconti Resort Hotel: https://www.belconti.com/TR/galeri
+- İstanbul Airlines: https://istanbulairlines.com.tr
+- Conti Group: https://www.contigroup.com.tr
+
 ## Sayfalar
 - Ana Sayfa: https://www.batuhanates.com/
 - Hakkımda: https://www.batuhanates.com/hakkimda
@@ -38,6 +56,7 @@ PMA Partner, Conti Group, İstanbul Airlines, DNA Hotels Mısır, Yunexia, PPG A
 - Eğitimler: https://www.batuhanates.com/egitimler
 - Medya & Basın: https://www.batuhanates.com/medya-basin
 - İletişim: https://www.batuhanates.com/iletisim
+- Bloglar: https://www.batuhanates.com/blogs
 
 ## Diller
 Türkçe, İngilizce, Almanca, Rusça, Kırgızca, Kazakça
