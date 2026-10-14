@@ -4,17 +4,18 @@ import { ArrowRight, Target, TrendingUp, Users, Award } from 'lucide-react'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { useLanguage } from '../context/LanguageContext'
+import { localizedPath } from '../i18n/routes'
 import aboutImage from '../assets/images/about-hero.png'
 
 const AboutPreview = () => {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   const stats = [
     { number: '25+', label: t('aboutPreview.stats.brands'), icon: Target },
     { number: '10+', label: t('aboutPreview.stats.international'), icon: Users },
-    { number: '95%', label: t('aboutPreview.stats.success'), icon: TrendingUp },
+    { number: '5', label: t('aboutPreview.stats.success'), icon: TrendingUp },
     { number: '1M+', label: t('aboutPreview.stats.engagement'), icon: Award },
   ]
 
@@ -79,7 +80,7 @@ const AboutPreview = () => {
               ))}
             </div>
 
-            <Link to="/hakkimda" className="btn-primary inline-flex items-center gap-2">
+            <Link to={localizedPath('about', language)} className="btn-primary inline-flex items-center gap-2">
               {t('aboutPreview.cta')}
               <ArrowRight size={18} />
             </Link>

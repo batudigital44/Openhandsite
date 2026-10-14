@@ -1,16 +1,20 @@
 import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Mail, MapPin, Send, Zap, Smartphone, TrendingUp, Target, Check, Calendar, Users, Award, Globe, MessageCircle, DollarSign } from 'lucide-react'
+import { useLanguage } from '../context/LanguageContext'
+import { sendTrainingApplication } from '../lib/submitForm'
 
 const Education = () => {
+  const { t } = useLanguage()
   const scrollRef = useRef(null)
-  const isInView = useInView(scrollRef, { once: true, margin: "-100px" })
+  const isInView = useInView(scrollRef, { once: true, amount: 0.1 })
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '',
-    subject: 'egitim',
-    message: ''
+    training_name: '',
+    message: '',
+    website: ''
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
@@ -29,33 +33,44 @@ const Education = () => {
     return null
   }
 
-const handleSubmit = (e) => {
+  const applyForTraining = (title) => {
+    setFormData((prev) => ({ ...prev, training_name: title }))
+    document.getElementById('basvuru-formu')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    
+
+    // Honeypot: botlar bu gizli alanı doldurur, gerçek kullanıcılar doldurmaz
+    if (formData.website) return
+
     const validationError = validateForm()
     if (validationError) {
       setError(validationError)
       return
     }
-    
-    // Create mailto link with form data
-    const subject = encodeURIComponent('Eğitim Başvurusu')
-    const body = encodeURIComponent(
-      `İsim: ${formData.name}\n` +
-      `Telefon: ${formData.phone}\n` +
-      `E-posta: ${formData.email}\n\n` +
-      `Mesaj:\n${formData.message}`
-    )
-    
-    // Open email client with pre-filled data
-    window.location.href = `mailto:digital@batuhanates.com?subject=${subject}&body=${body}`
-    // Simulate successful submission
-    setTimeout(() => {
-      setIsSubmitting(false)
+
+    setIsSubmitting(true)
+
+    try {
+      await sendTrainingApplication({
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        message: formData.message,
+        training_name: formData.training_name,
+        reply_to: formData.email
+      })
+
       setSubmitted(true)
-      setFormData({ name: '', phone: '', email: '', subject: 'egitim', message: '' })
+      setFormData({ name: '', phone: '', email: '', training_name: '', message: '', website: '' })
       setTimeout(() => setSubmitted(false), 5000)
-    }, 1500)
+    } catch (err) {
+      console.error('E-posta gönderim hatası:', err)
+      setError('Mesaj gönderilemedi. Lütfen digital@batuhanates.com adresine doğrudan yazın.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const trainings = [
@@ -130,9 +145,10 @@ const handleSubmit = (e) => {
                 <span className="gradient-text">Dijital Kazançlar</span><br />
                 Akıllı Sistemlerle İnşa Edilir
               </h1>
-              <p className="text-xl text-gray-300 mb-8">
+              <p className="text-xl text-gray-300 mb-6">
                 Küresel deneyim, veri odaklı yaklaşım. Manuel iş yükünden kurtulun, yapay zeka ve otomasyonun gücüyle markanızı büyütün.
               </p>
+              <p className="text-lg text-gray-300 mb-8">{t('education.summary')}</p>
               <div className="flex flex-wrap gap-4">
                 <a href="#egitimler" className="btn-primary">
                   Eğitimlere Göz At
@@ -263,6 +279,14 @@ const handleSubmit = (e) => {
                         </div>
                       ))}
                     </div>
+                    <button
+                      type="button"
+                      onClick={() => applyForTraining(training.title)}
+                      className="btn-primary mt-6 inline-flex items-center gap-2"
+                    >
+                      Başvuru Yap
+                      <Send size={16} />
+                    </button>
                   </div>
                 </div>
               </motion.div>
@@ -321,7 +345,7 @@ const handleSubmit = (e) => {
                     <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Check className="w-8 h-8 text-green-400" />
                     </div>
-                    <h4 className="text-xl font-bold mb-2">Başvurunuz Alındı!</h4>
+                    <h4 className="text-xl font-bold mb-2">Mesajınız alındı, en kısa sürede dönüş yapacağım.</h4>
                     <p className="text-gray-400">En kısa sürede {formData.email || 'e-posta adresinize'} dönüş yapacağım.</p>
                   </motion.div>
                 ) : (
@@ -331,6 +355,17 @@ const handleSubmit = (e) => {
                         {error}
                       </div>
                     )}
+                    {/* Honeypot - spam botlarını yakalamak için gizli alan */}
+                    <input
+                      type="text"
+                      name="website"
+                      value={formData.website}
+                      onChange={handleChange}
+                      tabIndex="-1"
+                      autoComplete="off"
+                      aria-hidden="true"
+                      className="hidden"
+                    />
                     <div>
                       <label className="block text-sm font-medium mb-2">İsim *</label>
                       <input
@@ -338,6 +373,7 @@ const handleSubmit = (e) => {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
+                        required
                         className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-xl focus:border-primary focus:outline-none transition-colors"
                         placeholder="Adınız Soyadınız"
                       />
@@ -349,6 +385,7 @@ const handleSubmit = (e) => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
+                        required
                         className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-xl focus:border-primary focus:outline-none transition-colors"
                         placeholder="+90 5XX XXX XX XX"
                       />
@@ -360,8 +397,20 @@ const handleSubmit = (e) => {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
+                        required
                         className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-xl focus:border-primary focus:outline-none transition-colors"
                         placeholder="ornek@mail.com"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Başvurulan Eğitim</label>
+                      <input
+                        type="text"
+                        name="training_name"
+                        value={formData.training_name}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-xl focus:border-primary focus:outline-none transition-colors"
+                        placeholder="Başvurmak istediğiniz eğitimi seçin"
                       />
                     </div>
                     <div>
@@ -455,7 +504,7 @@ const handleSubmit = (e) => {
                 <h4 className="font-semibold mb-4">Sosyal Medya</h4>
                 <div className="flex gap-4">
                   <a 
-                    href="https://www.instagram.com/ba2digital/" 
+                    href="https://www.instagram.com/batu.digital/" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-dark-700 rounded-xl flex items-center justify-center hover:bg-primary/20 transition-colors"
@@ -473,6 +522,52 @@ const handleSubmit = (e) => {
                 </div>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Past Events Section */}
+      <section className="section-padding bg-dark-900">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-sm font-semibold text-primary mb-2 uppercase tracking-wider">{t('education.pastEventsTitle')}</h2>
+            <h3 className="text-3xl md:text-4xl font-display font-bold">{t('education.pastEventsSubtitle')}</h3>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {t('education.pastEvents').map((event, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="glass-card p-8"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <Calendar size={24} className="text-primary" />
+                  <h4 className="text-xl font-bold">{event.title}</h4>
+                </div>
+                <p className="text-gray-400 text-sm mb-4 flex items-center gap-2">
+                  <MapPin size={16} className="text-primary" /> {event.location}
+                </p>
+                <div className="grid sm:grid-cols-2 gap-3 mb-4">
+                  {event.topics.map((topic, i) => (
+                    <div key={i} className="flex items-center gap-3 bg-dark-800/50 p-3 rounded-lg">
+                      <Check size={18} className="text-primary flex-shrink-0" />
+                      <span className="text-sm">{topic}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="text-sm text-secondary font-medium flex items-center gap-2">
+                  <Users size={16} /> {event.quota}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

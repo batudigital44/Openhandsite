@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
+import { localizedPath } from '../i18n/routes'
 import Logo from '../assets/images/logo.png'
 import LanguageSwitcher from './LanguageSwitcher'
 
@@ -27,12 +28,12 @@ const Navbar = () => {
 
   // Recalculate navLinks when language changes
   const navLinks = useMemo(() => [
-    { name: t('nav.home'), path: '/' },
-    { name: t('nav.about'), path: '/hakkimda' },
-    { name: t('nav.portfolio'), path: '/portfolyo' },
-    { name: t('nav.education'), path: '/egitimler' },
-    { name: t('nav.mediaPress'), path: '/medya-basin' },
-    { name: t('nav.contact'), path: '/iletisim' },
+    { name: t('nav.home'), path: localizedPath('home', language) },
+    { name: t('nav.about'), path: localizedPath('about', language) },
+    { name: t('nav.portfolio'), path: localizedPath('portfolio', language) },
+    { name: t('nav.education'), path: localizedPath('education', language) },
+    { name: t('nav.mediaPress'), path: localizedPath('press', language) },
+    { name: t('nav.contact'), path: localizedPath('contact', language) },
   ], [t, language])
 
   return (

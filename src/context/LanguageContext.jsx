@@ -1,4 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { parsePath, localizedPath, DEFAULT_LANG } from '../i18n/routes'
 
 const translations = {
   tr: {
@@ -15,24 +17,25 @@ const translations = {
     // Footer
     footer: {
       ctaTitle: 'Hadi Beraber Çalışalım',
-      ctaDesc: 'Dijitali öğrenmek, markanı konumlandırmak veya iş ortağı olmak için şimdi bana mail gönder görüşelim',
-      subtitle: 'Uluslararası Medya Danışmanı | Dijital Pazarlama Uzmanı | Diplomasi Teknoloji Gazetecisi',
+      ctaDesc: 'Dijital pazarlama eğitimi, marka konumlandırma ya da iş birliği için bana yazın, birlikte planlayalım.',
+      copyright: 'Batuhan Ateş. Tüm hakları saklıdır.',
+      subtitle: 'Dijital Pazarlama & Yapay Zekâ Uzmanı | Uluslararası Medya Danışmanı | Gazeteci',
       quickLinks: 'Hızlı Linkler',
       contactTitle: 'İletişim'
     },
     // AboutPreview Component
     aboutPreview: {
       title: 'Beni Tanıyın',
-      subtitle: 'Dijitalin sınırları',
-      subtitleHighlight: 'olmadığını',
-      subtitleSuffix: 'söyleyerek',
-      description1: 'Uluslararası Medya Danışmanı, Dijital Pazarlama Uzmanı ve Diplomasi Teknoloji Gazetecisiyim. 800.000$+ Dubai emlak satış dönüşümü ve IFJ akreditasyonlu diplomasi haberciliği deneyimine sahibim.',
-      description2: 'PMA Partner bünyesinde turizm teknolojileri ve otomasyon alanında stratejik dijital dönüşüm süreçlerini yönetiyorum. Münih merkezli TravelTech şirketinin İstanbul ve Stockholm ofisleriyle koordineli çalışarak uluslararası projelerde görev alıyorum.',
+      subtitle: 'Dijitalin sınırı yok,',
+      subtitleHighlight: 'benim çalışma alanım da',
+      subtitleSuffix: '',
+      description1: "Dijital pazarlama ve yapay zekâ pazarlama uzmanı, uluslararası medya danışmanı ve gazeteciyim. Kırgızistan, Almanya, İsveç, BAE ve Türkiye'de turizm, teknoloji ve medya markalarıyla çalıştım. Dubai gayrimenkul projesinde 14 günde 800.000$+ satış dönüşümü sağladım.",
+      description2: "PMA Partner'da turizm teknolojileri ve pazarlama otomasyonu alanında dijital dönüşüm projelerini yönetiyorum. Münih merkezli bir TravelTech şirketinin İstanbul ve Stockholm ekipleriyle birlikte uluslararası projelerde çalışıyorum.",
       stats: {
         brands: 'Marka ve kurum yönetimi',
         international: 'Uluslararası işbirliği',
-        success: 'Başarı ve satış oranı',
-        engagement: 'İçerik etkileşimi'
+        success: 'Çalışma dili',
+        engagement: 'Toplam içerik görüntülenmesi'
       },
       cta: 'Hakkımda Sayfası'
     },
@@ -73,7 +76,9 @@ const translations = {
     home: {
       hero: {
         title: 'Dijital Dünyayı Dönüştürüyorum',
-        subtitle: 'Uluslararası Medya Danışmanı | Dijital Pazarlama | Diplomasi Teknoloji Gazetecisi',
+        subtitle: 'Dijital Pazarlama & Yapay Zekâ Uzmanı | Uluslararası Medya Danışmanı | Gazeteci',
+        badge: 'Antalya · Stockholm · Uzaktan',
+        summary: 'Antalya merkezli dijital pazarlama ve yapay zekâ pazarlama uzmanıyım. Turizm teknolojileri, performans pazarlaması, SEO ve uluslararası PR alanlarında 25+ markayla çalıştım; Dubai gayrimenkul projesinde 14 günde 800.000$+ satış dönüşümü sağladım.',
         cta: 'Projelerimi İncele',
         ctaSecondary: 'İletişime Geç'
       },
@@ -110,7 +115,7 @@ const translations = {
       heroTitle: 'Hadi ', heroTitleSpan: 'Formu Doldur',
       heroSubtitle: 'Eğitimlere Başlayalım',
       formDescription: 'Aklınızda bir proje mi var? Fikirlerinizi dinlemek ve birlikte anlamlı bir şey yaratmak isterim.',
-      formSubmitted: 'Başvurunuz Alındı!',
+      formSubmitted: 'Mesajınız alındı, en kısa sürede dönüş yapacağım.',
       formSubmittedDesc: 'En kısa sürede dönüş yapacağım.',
       formNote: 'Eğitimlerim ve danışmanlıklarım için lütfen ön başvuru formunu doldurunuz.',
       submitting: 'Gönderiliyor...',
@@ -127,7 +132,8 @@ const translations = {
         phone: 'Lütfen telefon numaranızı girin',
         email: 'Lütfen e-posta adresinizi girin',
         emailInvalid: 'Geçerli bir e-posta adresi girin',
-        subject: 'Lütfen bir konu seçin'
+        subject: 'Lütfen bir konu seçin',
+        sendFailed: 'Mesaj gönderilemedi. Lütfen digital@batuhanates.com adresine doğrudan yazın.'
       },
       feature1: 'Yapay zeka ile profesyonel içerik üretimi',
       feature2: 'Mobil içerik üretimi',
@@ -143,12 +149,14 @@ const translations = {
       emailLabel: 'E-posta',
       locationLabel: 'Konum',
       locationValue: 'Antalya, Türkiye',
-      socialMedia: 'Sosyal Medya'
+      socialMedia: 'Sosyal Medya',
+      summary: 'Dijital pazarlama, eğitim veya iş birliği için iletişime geçin. Formu doldurun ya da digital@batuhanates.com adresine doğrudan yazın.'
     },
     // Portfolio
     portfolio: {
       certificates: 'Sertifikalar ve Başarılar',
       certificatesDesc: 'Aldığım eğitimler ve sertifikalar',
+      summary: 'PMA Partner, TEUS Group, Conti Group ve Dubai emlak projelerinde ölçülebilir sonuçlar ürettim: satış dönüşümü, SEO büyümesi ve reklam performansı.',
       // 1. PMA Partner
       pma: {
         title: 'PMA Partner — Uluslararası Pazarlama, Medya & Teknoloji',
@@ -161,7 +169,7 @@ const translations = {
       // 2. Conti Group
       conti: {
         title: 'Conti Group — Satış, SEO & Performans Pazarlaması',
-        description: 'Conti Group\'ta yürüttüğüm kampanyalarda en yüksek satış hacmi ve içerik izlenmesi elde edildi. SEO\'da ulaşılan en yüksek hacim, Meta reklam performansı ve organik görünlük artışıyla ölçülebilir sonuçlar sağladım.',
+        description: 'Conti Group için yürüttüğüm kampanyalarda şirketin en yüksek satış hacmine ve içerik izlenmesine ulaşıldı. SEO trafiği, Meta reklam performansı ve organik görünürlükte ölçülebilir artış sağladım.',
         tag: 'Satış & SEO',
         metric1: 'En Yüksek Satış Hacmi',
         metric2: 'SEO Hacmi Artışı',
@@ -188,7 +196,7 @@ const translations = {
       // 5. Dubai Real Estate
       dubai: {
         title: 'Dubai Emlak — $800K+ Dönüşüm',
-        description: 'Performans pazarlamasında sıradışı metinler ve satış stratejileriyle doğrudan satışa odaklandım. Dubai gayrimenkul pazarı için tasarladığım tek bir içerik stratejisiyle 14 günde 800.000$+ atfedilen satış dönüşümü sağladım. 5.000 TL reklam harcamasıyla yüksek ROAS elde edildi.',
+        description: 'Dubai gayrimenkul pazarı için hazırladığım içerik ve satış stratejisiyle 14 günde 800.000$+ atfedilen satış dönüşümü sağladım. Toplam reklam harcaması 5.000 TL oldu.',
         tag: 'Gayrimenkul & ROI',
         metric1: '$800K+ Atfedilen Satış',
         metric2: '5.000 TL Reklam Harcaması',
@@ -290,8 +298,8 @@ const translations = {
       }
     },
     portfolioPreview: {
-      subtitle: 'Başarılar ve Ödüller',
-      title: 'Tüm Çalışmalarım',
+      subtitle: 'Seçili Projeler',
+      title: 'Öne Çıkan Çalışmalarım',
       viewAll: 'Tümünü Gör'
     },
     about: {
@@ -332,7 +340,61 @@ const translations = {
       partnerDnaDesc: 'Avrupa\'da faaliyet gösteren premium otel zinciri. Turizm sektöründe lider konumda.',
       partnerContiDesc: 'Avrupa genelinde butik otel ve rezidans işletmeleri. Konukseverlik sektöründe yenilikçi yaklaşımlar.',
       partnerTypeTech: 'TravelTech',
-      partnerTypeHotel: 'Otel Grubu'
+      partnerTypeHotel: 'Otel Grubu',
+      summary: 'Gazetecilikten dijital pazarlamaya uzanan bir kariyer: Kırgızistan, Almanya, İsveç ve Türkiye\'de medya, turizm ve teknoloji markalarıyla çalıştım. PMA Partner\'da TravelTech ve pazarlama otomasyonu projelerini yönetiyorum.',
+      experienceTitle: 'Deneyim',
+      experienceSubtitle: 'Profesyonel geçmişim',
+      experience: [
+        { period: '2026', role: 'Dijital Pazarlama ve Yapay Zekâ Uzmanı', org: 'PMA Partner', desc: 'Stockholm (uzaktan). MarTech/TravelTech, büyüme pazarlaması, pazarlamada yapay zekâ entegrasyonları (analitik, raporlama, içerik), PR ve marka iletişimi.' },
+        { period: '2024–2026', role: 'Türkiye Bölge PR/Pazarlama Danışmanı', org: 'TEUS Group', desc: 'Kurumsal web siteleri, sosyal medya ve dijital pazarlama, CRM lead yönetimi, içerik ve metin yazarlığı, kurumsal iletişim.' },
+        { period: '2023–2024', role: 'Kurumsal İletişim Müdür Yardımcısı', org: 'Antalya Belek Üniversitesi', desc: 'Web sitesi, sosyal medya, protokol, basın ve medya ilişkileri.' },
+        { period: '2023', role: 'DACH Bölgesi Sosyal Medya ve Dijital Pazarlama Sorumlusu', org: 'Mediawirt Consulting (Almanya)', desc: '' },
+        { period: '2022', role: 'Cluster Dijital Medya Sorumlusu', org: 'Orange County Hotels', desc: '' },
+        { period: '2021', role: 'Cluster Sosyal Medya Asistanı', org: 'Sueno Hotels', desc: 'Video prodüksiyon: Premiere Pro, After Effects.' },
+        { period: '2020–2021', role: 'Avrasya Bölge Muhabiri / Haber Editörü', org: 'Qırım Haber Ajansı (QHA)', desc: '' },
+        { period: '2019–2020', role: 'Kurucu Ortak', org: 'Asman Digital Media Agency', desc: 'Orta Asya ve Türkiye\'de dijital pazarlama ve gazetecilik hizmetleri.' },
+        { period: '2016–2019', role: 'Gazetecilik ve basın stajları', org: 'Manavgat Medya Grubu ve Manas Üniversitesi', desc: '' }
+      ],
+      certificatesTitle: 'Sertifikalar',
+      certificatesSubtitle: 'Eğitimler ve sertifikalar',
+      certificatesList: [
+        { name: 'Generative AI Fundamentals', issuer: 'Databricks', year: '2026' },
+        { name: 'Konaklamada Yapay Zekâ Uygulamaları / RecepAI', issuer: 'Hotel Linkage', year: '2026' },
+        { name: 'ChatGPT 2026: Prompt Mühendisliği, İçerik ve Görsel Üretme', issuer: 'Udemy', year: '2026' },
+        { name: 'Uluslararası Basın Akreditasyonu', issuer: 'CamerapixoPress', year: '2025' },
+        { name: 'HTML CSS', issuer: 'BTK Akademi', year: '2025' },
+        { name: 'SEO Eğitimi 2025: Sıfırdan Uzmanlığa', issuer: 'Udemy', year: '2025' }
+      ],
+      languagesTitle: 'Diller',
+      languagesValue: 'Türkçe, İngilizce, Rusça, Kırgızca, Kazakça',
+      educationTitle: 'Eğitim',
+      educationValue: 'Kırgızistan-Türkiye Manas Üniversitesi',
+      faqTitle: 'SSS',
+      faqSubtitle: 'Sıkça Sorulan Sorular',
+      faq: [
+        { q: 'Batuhan Ateş kimdir?', a: 'Antalya merkezli dijital pazarlama ve yapay zekâ pazarlama uzmanı, uluslararası medya danışmanı ve gazeteci. Türkiye, Almanya, İsveç, Kırgızistan ve BAE\'de medya, turizm ve teknoloji markalarıyla çalıştı.' },
+        { q: 'Hangi hizmetleri veriyor?', a: 'Performans pazarlaması (Meta, Google, Yandex Ads), SEO, pazarlama otomasyonu ve CRM (HubSpot, Mautic, Zapier), yapay zekâ ile içerik üretimi, PR ve kurumsal iletişim, eğitim ve danışmanlık.' },
+        { q: 'Eğitimlere nasıl başvurulur?', a: 'Eğitimler sayfasındaki "Başvuru Yap" formunu doldurarak ya da digital@batuhanates.com adresine e-posta göndererek.' },
+        { q: 'Hangi dillerde çalışıyor?', a: 'Türkçe, İngilizce, Rusça, Kırgızca ve Kazakça.' }
+      ]
+    },
+    education: {
+      summary: 'Emlak danışmanları, otelciler ve markalar için uygulamalı dijital pazarlama ve yapay zekâ eğitimleri veriyorum. İçerik üretimi, Meta reklamları, CRM ve otomasyon konularında butik atölyeler düzenliyorum.',
+      pastEventsTitle: 'Geçmiş Etkinlikler',
+      pastEventsSubtitle: 'Gerçekleştirdiğim atölyeler',
+      pastEvents: [
+        {
+          title: 'Emlak Danışmanları için Yüz Yüze Dijital Dönüşüm Atölyesi',
+          location: 'Teus Group ofisi, Muratpaşa · Antalya',
+          topics: [
+            'Yapay zekâ ile profesyonel içerik üretimi',
+            'Mobil içerik üretimi',
+            'Meta reklam stratejileri',
+            'CRM ve otomatik müşteri yönetimi'
+          ],
+          quota: 'Kontenjan: 8 kişilik butik atölye'
+        }
+      ]
     },
     press: {
       title: 'Medya & Basın',
@@ -344,7 +406,8 @@ const translations = {
       newsArticles: 'Haber & Makale',
       platforms: 'Farklı Platform',
       reach: 'Erişim',
-      open: 'Aç'
+      open: 'Aç',
+      summary: 'Uluslararası basın akreditasyonlu gazeteci olarak haber, röportaj ve analizlerim ulusal ve uluslararası medyada yayımlandı.'
     }
   },
   en: {
@@ -359,24 +422,25 @@ const translations = {
     },
     footer: {
       ctaTitle: "Let's Work Together",
-      ctaDesc: "Let's get in touch to learn digital, position your brand, or become a partner",
-      subtitle: 'International Media Consultant | Digital Marketing Expert | Diplomacy Technology Journalist',
+      ctaDesc: "Write to me about digital marketing training, brand positioning, or a partnership, and let's plan it together.",
+      copyright: "Batuhan Ateş. All rights reserved.",
+      subtitle: 'Digital Marketing & AI Expert | International Media Consultant | Journalist',
       quickLinks: 'Quick Links',
       contactTitle: 'Contact'
     },
     // AboutPreview Component
     aboutPreview: {
       title: 'Get to Know Me',
-      subtitle: 'By saying that the limits of',
-      subtitleHighlight: 'digital have no bounds',
+      subtitle: 'Digital has no limits,',
+      subtitleHighlight: 'and neither does my field of work',
       subtitleSuffix: '',
-      description1: 'I am an International Media Consultant, Digital Marketing Expert, and Diplomacy Technology Journalist. I have $800,000+ Dubai real estate sales conversion and IFJ-accredited diplomacy journalism experience.',
-      description2: 'I manage strategic digital transformation processes at PMA Partner in tourism technology and automation. I work in coordination with the Munich-based TravelTech company\'s Istanbul and Stockholm offices on international projects.',
+      description1: 'I am a digital marketing and AI marketing expert, international media consultant, and journalist. I have worked with tourism, technology, and media brands in Kyrgyzstan, Germany, Sweden, the UAE, and Türkiye. I achieved $800,000+ in sales conversion in 14 days on a Dubai real estate project.',
+      description2: 'At PMA Partner I manage digital transformation projects in tourism technology and marketing automation. I work on international projects together with the Istanbul and Stockholm teams of a Munich-based TravelTech company.',
       stats: {
         brands: 'Brand and institution management',
         international: 'International collaboration',
-        success: 'Success and sales rate',
-        engagement: 'Content engagement'
+        success: 'Working languages',
+        engagement: 'Total content views'
       },
       cta: 'About Page'
     },
@@ -416,7 +480,9 @@ const translations = {
     home: {
       hero: {
         title: 'Transforming the Digital World',
-        subtitle: 'International Media Consultant | Digital Marketing | Diplomacy Technology Journalist',
+        subtitle: 'Digital Marketing & AI Expert | International Media Consultant | Journalist',
+        badge: 'Antalya · Stockholm · Remote',
+        summary: 'I am a digital marketing and AI marketing expert based in Antalya. I have worked with 25+ brands in tourism technology, performance marketing, SEO, and international PR, and achieved $800,000+ in sales conversion in 14 days on a Dubai real estate project.',
         cta: 'View Projects',
         ctaSecondary: 'Contact'
       },
@@ -451,7 +517,7 @@ const translations = {
       heroTitle: 'Fill Out ', heroTitleSpan: 'The Form',
       heroSubtitle: "Let's Start With Training",
       formDescription: 'Do you have a project in mind? I would love to listen to your ideas and create something meaningful together.',
-      formSubmitted: 'Application Received!',
+      formSubmitted: 'Your message has been received. I will get back to you as soon as possible.',
       formSubmittedDesc: 'I will get back to you as soon as possible.',
       formNote: 'Please fill out the pre-application form for my trainings and consultations.',
       submitting: 'Sending...',
@@ -468,7 +534,8 @@ const translations = {
         phone: 'Please enter your phone number',
         email: 'Please enter your email address',
         emailInvalid: 'Please enter a valid email address',
-        subject: 'Please select a subject'
+        subject: 'Please select a subject',
+        sendFailed: 'The message could not be sent. Please write directly to digital@batuhanates.com.'
       },
       feature1: 'Professional content production with AI',
       feature2: 'Mobile content production',
@@ -484,11 +551,13 @@ const translations = {
       emailLabel: 'Email',
       locationLabel: 'Location',
       locationValue: 'Antalya, Turkey',
-      socialMedia: 'Social Media'
+      socialMedia: 'Social Media',
+      summary: 'Get in touch for digital marketing, training, or a partnership. Fill in the form or write directly to digital@batuhanates.com.'
     },
     portfolio: {
       certificates: 'Certificates and Achievements',
       certificatesDesc: 'Trainings and certificates I have obtained',
+      summary: 'I have produced measurable results for PMA Partner, TEUS Group, Conti Group, and Dubai real estate projects: sales conversion, SEO growth, and ad performance.',
       // 1. PMA Partner
       pma: {
         title: 'PMA Partner — International Marketing, Media & Technology',
@@ -501,7 +570,7 @@ const translations = {
       // 2. Conti Group
       conti: {
         title: 'Conti Group — Sales, SEO & Performance Marketing',
-        description: 'In campaigns I managed at Conti Group, I achieved the highest sales volume and content views. I delivered measurable results with the highest SEO volume reached, Meta ad performance, and organic visibility increase.',
+        description: 'In the campaigns I ran for Conti Group, the company reached its highest sales volume and content views. I delivered measurable growth in SEO traffic, Meta ad performance, and organic visibility.',
         tag: 'Sales & SEO',
         metric1: 'Highest Sales Volume',
         metric2: 'SEO Volume Increase',
@@ -528,7 +597,7 @@ const translations = {
       // 5. Dubai Real Estate
       dubai: {
         title: 'Dubai Real Estate — $800K+ Conversion',
-        description: 'I focused on direct sales with extraordinary texts and sales strategies in performance marketing. With a single content strategy designed for the Dubai real estate market, I achieved $800,000+ in attributed sales conversion in just 14 days. High ROAS was achieved with 5,000 TL in ad spend.',
+        description: 'With the content and sales strategy I prepared for the Dubai real estate market, I achieved $800,000+ in attributed sales conversion in 14 days. Total ad spend was 5,000 TL.',
         tag: 'Real Estate & ROI',
         metric1: '$800K+ Attributed Sales',
         metric2: '5,000 TL Ad Spend',
@@ -630,8 +699,8 @@ const translations = {
       }
     },
     portfolioPreview: {
-      subtitle: 'Success Stories',
-      title: 'All My Work',
+      subtitle: 'Selected Projects',
+      title: 'My Featured Work',
       viewAll: 'View All'
     },
     about: {
@@ -672,7 +741,61 @@ const translations = {
       partnerDnaDesc: 'Premium hotel chain operating in Europe. Leader in the tourism sector.',
       partnerContiDesc: 'Boutique hotels and residences across Europe. Innovative approaches in hospitality industry.',
       partnerTypeTech: 'TravelTech',
-      partnerTypeHotel: 'Hotel Group'
+      partnerTypeHotel: 'Hotel Group',
+      summary: 'A career that runs from journalism to digital marketing: I have worked with media, tourism, and technology brands in Kyrgyzstan, Germany, Sweden, and Türkiye. At PMA Partner I manage TravelTech and marketing automation projects.',
+      experienceTitle: 'Experience',
+      experienceSubtitle: 'My professional background',
+      experience: [
+        { period: '2026', role: 'Digital Marketing and AI Expert', org: 'PMA Partner', desc: 'Stockholm (remote). MarTech/TravelTech, growth marketing, AI integrations in marketing (analytics, reporting, content), PR and brand communication.' },
+        { period: '2024–2026', role: 'Türkiye Regional PR/Marketing Consultant', org: 'TEUS Group', desc: 'Corporate websites, social media and digital marketing, CRM lead management, content and copywriting, corporate communication.' },
+        { period: '2023–2024', role: 'Assistant Corporate Communication Manager', org: 'Antalya Belek University', desc: 'Website, social media, protocol, press and media relations.' },
+        { period: '2023', role: 'DACH Region Social Media and Digital Marketing Lead', org: 'Mediawirt Consulting (Germany)', desc: '' },
+        { period: '2022', role: 'Cluster Digital Media Lead', org: 'Orange County Hotels', desc: '' },
+        { period: '2021', role: 'Cluster Social Media Assistant', org: 'Sueno Hotels', desc: 'Video production: Premiere Pro, After Effects.' },
+        { period: '2020–2021', role: 'Eurasia Regional Reporter / News Editor', org: 'Qırım News Agency (QHA)', desc: '' },
+        { period: '2019–2020', role: 'Co-Founder', org: 'Asman Digital Media Agency', desc: 'Digital marketing and journalism services across Central Asia and Türkiye.' },
+        { period: '2016–2019', role: 'Journalism and press internships', org: 'Manavgat Media Group and Manas University', desc: '' }
+      ],
+      certificatesTitle: 'Certificates',
+      certificatesSubtitle: 'Trainings and certificates',
+      certificatesList: [
+        { name: 'Generative AI Fundamentals', issuer: 'Databricks', year: '2026' },
+        { name: 'AI Applications in Hospitality / RecepAI', issuer: 'Hotel Linkage', year: '2026' },
+        { name: 'ChatGPT 2026: Prompt Engineering, Content and Image Generation', issuer: 'Udemy', year: '2026' },
+        { name: 'International Press Accreditation', issuer: 'CamerapixoPress', year: '2025' },
+        { name: 'HTML CSS', issuer: 'BTK Akademi', year: '2025' },
+        { name: 'SEO Training 2025: From Beginner to Expert', issuer: 'Udemy', year: '2025' }
+      ],
+      languagesTitle: 'Languages',
+      languagesValue: 'Turkish, English, Russian, Kyrgyz, Kazakh',
+      educationTitle: 'Education',
+      educationValue: 'Kyrgyzstan-Türkiye Manas University',
+      faqTitle: 'FAQ',
+      faqSubtitle: 'Frequently Asked Questions',
+      faq: [
+        { q: 'Who is Batuhan Ateş?', a: 'A digital marketing and AI marketing expert, international media consultant, and journalist based in Antalya. He has worked with media, tourism, and technology brands in Türkiye, Germany, Sweden, Kyrgyzstan, and the UAE.' },
+        { q: 'What services does he provide?', a: 'Performance marketing (Meta, Google, Yandex Ads), SEO, marketing automation and CRM (HubSpot, Mautic, Zapier), AI content production, PR and corporate communication, training and consulting.' },
+        { q: 'How can I apply for the trainings?', a: 'By filling in the "Apply" form on the Trainings page or by sending an email to digital@batuhanates.com.' },
+        { q: 'Which languages does he work in?', a: 'Turkish, English, Russian, Kyrgyz, and Kazakh.' }
+      ]
+    },
+    education: {
+      summary: 'I deliver hands-on digital marketing and AI training for real estate agents, hoteliers, and brands. I run boutique workshops on content production, Meta ads, CRM, and automation.',
+      pastEventsTitle: 'Past Events',
+      pastEventsSubtitle: 'Workshops I have delivered',
+      pastEvents: [
+        {
+          title: 'In-Person Digital Transformation Workshop for Real Estate Agents',
+          location: 'Teus Group office, Muratpaşa · Antalya',
+          topics: [
+            'Professional content production with AI',
+            'Mobile content production',
+            'Meta ad strategies',
+            'CRM and automated customer management'
+          ],
+          quota: 'Capacity: boutique workshop for 8 people'
+        }
+      ]
     },
     press: {
       title: 'Media & Press',
@@ -684,7 +807,8 @@ const translations = {
       newsArticles: 'News & Articles',
       platforms: 'Different Platforms',
       reach: 'Reach',
-      open: 'Open'
+      open: 'Open',
+      summary: 'As an internationally press-accredited journalist, my news, interviews, and analyses have been published in national and international media.'
     }
   },
   de: {
@@ -699,24 +823,25 @@ const translations = {
     },
     footer: {
       ctaTitle: 'Lassen Sie uns zusammenarbeiten',
-      ctaDesc: 'Kontaktieren Sie mich, um Digitales zu lernen, Ihre Marke zu positionieren oder Partner zu werden',
-      subtitle: 'Internationaler Medienberater | Digitalmarketing-Experte | Diplomatie-Technologie-Journalist',
+      ctaDesc: 'Schreiben Sie mir zu Digitalmarketing-Schulungen, Markenpositionierung oder einer Partnerschaft, und wir planen es gemeinsam.',
+      copyright: 'Batuhan Ateş. Alle Rechte vorbehalten.',
+      subtitle: 'Digitalmarketing- & KI-Experte | Internationaler Medienberater | Journalist',
       quickLinks: 'Schnelle Links',
       contactTitle: 'Kontakt'
     },
     // AboutPreview Component
     aboutPreview: {
       title: 'Lernen Sie mich kennen',
-      subtitle: 'Indem ich sage, dass die Grenzen des',
-      subtitleHighlight: 'Digitalen keine Grenzen haben',
+      subtitle: 'Das Digitale kennt keine Grenzen,',
+      subtitleHighlight: 'mein Arbeitsfeld ebenso wenig',
       subtitleSuffix: '',
-      description1: 'Ich bin Internationaler Medienberater, Digitalmarketing-Experte und Diplomatie-Technologie-Journalist. Ich habe 800.000$+ Dubai-Immobilienverkaufskonversion und IFJ-akkreditiertem Diplomatie-Journalismus Erfahrung.',
-      description2: 'Ich leite strategische digitale Transformationsprozesse bei PMA Partner in Tourismustechnologie und -automatisierung. Ich arbeite in Koordination mit den Istanbul- und Stockholm-Büros des München basierten TravelTech-Unternehmens an internationalen Projekten.',
+      description1: 'Ich bin Experte für Digitalmarketing und KI-Marketing, internationaler Medienberater und Journalist. Ich habe mit Tourismus-, Technologie- und Medienmarken in Kirgisistan, Deutschland, Schweden, den VAE und der Türkei gearbeitet. Bei einem Dubai-Immobilienprojekt erzielte ich in 14 Tagen über 800.000$ Verkaufskonversion.',
+      description2: 'Bei PMA Partner leite ich digitale Transformationsprojekte in Tourismustechnologie und Marketing-Automatisierung. Gemeinsam mit den Istanbuler und Stockholmer Teams eines Münchner TravelTech-Unternehmens arbeite ich an internationalen Projekten.',
       stats: {
         brands: 'Marken- und Institutionsmanagement',
         international: 'Internationale Zusammenarbeit',
-        success: 'Erfolgs- und Verkaufsquote',
-        engagement: 'Inhaltsinteraktion'
+        success: 'Arbeitssprachen',
+        engagement: 'Gesamte Content-Aufrufe'
       },
       cta: 'Über-mich-Seite'
     },
@@ -756,7 +881,9 @@ const translations = {
     home: {
       hero: {
         title: 'Die digitale Welt transformieren',
-        subtitle: 'Internationaler Medienberater | Digitalmarketing | Diplomatie-Technologie-Journalist',
+        subtitle: 'Digitalmarketing- & KI-Experte | Internationaler Medienberater | Journalist',
+        badge: 'Antalya · Stockholm · Remote',
+        summary: 'Ich bin Experte für Digitalmarketing und KI-Marketing mit Sitz in Antalya. Ich habe mit über 25 Marken in Tourismustechnologie, Performance-Marketing, SEO und internationaler PR gearbeitet und bei einem Dubai-Immobilienprojekt in 14 Tagen über 800.000$ Verkaufskonversion erzielt.',
         cta: 'Projekte ansehen',
         ctaSecondary: 'Kontakt'
       },
@@ -791,7 +918,7 @@ const translations = {
       heroTitle: 'Füllen Sie das ', heroTitleSpan: 'Formular aus',
       heroSubtitle: 'Lassen Sie uns mit der Schulung beginnen',
       formDescription: 'Haben Sie ein Projekt im Sinn? Ich würde gerne Ihre Ideen hören und gemeinsam etwas Bedeutungsvolles schaffen.',
-      formSubmitted: 'Anfrage erhalten!',
+      formSubmitted: 'Ihre Nachricht ist eingegangen. Ich melde mich so schnell wie möglich bei Ihnen.',
       formSubmittedDesc: 'Ich werde mich so schnell wie möglich bei Ihnen melden.',
       formNote: 'Bitte füllen Sie das Vorantragsformular für meine Schulungen und Beratungen aus.',
       submitting: 'Senden...',
@@ -808,7 +935,8 @@ const translations = {
         phone: 'Bitte geben Sie Ihre Telefonnummer ein',
         email: 'Bitte geben Sie Ihre E-Mail-Adresse ein',
         emailInvalid: 'Bitte geben Sie eine gültige E-Mail-Adresse ein',
-        subject: 'Bitte wählen Sie einen Betreff'
+        subject: 'Bitte wählen Sie einen Betreff',
+        sendFailed: 'Die Nachricht konnte nicht gesendet werden. Bitte schreiben Sie direkt an digital@batuhanates.com.'
       },
       feature1: 'Professionelle Inhaltsproduktion mit KI',
       feature2: 'Mobile Inhaltsproduktion',
@@ -824,11 +952,13 @@ const translations = {
       emailLabel: 'E-Mail',
       locationLabel: 'Standort',
       locationValue: 'Antalya, Türkei',
-      socialMedia: 'Soziale Medien'
+      socialMedia: 'Soziale Medien',
+      summary: 'Kontaktieren Sie mich für Digitalmarketing, Schulungen oder eine Partnerschaft. Füllen Sie das Formular aus oder schreiben Sie direkt an digital@batuhanates.com.'
     },
     portfolio: {
       certificates: 'Zertifikate und Erfolge',
       certificatesDesc: 'Schulungen und Zertifikate, die ich erworben habe',
+      summary: 'Für PMA Partner, TEUS Group, Conti Group und Dubai-Immobilienprojekte habe ich messbare Ergebnisse erzielt: Verkaufskonversion, SEO-Wachstum und Anzeigenleistung.',
       // 1. PMA Partner
       pma: {
         title: 'PMA Partner — Internationales Marketing, Medien & Technologie',
@@ -841,7 +971,7 @@ const translations = {
       // 2. Conti Group
       conti: {
         title: 'Conti Group — Vertrieb, SEO & Performance-Marketing',
-        description: 'In Kampagnen, die ich bei Conti Group leitete, erzielte ich das höchste Verkaufsvolumen und die höchsten Content-Aufrufe. Ich lieferte messbare Ergebnisse mit dem höchsten erreichten SEO-Volumen, Meta-Anzeigenleistung und organischer Sichtbarkeitssteigerung.',
+        description: 'In den Kampagnen, die ich für Conti Group durchführte, erreichte das Unternehmen sein höchstes Verkaufsvolumen und die höchsten Content-Aufrufe. Ich erzielte messbares Wachstum bei SEO-Traffic, Meta-Anzeigenleistung und organischer Sichtbarkeit.',
         tag: 'Vertrieb & SEO',
         metric1: 'Höchstes Verkaufsvolumen',
         metric2: 'SEO-Volumensteigerung',
@@ -868,7 +998,7 @@ const translations = {
       // 5. Dubai Real Estate
       dubai: {
         title: 'Dubai Immobilien — $800K+ Konversion',
-        description: 'Ich konzentrierte mich auf Direktverkauf mit außergewöhnlichen Texten und Verkaufsstrategien im Performance-Marketing. Mit einer einzelnen Content-Strategie für den Dubai-Immobilienmarkt erzielte ich in nur 14 Tagen über 800.000$ an zugeschriebenem Verkaufsumsatz. Hohe ROAS wurde mit 5.000 TL Werbeausgaben erzielt.',
+        description: 'Mit dem Content und der Verkaufsstrategie, die ich für den Dubai-Immobilienmarkt erstellte, erzielte ich in 14 Tagen über 800.000$ an zugeschriebenem Verkaufsumsatz. Die gesamten Werbeausgaben betrugen 5.000 TL.',
         tag: 'Immobilien & ROI',
         metric1: '$800K+ Zugeschriebener Umsatz',
         metric2: '5.000 TL Werbeausgaben',
@@ -970,8 +1100,8 @@ const translations = {
       }
     },
     portfolioPreview: {
-      subtitle: 'Erfolgsgeschichten',
-      title: 'Alle meine Arbeiten',
+      subtitle: 'Ausgewählte Projekte',
+      title: 'Meine ausgewählten Arbeiten',
       viewAll: 'Alle ansehen'
     },
     about: {
@@ -1012,7 +1142,61 @@ const translations = {
       partnerDnaDesc: 'Premium-Hotelkette in Europa. Führend im Tourismussektor.',
       partnerContiDesc: 'Boutique-Hotels und Residenzen in ganz Europa. Innovative Ansätze in der Gastfreundschaft.',
       partnerTypeTech: 'TravelTech',
-      partnerTypeHotel: 'Hotelgruppe'
+      partnerTypeHotel: 'Hotelgruppe',
+      summary: 'Eine Karriere vom Journalismus zum Digitalmarketing: Ich habe mit Medien-, Tourismus- und Technologiemarken in Kirgisistan, Deutschland, Schweden und der Türkei gearbeitet. Bei PMA Partner leite ich TravelTech- und Marketing-Automatisierungsprojekte.',
+      experienceTitle: 'Erfahrung',
+      experienceSubtitle: 'Mein beruflicher Werdegang',
+      experience: [
+        { period: '2026', role: 'Experte für Digitalmarketing und KI', org: 'PMA Partner', desc: 'Stockholm (remote). MarTech/TravelTech, Growth-Marketing, KI-Integrationen im Marketing (Analytik, Reporting, Content), PR und Markenkommunikation.' },
+        { period: '2024–2026', role: 'PR-/Marketingberater Region Türkei', org: 'TEUS Group', desc: 'Unternehmenswebsites, Social Media und Digitalmarketing, CRM-Lead-Management, Content und Texten, Unternehmenskommunikation.' },
+        { period: '2023–2024', role: 'Stellvertretender Leiter der Unternehmenskommunikation', org: 'Antalya Belek Universität', desc: 'Website, Social Media, Protokoll, Presse- und Medienbeziehungen.' },
+        { period: '2023', role: 'Leiter Social Media und Digitalmarketing Region DACH', org: 'Mediawirt Consulting (Deutschland)', desc: '' },
+        { period: '2022', role: 'Cluster-Leiter Digitale Medien', org: 'Orange County Hotels', desc: '' },
+        { period: '2021', role: 'Cluster-Assistent Social Media', org: 'Sueno Hotels', desc: 'Videoproduktion: Premiere Pro, After Effects.' },
+        { period: '2020–2021', role: 'Reporter / Nachrichtenredakteur Region Eurasien', org: 'Qırım Nachrichtenagentur (QHA)', desc: '' },
+        { period: '2019–2020', role: 'Mitgründer', org: 'Asman Digital Media Agency', desc: 'Digitalmarketing- und Journalismus-Dienstleistungen in Zentralasien und der Türkei.' },
+        { period: '2016–2019', role: 'Journalismus- und Pressepraktika', org: 'Manavgat Mediengruppe und Manas Universität', desc: '' }
+      ],
+      certificatesTitle: 'Zertifikate',
+      certificatesSubtitle: 'Schulungen und Zertifikate',
+      certificatesList: [
+        { name: 'Generative AI Fundamentals', issuer: 'Databricks', year: '2026' },
+        { name: 'KI-Anwendungen im Gastgewerbe / RecepAI', issuer: 'Hotel Linkage', year: '2026' },
+        { name: 'ChatGPT 2026: Prompt Engineering, Content und Bildgenerierung', issuer: 'Udemy', year: '2026' },
+        { name: 'Internationale Presseakkreditierung', issuer: 'CamerapixoPress', year: '2025' },
+        { name: 'HTML CSS', issuer: 'BTK Akademi', year: '2025' },
+        { name: 'SEO-Schulung 2025: Vom Anfänger zum Experten', issuer: 'Udemy', year: '2025' }
+      ],
+      languagesTitle: 'Sprachen',
+      languagesValue: 'Türkisch, Englisch, Russisch, Kirgisisch, Kasachisch',
+      educationTitle: 'Ausbildung',
+      educationValue: 'Kirgisistan-Türkei Manas Universität',
+      faqTitle: 'FAQ',
+      faqSubtitle: 'Häufig gestellte Fragen',
+      faq: [
+        { q: 'Wer ist Batuhan Ateş?', a: 'Ein Experte für Digitalmarketing und KI-Marketing, internationaler Medienberater und Journalist mit Sitz in Antalya. Er hat mit Medien-, Tourismus- und Technologiemarken in der Türkei, Deutschland, Schweden, Kirgisistan und den VAE gearbeitet.' },
+        { q: 'Welche Leistungen bietet er an?', a: 'Performance-Marketing (Meta, Google, Yandex Ads), SEO, Marketing-Automatisierung und CRM (HubSpot, Mautic, Zapier), KI-Content-Produktion, PR und Unternehmenskommunikation, Schulung und Beratung.' },
+        { q: 'Wie kann man sich für die Schulungen bewerben?', a: 'Indem man das Formular "Jetzt bewerben" auf der Schulungsseite ausfüllt oder eine E-Mail an digital@batuhanates.com sendet.' },
+        { q: 'In welchen Sprachen arbeitet er?', a: 'Türkisch, Englisch, Russisch, Kirgisisch und Kasachisch.' }
+      ]
+    },
+    education: {
+      summary: 'Ich biete praxisnahe Digitalmarketing- und KI-Schulungen für Immobilienmakler, Hoteliers und Marken an. Ich veranstalte Boutique-Workshops zu Content-Produktion, Meta-Anzeigen, CRM und Automatisierung.',
+      pastEventsTitle: 'Vergangene Veranstaltungen',
+      pastEventsSubtitle: 'Workshops, die ich durchgeführt habe',
+      pastEvents: [
+        {
+          title: 'Präsenz-Workshop zur digitalen Transformation für Immobilienmakler',
+          location: 'Teus Group Büro, Muratpaşa · Antalya',
+          topics: [
+            'Professionelle Content-Produktion mit KI',
+            'Mobile Content-Produktion',
+            'Meta-Anzeigenstrategien',
+            'CRM und automatisiertes Kundenmanagement'
+          ],
+          quota: 'Kapazität: Boutique-Workshop für 8 Personen'
+        }
+      ]
     },
     press: {
       title: 'Medien & Presse',
@@ -1024,7 +1208,8 @@ const translations = {
       newsArticles: 'Nachrichten & Artikel',
       platforms: 'Verschiedene Plattformen',
       reach: 'Reichweite',
-      open: 'Öffnen'
+      open: 'Öffnen',
+      summary: 'Als international presseakkreditierter Journalist wurden meine Nachrichten, Interviews und Analysen in nationalen und internationalen Medien veröffentlicht.'
     }
   }
 }
@@ -1032,21 +1217,39 @@ const translations = {
 const LanguageContext = createContext()
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState('tr')
+  const location = useLocation()
+  const navigate = useNavigate()
+  const { lang: urlLang, pageKey } = parsePath(location.pathname)
+  const [language, setLanguage] = useState(urlLang)
   const [isOpen, setIsOpen] = useState(false)
 
+  // URL'deki dil öneki kaynağı belirler; böylece /en ve /de ayrı sayfalardır.
   useEffect(() => {
+    setLanguage(urlLang)
+    localStorage.setItem('language', urlLang)
+  }, [urlLang])
+
+  // Varsayılan dilde doğrudan ziyaret edilen (veya köke düşen) bilinmeyen yollar
+  // önceki tercihe göre yerelleştirilmiş karşılığına yönlendirilir.
+  useEffect(() => {
+    if (urlLang !== DEFAULT_LANG) return
+    if (pageKey === null) return
     const saved = localStorage.getItem('language')
-    if (saved && translations[saved]) {
-      setLanguage(saved)
-    }
-  }, [])
+    if (!saved || saved === DEFAULT_LANG) return
+    navigate(localizedPath(pageKey, saved), { replace: true })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location.pathname])
 
   const changeLanguage = (lang) => {
-    if (translations[lang]) {
-      setLanguage(lang)
-      localStorage.setItem('language', lang)
+    if (!lang || lang === language) {
       setIsOpen(false)
+      return
+    }
+    localStorage.setItem('language', lang)
+    setLanguage(lang)
+    setIsOpen(false)
+    if (pageKey) {
+      navigate(localizedPath(pageKey, lang))
     }
   }
 

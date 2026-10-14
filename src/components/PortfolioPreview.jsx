@@ -2,6 +2,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import { Link } from 'react-router-dom'
+import { localizedPath } from '../i18n/routes'
 import portfolioImage from '../assets/images/portfolio-banner.png'
 import globalNetwork from '../assets/images/global-network.png'
 import hotelResort from '../assets/images/hotel-resort.png'
@@ -9,8 +10,8 @@ import dubaiSkyline from '../assets/images/dubai-skyline.png'
 
 const PortfolioPreview = () => {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-  const { t } = useLanguage()
+  const isInView = useInView(ref, { once: true, amount: 0.1 })
+  const { t, language } = useLanguage()
 
   const achievements = [
     {
@@ -52,7 +53,7 @@ const PortfolioPreview = () => {
           <h3 className="text-3xl md:text-4xl font-display font-bold mb-4">
             {t('portfolioPreview.title')}
           </h3>
-          <img src={portfolioImage} alt="" className="mx-auto mt-8 max-w-md" />
+          <img src={portfolioImage} alt="Batuhan Ateş kreatif portfolyo" className="mx-auto mt-8 max-w-md" />
         </motion.div>
 
         {/* Portfolio Grid */}
@@ -109,7 +110,7 @@ const PortfolioPreview = () => {
           className="text-center mt-12"
         >
           <Link
-            to="/portfolyo"
+            to={localizedPath('portfolio', language)}
             className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-xl hover:opacity-90 transition-opacity"
           >
             {t('portfolioPreview.viewAll')}

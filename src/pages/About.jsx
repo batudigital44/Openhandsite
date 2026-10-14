@@ -1,7 +1,8 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
-import { ArrowRight, ChevronDown } from 'lucide-react'
+import { ArrowRight, ChevronDown, Award } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
 import aboutImage from '../assets/images/about-hero.png'
 import figmaImg from '../assets/images/figma.png'
@@ -28,7 +29,7 @@ import dubaiSkyline from '../assets/images/dubai-skyline.png'
 const About = () => {
   const { t } = useLanguage()
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { once: true, amount: 0.1 })
   const [showWhyBatuhan, setShowWhyBatuhan] = useState(false)
 
   const tools = [
@@ -81,6 +82,9 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <h3 className="text-2xl font-bold mb-4">{t('about.aboutMe')}</h3>
+              <p className="text-lg text-white leading-relaxed mb-6 border-l-2 border-primary pl-4">
+                {t('about.summary')}
+              </p>
               <p className="text-gray-300 leading-relaxed mb-4">
                 {t('about.bio1')}
               </p>
@@ -351,6 +355,94 @@ const About = () => {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Experience Section */}
+      <section className="section-padding bg-dark-800">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-sm font-semibold text-primary mb-2 uppercase tracking-wider">{t('about.experienceTitle')}</h2>
+            <h3 className="text-3xl md:text-4xl font-display font-bold">{t('about.experienceSubtitle')}</h3>
+          </div>
+
+          <div className="relative border-l border-dark-600 pl-6 space-y-8">
+            {t('about.experience').map((item, index) => (
+              <div key={index} className="relative">
+                <span className="absolute -left-[31px] top-1.5 w-3 h-3 rounded-full bg-primary" />
+                <span className="text-sm font-semibold text-primary">{item.period}</span>
+                <h4 className="text-lg font-bold mt-1">{item.role}</h4>
+                <p className="text-gray-400 text-sm">{item.org}</p>
+                {item.desc && <p className="text-gray-300 text-sm mt-2 leading-relaxed">{item.desc}</p>}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Certificates + Languages + Education Section */}
+      <section className="section-padding bg-dark-900">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-sm font-semibold text-primary mb-2 uppercase tracking-wider">{t('about.certificatesTitle')}</h2>
+            <h3 className="text-3xl md:text-4xl font-display font-bold">{t('about.certificatesSubtitle')}</h3>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+            {t('about.certificatesList').map((cert, index) => (
+              <div key={index} className="glass-card p-5 flex items-start gap-3">
+                <Award size={20} className="text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h4 className="font-semibold text-sm">{cert.name}</h4>
+                  <p className="text-gray-400 text-xs mt-1">{cert.issuer} · {cert.year}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="glass-card p-6">
+              <h4 className="text-sm font-semibold text-primary mb-2 uppercase tracking-wider">{t('about.languagesTitle')}</h4>
+              <p className="text-gray-300">{t('about.languagesValue')}</p>
+            </div>
+            <div className="glass-card p-6">
+              <h4 className="text-sm font-semibold text-primary mb-2 uppercase tracking-wider">{t('about.educationTitle')}</h4>
+              <p className="text-gray-300">{t('about.educationValue')}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="section-padding bg-dark-800">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-sm font-semibold text-primary mb-2 uppercase tracking-wider">{t('about.faqTitle')}</h2>
+            <h3 className="text-3xl md:text-4xl font-display font-bold">{t('about.faqSubtitle')}</h3>
+          </div>
+
+          <div className="space-y-4">
+            {t('about.faq').map((item, index) => (
+              <div key={index} className="glass-card p-6">
+                <h4 className="font-bold mb-2">{item.q}</h4>
+                <p className="text-gray-300 text-sm leading-relaxed">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <Helmet>
+          <script type="application/ld+json">
+            {JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: t('about.faq').map((item) => ({
+                '@type': 'Question',
+                name: item.q,
+                acceptedAnswer: { '@type': 'Answer', text: item.a },
+              })),
+            })}
+          </script>
+        </Helmet>
       </section>
     </div>
   )

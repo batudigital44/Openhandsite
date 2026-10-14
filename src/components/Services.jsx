@@ -6,7 +6,7 @@ import { useLanguage } from '../context/LanguageContext'
 const Services = () => {
   const { t } = useLanguage()
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   const services = [
     {

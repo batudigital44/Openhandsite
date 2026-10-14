@@ -1,1 +1,2 @@
-/*    /index.html   200
+# Tüm route lar build sirasinda statik HTML olarak uretilir; eslesmeyen URL ler icin gercek 404 doner.
+/*    /404.html   404
