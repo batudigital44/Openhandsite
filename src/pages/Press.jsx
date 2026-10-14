@@ -7,7 +7,7 @@ import pressBanner from '../assets/images/portfolio-banner.png'
 const Press = () => {
   const { t } = useLanguage()
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   const pressArticles = [
     {
@@ -151,7 +151,8 @@ const Press = () => {
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
               {t('press.title').split(' ')[0]} <span className="gradient-text">{t('press.title').split(' ')[1]}</span>
             </h1>
-            <p className="text-xl text-gray-300 mb-8">{t('press.subtitle')}</p>
+            <p className="text-xl text-gray-300 mb-6">{t('press.subtitle')}</p>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-8">{t('press.summary')}</p>
             <div className="flex justify-center gap-4 mt-8">
               <div className="glass-card px-6 py-4">
                 <Newspaper className="w-8 h-8 text-primary mx-auto mb-2" />

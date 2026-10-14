@@ -19,7 +19,7 @@ import orangeCountyKemer from '../assets/images/orange-county-kemer.jpg'
 const Portfolio = () => {
   const { t } = useLanguage()
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { once: true, amount: 0.1 })
 
   const achievements = [
     // 1. PMA Partner — International Marketing, Media & Technology
@@ -446,8 +446,9 @@ const Portfolio = () => {
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
               Başarı <span className="gradient-text">Hikayeleri</span>
             </h1>
-            <p className="text-xl text-gray-300 mb-8">Portfolyo</p>
-            <img src={portfolioBanner} alt="" className="mx-auto max-w-md mt-8" />
+            <p className="text-xl text-gray-300 mb-6">Portfolyo</p>
+            <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-8">{t('portfolio.summary')}</p>
+            <img src={portfolioBanner} alt="Batuhan Ateş kreatif portfolyo" className="mx-auto max-w-md mt-8" />
           </motion.div>
         </div>
       </section>
@@ -492,8 +493,8 @@ const Portfolio = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-sm font-semibold text-primary mb-2">Başarılar ve Ödüller</h2>
-            <h3 className="text-3xl font-display font-bold">Tüm Çalışmalarım</h3>
+            <h2 className="text-sm font-semibold text-primary mb-2">{t('portfolioPreview.subtitle')}</h2>
+            <h3 className="text-3xl font-display font-bold">{t('portfolioPreview.title')}</h3>
           </motion.div>
 
           <div className="space-y-16">
@@ -534,7 +535,7 @@ const Portfolio = () => {
                     {item.gallery && (
                       <div className="flex gap-3 mt-4">
                         {item.gallery.map((img, i) => (
-                          <img key={i} src={img} alt="" className="w-24 h-16 object-cover rounded-lg" />
+                          <img key={i} src={img} alt={`${item.title} galeri görseli ${i + 1}`} className="w-24 h-16 object-cover rounded-lg" />
                         ))}
                       </div>
                     )}

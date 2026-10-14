@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
 import { Instagram, Linkedin, Mail, MapPin } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
+import { localizedPath } from '../i18n/routes'
 import Logo from '../assets/images/logo.png'
 
 const Footer = () => {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   
   return (
     <footer className="bg-dark-800 border-t border-dark-700">
@@ -35,7 +36,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-4 mt-4">
               <a
-                href="https://www.instagram.com/ba2digital/"
+                href="https://www.instagram.com/batu.digital/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-dark-700 rounded-lg hover:bg-primary/20 hover:text-primary transition-colors"
@@ -56,12 +57,12 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">{t('footer.quickLinks')}</h4>
             <ul className="space-y-2">
-              <li><Link to="/" className="text-gray-400 hover:text-white transition-colors">{t('nav.home')}</Link></li>
-              <li><Link to="/hakkimda" className="text-gray-400 hover:text-white transition-colors">{t('nav.about')}</Link></li>
-              <li><Link to="/portfolyo" className="text-gray-400 hover:text-white transition-colors">{t('nav.portfolio')}</Link></li>
-              <li><Link to="/egitimler" className="text-gray-400 hover:text-white transition-colors">{t('nav.education')}</Link></li>
-              <li><Link to="/medya-basin" className="text-gray-400 hover:text-white transition-colors">{t('nav.mediaPress')}</Link></li>
-              <li><Link to="/iletisim" className="text-gray-400 hover:text-white transition-colors">{t('nav.contact')}</Link></li>
+              <li><Link to={localizedPath('home', language)} className="text-gray-400 hover:text-white transition-colors">{t('nav.home')}</Link></li>
+              <li><Link to={localizedPath('about', language)} className="text-gray-400 hover:text-white transition-colors">{t('nav.about')}</Link></li>
+              <li><Link to={localizedPath('portfolio', language)} className="text-gray-400 hover:text-white transition-colors">{t('nav.portfolio')}</Link></li>
+              <li><Link to={localizedPath('education', language)} className="text-gray-400 hover:text-white transition-colors">{t('nav.education')}</Link></li>
+              <li><Link to={localizedPath('press', language)} className="text-gray-400 hover:text-white transition-colors">{t('nav.mediaPress')}</Link></li>
+              <li><Link to={localizedPath('contact', language)} className="text-gray-400 hover:text-white transition-colors">{t('nav.contact')}</Link></li>
             </ul>
           </div>
 
@@ -84,7 +85,7 @@ const Footer = () => {
 
         <div className="border-t border-dark-700 pt-8 text-center">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} BATUHAN ATEŞ Portfolio Web Site
+            © {new Date().getFullYear()} {t('footer.copyright')}
           </p>
         </div>
       </div>

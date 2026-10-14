@@ -2,17 +2,18 @@ import { motion } from 'framer-motion'
 import { ChevronDown, Instagram, Linkedin, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
+import { localizedPath } from '../i18n/routes'
 import heroImage from '../assets/images/hero-bg.png'
 
 const Hero = () => {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden md:pb-28">
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Hero Background"
+          alt="Batuhan Ateş dijital pazarlama ve medya çalışmaları"
           className="w-full h-full object-cover opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-dark-900/50 via-dark-900/80 to-dark-900" />
@@ -35,7 +36,7 @@ const Hero = () => {
             className="inline-flex items-center gap-2 px-4 py-2 bg-dark-700/50 backdrop-blur-sm border border-dark-600 rounded-full mb-8"
           >
             <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-            <span className="text-sm text-gray-300">{t('home.hero.subtitle')}</span>
+            <span className="text-sm text-gray-300">{t('home.hero.badge')}</span>
           </motion.div>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold mb-6">
@@ -47,10 +48,19 @@ const Hero = () => {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto"
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="text-xl md:text-2xl font-medium text-white mb-4 max-w-3xl mx-auto"
           >
             {t('home.hero.subtitle')}
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto"
+          >
+            {t('home.hero.summary')}
           </motion.p>
 
           <motion.div
@@ -59,11 +69,11 @@ const Hero = () => {
             transition={{ delay: 0.6, duration: 0.5 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Link to="/portfolyo" className="btn-primary flex items-center gap-2">
+            <Link to={localizedPath('portfolio', language)} className="btn-primary flex items-center gap-2">
               {t('home.hero.cta')}
               <ArrowRight size={18} />
             </Link>
-            <Link to="/iletisim" className="btn-outline">
+            <Link to={localizedPath('contact', language)} className="btn-outline">
               {t('home.hero.ctaSecondary')}
             </Link>
           </motion.div>
@@ -100,7 +110,7 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1, duration: 0.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          className="hidden md:flex justify-center mt-12"
         >
           <a
             href="#about"
