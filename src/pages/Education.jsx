@@ -2,7 +2,7 @@ import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Mail, MapPin, Send, Zap, Smartphone, TrendingUp, Target, Check, Calendar, Users, Award, Globe, MessageCircle, DollarSign } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
-import { isEmailConfigured, sendTrainingEmail } from '../config/email'
+import { sendTrainingApplication } from '../lib/submitForm'
 
 const Education = () => {
   const { t } = useLanguage()
@@ -53,11 +53,7 @@ const Education = () => {
     setIsSubmitting(true)
 
     try {
-      if (!isEmailConfigured()) {
-        throw new Error('EmailJS ortam değişkenleri tanımlı değil')
-      }
-
-      await sendTrainingEmail({
+      await sendTrainingApplication({
         name: formData.name,
         phone: formData.phone,
         email: formData.email,

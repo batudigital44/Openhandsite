@@ -2,7 +2,7 @@ import { useState, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Mail, MapPin, Send, Zap, Smartphone, TrendingUp, Target, Shield, Check } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
-import { isEmailConfigured, sendContactEmail, RECIPIENT_EMAIL } from '../config/email'
+import { sendContactMessage } from '../lib/submitForm'
 
 const subjectOptions = {
   tr: [
@@ -80,11 +80,7 @@ const Contact = () => {
     setIsSubmitting(true)
 
     try {
-      if (!isEmailConfigured()) {
-        throw new Error('EmailJS ortam degiskenleri tanimli degil')
-      }
-
-      await sendContactEmail({
+      await sendContactMessage({
         name: formData.name,
         phone: formData.phone,
         email: formData.email,

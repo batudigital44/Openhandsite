@@ -120,6 +120,32 @@
   </head>
   <body>
     <div id="root"></div>
+
+    <!--
+      Netlify Forms kaydı. Netlify build sırasında bu formları algılar ve gönderimleri
+      Site settings > Forms > Form notifications altında tanımlı e-posta adresine iletir.
+      Formlar SPA içinde React ile gönderilir; burada yalnızca şema tanımı yapılır.
+    -->
+    <form name="contact" data-netlify="true" netlify-honeypot="website" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="text" name="website" />
+      <input type="text" name="name" />
+      <input type="text" name="phone" />
+      <input type="email" name="email" />
+      <input type="text" name="subject" />
+      <textarea name="message"></textarea>
+    </form>
+
+    <form name="training-application" data-netlify="true" netlify-honeypot="website" hidden>
+      <input type="hidden" name="form-name" value="training-application" />
+      <input type="text" name="website" />
+      <input type="text" name="name" />
+      <input type="text" name="phone" />
+      <input type="email" name="email" />
+      <input type="text" name="training_name" />
+      <textarea name="message"></textarea>
+    </form>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

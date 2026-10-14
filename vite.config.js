@@ -12,12 +12,15 @@ const vitePrerender = require('vite-plugin-prerender')
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-// Prerender için sistemde bulunan bir Chromium ikilisi kullanılır.
+// Prerender icin bir Chromium/Chrome ikilisi kullanilir. Oncelik: ortam degiskenleri
+// (scripts/build.mjs tarafindan set edilir), sonra sistemdeki bilinen yollar.
 const CHROMIUM_CANDIDATES = [
   process.env.PUPPETEER_EXECUTABLE_PATH,
+  process.env.CHROME_PATH,
   '/usr/bin/chromium',
   '/usr/bin/chromium-browser',
   '/usr/bin/google-chrome',
+  '/usr/bin/google-chrome-stable',
   '/opt/google/chrome/chrome',
 ].filter(Boolean)
 const executablePath = CHROMIUM_CANDIDATES.find((candidate) => fs.existsSync(candidate))
@@ -80,7 +83,7 @@ export default defineConfig({
       routes: ROUTES,
       renderer: new vitePrerender.PuppeteerRenderer({
         maxConcurrentRoutes: 1,
-        renderAfterTime: 600,
+        renderAfterTime: 1000,
         ...(executablePath ? { executablePath } : {})
       })
     })
