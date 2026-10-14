@@ -3,8 +3,9 @@
 // 2) vite build calistirir.
 // 3) Prerender sonucunu dogrular; bossa build'i basarisiz eder.
 // vite-plugin-prerender hata durumunda build'i sessizce gecirdigi icin bu kontrol zorunlu.
-import { existsSync, readFileSync } from 'node:fs'
+import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs'
 import { spawnSync } from 'node:child_process'
+import os from 'node:os'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -24,25 +25,55 @@ function resolveChrome() {
   return candidates.find((candidate) => existsSync(candidate))
 }
 
+// puppeteer onbellegi altinda indirilen chrome ikilisini bulur.
+function findInPuppeteerCache() {
+  const cacheRoot =
+    process.env.PUPPETEER_CACHE_DIR || path.join(os.homedir(), '.cache', 'puppeteer')
+  const targets = ['chrome', 'headless_shell']
+  const found = []
+  const walk = (dir, depth) => {
+    if (depth > 6) return
+    let entries
+    try {
+      entries = readdirSync(dir, { withFileTypes: true })
+    } catch {
+      return
+    }
+    for (const entry of entries) {
+      const full = path.join(dir, entry.name)
+      if (entry.isDirectory()) walk(full, depth + 1)
+      else if (targets.includes(entry.name)) {
+        try {
+          if (statSync(full).mode & 0o111) found.push(full)
+        } catch {
+          /* yok say */
+        }
+      }
+    }
+  }
+  walk(cacheRoot, 0)
+  return found.sort().pop()
+}
+
 function installChrome() {
   console.log('[build] Chrome indiriliyor (puppeteer)...')
   const install = spawnSync('npx', ['--yes', 'puppeteer', 'browsers', 'install', 'chrome'], {
-    stdio: 'inherit',
-  })
-  if (install.status !== 0) return null
-
-  const located = spawnSync('npx', ['--yes', 'puppeteer', 'browsers', 'path', 'chrome'], {
     encoding: 'utf8',
   })
-  return (located.stdout || '')
+  const output = `${install.stdout || ''}\n${install.stderr || ''}`
+  process.stdout.write(output)
+  if (install.status !== 0) return null
+
+  // Kurulum ciktisi "chrome@<surum> <yol>" biciminde yol icerir.
+  const fromOutput = output
     .split('\n')
-    .map((line) => line.trim())
-    .filter((line) => line && existsSync(line))
+    .flatMap((line) => line.trim().split(/\s+/))
+    .filter((token) => token.startsWith('/') && existsSync(token))
     .pop()
+  return fromOutput || findInPuppeteerCache()
 }
 
-let chromePath = resolveChrome()
-if (!chromePath) chromePath = installChrome()
+let chromePath = resolveChrome() || installChrome() || findInPuppeteerCache()
 if (!chromePath) {
   console.error('[build] Chrome bulunamadi; prerender yapilamaz.')
   process.exit(1)
