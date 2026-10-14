@@ -2,12 +2,10 @@
   command = "npm run build"
   publish = "dist"
 
-[[redirects]]
-  # Bilinen tüm route'lar dist içinde statik HTML olarak mevcut; Netlify bunları
-  # doğrudan sunar. Eşleşmeyen URL'ler gerçek 404 sayfası döndürür.
-  from = "/*"
-  to = "/404.html"
-  status = 404
+# Not: Bilinen tüm route'lar dist içinde statik HTML olarak mevcut. Eşleşmeyen
+# URL'ler için Netlify, publish kökündeki 404.html dosyasını otomatik olarak 404
+# durumuyla sunar. Catch-all bir redirect kuralı eklenmiyor; çünkü bu kural
+# Netlify Forms POST isteklerini de yakalayıp 404 döndürüyor.
 
 [[headers]]
   for = "/*"

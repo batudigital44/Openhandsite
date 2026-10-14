@@ -1,2 +1,3 @@
-# Tüm route lar build sirasinda statik HTML olarak uretilir; eslesmeyen URL ler icin gercek 404 doner.
-/*    /404.html   404
+# Eslesmeyen URL ler icin Netlify, publish kokundeki 404.html dosyasini otomatik sunar.
+# Catch-all redirect kurali eklenmiyor; aksi halde Netlify Forms POST istekleri de
+# yakalanip 404 donuyor.
