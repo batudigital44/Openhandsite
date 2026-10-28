@@ -28,7 +28,6 @@ const translations = {
       title: 'Beni Tanıyın',
       subtitle: 'Dijitalin sınırı yok,',
       subtitleHighlight: 'benim çalışma alanım da',
-      subtitleSuffix: '',
       description1: "Dijital pazarlama ve yapay zekâ pazarlama uzmanı, uluslararası medya danışmanı ve gazeteciyim. Kırgızistan, Almanya, İsveç, BAE ve Türkiye'de turizm, teknoloji ve medya markalarıyla çalıştım. Dubai gayrimenkul projesinde 14 günde 800.000$+ satış dönüşümü sağladım.",
       description2: "PMA Partner'da turizm teknolojileri ve pazarlama otomasyonu alanında dijital dönüşüm projelerini yönetiyorum. Münih merkezli bir TravelTech şirketinin İstanbul ve Stockholm ekipleriyle birlikte uluslararası projelerde çalışıyorum.",
       stats: {
@@ -433,7 +432,6 @@ const translations = {
       title: 'Get to Know Me',
       subtitle: 'Digital has no limits,',
       subtitleHighlight: 'and neither does my field of work',
-      subtitleSuffix: '',
       description1: 'I am a digital marketing and AI marketing expert, international media consultant, and journalist. I have worked with tourism, technology, and media brands in Kyrgyzstan, Germany, Sweden, the UAE, and Türkiye. I achieved $800,000+ in sales conversion in 14 days on a Dubai real estate project.',
       description2: 'At PMA Partner I manage digital transformation projects in tourism technology and marketing automation. I work on international projects together with the Istanbul and Stockholm teams of a Munich-based TravelTech company.',
       stats: {
@@ -834,7 +832,6 @@ const translations = {
       title: 'Lernen Sie mich kennen',
       subtitle: 'Das Digitale kennt keine Grenzen,',
       subtitleHighlight: 'mein Arbeitsfeld ebenso wenig',
-      subtitleSuffix: '',
       description1: 'Ich bin Experte für Digitalmarketing und KI-Marketing, internationaler Medienberater und Journalist. Ich habe mit Tourismus-, Technologie- und Medienmarken in Kirgisistan, Deutschland, Schweden, den VAE und der Türkei gearbeitet. Bei einem Dubai-Immobilienprojekt erzielte ich in 14 Tagen über 800.000$ Verkaufskonversion.',
       description2: 'Bei PMA Partner leite ich digitale Transformationsprojekte in Tourismustechnologie und Marketing-Automatisierung. Gemeinsam mit den Istanbuler und Stockholmer Teams eines Münchner TravelTech-Unternehmens arbeite ich an internationalen Projekten.',
       stats: {
