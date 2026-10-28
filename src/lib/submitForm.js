@@ -1,13 +1,16 @@
 // Form gonderimi.
 //
-// Birincil yol Netlify Forms: Netlify build sirasinda index.html icindeki form
-// semalarini algilar ve gonderimleri Site settings > Forms > Form notifications
-// altinda tanimli e-posta adresine iletir. API anahtari gerekmez.
+// Birincil yol FormSubmit (formsubmit.co): gonderimler dogrudan
+// digital@batuhanates.com adresine e-posta olarak iletilir. API anahtari
+// gerekmez; yalnizca alici adresine gelen ilk "Activate Form" baglantisinin
+// bir kez onaylanmasi gerekir.
 //
 // Alternatif yol EmailJS: VITE_EMAILJS_* ortam degiskenleri tanimliysa
-// gonderim dogrudan EmailJS uzerinden yapilir (Netlify disi hosting icin).
+// gonderim EmailJS uzerinden yapilir.
 import emailjs from '@emailjs/browser'
 import { RECIPIENT_EMAIL } from '../config/email'
+
+const FORMSUBMIT_ENDPOINT = `https://formsubmit.co/ajax/${RECIPIENT_EMAIL}`
 
 const emailConfig = {
   serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -24,18 +27,24 @@ export const isEmailJsConfigured = () =>
       emailConfig.publicKey
   )
 
-const encode = (data) =>
-  Object.keys(data)
-    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key] ?? '')}`)
-    .join('&')
-
-const submitToNetlify = async (formName, params) => {
-  const response = await fetch('/', {
+const submitToFormSubmit = async (subject, params) => {
+  const response = await fetch(FORMSUBMIT_ENDPOINT, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: encode({ 'form-name': formName, ...params }),
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify({
+      ...params,
+      _subject: subject,
+      _template: 'table',
+      _captcha: 'false',
+    }),
   })
-  if (!response.ok) throw new Error(`Netlify Forms gonderimi basarisiz: ${response.status}`)
+  if (!response.ok) throw new Error(`FormSubmit gonderimi basarisiz: ${response.status}`)
+
+  const result = await response.json().catch(() => ({}))
+  if (result && result.success === 'false') {
+    throw new Error(`FormSubmit: ${result.message || 'gonderim reddedildi'}`)
+  }
+  return result
 }
 
 export const sendContactMessage = async (params) => {
@@ -47,7 +56,7 @@ export const sendContactMessage = async (params) => {
       emailConfig.publicKey
     )
   }
-  return submitToNetlify('contact', params)
+  return submitToFormSubmit('Yeni iletisim mesaji - batuhanates.com', params)
 }
 
 export const sendTrainingApplication = async (params) => {
@@ -59,5 +68,5 @@ export const sendTrainingApplication = async (params) => {
       emailConfig.publicKey
     )
   }
-  return submitToNetlify('training-application', params)
+  return submitToFormSubmit('Yeni egitim basvurusu - batuhanates.com', params)
 }
