@@ -129,10 +129,99 @@ const Press = () => {
       excerpt: 'Dubai\'nin 2040 vizyonu: Bir devletin dönüşüm manifestosu ve gelecek şehirleşme.',
       url: 'https://www.gayrimenkulgundemi.com/gelecek-burada-insa-ediliyor-dubai-2040-bir-devletin-donusum-manifestosu',
       category: 'Uluslararası & Diplomasi'
-    }
+    },
+      {
+        title: 'TEUS Group\'un Bali Adası\'ndaki Yeni Projesi: Amani Melasti',
+        source: 'Tourism Today (Instagram)',
+        date: '2025',
+        excerpt: 'Avrupa ödüllü TEUS Group\'un Bali Adası\'ndaki yeni projesi Amani Melasti, Tourism Today sosyal medya hesaplarında paylaşıldı.',
+        url: 'https://www.instagram.com/tourismtoday_official/p/DGz0SUbI7fv/',
+        category: 'Turizm & Yatırım'
+      },
+      {
+        title: 'Avrupa Ödüllü TEUS Group\'un Bali Adası\'ndaki Yeni Projesi: Amani Melasti',
+        source: 'Tourism Today',
+        date: '2025',
+        excerpt: 'Avrupa ödüllü TEUS Group\'un Bali Adası\'ndaki yeni projesi Amani Melasti, turizm basınında geniş yer buldu.',
+        url: 'https://www.tourismtoday.net/kategoriler/genel-haberler/avrupa-odullu-teus-groupun-bali-adasindaki-yeni-projesi-amani-melasti/',
+        category: 'Turizm & Yatırım'
+      },
+      {
+        title: 'TEUS Group, Bali Adası\'nda Otel Yapacak',
+        source: 'Turizm Yatırım Haber',
+        date: '2025',
+        excerpt: 'TEUS Group\'un Bali Adası\'nda hayata geçireceği yeni otel projesi sektör basınında duyuruldu.',
+        url: 'https://turizmyatirimhaber.com/teus-group-bali-adasinda-otel-yapacak/',
+        category: 'Turizm & Yatırım'
+      },
+      {
+        title: 'Antalya\'da Gayrimenkul Profesyonellerine Yönelik Sektörel Seminer Ses Getirdi',
+        source: 'Tüm 1 Haber',
+        date: '2025',
+        excerpt: 'Antalya\'da gayrimenkul profesyonellerine yönelik düzenlenen sektörel seminer büyük ilgi gördü.',
+        url: 'https://tum1haber.com/haber/antalyada_gayrimenkul_profesyonellerine_yonelik_sektorel_seminer_ses_getirdi-289326.html',
+        category: 'Gayrimenkul & Yatırım'
+      },
+      {
+        title: 'Antalya\'da Gayrimenkul Profesyonellerine Yönelik Sektörel Seminer Ses Getirdi',
+        source: 'Gayrimenkul Haber',
+        date: '2025',
+        excerpt: 'Antalya\'da gayrimenkul profesyonellerine yönelik sektörel seminerin yankıları basına taşındı.',
+        url: 'https://www.gayrimenkulhaber.com/bolgesel/antalyada-gayrimenkul-profesyonellerine-yonelik-sektorel-seminer-ses-getirdi/',
+        category: 'Gayrimenkul & Yatırım'
+      },
+      {
+        title: 'Gayrimenkul Yatırımında Kazandıran Stratejiler: Antalya ve Ötesi',
+        source: 'İnşaat Rehberi',
+        date: '2025',
+        excerpt: 'Antalya ve ötesinde gayrimenkul yatırımında kazandıran stratejiler üzerine bir değerlendirme.',
+        url: 'https://insaatrehberi.com.tr/gayrimenkul-yatiriminda-kazandiran-stratejiler-antalya-ve-otesi/',
+        category: 'Gayrimenkul & Yatırım'
+      },
+      {
+        title: 'Tercihini Gayrimenkulden Yana Kullanan Yatırımcılara Öneriler',
+        source: 'Dünya Gazetesi',
+        date: '2025',
+        excerpt: 'Gayrimenkulü tercih eden yatırımcılar için strateji ve öneriler Dünya Gazetesi\'nde yer aldı.',
+        url: 'https://www.dunya.com/ekonomi/tercihini-gayrimenkulden-yana-kullanan-yatirimcilara-oneriler-haberi-758232',
+        category: 'Gayrimenkul & Yatırım'
+      },
+      {
+        title: 'Desire Antalya: Avrupa\'nın En İyi Yeni Otel İnşaat ve Tasarım Ödülü',
+        source: 'Tourism Today (Instagram)',
+        date: '2024',
+        excerpt: 'Desire Antalya, Avrupa\'nın en iyi yeni otel inşaat ve tasarım ödülüyle Tourism Today sosyal medya hesaplarında yer aldı.',
+        url: 'https://www.instagram.com/tourismtoday_official/p/DDwYz2VtlCc/',
+        category: 'Turizm & Yatırım'
+      },
+      {
+        title: 'Desire Antalya\'ya Avrupa\'nın En İyi Yeni Otel İnşaat ve Tasarım Ödülü',
+        source: 'GM Dergi',
+        date: '2024',
+        excerpt: 'Desire Antalya projesi, Avrupa\'nın en iyi yeni otel inşaat ve tasarım ödülüne layık görüldü.',
+        url: 'https://www.gmdergi.com/aktuel/desire-antalyaya-avrupanin-en-iyi-yeni-otel-insaat-ve-tasarim-odulu/',
+        category: 'Turizm & Yatırım'
+      },
+      {
+        title: 'TEUS Group\'un "En İyi Yeni Küçük Otel İnşaatı ve Tasarımı" Ödüllü Projesi: DESIRE',
+        source: 'Türk Emlak Haber Ajansı',
+        date: '2024',
+        excerpt: 'TEUS Group\'un DESIRE projesi, "En İyi Yeni Küçük Otel İnşaatı ve Tasarımı" ödülünü kazandı.',
+        url: 'https://www.emlakhaberajansi.com/teus-groupun-en-iyi-yeni-kucuk-otel-insaati-ve-tasarimi-odullu-projesi-desire.html',
+        category: 'Turizm & Yatırım'
+      },
+      {
+        title: 'Antalya\'da Yüksek Getiri Potansiyeline Sahip Desire Antalya Rezidans Projesi',
+        source: 'Ekonomi Life',
+        date: '2024',
+        excerpt: 'Antalya\'da yüksek getiri potansiyeli taşıyan Desire Antalya rezidans projesi incelendi.',
+        url: 'https://ekonomilife.com/ekonomi/antalyda-yuksek-getiri-potansiyeline-sahip-desire-antalya-rezidans-projesi/',
+        category: 'Gayrimenkul & Yatırım'
+      }
+,
   ]
 
-  const categories = ['Tümü', 'Kariyer & Freelance', 'Uluslararası & Diplomasi']
+  const categories = ['Tümü', 'Kariyer & Freelance', 'Uluslararası & Diplomasi', 'Turizm & Yatırım', 'Gayrimenkul & Yatırım']
 
   return (
     <div className="pt-20">
@@ -156,12 +245,12 @@ const Press = () => {
             <div className="flex justify-center gap-4 mt-8">
               <div className="glass-card px-6 py-4">
                 <Newspaper className="w-8 h-8 text-primary mx-auto mb-2" />
-                <div className="text-2xl font-bold gradient-text">15+</div>
+                <div className="text-2xl font-bold gradient-text">25+</div>
                 <div className="text-sm text-gray-400">{t('press.newsArticles')}</div>
               </div>
               <div className="glass-card px-6 py-4">
                 <Globe className="w-8 h-8 text-secondary mx-auto mb-2" />
-                <div className="text-2xl font-bold gradient-text">10+</div>
+                <div className="text-2xl font-bold gradient-text">20+</div>
                 <div className="text-sm text-gray-400">{t('press.platforms')}</div>
               </div>
               <div className="glass-card px-6 py-4">
