@@ -22,6 +22,7 @@ Site: https://www.batuhanates.com — GitHub: batudigital44/Openhandsite — Hos
 - **Tasarım dili:** `text-gray-400` gövde metni, `glass-card` kart, `text-xs` yerine `text-sm` etiket/chip. Bölüm başlıklarına emoji koymayın (kart ikonları ayrı).
 - **Kontrast:** `text-gray-500` küçük metinde AA'yı geçmez; kullanmayın.
 - Kullanıcı isteği: framework/tasarım değişmeyecek; mevcut bileşenler ve stil sınıfları kullanılacak.
+- **Portfolyo filtresi:** Proje kartındaki rozet, filtrenin kategori etiketini (`labelOf(item.type)`) gösterir — serbest bir `tag` değil. Yeni proje eklerken `type` alanını `FILTERS.<lang>.options` anahtarlarından biriyle (`all`/`tourism`/`realestate`/`tech`/`pr`/`digital`) verin; rozet ile filtre böylece birebir tutarlı kalır.
 
 ## Deploy / git
 - Remote'ta geçersiz PAT gömülü olabilir. Push: `git push https://x-access-token:<PAT>@github.com/batudigital44/Openhandsite.git master`. PAT paylaşılırsa iş sonunda rotasyon uyarısı yapın.
