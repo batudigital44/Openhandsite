@@ -30,7 +30,7 @@ const Portfolio = () => {
       title: t('portfolio.pma.title'),
       description: t('portfolio.pma.description'),
       tag: t('portfolio.pma.tag'),
-      sector: 'digital',
+      type: 'digital',
       metrics: [t('portfolio.pma.metric1'), t('portfolio.pma.metric2'), t('portfolio.pma.metric3')]
     },
     // 2. Conti Group — Sales, SEO & Performance Marketing
@@ -39,7 +39,7 @@ const Portfolio = () => {
       title: t('portfolio.conti.title'),
       description: t('portfolio.conti.description'),
       tag: t('portfolio.conti.tag'),
-      sector: 'tourism',
+      type: 'tourism',
       metrics: [t('portfolio.conti.metric1'), t('portfolio.conti.metric2'), t('portfolio.conti.metric3')]
     },
     // 3. Istanbul Airlines — Marketing & Digital Growth
@@ -48,7 +48,7 @@ const Portfolio = () => {
       title: t('portfolio.istanbulAirlines.title'),
       description: t('portfolio.istanbulAirlines.description'),
       tag: t('portfolio.istanbulAirlines.tag'),
-      sector: 'tourism',
+      type: 'tourism',
       metrics: [t('portfolio.istanbulAirlines.metric1'), t('portfolio.istanbulAirlines.metric2'), t('portfolio.istanbulAirlines.metric3')]
     },
     // 4. DNA Hotels — Egypt (Technology × Marketing × Media)
@@ -57,7 +57,7 @@ const Portfolio = () => {
       title: t('portfolio.dna.title'),
       description: t('portfolio.dna.description'),
       tag: t('portfolio.dna.tag'),
-      sector: 'tourism',
+      type: 'tourism',
       metrics: [t('portfolio.dna.metric1'), t('portfolio.dna.metric2'), t('portfolio.dna.metric3')]
     },
     // 5. PPG All in One — Tourism Technology
@@ -66,7 +66,7 @@ const Portfolio = () => {
       title: t('portfolio.ppg.title'),
       description: t('portfolio.ppg.description'),
       tag: t('portfolio.ppg.tag'),
-      sector: 'tourism',
+      type: 'tourism',
       metrics: [t('portfolio.ppg.metric1'), t('portfolio.ppg.metric2'), t('portfolio.ppg.metric3')]
     },
     // 6. Yunexia — SaaS & AI Automation
@@ -75,7 +75,7 @@ const Portfolio = () => {
       title: t('portfolio.yunexia.title'),
       description: t('portfolio.yunexia.description'),
       tag: t('portfolio.yunexia.tag'),
-      sector: 'tech',
+      type: 'tech',
       metrics: [t('portfolio.yunexia.metric1'), t('portfolio.yunexia.metric2'), t('portfolio.yunexia.metric3')]
     },
     // 7. Orange County Hotels — Data-Driven Marketing
@@ -84,7 +84,7 @@ const Portfolio = () => {
       title: t('portfolio.orangeCounty.title'),
       description: t('portfolio.orangeCounty.description'),
       tag: t('portfolio.orangeCounty.tag'),
-      sector: 'tourism',
+      type: 'tourism',
       metrics: [t('portfolio.orangeCounty.metric1'), t('portfolio.orangeCounty.metric2'), t('portfolio.orangeCounty.metric3')],
       links: [{ name: t('portfolio.orangeCounty.photoLink'), url: 'https://www.orangecounty.com.tr/kemer/tr/foto-galeri' }]
     },
@@ -94,7 +94,7 @@ const Portfolio = () => {
       title: t('portfolio.dubai.title'),
       description: t('portfolio.dubai.description'),
       tag: t('portfolio.dubai.tag'),
-      sector: 'realestate',
+      type: 'realestate',
       metrics: [t('portfolio.dubai.metric1'), t('portfolio.dubai.metric2'), t('portfolio.dubai.metric3')]
     },
     // 9. Teus Group — International PR & Media
@@ -103,7 +103,7 @@ const Portfolio = () => {
       title: t('portfolio.teus.title'),
       description: t('portfolio.teus.description'),
       tag: t('portfolio.teus.tag'),
-      sector: 'pr',
+      type: 'pr',
       metrics: [t('portfolio.teus.metric1'), t('portfolio.teus.metric2'), t('portfolio.teus.metric3')],
       links: [
         { name: 'Desire Antalya', url: 'https://www.desire-antalya.com/tr/#gallery' },
@@ -116,7 +116,7 @@ const Portfolio = () => {
       title: t('portfolio.mediawirt.title'),
       description: t('portfolio.mediawirt.description'),
       tag: t('portfolio.mediawirt.tag'),
-      sector: 'digital',
+      type: 'digital',
       metrics: [t('portfolio.mediawirt.metric1'), t('portfolio.mediawirt.metric2'), t('portfolio.mediawirt.metric3')]
     },
     // 11. EMO Optik — Turkey Market Entry
@@ -125,7 +125,7 @@ const Portfolio = () => {
       title: t('portfolio.emo.title'),
       description: t('portfolio.emo.description'),
       tag: t('portfolio.emo.tag'),
-      sector: 'realestate',
+      type: 'tourism',
       metrics: [t('portfolio.emo.metric1'), t('portfolio.emo.metric2'), t('portfolio.emo.metric3')]
     },
     // 12. Türkiye–Kırgızistan — Diplomatic Digital Transformation
@@ -134,7 +134,7 @@ const Portfolio = () => {
       title: t('portfolio.kyrgyz.title'),
       description: t('portfolio.kyrgyz.description'),
       tag: t('portfolio.kyrgyz.tag'),
-      sector: 'pr',
+      type: 'pr',
       metrics: [t('portfolio.kyrgyz.metric1'), t('portfolio.kyrgyz.metric2'), t('portfolio.kyrgyz.metric3')],
       links: [{ name: 'Video', url: 'https://www.facebook.com/BiskekTTEOMER/videos/1323158961190017/' }]
     },
@@ -144,7 +144,7 @@ const Portfolio = () => {
       title: t('portfolio.asman.title'),
       description: t('portfolio.asman.description'),
       tag: t('portfolio.asman.tag'),
-      sector: 'pr',
+      type: 'pr',
       metrics: [t('portfolio.asman.metric1'), t('portfolio.asman.metric2'), t('portfolio.asman.metric3')]
     },
     // 14. Belconti Resort Hotel — 90K Views Viral Content
@@ -153,7 +153,7 @@ const Portfolio = () => {
       title: t('portfolio.belconti.title'),
       description: t('portfolio.belconti.description'),
       tag: t('portfolio.belconti.tag'),
-      sector: 'tourism',
+      type: 'tourism',
       metrics: [t('portfolio.belconti.metric1'), t('portfolio.belconti.metric2'), t('portfolio.belconti.metric3')],
       links: [
         { name: t('portfolio.belconti.articleLink'), url: 'https://www.linkedin.com/pulse/mobil-i%C3%A7erikle-90-bin-izlenme-batuhan-ate%C5%9F-vyc6f/' },
@@ -166,7 +166,7 @@ const Portfolio = () => {
       title: t('portfolio.belekUni.title'),
       description: t('portfolio.belekUni.description'),
       tag: t('portfolio.belekUni.tag'),
-      sector: 'tourism',
+      type: 'tourism',
       metrics: [t('portfolio.belekUni.metric1'), t('portfolio.belekUni.metric2'), t('portfolio.belekUni.metric3')],
       links: [
         { name: t('portfolio.belekUni.videoLink'), url: 'https://www.instagram.com/p/C13erk5oGBJ/' }
@@ -357,9 +357,44 @@ const Portfolio = () => {
     }
   ]
 
-  const FILTERS = {"tr": {"all": "Tümü", "tourism": "Turizm", "realestate": "Gayrimenkul", "tech": "Teknoloji / SaaS", "pr": "PR & Medya", "digital": "Dijital Pazarlama", "more": "Tümünü Göster", "less": "Daha Az Göster"}, "en": {"all": "All", "tourism": "Tourism", "realestate": "Real Estate", "tech": "Technology / SaaS", "pr": "PR & Media", "digital": "Digital Marketing", "more": "Show All", "less": "Show Less"}, "de": {"all": "Alle", "tourism": "Tourismus", "realestate": "Immobilien", "tech": "Technologie / SaaS", "pr": "PR & Medien", "digital": "Digitalmarketing", "more": "Alle anzeigen", "less": "Weniger anzeigen"}}
+  const FILTERS = {
+    tr: {
+      options: [
+        { key: 'all', label: 'Tümü' },
+        { key: 'tourism', label: 'Oteller & Turizm' },
+        { key: 'realestate', label: 'Gayrimenkul' },
+        { key: 'tech', label: 'Teknoloji / SaaS' },
+        { key: 'pr', label: 'PR & Medya' },
+        { key: 'digital', label: 'Dijital Pazarlama' },
+      ],
+      more: 'Tümünü Göster', less: 'Daha Az Göster'
+    },
+    en: {
+      options: [
+        { key: 'all', label: 'All' },
+        { key: 'tourism', label: 'Hotels & Tourism' },
+        { key: 'realestate', label: 'Real Estate' },
+        { key: 'tech', label: 'Technology / SaaS' },
+        { key: 'pr', label: 'PR & Media' },
+        { key: 'digital', label: 'Digital Marketing' },
+      ],
+      more: 'Show All', less: 'Show Less'
+    },
+    de: {
+      options: [
+        { key: 'all', label: 'Alle' },
+        { key: 'tourism', label: 'Hotels & Tourismus' },
+        { key: 'realestate', label: 'Immobilien' },
+        { key: 'tech', label: 'Technologie / SaaS' },
+        { key: 'pr', label: 'PR & Medien' },
+        { key: 'digital', label: 'Digitalmarketing' },
+      ],
+      more: 'Alle anzeigen', less: 'Weniger anzeigen'
+    }
+  }
   const L = FILTERS[language] || FILTERS.tr
-  const filteredAchievements = sector === 'all' ? achievements : achievements.filter((a) => a.sector === sector)
+  const labelOf = (key) => (L.options.find((o) => o.key === key) || {}).label || key
+  const filteredAchievements = sector === 'all' ? achievements : achievements.filter((a) => a.type === sector)
   const visibleCerts = showAllCerts ? certificates : certificates.slice(0, 6)
 
   const partners = [
@@ -518,14 +553,7 @@ const Portfolio = () => {
           </motion.div>
 
           <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {[
-              { key: 'all', label: L.all },
-              { key: 'tourism', label: L.tourism },
-              { key: 'realestate', label: L.realestate },
-              { key: 'tech', label: L.tech },
-              { key: 'pr', label: L.pr },
-              { key: 'digital', label: L.digital },
-            ].map((f) => (
+            {L.options.map((f) => (
               <button
                 key={f.key}
                 type="button"
@@ -561,7 +589,7 @@ const Portfolio = () => {
                     {/* Tag overlay */}
                     <div className="absolute top-4 left-4">
                       <span className="px-4 py-2 bg-primary/90 backdrop-blur-sm text-white text-sm font-semibold rounded-full">
-                        {item.tag}
+                        {labelOf(item.type)}
                       </span>
                     </div>
                   </div>
