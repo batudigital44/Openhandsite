@@ -48,7 +48,7 @@ const Portfolio = () => {
       title: t('portfolio.istanbulAirlines.title'),
       description: t('portfolio.istanbulAirlines.description'),
       tag: t('portfolio.istanbulAirlines.tag'),
-      type: 'tourism',
+      type: 'digital',
       metrics: [t('portfolio.istanbulAirlines.metric1'), t('portfolio.istanbulAirlines.metric2'), t('portfolio.istanbulAirlines.metric3')]
     },
     // 4. DNA Hotels — Egypt (Technology × Marketing × Media)
@@ -125,7 +125,7 @@ const Portfolio = () => {
       title: t('portfolio.emo.title'),
       description: t('portfolio.emo.description'),
       tag: t('portfolio.emo.tag'),
-      type: 'tourism',
+      type: 'ecommerce',
       metrics: [t('portfolio.emo.metric1'), t('portfolio.emo.metric2'), t('portfolio.emo.metric3')]
     },
     // 12. Türkiye–Kırgızistan — Diplomatic Digital Transformation
@@ -166,7 +166,7 @@ const Portfolio = () => {
       title: t('portfolio.belekUni.title'),
       description: t('portfolio.belekUni.description'),
       tag: t('portfolio.belekUni.tag'),
-      type: 'tourism',
+      type: 'digital',
       metrics: [t('portfolio.belekUni.metric1'), t('portfolio.belekUni.metric2'), t('portfolio.belekUni.metric3')],
       links: [
         { name: t('portfolio.belekUni.videoLink'), url: 'https://www.instagram.com/p/C13erk5oGBJ/' }
@@ -311,6 +311,36 @@ const Portfolio = () => {
       location: 'Antalya, Türkiye',
       year: '2024',
       type: 'Konferans'
+    },
+    {
+      name: 'Münih Güvenlik Konferansı',
+      location: 'Münih, Almanya',
+      year: '',
+      type: 'Konferans'
+    },
+    {
+      name: 'Antalya Diplomasi Zirvesi',
+      location: 'Antalya, Türkiye',
+      year: '',
+      type: 'Zirve'
+    },
+    {
+      name: 'COP31 İklim Zirvesi – Birleşmiş Milletler',
+      location: 'Antalya, Türkiye',
+      year: '',
+      type: 'Zirve'
+    },
+    {
+      name: 'Hollanda Yapay Zekâ Zirvesi',
+      location: 'Amsterdam, Hollanda',
+      year: '',
+      type: 'Zirve'
+    },
+    {
+      name: 'IBC – Uluslararası Yayıncılık Konvansiyonu',
+      location: 'Amsterdam, Hollanda',
+      year: '',
+      type: 'Konferans'
     }
   ]
 
@@ -342,20 +372,6 @@ const Portfolio = () => {
     }
   ]
 
-  const referenceLetters = [
-    {
-      name: 'Dç. Dr. Erdoğan Akman',
-      title: 'Manas Üniversitesi Doçent Doktoru'
-    },
-    {
-      name: 'Pelin Aktaş',
-      title: 'Antalya Belek Üniversitesi Asistan Profesör'
-    },
-    {
-      name: 'Rasim Gündüz',
-      title: 'Antalya Körfez Gazetesi Genel Yayın Yönetmeni & Kurucu'
-    }
-  ]
 
   const FILTERS = {
     tr: {
@@ -366,6 +382,7 @@ const Portfolio = () => {
         { key: 'tech', label: 'Teknoloji / SaaS' },
         { key: 'pr', label: 'PR & Medya' },
         { key: 'digital', label: 'Dijital Pazarlama' },
+        { key: 'ecommerce', label: 'E-Ticaret' },
       ],
       more: 'Tümünü Göster', less: 'Daha Az Göster'
     },
@@ -377,6 +394,7 @@ const Portfolio = () => {
         { key: 'tech', label: 'Technology / SaaS' },
         { key: 'pr', label: 'PR & Media' },
         { key: 'digital', label: 'Digital Marketing' },
+        { key: 'ecommerce', label: 'E-Commerce' },
       ],
       more: 'Show All', less: 'Show Less'
     },
@@ -388,6 +406,7 @@ const Portfolio = () => {
         { key: 'tech', label: 'Technologie / SaaS' },
         { key: 'pr', label: 'PR & Medien' },
         { key: 'digital', label: 'Digitalmarketing' },
+        { key: 'ecommerce', label: 'E-Commerce' },
       ],
       more: 'Alle anzeigen', less: 'Weniger anzeigen'
     }
@@ -836,7 +855,7 @@ const Portfolio = () => {
                   <span className="px-3 py-1 bg-secondary/20 text-secondary text-sm font-semibold rounded-full">
                     {conf.type}
                   </span>
-                  <span className="text-gray-400 text-sm">{conf.year}</span>
+                  {conf.year && <span className="text-gray-400 text-sm">{conf.year}</span>}
                 </div>
                 <h3 className="font-bold mb-2">{conf.name}</h3>
                 <div className="flex items-center gap-2 text-gray-400 text-sm">
@@ -865,7 +884,7 @@ const Portfolio = () => {
             </h2>
             <p className="text-gray-400">İş dünyasından ve akademik çevrelerden aldığım LinkedIn tavsiyeleri</p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {linkedinRecommendations.map((rec, index) => (
               <motion.div
                 key={index}
@@ -893,35 +912,6 @@ const Portfolio = () => {
             ))}
           </div>
 
-          {/* Referans Mektupları */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-display font-bold mb-4">
-              Referans <span className="gradient-text">Mektupları</span>
-            </h2>
-            <p className="text-gray-400">Aldığım referans mektupları</p>
-          </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {referenceLetters.map((ref, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="glass-card p-5 hover:border-primary/30 transition-all text-center"
-              >
-                <div className="w-14 h-14 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4">
-                  {ref.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
-                </div>
-                <h3 className="font-bold mb-2">{ref.name}</h3>
-                <p className="text-secondary text-sm">{ref.title}</p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
