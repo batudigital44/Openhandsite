@@ -30,7 +30,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <img src={Logo} alt="Batuhan Ateş" className="h-10 mb-4" />
+            <img loading="lazy" decoding="async" src={Logo} alt="Batuhan Ateş" className="h-10 mb-4" />
             <p className="text-gray-400 text-sm">
               {t('footer.subtitle')}
             </p>
@@ -84,7 +84,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-dark-700 pt-8 text-center">
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-400 text-sm">
             © {new Date().getFullYear()} {t('footer.copyright')}
           </p>
         </div>

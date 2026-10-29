@@ -3,10 +3,10 @@ import { useRef } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import { Link } from 'react-router-dom'
 import { localizedPath } from '../i18n/routes'
-import portfolioImage from '../assets/images/portfolio-banner.png'
-import globalNetwork from '../assets/images/global-network.png'
-import hotelResort from '../assets/images/hotel-resort.png'
-import dubaiSkyline from '../assets/images/dubai-skyline.png'
+import portfolioImage from '../assets/images/portfolio-banner.webp'
+import globalNetwork from '../assets/images/global-network.webp'
+import hotelResort from '../assets/images/hotel-resort.webp'
+import dubaiSkyline from '../assets/images/dubai-skyline.webp'
 
 const PortfolioPreview = () => {
   const ref = useRef(null)
@@ -53,7 +53,7 @@ const PortfolioPreview = () => {
           <h3 className="text-3xl md:text-4xl font-display font-bold mb-4">
             {t('portfolioPreview.title')}
           </h3>
-          <img src={portfolioImage} alt="Batuhan Ateş kreatif portfolyo" className="mx-auto mt-8 max-w-md" />
+          <img loading="lazy" decoding="async" src={portfolioImage} alt="Batuhan Ateş kreatif portfolyo" className="mx-auto mt-8 max-w-md" />
         </motion.div>
 
         {/* Portfolio Grid */}
@@ -67,7 +67,7 @@ const PortfolioPreview = () => {
               className="group glass-card overflow-hidden hover:border-primary/30 transition-all duration-300"
             >
               <div className="relative h-56 overflow-hidden">
-                <img
+                <img loading="lazy" decoding="async"
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -75,7 +75,7 @@ const PortfolioPreview = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/50 to-transparent" />
                 {/* Tag */}
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-primary/80 backdrop-blur-sm text-white text-xs font-medium rounded-full">
+                  <span className="px-3 py-1 bg-primary/80 backdrop-blur-sm text-white text-sm font-medium rounded-full">
                     {item.tag}
                   </span>
                 </div>
@@ -91,7 +91,7 @@ const PortfolioPreview = () => {
                 {item.metrics && (
                   <div className="flex flex-wrap gap-2">
                     {item.metrics.map((metric, i) => (
-                      <span key={i} className="px-3 py-1 bg-gradient-to-r from-primary/20 to-secondary/20 text-primary text-xs font-medium rounded-full">
+                      <span key={i} className="px-3 py-1 bg-gradient-to-r from-primary/20 to-secondary/20 text-primary text-sm font-medium rounded-full">
                         {metric}
                       </span>
                     ))}

@@ -5,7 +5,7 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { useLanguage } from '../context/LanguageContext'
 import { localizedPath } from '../i18n/routes'
-import aboutImage from '../assets/images/about-hero.png'
+import aboutImage from '../assets/images/about-hero.webp'
 
 const AboutPreview = () => {
   const { t, language } = useLanguage()
@@ -34,7 +34,7 @@ const AboutPreview = () => {
             className="relative"
           >
             <div className="relative rounded-2xl overflow-hidden">
-              <img
+              <img loading="lazy" decoding="async"
                 src={aboutImage}
                 alt="Batuhan Ateş"
                 className="w-full h-auto"
@@ -75,7 +75,7 @@ const AboutPreview = () => {
                 >
                   <stat.icon className="w-5 h-5 text-primary mb-2" />
                   <div className="text-2xl font-bold gradient-text">{stat.number}</div>
-                  <div className="text-xs text-gray-400">{stat.label}</div>
+                  <div className="text-sm text-gray-400">{stat.label}</div>
                 </motion.div>
               ))}
             </div>

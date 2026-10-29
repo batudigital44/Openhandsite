@@ -173,7 +173,7 @@ const Education = () => {
                 {stats.map((stat, i) => (
                   <div key={i} className="text-center p-4 bg-dark-700/50 rounded-xl">
                     <div className="text-2xl font-bold text-white">{stat.number}</div>
-                    <div className="text-xs text-gray-400">{stat.label}</div>
+                    <div className="text-sm text-gray-400">{stat.label}</div>
                   </div>
                 ))}
               </div>

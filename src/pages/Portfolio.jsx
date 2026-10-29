@@ -1,23 +1,25 @@
 import { motion, useInView } from 'framer-motion'
 import { useLanguage } from '../context/LanguageContext'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { Target, Users, TrendingUp, Award, Award as Certificate, ExternalLink, Globe, MapPin, Building, MessageSquare } from 'lucide-react'
-import portfolioBanner from '../assets/images/portfolio-banner.png'
-import dubaiSkyline from '../assets/images/dubai-skyline.png'
-import hotelPool from '../assets/images/hotel-pool.png'
-import hotelResort from '../assets/images/hotel-resort.png'
-import germanyBerlin from '../assets/images/germany-berlin.jpg'
-import opticStore from '../assets/images/optic-store.jpg'
-import centralAsia from '../assets/images/central-asia.png'
-import diplomaticMeeting from '../assets/images/diplomatic-meeting.jpg'
-import globalNetwork from '../assets/images/global-network.png'
-import belcontiResort from '../assets/images/belconti-resort.jpg'
-import thyAirplane from '../assets/images/thy-airplane.jpg'
-import istanbulAirlinesJet from '../assets/images/istanbul-airlines-jet.jpg'
-import orangeCountyKemer from '../assets/images/orange-county-kemer.jpg'
+import portfolioBanner from '../assets/images/portfolio-banner.webp'
+import dubaiSkyline from '../assets/images/dubai-skyline.webp'
+import hotelPool from '../assets/images/hotel-pool.webp'
+import hotelResort from '../assets/images/hotel-resort.webp'
+import germanyBerlin from '../assets/images/germany-berlin.webp'
+import opticStore from '../assets/images/optic-store.webp'
+import centralAsia from '../assets/images/central-asia.webp'
+import diplomaticMeeting from '../assets/images/diplomatic-meeting.webp'
+import globalNetwork from '../assets/images/global-network.webp'
+import belcontiResort from '../assets/images/belconti-resort.webp'
+import thyAirplane from '../assets/images/thy-airplane.webp'
+import istanbulAirlinesJet from '../assets/images/istanbul-airlines-jet.webp'
+import orangeCountyKemer from '../assets/images/orange-county-kemer.webp'
 
 const Portfolio = () => {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+  const [sector, setSector] = useState('all')
+  const [showAllCerts, setShowAllCerts] = useState(false)
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
 
@@ -28,6 +30,7 @@ const Portfolio = () => {
       title: t('portfolio.pma.title'),
       description: t('portfolio.pma.description'),
       tag: t('portfolio.pma.tag'),
+      sector: 'digital',
       metrics: [t('portfolio.pma.metric1'), t('portfolio.pma.metric2'), t('portfolio.pma.metric3')]
     },
     // 2. Conti Group — Sales, SEO & Performance Marketing
@@ -36,6 +39,7 @@ const Portfolio = () => {
       title: t('portfolio.conti.title'),
       description: t('portfolio.conti.description'),
       tag: t('portfolio.conti.tag'),
+      sector: 'tourism',
       metrics: [t('portfolio.conti.metric1'), t('portfolio.conti.metric2'), t('portfolio.conti.metric3')]
     },
     // 3. Istanbul Airlines — Marketing & Digital Growth
@@ -44,6 +48,7 @@ const Portfolio = () => {
       title: t('portfolio.istanbulAirlines.title'),
       description: t('portfolio.istanbulAirlines.description'),
       tag: t('portfolio.istanbulAirlines.tag'),
+      sector: 'tourism',
       metrics: [t('portfolio.istanbulAirlines.metric1'), t('portfolio.istanbulAirlines.metric2'), t('portfolio.istanbulAirlines.metric3')]
     },
     // 4. DNA Hotels — Egypt (Technology × Marketing × Media)
@@ -52,6 +57,7 @@ const Portfolio = () => {
       title: t('portfolio.dna.title'),
       description: t('portfolio.dna.description'),
       tag: t('portfolio.dna.tag'),
+      sector: 'tourism',
       metrics: [t('portfolio.dna.metric1'), t('portfolio.dna.metric2'), t('portfolio.dna.metric3')]
     },
     // 5. PPG All in One — Tourism Technology
@@ -60,6 +66,7 @@ const Portfolio = () => {
       title: t('portfolio.ppg.title'),
       description: t('portfolio.ppg.description'),
       tag: t('portfolio.ppg.tag'),
+      sector: 'tourism',
       metrics: [t('portfolio.ppg.metric1'), t('portfolio.ppg.metric2'), t('portfolio.ppg.metric3')]
     },
     // 6. Yunexia — SaaS & AI Automation
@@ -68,6 +75,7 @@ const Portfolio = () => {
       title: t('portfolio.yunexia.title'),
       description: t('portfolio.yunexia.description'),
       tag: t('portfolio.yunexia.tag'),
+      sector: 'tech',
       metrics: [t('portfolio.yunexia.metric1'), t('portfolio.yunexia.metric2'), t('portfolio.yunexia.metric3')]
     },
     // 7. Orange County Hotels — Data-Driven Marketing
@@ -76,6 +84,7 @@ const Portfolio = () => {
       title: t('portfolio.orangeCounty.title'),
       description: t('portfolio.orangeCounty.description'),
       tag: t('portfolio.orangeCounty.tag'),
+      sector: 'tourism',
       metrics: [t('portfolio.orangeCounty.metric1'), t('portfolio.orangeCounty.metric2'), t('portfolio.orangeCounty.metric3')],
       links: [{ name: t('portfolio.orangeCounty.photoLink'), url: 'https://www.orangecounty.com.tr/kemer/tr/foto-galeri' }]
     },
@@ -85,6 +94,7 @@ const Portfolio = () => {
       title: t('portfolio.dubai.title'),
       description: t('portfolio.dubai.description'),
       tag: t('portfolio.dubai.tag'),
+      sector: 'realestate',
       metrics: [t('portfolio.dubai.metric1'), t('portfolio.dubai.metric2'), t('portfolio.dubai.metric3')]
     },
     // 9. Teus Group — International PR & Media
@@ -93,6 +103,7 @@ const Portfolio = () => {
       title: t('portfolio.teus.title'),
       description: t('portfolio.teus.description'),
       tag: t('portfolio.teus.tag'),
+      sector: 'pr',
       metrics: [t('portfolio.teus.metric1'), t('portfolio.teus.metric2'), t('portfolio.teus.metric3')],
       links: [
         { name: 'Desire Antalya', url: 'https://www.desire-antalya.com/tr/#gallery' },
@@ -105,6 +116,7 @@ const Portfolio = () => {
       title: t('portfolio.mediawirt.title'),
       description: t('portfolio.mediawirt.description'),
       tag: t('portfolio.mediawirt.tag'),
+      sector: 'digital',
       metrics: [t('portfolio.mediawirt.metric1'), t('portfolio.mediawirt.metric2'), t('portfolio.mediawirt.metric3')]
     },
     // 11. EMO Optik — Turkey Market Entry
@@ -113,6 +125,7 @@ const Portfolio = () => {
       title: t('portfolio.emo.title'),
       description: t('portfolio.emo.description'),
       tag: t('portfolio.emo.tag'),
+      sector: 'realestate',
       metrics: [t('portfolio.emo.metric1'), t('portfolio.emo.metric2'), t('portfolio.emo.metric3')]
     },
     // 12. Türkiye–Kırgızistan — Diplomatic Digital Transformation
@@ -121,6 +134,7 @@ const Portfolio = () => {
       title: t('portfolio.kyrgyz.title'),
       description: t('portfolio.kyrgyz.description'),
       tag: t('portfolio.kyrgyz.tag'),
+      sector: 'pr',
       metrics: [t('portfolio.kyrgyz.metric1'), t('portfolio.kyrgyz.metric2'), t('portfolio.kyrgyz.metric3')],
       links: [{ name: 'Video', url: 'https://www.facebook.com/BiskekTTEOMER/videos/1323158961190017/' }]
     },
@@ -130,6 +144,7 @@ const Portfolio = () => {
       title: t('portfolio.asman.title'),
       description: t('portfolio.asman.description'),
       tag: t('portfolio.asman.tag'),
+      sector: 'pr',
       metrics: [t('portfolio.asman.metric1'), t('portfolio.asman.metric2'), t('portfolio.asman.metric3')]
     },
     // 14. Belconti Resort Hotel — 90K Views Viral Content
@@ -138,6 +153,7 @@ const Portfolio = () => {
       title: t('portfolio.belconti.title'),
       description: t('portfolio.belconti.description'),
       tag: t('portfolio.belconti.tag'),
+      sector: 'tourism',
       metrics: [t('portfolio.belconti.metric1'), t('portfolio.belconti.metric2'), t('portfolio.belconti.metric3')],
       links: [
         { name: t('portfolio.belconti.articleLink'), url: 'https://www.linkedin.com/pulse/mobil-i%C3%A7erikle-90-bin-izlenme-batuhan-ate%C5%9F-vyc6f/' },
@@ -150,6 +166,7 @@ const Portfolio = () => {
       title: t('portfolio.belekUni.title'),
       description: t('portfolio.belekUni.description'),
       tag: t('portfolio.belekUni.tag'),
+      sector: 'tourism',
       metrics: [t('portfolio.belekUni.metric1'), t('portfolio.belekUni.metric2'), t('portfolio.belekUni.metric3')],
       links: [
         { name: t('portfolio.belekUni.videoLink'), url: 'https://www.instagram.com/p/C13erk5oGBJ/' }
@@ -195,14 +212,12 @@ const Portfolio = () => {
     { name: 'Habitat Facebook Gazetecilik', issuer: 'Habitat Derneği', year: '2021' },
     { name: 'Habitat Siber Zorbalık Eğitmenliği', issuer: 'Habitat Derneği', year: '2023' },
     // Uluslararası
-    { name: 'REUTERS Meta Journalist Certificate', issuer: 'Reuters - Meta', year: '2022' },
     { name: 'Uluslararası Basın Kartı (IFJ)', issuer: 'IFJ - European Union', year: '2024' },
     { name: 'ASMAN Medya Sosyal Medya Sertifikası', issuer: 'ASMAN Medya Grubu', year: '2024' },
     { name: 'Youthpass Sertifikası', issuer: 'ESC Avrupa Birliği', year: '2021' },
     { name: 'RE Code Freelancer Sertifikası', issuer: 'RE Code', year: '2023' },
     { name: 'Genç Liderler Eğitimi', issuer: 'Rusya Ankara Büyükelçiliği', year: '2021' },
     { name: 'B1 Seviye İngilizce Sertifikası', issuer: 'Dil Eğitimi', year: '2025' },
-    { name: 'SEO Eğitimi 2025', issuer: 'Udemy', year: '2025' },
     { name: 'AI Engineering Certificate', issuer: 'Özel Eğitim', year: '2026' },
   ]
 
@@ -342,6 +357,11 @@ const Portfolio = () => {
     }
   ]
 
+  const FILTERS = {"tr": {"all": "Tümü", "tourism": "Turizm", "realestate": "Gayrimenkul", "tech": "Teknoloji / SaaS", "pr": "PR & Medya", "digital": "Dijital Pazarlama", "more": "Tümünü Göster", "less": "Daha Az Göster"}, "en": {"all": "All", "tourism": "Tourism", "realestate": "Real Estate", "tech": "Technology / SaaS", "pr": "PR & Media", "digital": "Digital Marketing", "more": "Show All", "less": "Show Less"}, "de": {"all": "Alle", "tourism": "Tourismus", "realestate": "Immobilien", "tech": "Technologie / SaaS", "pr": "PR & Medien", "digital": "Digitalmarketing", "more": "Alle anzeigen", "less": "Weniger anzeigen"}}
+  const L = FILTERS[language] || FILTERS.tr
+  const filteredAchievements = sector === 'all' ? achievements : achievements.filter((a) => a.sector === sector)
+  const visibleCerts = showAllCerts ? certificates : certificates.slice(0, 6)
+
   const partners = [
     { 
       name: 'Teus Group', 
@@ -448,7 +468,7 @@ const Portfolio = () => {
             </h1>
             <p className="text-xl text-gray-300 mb-6">Portfolyo</p>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-8">{t('portfolio.summary')}</p>
-            <img src={portfolioBanner} alt="Batuhan Ateş kreatif portfolyo" className="mx-auto max-w-md mt-8" />
+            <img decoding="async" src={portfolioBanner} alt="Batuhan Ateş kreatif portfolyo" className="mx-auto max-w-md mt-8" />
           </motion.div>
         </div>
       </section>
@@ -477,7 +497,7 @@ const Portfolio = () => {
                 <stat.icon className="w-6 h-6 text-primary mx-auto mb-2" />
                 <div className="text-2xl md:text-3xl font-bold gradient-text">{stat.number}</div>
                 <div className="text-sm font-medium text-white mt-1">{stat.label}</div>
-                <div className="text-xs text-gray-400 mt-1">{stat.sublabel}</div>
+                <div className="text-sm text-gray-400 mt-1">{stat.sublabel}</div>
               </motion.div>
             ))}
           </div>
@@ -493,12 +513,36 @@ const Portfolio = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-sm font-semibold text-primary mb-2">{t('portfolioPreview.subtitle')}</h2>
-            <h3 className="text-3xl font-display font-bold">{t('portfolioPreview.title')}</h3>
+            <p className="text-sm font-semibold text-primary mb-2">{t('portfolioPreview.subtitle')}</p>
+            <h2 className="text-3xl font-display font-bold">{t('portfolioPreview.title')}</h2>
           </motion.div>
 
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {[
+              { key: 'all', label: L.all },
+              { key: 'tourism', label: L.tourism },
+              { key: 'realestate', label: L.realestate },
+              { key: 'tech', label: L.tech },
+              { key: 'pr', label: L.pr },
+              { key: 'digital', label: L.digital },
+            ].map((f) => (
+              <button
+                key={f.key}
+                type="button"
+                onClick={() => setSector(f.key)}
+                className={
+                  sector === f.key
+                    ? 'px-4 py-2 rounded-full text-sm font-semibold bg-primary text-white transition-colors'
+                    : 'px-4 py-2 rounded-full text-sm font-semibold bg-white/5 text-gray-300 hover:bg-white/10 transition-colors'
+                }
+              >
+                {f.label}
+              </button>
+            ))}
+          </div>
+
           <div className="space-y-16">
-            {achievements.map((item, index) => (
+            {filteredAchievements.map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
@@ -508,7 +552,7 @@ const Portfolio = () => {
               >
                 <div className="grid lg:grid-cols-2">
                   <div className="relative h-64 lg:h-auto">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={item.image}
                       alt={item.title}
                       className="w-full h-full object-cover"
@@ -522,7 +566,7 @@ const Portfolio = () => {
                     </div>
                   </div>
                   <div className="p-8 lg:p-12 flex flex-col justify-center">
-                    <h4 className="text-2xl font-bold mb-4">{item.title}</h4>
+                    <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
                     <p className="text-gray-300 leading-relaxed mb-6">{item.description}</p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {item.metrics.map((metric, i) => (
@@ -535,7 +579,7 @@ const Portfolio = () => {
                     {item.gallery && (
                       <div className="flex gap-3 mt-4">
                         {item.gallery.map((img, i) => (
-                          <img key={i} src={img} alt={`${item.title} galeri görseli ${i + 1}`} className="w-24 h-16 object-cover rounded-lg" />
+                          <img loading="lazy" decoding="async" key={i} src={img} alt={`${item.title} galeri görseli ${i + 1}`} className="w-24 h-16 object-cover rounded-lg" />
                         ))}
                       </div>
                     )}
@@ -573,9 +617,9 @@ const Portfolio = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h3 className="text-3xl font-display font-bold mb-4">
-              🏢 Yönettiğim <span className="gradient-text">Firmalar</span>
-            </h3>
+            <h2 className="text-3xl font-display font-bold mb-4">
+              Yönettiğim <span className="gradient-text">Firmalar</span>
+            </h2>
             <p className="text-gray-400">Kurucu veya yönetici olarak bulunduğum firmalar ve markalar</p>
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -593,9 +637,9 @@ const Portfolio = () => {
                 <div className="w-14 h-14 bg-primary/20 rounded-xl flex items-center justify-center mb-4 mx-auto group-hover:bg-primary/30 transition-colors">
                   <span className="text-2xl">{partner.icon}</span>
                 </div>
-                <h4 className="font-semibold mb-2 text-sm">{partner.name}</h4>
-                <p className="text-gray-400 text-xs mb-3">{partner.category}</p>
-                <span className="inline-flex items-center gap-1 text-primary text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                <h3 className="font-semibold mb-2 text-sm">{partner.name}</h3>
+                <p className="text-gray-400 text-sm mb-3">{partner.category}</p>
+                <span className="inline-flex items-center gap-1 text-primary text-sm opacity-0 group-hover:opacity-100 transition-opacity">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                   </svg>
@@ -616,9 +660,9 @@ const Portfolio = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h3 className="text-3xl font-display font-bold mb-4">
-              🏆 Ödüller ve <span className="gradient-text">KPI Başarıları</span>
-            </h3>
+            <h2 className="text-3xl font-display font-bold mb-4">
+              Ödüller ve <span className="gradient-text">KPI Başarıları</span>
+            </h2>
             <p className="text-gray-400">Ölçülebilir sonuçlar ve uluslararası başarılar</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -633,11 +677,11 @@ const Portfolio = () => {
                 <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-bl-full" />
                 <div className="relative">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="px-3 py-1 bg-primary/20 text-primary text-xs font-semibold rounded-full">
+                    <span className="px-3 py-1 bg-primary/20 text-primary text-sm font-semibold rounded-full">
                       {award.year}
                     </span>
                   </div>
-                  <h4 className="font-bold text-lg mb-2">{award.name}</h4>
+                  <h3 className="font-bold text-lg mb-2">{award.name}</h3>
                   <p className="text-secondary text-sm mb-2">{award.project}</p>
                   <p className="text-gray-400 text-sm">{award.description}</p>
                 </div>
@@ -656,13 +700,13 @@ const Portfolio = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h3 className="text-3xl font-display font-bold mb-4">
+            <h2 className="text-3xl font-display font-bold mb-4">
               {t('portfolio.certificates')}
-            </h3>
+            </h2>
             <p className="text-gray-400">{t('portfolio.certificatesDesc')}</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-            {certificates.map((cert, index) => (
+            {visibleCerts.map((cert, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -674,12 +718,23 @@ const Portfolio = () => {
                   <Certificate className="w-5 h-5 text-primary" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h4 className="font-semibold text-xs mb-1 line-clamp-2">{cert.name}</h4>
-                  <p className="text-gray-400 text-xs">{cert.issuer} • {cert.year}</p>
+                  <h3 className="font-semibold text-sm mb-1 line-clamp-2">{cert.name}</h3>
+                  <p className="text-gray-400 text-sm">{cert.issuer} • {cert.year}</p>
                 </div>
               </motion.div>
             ))}
           </div>
+          {certificates.length > 6 && (
+            <div className="text-center mt-8">
+              <button
+                type="button"
+                onClick={() => setShowAllCerts((v) => !v)}
+                className="px-6 py-3 rounded-full text-sm font-semibold bg-white/5 text-gray-300 hover:bg-white/10 transition-colors"
+              >
+                {showAllCerts ? L.less : L.more} ({certificates.length})
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
@@ -692,9 +747,9 @@ const Portfolio = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h3 className="text-3xl font-display font-bold mb-4">
-              🏛️ Dernek Üyelikleri ve <span className="gradient-text">Profesyonel Ağlar</span>
-            </h3>
+            <h2 className="text-3xl font-display font-bold mb-4">
+              Dernek Üyelikleri ve <span className="gradient-text">Profesyonel Ağlar</span>
+            </h2>
             <p className="text-gray-400">Uluslararası nitelikteki profesyonel üyeliklerim ve ağlarım</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -711,9 +766,9 @@ const Portfolio = () => {
                     <Globe className="w-6 h-6 text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold mb-1">{assoc.name}</h4>
+                    <h3 className="font-bold mb-1">{assoc.name}</h3>
                     <p className="text-secondary text-sm mb-2">{assoc.role}</p>
-                    <div className="flex items-center gap-2 text-gray-400 text-xs mb-2">
+                    <div className="flex items-center gap-2 text-gray-400 text-sm mb-2">
                       <MapPin size={12} />
                       <span>{assoc.country}</span>
                     </div>
@@ -735,9 +790,9 @@ const Portfolio = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h3 className="text-3xl font-display font-bold mb-4">
-              🎤 Konferanslar ve <span className="gradient-text">Etkinlikler</span>
-            </h3>
+            <h2 className="text-3xl font-display font-bold mb-4">
+              Konferanslar ve <span className="gradient-text">Etkinlikler</span>
+            </h2>
             <p className="text-gray-400">Katıldığım uluslararası ve yerel etkinlikler</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -750,12 +805,12 @@ const Portfolio = () => {
                 className="glass-card p-5 hover:border-primary/30 transition-all"
               >
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="px-3 py-1 bg-secondary/20 text-secondary text-xs font-semibold rounded-full">
+                  <span className="px-3 py-1 bg-secondary/20 text-secondary text-sm font-semibold rounded-full">
                     {conf.type}
                   </span>
-                  <span className="text-gray-500 text-xs">{conf.year}</span>
+                  <span className="text-gray-400 text-sm">{conf.year}</span>
                 </div>
-                <h4 className="font-bold mb-2">{conf.name}</h4>
+                <h3 className="font-bold mb-2">{conf.name}</h3>
                 <div className="flex items-center gap-2 text-gray-400 text-sm">
                   <MapPin size={14} />
                   <span>{conf.location}</span>
@@ -777,9 +832,9 @@ const Portfolio = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h3 className="text-3xl font-display font-bold mb-4">
-              💬 LinkedIn <span className="gradient-text">Tavsiyeleri</span>
-            </h3>
+            <h2 className="text-3xl font-display font-bold mb-4">
+              LinkedIn <span className="gradient-text">Tavsiyeleri</span>
+            </h2>
             <p className="text-gray-400">İş dünyasından ve akademik çevrelerden aldığım LinkedIn tavsiyeleri</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
@@ -796,7 +851,7 @@ const Portfolio = () => {
                     {rec.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
                   </div>
                   <div className="flex-1">
-                    <h4 className="font-bold mb-1">{rec.name}</h4>
+                    <h3 className="font-bold mb-1">{rec.name}</h3>
                     <p className="text-secondary text-sm">{rec.title}</p>
                   </div>
                 </div>
@@ -817,9 +872,9 @@ const Portfolio = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h3 className="text-3xl font-display font-bold mb-4">
-              📄 Referans <span className="gradient-text">Mektupları</span>
-            </h3>
+            <h2 className="text-3xl font-display font-bold mb-4">
+              Referans <span className="gradient-text">Mektupları</span>
+            </h2>
             <p className="text-gray-400">Aldığım referans mektupları</p>
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -834,7 +889,7 @@ const Portfolio = () => {
                 <div className="w-14 h-14 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-bold text-lg mx-auto mb-4">
                   {ref.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
                 </div>
-                <h4 className="font-bold mb-2">{ref.name}</h4>
+                <h3 className="font-bold mb-2">{ref.name}</h3>
                 <p className="text-secondary text-sm">{ref.title}</p>
               </motion.div>
             ))}

@@ -4,27 +4,27 @@ import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import { ArrowRight, ChevronDown, Award } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
-import aboutImage from '../assets/images/about-hero.png'
+import aboutImage from '../assets/images/about-hero.webp'
 import figmaImg from '../assets/images/figma.png'
 import photoshopImg from '../assets/images/photoshop.png'
 import illustratorImg from '../assets/images/illustrator.png'
 import midjourneyImg from '../assets/images/midjourney.png'
-import gallery1 from '../assets/images/photo_2025-09-15_21-23-37.jpg'
-import gallery2 from '../assets/images/photo_2025-09-16_21-58-29.jpg'
-import gallery3 from '../assets/images/photo_2026-06-25_00-42-11.jpg'
-import gallery4 from '../assets/images/photo_2026-06-25_00-42-15.jpg'
-import gallery5 from '../assets/images/photo_2026-06-25_00-42-18.jpg'
-import gallery6 from '../assets/images/photo_2026-06-25_00-42-26.jpg'
-import gallery7 from '../assets/images/photo_2026-07-21_00-25-23.jpg'
-import gallery8 from '../assets/images/photo_2026-07-21_00-27-31.jpg'
-import portfolio1 from '../assets/images/portfolio-1.png'
-import portfolio2 from '../assets/images/portfolio-2.png'
-import portfolio3 from '../assets/images/portfolio-3.png'
-import portfolio4 from '../assets/images/portfolio-4.png'
-import diplomaticMeeting from '../assets/images/diplomatic-meeting.jpg'
-import whiteHouse from '../assets/images/white-house.jpg'
-import hotelResort from '../assets/images/hotel-resort.png'
-import dubaiSkyline from '../assets/images/dubai-skyline.png'
+import gallery1 from '../assets/images/photo_2025-09-15_21-23-37.webp'
+import gallery2 from '../assets/images/photo_2025-09-16_21-58-29.webp'
+import gallery3 from '../assets/images/photo_2026-06-25_00-42-11.webp'
+import gallery4 from '../assets/images/photo_2026-06-25_00-42-15.webp'
+import gallery5 from '../assets/images/photo_2026-06-25_00-42-18.webp'
+import gallery6 from '../assets/images/photo_2026-06-25_00-42-26.webp'
+import gallery7 from '../assets/images/photo_2026-07-21_00-25-23.webp'
+import gallery8 from '../assets/images/photo_2026-07-21_00-27-31.webp'
+import portfolio1 from '../assets/images/portfolio-1.webp'
+import portfolio2 from '../assets/images/portfolio-2.webp'
+import portfolio3 from '../assets/images/portfolio-3.webp'
+import portfolio4 from '../assets/images/portfolio-4.webp'
+import diplomaticMeeting from '../assets/images/diplomatic-meeting.webp'
+import whiteHouse from '../assets/images/white-house.webp'
+import hotelResort from '../assets/images/hotel-resort.webp'
+import dubaiSkyline from '../assets/images/dubai-skyline.webp'
 
 const About = () => {
   const { t } = useLanguage()
@@ -73,7 +73,7 @@ const About = () => {
                 {t('about.heroTitle')}<br />
                 <span className="gradient-text">{t('about.heroSubtitle')}</span>
               </h1>
-              <img src={aboutImage} alt="Batuhan Ateş" className="max-w-md rounded-2xl shadow-2xl" />
+              <img decoding="async" src={aboutImage} alt="Batuhan Ateş" className="max-w-md rounded-2xl shadow-2xl" />
             </motion.div>
 
             <motion.div
@@ -253,7 +253,7 @@ const About = () => {
                 className="glass-card p-4 flex items-center justify-center min-h-[80px]"
               >
                 {tool.image ? (
-                  <img src={tool.image} alt={tool.name} className="max-h-10" />
+                  <img loading="lazy" decoding="async" src={tool.image} alt={tool.name} className="max-h-10" />
                 ) : (
                   <span className="text-sm text-center">{tool.name}</span>
                 )}
@@ -290,7 +290,7 @@ const About = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-fr">
             <div className="col-span-2 row-span-2 relative group cursor-pointer overflow-hidden rounded-xl">
-              <img
+              <img loading="lazy" decoding="async"
                 src={gallery1}
                 alt="Galeri 1"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 min-h-[300px]"
@@ -298,7 +298,7 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
             <div className="relative group cursor-pointer overflow-hidden rounded-xl">
-              <img
+              <img loading="lazy" decoding="async"
                 src={gallery2}
                 alt="Galeri 2"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 min-h-[145px]"
@@ -306,7 +306,7 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
             <div className="relative group cursor-pointer overflow-hidden rounded-xl">
-              <img
+              <img loading="lazy" decoding="async"
                 src={gallery3}
                 alt="Galeri 3"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 min-h-[145px]"
@@ -314,7 +314,7 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
             <div className="relative group cursor-pointer overflow-hidden rounded-xl">
-              <img
+              <img loading="lazy" decoding="async"
                 src={gallery4}
                 alt="Galeri 4"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 min-h-[145px]"
@@ -322,7 +322,7 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
             <div className="relative group cursor-pointer overflow-hidden rounded-xl">
-              <img
+              <img loading="lazy" decoding="async"
                 src={gallery5}
                 alt="Galeri 5"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 min-h-[145px]"
@@ -330,7 +330,7 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
             <div className="relative group cursor-pointer overflow-hidden rounded-xl">
-              <img
+              <img loading="lazy" decoding="async"
                 src={gallery6}
                 alt="Galeri 6"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 min-h-[145px]"
@@ -338,7 +338,7 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
             <div className="relative group cursor-pointer overflow-hidden rounded-xl">
-              <img
+              <img loading="lazy" decoding="async"
                 src={gallery7}
                 alt="Galeri 7"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 min-h-[145px]"
@@ -346,7 +346,7 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
             <div className="relative group cursor-pointer overflow-hidden rounded-xl">
-              <img
+              <img loading="lazy" decoding="async"
                 src={gallery8}
                 alt="Galeri 8"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 min-h-[145px]"
@@ -393,7 +393,7 @@ const About = () => {
                 <Award size={20} className="text-primary flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-semibold text-sm">{cert.name}</h4>
-                  <p className="text-gray-400 text-xs mt-1">{cert.issuer} · {cert.year}</p>
+                  <p className="text-gray-400 text-sm mt-1">{cert.issuer} · {cert.year}</p>
                 </div>
               </div>
             ))}

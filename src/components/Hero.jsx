@@ -3,7 +3,7 @@ import { ChevronDown, Instagram, Linkedin, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useLanguage } from '../context/LanguageContext'
 import { localizedPath } from '../i18n/routes'
-import heroImage from '../assets/images/hero-bg.png'
+import heroImage from '../assets/images/hero-bg.webp'
 
 const Hero = () => {
   const { t, language } = useLanguage()
@@ -11,7 +11,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden md:pb-28">
       <div className="absolute inset-0 z-0">
-        <img
+        <img fetchPriority="high"
           src={heroImage}
           alt="Batuhan Ateş dijital pazarlama ve medya çalışmaları"
           className="w-full h-full object-cover opacity-20"

@@ -2,7 +2,7 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { ExternalLink, Newspaper, TrendingUp, Globe } from 'lucide-react'
 import { useLanguage } from '../context/LanguageContext'
-import pressBanner from '../assets/images/portfolio-banner.png'
+import pressBanner from '../assets/images/portfolio-banner.webp'
 
 const Press = () => {
   const { t } = useLanguage()
@@ -289,10 +289,10 @@ const Press = () => {
                 className="glass-card p-6 hover:border-primary/50 transition-all group"
               >
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">
+                  <span className="px-3 py-1 bg-primary/20 text-primary text-sm rounded-full">
                     {article.category}
                   </span>
-                  <span className="text-gray-500 text-sm">{article.source}</span>
+                  <span className="text-gray-400 text-sm">{article.source}</span>
                 </div>
                 <h4 className="text-lg font-bold mb-3 group-hover:text-primary transition-colors">
                   {article.title}
@@ -301,7 +301,7 @@ const Press = () => {
                   {article.excerpt}
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-500 text-xs">{article.date}</span>
+                  <span className="text-gray-400 text-sm">{article.date}</span>
                   <span className="flex items-center gap-1 text-primary text-sm group-hover:underline">
                     <ExternalLink size={14} />
                     {t('press.open')}
