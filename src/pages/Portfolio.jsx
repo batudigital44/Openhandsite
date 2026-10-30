@@ -233,6 +233,12 @@ const Portfolio = () => {
       project: 'Dubai Emlak Firması',
       year: '2024',
       description: '14 günde, 5.000 TL reklam harcamasıyla 800.000$+ satış konversiyonu'
+    },
+    {
+      name: '90 Bin İzlenme Rekoru',
+      project: 'Belconti Resort Hotel',
+      year: '2024',
+      description: 'Ürettiğim mobil içerik 90.000 izlenmeye ulaşarak son 2 yılın en çok izlenen içeriği oldu; otelin en yüksek takipçi kazanımını sağladı'
     }
   ]
 
