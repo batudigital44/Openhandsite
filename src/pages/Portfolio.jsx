@@ -225,19 +225,19 @@ const Portfolio = () => {
     {
       name: 'Avrupa\'nın En İyi Otel İnşaat ve Tasarım Ödülü',
       project: 'Teus Group - Desire Antalya',
-      year: '2024',
+      year: '2025',
       description: 'Ulusal ve uluslararası basın PR çalışmalarıyla desteklenen iletişim stratejisi'
     },
     {
       name: '800.000$+ Dubai Gayrimenkul Satış Dönüşümü',
       project: 'Dubai Emlak Firması',
-      year: '2024',
+      year: '2025',
       description: '14 günde, 5.000 TL reklam harcamasıyla 800.000$+ satış konversiyonu'
     },
     {
       name: '90 Bin İzlenme Rekoru',
       project: 'Belconti Resort Hotel',
-      year: '2024',
+      year: '2026',
       description: 'Ürettiğim mobil içerik 90.000 izlenmeye ulaşarak son 2 yılın en çok izlenen içeriği oldu; otelin en yüksek takipçi kazanımını sağladı'
     }
   ]
