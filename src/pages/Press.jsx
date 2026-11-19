@@ -12,6 +12,22 @@ const Press = () => {
 
   const pressArticles = [
     {
+      title: 'COP31 Liderler Zirvesi Antalya\'da: Hedefler, Çağrılar ve Eleştiriler',
+      source: 'Basın Antalya',
+      date: '2026',
+      excerpt: 'Antalya\'da düzenlenen COP31 Liderler Zirvesi\'nde BM\'den acil iklim eylemi çağrısı gelirken, Greta Thunberg\'in fosil yakıt lobisi eleştirileri ve Lula da Silva\'nın iklim adaleti vurgusu öne çıktı.',
+      url: 'https://www.basinantalya.com/cop31-liderler-zirvesi-antalyada-hedefler-cagrilar-ve-elestiriler',
+      category: 'Uluslararası & Diplomasi'
+    },
+    {
+      title: 'Antalya\'nın Yeşil Laboratuvarı COP31\'de Örnek Oldu',
+      source: 'Basın Antalya',
+      date: '2026',
+      excerpt: 'Antalya Eğitim ve Araştırma Hastanesi\'nin yeşil laboratuvar deneyimi, Prof. Dr. Güzin Aykal\'ın katılımıyla COP31\'de dünya çapındaki bilim insanlarına aktarıldı.',
+      url: 'https://www.basinantalya.com/antalyanin-yesil-laboratuvari-cop31de-ornek-oldu',
+      category: 'Uluslararası & Diplomasi'
+    },
+    {
       title: 'Schengen\'de Türkiye\'ye Özel Kapı Diplomasisi',
       source: 'Turizm Aktüel',
       date: '2025',
